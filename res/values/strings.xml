@@ -1265,4 +1265,8 @@
    <!-- Dynamic Navbar Color -->
    <string name="nav_bar_dynamic_title">Dynamic navbar color</string>
    <string name="nav_bar_dynamic_summary">Enable to adapt navbar color to apps primary dark color.Restart your desired app to see effect</string>
+
+   <!-- Launch music player when headset is connected -->
+   <string name="headset_connect_player_title">Launch music app</string>
+   <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
 </resources>

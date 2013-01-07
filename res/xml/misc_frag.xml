@@ -17,6 +17,12 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/misc" >
 
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="headset_connect_player"
+            android:title="@string/headset_connect_player_title"
+            android:summary="@string/headset_connect_player_summary"
+            android:defaultValue="false" />
+
      <PreferenceCategory
             android:key="screenshot_options"
             android:title="@string/screenshot_options_category" >
