@@ -54,6 +54,10 @@
             android:title="@string/wallpaper_open_title" />
 
         <ListPreference
+            android:key="task_open_behind"
+            android:title="@string/task_open_behind_title" />
+
+        <ListPreference
             android:key="wallpaper_close"
             android:title="@string/wallpaper_close_title" />
 
