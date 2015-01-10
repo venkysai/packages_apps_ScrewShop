@@ -46,6 +46,11 @@
         android:key="panel_porn"
         android:title="@string/panel_porn_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.PanelPorn" />
+
+    <Preference
+        android:key="batterybar"
+        android:title="@string/battery_bar_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.BatteryBarSettings" />
 	
 
 </PreferenceScreen>
