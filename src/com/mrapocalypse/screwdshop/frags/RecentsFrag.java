@@ -84,12 +84,23 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
+    private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
+    private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
+
+    // Package name of the omnniswitch app
+    public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
+    // Intent for launching the omniswitch settings actvity
+    public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
+            .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mImmersiveRecents;
     private SwitchPreference mSlimToggle;
     private Preference mStockIconPacks;
+    private SwitchPreference mRecentsUseOmniSwitch;
+    private Preference mOmniSwitchSettings;
+    private boolean mOmniSwitchInitCalled;
 
     private AlertDialog mDialog;
     private ListView mListView;
@@ -126,6 +137,22 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         mStockIconPacks.setEnabled(!enabled);
         mSlimToggle.setOnPreferenceChangeListener(this);
 
+        mRecentsUseOmniSwitch = (SwitchPreference)
+                prefScreen.findPreference(RECENTS_USE_OMNISWITCH);
+
+        try {
+            mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_OMNI_SWITCH_ENABLED) == 1);
+            mOmniSwitchInitCalled = true;
+        } catch(SettingNotFoundException e){
+            // if the settings value is unset
+        }
+        mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
+
+        mOmniSwitchSettings = (Preference)
+                prefScreen.findPreference(OMNISWITCH_START_SETTINGS);
+        mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
+
     }
 
     @Override
@@ -152,14 +179,31 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
             mSlimToggle.setChecked(value);
             mStockIconPacks.setEnabled(!value);
             return true;
+        } else if (preference == mRecentsUseOmniSwitch) {
+            boolean value = (Boolean) newValue;
+
+            // if value has never been set before
+            if (value && !mOmniSwitchInitCalled){
+                openOmniSwitchFirstTimeWarning();
+                mOmniSwitchInitCalled = true;
+            }
+
+            Settings.System.putInt(
+                    resolver, Settings.System.RECENTS_OMNI_SWITCH_ENABLED, value ? 1 : 0);
+            mOmniSwitchSettings.setEnabled(value);
+            return true;
         }
         return false;
     }
+
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mStockIconPacks) {
             pickIconPack(getContext());
+            return true;
+        } else if (preference == mOmniSwitchSettings){
+            startActivity(INTENT_OMNISWITCH_SETTINGS);
             return true;
         }
         return super.onPreferenceTreeClick(preference);
@@ -168,6 +212,16 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.SCREWD;
+    }
+
+    private void openOmniSwitchFirstTimeWarning() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
+                .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+                }).show();
     }
 
     /** Recents Icon Pack Dialog **/
