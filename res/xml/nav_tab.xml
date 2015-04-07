@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="gest_any"
+        android:title="@string/gestureany"
+        android:fragment="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereSettings" />
 
 </PreferenceScreen>
