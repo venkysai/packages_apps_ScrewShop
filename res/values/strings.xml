@@ -34,6 +34,7 @@
     <string name="toast">Toast</string>
     <string name="listview">ListView</string>
     <string name="icons">Icons</string>
+    <string name="entries">Entries</string>
 
     <!-- begin strings for options -->
     
@@ -255,5 +256,9 @@
     <string name="immersive_recents_fullscreen">Fullscreen</string>
     <string name="immersive_recents_statusbar">Statusbar only</string>
     <string name="immersive_recents_navbar">Navbar only</string>
+
+    <!--Power menu on Secure Lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Show power menu lock screen</string>
+    <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
 
 </resources>
