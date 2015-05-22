@@ -65,7 +65,7 @@
         <PreferenceCategory
             android:title="@string/powermenu_category_visibility">
 
-            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
                 android:key="powermenu_lockscreen"
                 android:title="@string/powermenu_lockscreen_title"
                 android:summary="@string/powermenu_lockscreen_summary"
