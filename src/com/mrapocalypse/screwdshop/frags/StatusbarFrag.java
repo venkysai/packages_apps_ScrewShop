@@ -19,14 +19,17 @@ package com.mrapocalypse.screwdshop.frags;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
@@ -38,6 +41,7 @@ import android.widget.EditText;
 
 import java.util.Date;
 
+import com.android.internal.util.screwd.screwdUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -60,6 +64,10 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
     private static final String PREF_CLOCK_DATE_FORMAT = "clock_date_format";
     private static final String STATUS_BAR_CLOCK = "status_bar_show_clock";
+    private static final String MISSED_CALL_BREATH = "missed_call_breath";
+    private static final String VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String SMS_BREATH = "sms_breath";
+    private static final String BREATHING_NOTIFICATIONS = "breathing_notifications";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -74,6 +82,10 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mClockDatePosition;
     private ListPreference mClockDateFormat;
     private SwitchPreference mStatusBarClock;
+    private SwitchPreference mMissedCallBreath;
+    private SwitchPreference mVoicemailBreath;
+    private SwitchPreference mSmsBreath;
+    private PreferenceGroup mBreathingNotifications;
 
 
     @Override
@@ -164,6 +176,36 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             mClockDateStyle.setEnabled(false);
             mClockDatePosition.setEnabled(false);
             mClockDateFormat.setEnabled(false);
+        }
+
+        mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
+        mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
+        mSmsBreath = (SwitchPreference) findPreference(SMS_BREATH);
+
+        mBreathingNotifications = (PreferenceGroup) findPreference(BREATHING_NOTIFICATIONS);
+
+        Context context = getActivity();
+        ConnectivityManager cm = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if(cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+
+            mMissedCallBreath.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
+            mMissedCallBreath.setOnPreferenceChangeListener(this);
+
+            mVoicemailBreath.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+            mVoicemailBreath.setOnPreferenceChangeListener(this);
+
+            mSmsBreath.setChecked(Settings.Global.getInt(getContentResolver(),
+                    Settings.Global.KEY_SMS_BREATH, 0) == 1);
+            mSmsBreath.setOnPreferenceChangeListener(this);
+        } else {
+            prefSet.removePreference(mMissedCallBreath);
+            prefSet.removePreference(mVoicemailBreath);
+            prefSet.removePreference(mSmsBreath);
+            prefSet.removePreference(mBreathingNotifications);
         }
     }
 
@@ -276,6 +318,21 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                         Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, (String) newValue);
                 }
             }
+            return true;
+        } else if (preference == mMissedCallBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), MISSED_CALL_BREATH,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mVoicemailBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), VOICEMAIL_BREATH,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mSmsBreath) {
+            boolean value = (Boolean) newValue;
+            Settings.Global.putInt(getContentResolver(), SMS_BREATH,
+                    value ? 1 : 0);
             return true;
         }
         return false;

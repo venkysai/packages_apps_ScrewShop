@@ -79,6 +79,7 @@
     <string name="gestures">Gestures</string>
     <string name="pulldown">Pulldown options</string>
     <string name="qs_tile_layout">Tile Layout</string>
+    <string name="breathing_notifications_category">Breathing Notifications</string>
 
     <!-- begin strings for options -->
     
@@ -749,5 +750,14 @@
     <string name="qs_rows_columns_6_title">6</string>
     <string name="qs_rows_columns_7_title">7</string>
     <string name="qs_rows_columns_8_title">8</string>
+
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing notifications</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your SMS notifications a breathing effect in the statusbar</string>
 
 </resources>
