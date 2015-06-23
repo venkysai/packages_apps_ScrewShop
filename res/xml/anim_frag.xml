@@ -3,6 +3,12 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/animations" >
 
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        android:key="disable_transition_animations"
+        android:title="@string/disable_animations"
+        android:summary="@string/disable_animations_summary"
+        android:defaultValue="false" />
+
      <PreferenceCategory
         android:title="@string/system_animations">
 
@@ -14,7 +20,7 @@
         <ListPreference
             android:key="activity_open"
             android:title="@string/activity_open_title" />
-
+          
         <ListPreference
             android:key="activity_close"
             android:title="@string/activity_close_title" />
