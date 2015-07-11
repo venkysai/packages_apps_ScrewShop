@@ -34,5 +34,12 @@
 
     </PreferenceCategory>
 
+          
+          <!-- Volume Steps -->
+        <Preference
+                android:key="volume_steps"
+                android:title="@string/volume_steps_title"
+                android:fragment="com.mrapocalypse.screwdshop.frags.VolumeSteps" />
+
 
 </PreferenceScreen>
