@@ -18,14 +18,6 @@
 
     <PreferenceCategory 
          android:title="@string/the_interface">
-
-         <Preference
-            android:title="@string/lockscreen_shortcuts_title"
-            android:summary="@string/lockscreen_shortcuts_summary">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
-         </Preference>
 	 
 	 <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
               android:key="double_tap_sleep_lockscreen"
@@ -54,16 +46,31 @@
        <PreferenceCategory 
          android:title="@string/shortcuts">
 
-         <Preference
-             android:key="lockscreen_shortcuts"
-             android:title="@string/lockscreen_shortcuts_slim_title"
-             android:summary="@string/lockscreen_shortcuts_slim_summary"
-             android:fragment="com.mrapocalypse.screwdshop.dslv.ActionListViewSettings">
-                 <extra android:name="actionMode" android:value="4" />
-                 <extra android:name="maxAllowedActions" android:value="8" />
-                 <extra android:name="disableLongpress" android:value="true" />
-                 <extra android:name="useAppPickerOnly" android:value="true" />
-                 <extra android:name="fragment" android:value="com.mrapocalypse.screwdshop.frags.LockscreenShortcuts" />
+          <Preference
+            android:title="@string/lockscreen_shortcuts_title"
+            android:summary="@string/lockscreen_shortcuts_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
+         </Preference>
+
+        <ListPreference
+            android:key="lockscreen_shortcuts_launch_type"
+            android:title="@string/lockscreen_shorcuts_launch_type_title"
+            android:summary="%s"
+            android:defaultValue="1"
+            android:entries="@array/lockscreen_shortcuts_launch_type_entries"
+            android:entryValues="@array/lockscreen_shortcuts_launch_type_values" />
+
+        <Preference
+            android:key="lockscreen_shortcuts"
+            android:fragment="com.mrapocalypse.screwdshop.dslv.ActionListViewSettings"
+            android:summary="@string/lockscreen_shortcuts_slim_summary"
+            android:title="@string/lockscreen_shortcuts_slim_title">
+             <extra android:name="actionMode" android:value="4" />
+             <extra android:name="maxAllowedActions" android:value="8" />
+             <extra android:name="disableLongpress" android:value="true" />
+             <extra android:name="useAppPickerOnly" android:value="true" />
         </Preference>
 
      </PreferenceCategory>

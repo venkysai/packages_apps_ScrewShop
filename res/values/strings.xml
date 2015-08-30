@@ -132,8 +132,8 @@
     <!--SysUI tuner options -->
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
-    <string name="lockscreen_shortcuts_title">Lockscreen shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">Lockscreen bottom shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Bottom shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">>Manage lockscreen shortcuts down at the bottom</string>
     <string name="navbar_buttons_title">Navbar buttons</string>
     <string name="navbar_buttons_summary">Navbar layout and custom buttons</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
@@ -566,9 +566,12 @@
 
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_category">Shortcuts</string>
-    <string name="lockscreen_shortcuts_title">Lockscreen shortcuts midscreen</string>
-    <string name="lockscreen_shortcuts_summary">Change the shortcuts that are about halfway up on the lockscreen</string>
-    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="lockscreen_shortcuts_slim_title">Upper Shortcuts</string>
+    <string name="lockscreen_shortcuts_slim_summary">Change the shortcuts right under the lockscreen clock</string>
+    <string name="lockscreen_shorcuts_launch_type_title">Shortcut click type</string>
+    <string name="lockscreen_shortcuts_single_tap">Click</string>
+    <string name="lockscreen_shortcuts_double_tap">Double tap</string>
+    <string name="lockscreen_shortcuts_longpress">Longpress</string>
+
 </resources>
 
