@@ -36,11 +36,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
+import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuFragment extends SettingsPreferenceFragment {
+public class PowerMenuFragment extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
+    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
 
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
@@ -53,6 +58,7 @@ public class PowerMenuFragment extends SettingsPreferenceFragment {
     private SwitchPreference mVoicePref;
     private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
+    private CustomSeekBarPreference mOnTheGoAlphaPref;
 
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
@@ -101,6 +107,13 @@ public class PowerMenuFragment extends SettingsPreferenceFragment {
                 mSilentPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SILENT);
             }
         }
+
+        mOnTheGoAlphaPref = (CustomSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+        float OTGAlpha = Settings.System.getFloat(getContentResolver(), Settings.System.ON_THE_GO_ALPHA,
+                    0.5f);
+        final int alpha = ((int) (OTGAlpha * 100));
+        mOnTheGoAlphaPref.setValue(alpha);
+        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
 
         getUserConfig();
     }
@@ -223,6 +236,17 @@ public class PowerMenuFragment extends SettingsPreferenceFragment {
             return super.onPreferenceTreeClick(preference);
         }
         return true;
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mOnTheGoAlphaPref) {
+            float val = (Integer) newValue;
+            Settings.System.putFloat(getContentResolver(), Settings.System.ON_THE_GO_ALPHA,
+                    val / 100);
+            return true;
+        }
+        return false;
     }
 
     private boolean settingsArrayContains(String preference) {
