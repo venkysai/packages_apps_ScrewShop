@@ -33,10 +33,13 @@ public class SoundsFrag extends SettingsPreferenceFragment implements
     private static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     public static final String VOLUME_ROCKER_MUSIC_CONTROLS = "volume_rocker_music_controls";
+    private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+
 
     private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mVolumeRockerWake;
     private SwitchPreference mVolumeRockerMusicControl;
+    private ListPreference mVolumeKeyCursorControl;
 
 
     @Override
@@ -68,6 +71,29 @@ public class SoundsFrag extends SettingsPreferenceFragment implements
         int volumeRockerMusicControl = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_MUSIC_CONTROLS, 0);
         mVolumeRockerMusicControl.setChecked(volumeRockerMusicControl != 0);
+
+        //Volume rocker cursor control
+        // Cursor volume keys
+        int cursorControlAction = Settings.System.getInt(resolver,
+                Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+        mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
+                cursorControlAction);
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
     }
 
 
@@ -87,6 +113,10 @@ public class SoundsFrag extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_MUSIC_CONTROLS,
                     value ? 1 : 0);
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            handleActionListChange(mVolumeKeyCursorControl, newValue,
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
         }
         return false;
