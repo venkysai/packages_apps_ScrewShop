@@ -41,7 +41,18 @@
             android:entryValues="@array/clock_date_format_entries_values"
             android:dependency="clock_date_display" />
 
-     </PreferenceCategory>
+    </PreferenceCategory>
+
+     <PreferenceCategory
+        android:title="@string/gestures">
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+             android:key="double_tap_sleep_gesture"
+             android:title="@string/double_tap_to_sleep_title"
+             android:summary="@string/double_tap_to_sleep_summary"
+             android:defaultValue="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/notifications">

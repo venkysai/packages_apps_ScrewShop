@@ -61,6 +61,7 @@
     <string name="shortcuts">Shortcuts</string>
     <string name="clock">Clock</string>
     <string name="the_interface">Interface</string>
+    <string name="gestures">Gestures</string>
 
     <!-- begin strings for options -->
     
@@ -590,5 +591,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
+    <!-- double tap to sleep - statusbar -->
+    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
 
 </resources>
