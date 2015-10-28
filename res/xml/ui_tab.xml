@@ -51,6 +51,11 @@
         android:key="batterybar"
         android:title="@string/battery_bar_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.BatteryBarSettings" />
+
+   <Preference
+        android:key="expanded_desktop_category"
+        android:title="@string/expanded_desktop_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.ExpandedDesktop"/>
 	
 
 </PreferenceScreen>
