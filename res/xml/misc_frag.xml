@@ -4,10 +4,16 @@
      android:title="@string/misc" >
 
      <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="flashlight_notification"
-            android:title="@string/flashlight_notification_title"
-            android:summary="@string/flashlight_notification_summary"
-            android:defaultValue="false" />
+        android:key="flashlight_notification"
+        android:title="@string/flashlight_notification_title"
+        android:summary="@string/flashlight_notification_summary"
+        android:defaultValue="false" />
+
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        android:key="disable_immersive_message"
+        android:title="@string/disable_immersive_message_title"
+        android:summary="@string/disable_immersive_message_summary"
+        android:persistent="false" />
 
 
 </PreferenceScreen>

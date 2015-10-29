@@ -31,8 +31,10 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
 
     private SwitchPreference mFlashlightNotification;
+    private SwitchPreference mDisableIM;
 
 
     @Override
@@ -51,6 +53,13 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         mFlashlightNotification.setChecked((Settings.System.getInt(resolver,
                 Settings.System.FLASHLIGHT_NOTIFICATION, 0) == 1));
         }
+
+        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
+        mDisableIM.setOnPreferenceChangeListener(this);
+        int DisableIM = Settings.System.getInt(getContentResolver(),
+                DISABLE_IMMERSIVE_MESSAGE, 0);
+        mDisableIM.setChecked(DisableIM != 0);
+
     }
 
 
@@ -60,6 +69,11 @@ public class MiscFrag extends SettingsPreferenceFragment implements
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                    Settings.System.FLASHLIGHT_NOTIFICATION, checked ? 1:0);
+            return true;
+        } else if (preference == mDisableIM) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE,
+                    value ? 1 : 0);
             return true;
         }
         return false;
