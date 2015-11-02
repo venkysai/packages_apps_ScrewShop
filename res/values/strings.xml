@@ -1193,4 +1193,8 @@
     <string name="sum10">&#8593; &#8593; &#8595; &#8595; &#8592; &#8594; &#8592; &#8594; A B</string> 
     <string name="sum11">Choppin \'em up...</string>
 
+    <!-- Volume key controls media stream -->
+    <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
+    <string name="volume_keys_control_media_stream_summary">Force volume keys to control media stream</string>
+
 </resources>
