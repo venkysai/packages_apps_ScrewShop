@@ -5,7 +5,12 @@
     <PreferenceCategory 
          android:title="@string/shortcuts">
 
-
+         <PreferenceScreen
+            android:title="@string/lockscreen_targets_message" >
+            <intent
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.screwd.LockscreenShortcutsActivity" />
+        </PreferenceScreen>
 
     </PreferenceCategory>
  
