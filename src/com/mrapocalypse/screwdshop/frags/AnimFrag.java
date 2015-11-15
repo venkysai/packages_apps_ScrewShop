@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.app.Fragment;
 import android.support.v7.preference.PreferenceCategory;
@@ -36,6 +37,11 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.screwd.AwesomeAnimationHelper;
 
 import com.android.settings.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
 public class AnimFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -54,6 +60,10 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
 
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
@@ -69,6 +79,7 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    private ListPreference mScrollingCachePref;
 
 
     private int[] mAnimations;
@@ -180,6 +191,11 @@ public class AnimFrag extends SettingsPreferenceFragment implements
         mListViewInterpolator.setOnPreferenceChangeListener(this);
         mListViewInterpolator.setEnabled(listviewanimation > 0);
 
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -254,6 +270,11 @@ public class AnimFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+            }
             return true;
         }
         preference.setSummary(getProperSummary(preference));
