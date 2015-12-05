@@ -45,6 +45,11 @@
             android:defaultValue="false" />
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="powermenu_screenrecord"
+            android:title="@string/powermenu_screenrecord_title"
+            android:defaultValue="false" />
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
             android:key="powermenu_airplane"
             android:title="@string/powermenu_airplane_title"
             android:defaultValue="false" />
