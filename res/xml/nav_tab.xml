@@ -27,4 +27,9 @@
         android:title="@string/pa_pie_control_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.PieControl" />
 
+     <Preference
+        android:key="appsidebar"
+        android:fragment="com.mrapocalypse.screwdshop.frags.AppSidebar"
+        android:title="@string/app_sidebar_title" />
+
 </PreferenceScreen>
