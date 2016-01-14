@@ -43,6 +43,12 @@
     <string name="choose_app">Choose app</string>
     <string name="reset_paranoid">Paranoid</string>
     <string name="reset_android">Android</string>
+    <string name="reset_screwd">Screw\'d</string>
+    <string name="reset_colors">Reset colors</string>
+    <string name="text_title">Text</string>
+    <string name="icon_title">Icon</string>
+    <string name="color_title">Color</string>
+    <string name="colors_title">Colors</string>
 
     <!-- Tabs -->
     <string name="ui_tab">UI</string>
@@ -1044,4 +1050,14 @@
     <string name="pa_pie_button_color_title">Buttons Color</string>
     <string name="pa_pie_always_right_title">Pie always on the right</string>
     <string name="pa_pie_always_right_summary">Pie will be always shown on the right while in landscape</string>
+
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Ticker</string>
+    <string name="ticker_title">Status Bar Ticker</string>
+    <string name="ticker_screen_summary">Customize the ticker style</string>
+    <string name="ticker_summary">Enable the old status bar ticker</string>
+
+    <!-- Heads up switch -->
+    <string name="heads_up_switch_title">Heads up</string>
+    <string name="heads_up_switch_summary">Toogle Heads up globally, not per app.</string>
 </resources>
