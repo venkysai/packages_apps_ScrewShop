@@ -38,6 +38,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.internal.util.screwd.screwdUtils;
+
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 /**
@@ -45,6 +47,10 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
  */
 public class LockscreenFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+
+    private SwitchPreference mKeyguardTorch;
 
 
     @Override
@@ -56,12 +62,26 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
+        mKeyguardTorch = (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
+        mKeyguardTorch.setOnPreferenceChangeListener(this);
+        if (!screwdUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mKeyguardTorch);
+        } else {
+        mKeyguardTorch.setChecked((Settings.System.getInt(resolver,
+                Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
+        }
+
 
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        if  (preference == mKeyguardTorch) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYGUARD_TOGGLE_TORCH, checked ? 1:0);
+            return true;
+        }
         return false;
     }
 
