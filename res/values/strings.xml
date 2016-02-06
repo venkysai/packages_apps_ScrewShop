@@ -60,7 +60,7 @@
     <string name="entries">Entries</string>
     <string name="shortcuts">Shortcuts</string>
     <string name="clock">Clock</string>
-    <string name="interface">Interface</string>
+    <string name="the_interface">Interface</string>
 
     <!-- begin strings for options -->
     
@@ -549,5 +549,10 @@
     <!-- Lockscreen album art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_items_title">Lockscreen items</string>
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
 
 </resources>
