@@ -35,7 +35,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
-
+import com.android.internal.util.screwd.screwdUtils;
 import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
 import java.util.Arrays;
@@ -50,6 +50,7 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
     private SwitchPreference mScreenrecordPref;
+    private SwitchPreference mTorchPref;
     private SwitchPreference mAirplanePref;
     private SwitchPreference mUsersPref;
     private SwitchPreference mSettingsPref;
@@ -89,6 +90,8 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
                 mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
             } else if (action.equals(GLOBAL_ACTION_KEY_SCREENRECORD)) {
                 mScreenrecordPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENRECORD);
+            } else if (action.equals(GLOBAL_ACTION_KEY_TORCH)) {
+                mTorchPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_TORCH);
             } else if (action.equals(GLOBAL_ACTION_KEY_AIRPLANE)) {
                 mAirplanePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
             } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
@@ -132,6 +135,15 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
 
         if (mScreenrecordPref != null) {
             mScreenrecordPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENRECORD));
+        }
+
+        if (mTorchPref != null) {
+            if (!Utils.deviceSupportsFlashLight(getActivity())) {
+                actionCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_TORCH));
+                mTorchPref = null;
+            } else {
+                mTorchPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_TORCH));
+            }
         }
 
         if (mAirplanePref != null) {
@@ -199,6 +211,10 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
         } else if (preference == mScreenrecordPref) {
             value = mScreenrecordPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_SCREENRECORD);
+
+        } else if (preference == mTorchPref) {
+            value = mTorchPref.isChecked();
+            updateUserConfig(value, GLOBAL_ACTION_KEY_TORCH);
 
         } else if (preference == mAirplanePref) {
             value = mAirplanePref.isChecked();
