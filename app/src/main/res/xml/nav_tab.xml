@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen
+        android:key="nav_bar"
+        android:title="@string/navbar" />
+
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:title="@string/pie" />
+
+    <PreferenceScreen
+        android:key="circlebar"
+        android:title="@string/appcirclebar" />
+
+</PreferenceScreen>

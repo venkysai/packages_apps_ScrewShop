@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ScrewShop</string>
+    <string name="action_settings">Settings</string>
+    <string name="press_back_again">Press back again to leave ScrewShop!</string>
+    <string name="screwd_device_success">Yay! You\'re Screw\'d!!</string>
+    <string name="screwd_device_failure">Sorry, this isn\'t a Screw\'d device. Exiting...</string>
+    <string name="theme_toggle">Light/Dark Mode</string>
+
+    <!-- Tabs -->
+    <string name="ui_tab">UI</string>
+    <string name="sounds_tab">Sounds</string>
+    <string name="system_tab">System</string>
+    <string name="navigation_tab">Navigation</string>
+    <!-- Sections -->
+    <string name="statusbar">Statusbar</string>
+    <string name="qs">Quick Settings</string>
+    <string name="recents">Recents</string>
+    <string name="powermenu">Power Menu</string>
+    <string name="lockscreen">Lockscreen</string>
+    <string name="notifications">Notifications</string>
+    <string name="pie">PIE</string>
+    <string name="navbar">Navigation Bar</string>
+    <string name="appcirclebar">App Circle Bar</string>
+    <string name="animations">Animations</string>
+    <string name="lcd">LCD Density</string>
+
+</resources>
