@@ -165,6 +165,12 @@ public class ButtonsFrag extends ActionFragment implements OnPreferenceChangeLis
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
     }
 
+
+    @Override
+    protected boolean usesExtendedActionsList() {
+        return true;
+    }
+
     private ListPreference initActionList(String key, int value) {
         ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
         list.setValue(Integer.toString(value));
