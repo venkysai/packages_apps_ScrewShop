@@ -138,6 +138,11 @@ public class ButtonsFrag extends ActionFragment implements
     }
 
     @Override
+    protected boolean usesExtendedActionsList() {
+        return true;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	     if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) newValue;
