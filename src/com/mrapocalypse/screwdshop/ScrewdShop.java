@@ -21,7 +21,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.design.widget.Snackbar;
@@ -52,6 +57,8 @@ import com.android.settings.R;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.mrapocalypse.screwdshop.viewpager.transforms.*;
+
 import com.mrapocalypse.screwdshop.util.Root;
 
 /**
@@ -66,7 +73,7 @@ public class ScrewdShop extends SettingsPreferenceFragment {
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
     boolean weAreScrewd = false;
-
+    private SettingsObserver mSettingsObserver;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
@@ -74,10 +81,11 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         View view = inflater.inflate(R.layout.screwd_main, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
+        mSettingsObserver = new SettingsObserver(new Handler());
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
-
+        mSettingsObserver.observe();
 
         setHasOptionsMenu(true);
 
@@ -155,6 +163,98 @@ public class ScrewdShop extends SettingsPreferenceFragment {
                 getString(R.string.navigation_tab)};
 
         return titleString;
+    }
+
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SCREWD_SETTINGS_TABS_EFFECT),
+                    false, this, UserHandle.USER_ALL);
+            update();
+        }
+
+        void unobserve() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            resolver.unregisterContentObserver(this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            update();
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            update();
+        }
+
+        public void update() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            int effect = Settings.System.getIntForUser(resolver,
+                Settings.System.SCREWD_SETTINGS_TABS_EFFECT, 0,
+                UserHandle.USER_CURRENT);
+            switch (effect) {
+                case 0:
+                    mViewPager.setPageTransformer(true, new DefaultTransformer());
+                    break;
+                case 1:
+                    mViewPager.setPageTransformer(true, new AccordionTransformer());
+                    break;
+                case 2:
+                    mViewPager.setPageTransformer(true, new BackgroundToForegroundTransformer());
+                    break;
+                case 3:
+                    mViewPager.setPageTransformer(true, new CubeInTransformer());
+                    break;
+                case 4:
+                    mViewPager.setPageTransformer(true, new CubeOutTransformer());
+                    break;
+                case 5:
+                    mViewPager.setPageTransformer(true, new DepthPageTransformer());
+                    break;
+                case 6:
+                    mViewPager.setPageTransformer(true, new FlipHorizontalTransformer());
+                    break;
+                case 7:
+                    mViewPager.setPageTransformer(true, new FlipVerticalTransformer());
+                    break;
+                case 8:
+                    mViewPager.setPageTransformer(true, new ForegroundToBackgroundTransformer());
+                    break;
+                case 9:
+                    mViewPager.setPageTransformer(true, new RotateDownTransformer());
+                    break;
+                case 10:
+                    mViewPager.setPageTransformer(true, new RotateUpTransformer());
+                    break;
+                case 11:
+                    mViewPager.setPageTransformer(true, new ScaleInOutTransformer());
+                    break;
+                case 12:
+                    mViewPager.setPageTransformer(true, new StackTransformer());
+                    break;
+                case 13:
+                    mViewPager.setPageTransformer(true, new TabletTransformer());
+                    break;
+                case 14:
+                    mViewPager.setPageTransformer(true, new ZoomInTransformer());
+                    break;
+                case 15:
+                    mViewPager.setPageTransformer(true, new ZoomOutSlideTransformer());
+                    break;
+                case 16:
+                    mViewPager.setPageTransformer(true, new ZoomOutTranformer());
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public static boolean areWeScrewd() {
