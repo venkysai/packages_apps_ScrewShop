@@ -24,6 +24,13 @@
         android:entries="@array/entries_scrollingcache"
         android:entryValues="@array/values_scrollingcache" />
 
+     <ListPreference
+            android:key="tabs_effect"
+            android:title="@string/tabs_effect_title"
+            android:entries="@array/tabs_effect_entries"
+            android:entryValues="@array/tabs_effect_values"
+            android:persistent="false" />
+
      <PreferenceCategory
         android:title="@string/system_animations">
 

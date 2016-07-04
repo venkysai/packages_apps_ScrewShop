@@ -65,6 +65,7 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
+    private static final String KEY_SS_TABS_EFFECT = "tabs_effect";
 
     private static final String SCROLLINGCACHE_DEFAULT = "2";
 
@@ -79,6 +80,7 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     ListPreference mWallpaperClose;
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
+    ListPreference mListViewTabsEffect;
     SwitchPreference mAnimNoOverride;
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
@@ -221,6 +223,12 @@ public class AnimFrag extends SettingsPreferenceFragment implements
         mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
         mPowerMenuAnimations.setOnPreferenceChangeListener(this);
 
+        mListViewTabsEffect = (ListPreference) findPreference(KEY_SS_TABS_EFFECT);
+        int tabsEffect = Settings.System.getInt(getContentResolver(),
+                Settings.System.SCREWD_SETTINGS_TABS_EFFECT, 0);
+        mListViewTabsEffect.setValue(String.valueOf(tabsEffect));
+        mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntry());
+        mListViewTabsEffect.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -311,6 +319,13 @@ public class AnimFrag extends SettingsPreferenceFragment implements
             if (newValue != null) {
                 SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
             }
+            return true;
+        } else if (preference == mListViewTabsEffect) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mListViewTabsEffect.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                     Settings.System.SCREWD_SETTINGS_TABS_EFFECT, value);
+            mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntries()[index]);
             return true;
         }
         preference.setSummary(getProperSummary(preference));
