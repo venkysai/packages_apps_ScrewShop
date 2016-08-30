@@ -28,7 +28,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.ProcessBuilder;
 
+
+import com.android.internal.logging.MetricsProto.MetricsEvent;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+
+
 public class ScrewdShop extends AppCompatActivity {
+
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
@@ -222,4 +230,5 @@ public class ScrewdShop extends AppCompatActivity {
 
         startActivity(intent);
     }
+
 }

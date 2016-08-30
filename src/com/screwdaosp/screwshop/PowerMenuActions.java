@@ -28,9 +28,10 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-//import com.android.settings.R;
-//import com.android.settings.SettingsPreferenceFragment;
-//import com.android.internal.logging.MetricsLogger;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.screwd.PowerMenuConstants;
 
 import static com.android.internal.util.screwd.PowerMenuConstants.*;
@@ -288,4 +289,5 @@ public class PowerMenuActions extends PreferenceFragment {
         u.setAction(Intent.UPDATE_POWER_MENU);
         mContext.sendBroadcastAsUser(u, UserHandle.ALL);
     }
+
 }
