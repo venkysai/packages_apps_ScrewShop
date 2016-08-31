@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.screwdaosp.screwshop;
+package com.screwdaosp.screwshop.frags;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +33,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.screwd.PowerMenuConstants;
+import com.android.settings.Utils;
 
 import static com.android.internal.util.screwd.PowerMenuConstants.*;
 
@@ -99,6 +100,8 @@ public class PowerMenuActions extends PreferenceFragment {
 
         getUserConfig();
     }
+
+    public PowerMenuActions(){}
 
     @Override
     public void onStart() {

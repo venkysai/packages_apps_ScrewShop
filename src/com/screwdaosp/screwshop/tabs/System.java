@@ -24,6 +24,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
  */
 public class System extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,7 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        return true;
+        return false;
     }
 
     @Override

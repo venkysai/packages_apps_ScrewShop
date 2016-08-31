@@ -6,7 +6,6 @@
     <Preference
         android:key="power_menu"
         android:title="@string/powermenu"
-        android:fragment="com.screwdaosp.screwshop.PowerMenuActions" 
-        android:layout="@layout/pref_powermenu"/>
+        android:fragment="com.screwdaosp.screwshop.frags.PowerMenuActions" />
 
 </PreferenceScreen>
