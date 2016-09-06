@@ -7,4 +7,7 @@
     <color name="darkColorPrimary">#8000ff</color>
     <color name="darkColorPrimaryDark">#141831</color>
     <color name="darkColorAccent">#8000ff</color>
+
+    <!--PagerSlidingTab -->
+    <color name="background_tab_pressed">#6633B5E5</color>
 </resources>

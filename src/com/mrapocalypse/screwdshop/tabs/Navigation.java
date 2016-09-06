@@ -1,9 +1,10 @@
-package com.screwdaosp.screwshop.tabs;
+package com.mrapocalypse.screwdshop.tabs;
 
 import android.os.Bundle;
 import android.app.Fragment;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
@@ -16,7 +17,7 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
-//import com.screwdaosp.screwshop.R;
+//import com.mrapocalypse.screwdshop.R;
 
 /**
  * Created by cedwards on 6/3/2016.
@@ -35,9 +36,11 @@ public class Navigation extends SettingsPreferenceFragment implements
         return true;
     }
 
+
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.SCREWD;
     }
+
 
 }

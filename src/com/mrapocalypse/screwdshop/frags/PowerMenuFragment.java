@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014-2015 The CyanogenMod Project
+ * Copyright (C) 2015 The Pure Nexus Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.screwdaosp.screwshop.frags;
+package com.mrapocalypse.screwdshop.frags;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,35 +23,35 @@ import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.util.screwd.PowerMenuConstants;
+import static com.android.internal.util.screwd.PowerMenuConstants.*;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.util.screwd.PowerMenuConstants;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
-
-import static com.android.internal.util.screwd.PowerMenuConstants.*;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuActions extends PreferenceFragment {
-    final static String TAG = "PowerMenuActions";
+public class PowerMenuFragment extends PreferenceFragment {
 
-    private SwitchPreference mPowerPref;
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
     private SwitchPreference mAirplanePref;
     private SwitchPreference mUsersPref;
     private SwitchPreference mSettingsPref;
     private SwitchPreference mLockdownPref;
+    private SwitchPreference mAssistPref;
+    private SwitchPreference mVoicePref;
     private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
 
@@ -63,7 +64,7 @@ public class PowerMenuActions extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.power_menu_settings);
+        addPreferencesFromResource(R.xml.powermenu_fragment);
         mContext = getActivity().getApplicationContext();
 
         mAvailableActions = getActivity().getResources().getStringArray(
@@ -71,15 +72,13 @@ public class PowerMenuActions extends PreferenceFragment {
         mAllActions = PowerMenuConstants.getAllActions();
 
         for (String action : mAllActions) {
-        // Remove preferences not present in the overlay
+            // Remove preferences not present in the overlay
             if (!isActionAllowed(action)) {
                 getPreferenceScreen().removePreference(findPreference(action));
                 continue;
             }
 
-            if (action.equals(GLOBAL_ACTION_KEY_POWER)) {
-                mPowerPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_POWER);
-            } else if (action.equals(GLOBAL_ACTION_KEY_REBOOT)) {
+            if (action.equals(GLOBAL_ACTION_KEY_REBOOT)) {
                 mRebootPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_REBOOT);
             } else if (action.equals(GLOBAL_ACTION_KEY_SCREENSHOT)) {
                 mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
@@ -91,6 +90,10 @@ public class PowerMenuActions extends PreferenceFragment {
                 mSettingsPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SETTINGS);
             } else if (action.equals(GLOBAL_ACTION_KEY_LOCKDOWN)) {
                 mLockdownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
+            } else if (action.equals(GLOBAL_ACTION_KEY_ASSIST)) {
+                mAssistPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_ASSIST);
+            } else if (action.equals(GLOBAL_ACTION_KEY_VOICEASSIST )) {
+                mVoicePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_VOICEASSIST );
             } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
                 mBugReportPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
             } else if (action.equals(GLOBAL_ACTION_KEY_SILENT)) {
@@ -101,15 +104,11 @@ public class PowerMenuActions extends PreferenceFragment {
         getUserConfig();
     }
 
-    public PowerMenuActions(){}
+    public PowerMenuFragment(){}
 
     @Override
     public void onStart() {
         super.onStart();
-
-        if (mPowerPref != null) {
-            mPowerPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_POWER));
-        }
 
         if (mRebootPref != null) {
             mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
@@ -119,6 +118,7 @@ public class PowerMenuActions extends PreferenceFragment {
             mScreenshotPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENSHOT));
         }
 
+
         if (mAirplanePref != null) {
             mAirplanePref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_AIRPLANE));
         }
@@ -126,6 +126,7 @@ public class PowerMenuActions extends PreferenceFragment {
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
                 getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                mUsersPref = null;
             } else {
                 List<UserInfo> users = ((UserManager) mContext.getSystemService(
                         Context.USER_SERVICE)).getUsers();
@@ -141,6 +142,14 @@ public class PowerMenuActions extends PreferenceFragment {
 
         if (mLockdownPref != null) {
             mLockdownPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_LOCKDOWN));
+        }
+
+        if (mAssistPref != null) {
+            mAssistPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_ASSIST));
+        }
+
+        if (mVoicePref != null) {
+            mVoicePref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_VOICEASSIST));
         }
 
         if (mBugReportPref != null) {
@@ -161,14 +170,10 @@ public class PowerMenuActions extends PreferenceFragment {
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, @NonNull Preference preference) {
         boolean value;
 
-        if (preference == mPowerPref) {
-            value = mPowerPref.isChecked();
-            updateUserConfig(value, GLOBAL_ACTION_KEY_POWER);
-
-        } else if (preference == mRebootPref) {
+        if (preference == mRebootPref) {
             value = mRebootPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_REBOOT);
 
@@ -191,6 +196,14 @@ public class PowerMenuActions extends PreferenceFragment {
         } else if (preference == mLockdownPref) {
             value = mLockdownPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_LOCKDOWN);
+
+        } else if (preference == mAssistPref) {
+            value = mAssistPref.isChecked();
+            updateUserConfig(value, GLOBAL_ACTION_KEY_ASSIST);
+
+        } else if (preference == mVoicePref) {
+            value = mVoicePref.isChecked();
+            updateUserConfig(value, GLOBAL_ACTION_KEY_VOICEASSIST);
 
         } else if (preference == mBugReportPref) {
             value = mBugReportPref.isChecked();
@@ -231,8 +244,9 @@ public class PowerMenuActions extends PreferenceFragment {
     }
 
     private void updatePreferences() {
-        boolean bugreport = Settings.Secure.getInt(mContext.getContentResolver(),
+        boolean bugreport = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
+
         if (mBugReportPref != null) {
             mBugReportPref.setEnabled(bugreport);
             if (bugreport) {
@@ -282,7 +296,7 @@ public class PowerMenuActions extends PreferenceFragment {
             }
         }
 
-        Settings.Global.putStringForUser(mContext.getContentResolver(),
+        Settings.Global.putStringForUser(getActivity().getContentResolver(),
                  Settings.Global.POWER_MENU_ACTIONS, s.toString(), UserHandle.USER_CURRENT);
         updatePowerMenuDialog();
     }
@@ -292,5 +306,12 @@ public class PowerMenuActions extends PreferenceFragment {
         u.setAction(Intent.UPDATE_POWER_MENU);
         mContext.sendBroadcastAsUser(u, UserHandle.ALL);
     }
-
+/*
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsEvent.SCREWD;
+    }
+*/
 }
+
+

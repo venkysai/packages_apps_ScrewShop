@@ -7,7 +7,11 @@
         <item>screenshot</item>
         <item>airplane</item>
         <item>users</item>
-        <item>bugreport</item>
+        <item>settings</item>
+        <item>lockdown</item>
+        <item>assist</item>
+        <item>voiceassist</item>
+        <item>silent</item>
     </string-array>
 
 </resources>

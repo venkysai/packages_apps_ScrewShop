@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
+<!-- Copyright (C) 2015 The Pure Nexus Project
      Copyright (C) 2014-2015 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,6 @@
         android:key="airplane"
         android:title="@string/power_menu_airplane_title"
         android:defaultValue="true" />
-    
 
     <SwitchPreference
         android:key="users"
@@ -50,10 +49,10 @@
         android:title="@string/power_menu_lockdown_title"
         android:defaultValue="false" />
 
-    <!--SwitchPreference
+    <SwitchPreference
         android:key="bugreport"
         android:title="@string/power_menu_bug_report_title"
-        android:defaultValue="false" /-->
+        android:defaultValue="false" />
 
     <SwitchPreference
         android:key="silent"
@@ -61,3 +60,5 @@
         android:defaultValue="true" />
 
 </PreferenceScreen>
+
+
