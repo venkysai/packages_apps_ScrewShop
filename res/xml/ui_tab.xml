@@ -5,14 +5,6 @@
         android:title="@string/statusbar" />
 
     <Preference
-        android:key="qs_settings"
-        android:title="@string/qs" />
-
-    <Preference
-        android:key="recents"
-        android:title="@string/recents" />
-
-    <Preference
         android:key="expanded_desktop"
         android:title="@string/ex_desk"
         android:fragment="com.mrapocalypse.screwdshop.frags.ExpandedDesktopPreferenceFragment" />
