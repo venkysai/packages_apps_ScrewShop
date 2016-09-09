@@ -30,6 +30,11 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 public class RecentsFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
+
+
+    private ListPreference mImmersiveRecents;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,11 +45,24 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.IMMERSIVE_RECENTS, 0)));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mImmersiveRecents) {
+            Settings.System.putInt(getContentResolver(), Settings.System.IMMERSIVE_RECENTS,
+                    Integer.valueOf((String) newValue));
+            mImmersiveRecents.setValue(String.valueOf(newValue));
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+            return true;
+        }
         return false;
     }
 
