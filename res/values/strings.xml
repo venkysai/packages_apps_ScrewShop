@@ -8,7 +8,6 @@
 
     <!-- Tabs -->
     <string name="ui_tab">UI</string>
-    <string name="sounds_tab">Sounds</string>
     <string name="system_tab">System</string>
     <string name="navigation_tab">Navigation</string>
     <!-- Sections -->
@@ -24,6 +23,7 @@
     <string name="animations">Animations</string>
     <string name="lcd">LCD Density</string>
     <string name="ex_desk">Expanded Desktop</string>
+    <string name="sounds">Sounds</string>
 
 
     <!-- begin strings for options -->

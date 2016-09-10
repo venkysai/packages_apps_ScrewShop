@@ -8,4 +8,9 @@
         android:title="@string/powermenu"
         android:fragment="com.mrapocalypse.screwdshop.frags.PowerMenuFragment" />
 
+    <Preference
+        android:key="sounds"
+        android:title="@string/sounds"
+        android:fragment="com.mrapocalypse.screwdshop.frags.SoundsFrag" />
+
 </PreferenceScreen>
