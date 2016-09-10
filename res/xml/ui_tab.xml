@@ -10,4 +10,9 @@
         android:title="@string/ex_desk"
         android:fragment="com.mrapocalypse.screwdshop.frags.ExpandedDesktopPreferenceFragment" />
 
+    <Preference
+        android:key="animations"
+        android:title="@string/animations"
+        android:fragment="com.mrapocalypse.screwdshop.frags.AnimFrag" />
+
 </PreferenceScreen>
