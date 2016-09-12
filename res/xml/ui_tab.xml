@@ -15,4 +15,9 @@
         android:title="@string/animations"
         android:fragment="com.mrapocalypse.screwdshop.frags.AnimFrag" />
 
+    <Preference
+        android:key="recents"
+        android:title="@string/recents"
+        android:fragment="com.mrapocalypse.screwdshop.frags.RecentsFrag" />
+
 </PreferenceScreen>
