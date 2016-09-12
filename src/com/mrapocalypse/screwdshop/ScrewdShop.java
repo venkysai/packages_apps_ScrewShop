@@ -20,6 +20,9 @@ import com.mrapocalypse.screwdshop.tabs.UI;
 import android.preference.PreferenceFragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -27,6 +30,8 @@ import android.widget.Toast;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.mrapocalypse.screwdshop.util.Root;
 
 /**
  * Created by MrApocalypse on 9/6/2016.
@@ -63,6 +68,22 @@ public class ScrewdShop extends SettingsPreferenceFragment {
             java.lang.System.exit(1);
         }
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.restart_ui:
+                Root.runCommand("pkill -f com.android.systemui");
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Override

@@ -4,7 +4,7 @@
     <string name="press_back_again">Press back again to leave ScrewShop!</string>
     <string name="screwd_device_success">Yay! You\'re Screw\'d!!</string>
     <string name="screwd_device_failure">Sorry, this isn\'t a Screw\'d device. Exiting...</string>
-    <string name="theme_toggle">Light/Dark Mode</string>
+    <string name="restart_systemui">Restart SystemUI</string>
 
     <!-- Tabs -->
     <string name="ui_tab">UI</string>
