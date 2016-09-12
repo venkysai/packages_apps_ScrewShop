@@ -10,6 +10,9 @@
 
     <!--PagerSlidingTab -->
     <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="darkScrewdPrimary">#8000ff</color>
+    <color name="darkScrewdPrimaryDark">#141831</color>
+    <color name="darkScrewdAccent">#8000ff</color>
 
     <!-- Expanded desktop -->
     <drawable name="expanded_item_bg_activated">#ffEEEEEE</drawable>
