@@ -66,7 +66,12 @@
     	   android:key="bluetooth_show_battery"
            android:title="@string/bluetooth_battery_title"
            android:summary="@string/bluetooth_battery_summary"
-           android:defaultValue="false" />
+           android:defaultValue="false" /> 
+
+        <Preference
+           android:key="nettraffic"
+        android:title="@string/nettraffic_settings_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.NetTraffic" />
   
      </PreferenceCategory>
 
