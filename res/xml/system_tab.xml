@@ -14,6 +14,11 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.SoundsFrag" />
 
      <Preference
+        android:key="lockscreen"
+        android:title="@string/lockscreen"
+        android:fragment="com.mrapocalypse.screwdshop.frags.LockscreenFrag" />
+
+     <Preference
         android:key="misc"
         android:title="@string/misc"
         android:fragment="com.mrapocalypse.screwdshop.frags.MiscFrag" />
