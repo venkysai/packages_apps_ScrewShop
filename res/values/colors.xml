@@ -23,6 +23,9 @@
     <color name="darkColorPrimaryDark">#141831</color>
     <color name="darkColorAccent">#8000ff</color>
 
+    <color name="theme_accent">#ff8000ff</color>
+    <color name="action_picker_fab_background">@color/theme_accent</color>
+
     <!--PagerSlidingTab -->
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="darkScrewdPrimary">#8000ff</color>

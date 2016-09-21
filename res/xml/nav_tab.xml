@@ -23,8 +23,8 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereSettings" /-->
 
      <Preference
-        android:key="nav_bar"
-        android:title="@string/navbar"
-        android:fragment="com.mrapocalypse.screwdshop.frags.NavbarFrag" />
+        android:key="navigation_options"
+        android:fragment="com.mrapocalypse.screwdshop.frags.NavbarSettings"
+        android:title="@string/navigationbar_settings_title" />
 
 </PreferenceScreen>
