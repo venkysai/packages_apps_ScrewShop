@@ -49,6 +49,7 @@
     <string name="navigation_tab">Navigation</string>
     <!-- Sections -->
     <string name="statusbar">Statusbar</string>
+    <string name="statusbar_items_category">Statusbar items</string>
     <string name="qs">Quick Settings</string>
     <string name="qs_tiles">QS Tiles</string>
     <string name="recents">Recents</string>

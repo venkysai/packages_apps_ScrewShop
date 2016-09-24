@@ -87,6 +87,15 @@
      <PreferenceCategory
         android:title="@string/icons">
 
+        <PreferenceScreen
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/statusbar_items_category" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.TunerActivity" />
+        </PreferenceScreen>
+
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
     	   android:key="bluetooth_show_battery"
            android:title="@string/bluetooth_battery_title"
