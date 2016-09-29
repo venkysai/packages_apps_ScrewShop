@@ -694,4 +694,7 @@
     <string name="led_color_red">Red</string>
     <string name="led_color_blue">Blue</string>
 
+     <!-- Navbar Tuner -->
+    <string name="navbar_tuner_title">Navbar Tuner</string>
+
 </resources>
