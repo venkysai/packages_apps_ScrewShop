@@ -13,18 +13,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen 
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="gest_any"
-        android:title="@string/gestureany"
-        android:fragment="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereSettings" />
+    <PreferenceCategory 
+         android:title="@string/buttons">
 
-     <Preference
-        android:key="nav_bar"
-        android:title="@string/navbar"
-        android:fragment="com.mrapocalypse.screwdshop.frags.NavbarFrag" />
+
+    </PreferenceCategory>
+ 
 
 </PreferenceScreen>
