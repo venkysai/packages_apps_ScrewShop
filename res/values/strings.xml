@@ -730,4 +730,7 @@
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button while screen is off to turn on flashlight</string>
 
+    <!-- Lockscreen Rotation -->
+    <string name="display_lockscreen_rotation_title">Rotate lock screen</string>
+
 </resources>

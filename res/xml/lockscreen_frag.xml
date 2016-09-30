@@ -40,6 +40,11 @@
             android:title="@string/hide_lockscreen_date_title"
             android:defaultValue="true" />
 
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="lockscreen_rotation"
+            android:title="@string/display_lockscreen_rotation_title"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
