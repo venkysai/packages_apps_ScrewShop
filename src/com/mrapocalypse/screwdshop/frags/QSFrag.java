@@ -183,7 +183,7 @@ public class QSFrag extends SettingsPreferenceFragment implements
             preference.setSummary(mColumnsLandscape.getEntries()[index]);
             return true;
         } else if (preference == mSysuiQqsCount) {
-            String SysuiQqsCount = (String) objValue;
+            String SysuiQqsCount = (String) newValue;
             int SysuiQqsCountValue = Integer.parseInt(SysuiQqsCount);
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.QQS_COUNT, SysuiQqsCountValue);
             int SysuiQqsCountIndex = mSysuiQqsCount.findIndexOfValue(SysuiQqsCount);
