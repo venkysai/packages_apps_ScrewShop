@@ -39,4 +39,12 @@
         android:title="@string/recents"
         android:fragment="com.mrapocalypse.screwdshop.frags.RecentsFrag" />
 
+    <PreferenceScreen
+            android:title="@string/display_color_title"
+            android:summary="@string/display_color_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.ColorAndAppearanceActivity" />
+    </PreferenceScreen>
+
 </PreferenceScreen>

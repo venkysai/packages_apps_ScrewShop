@@ -47,4 +47,12 @@
         android:title="@string/omni_notification_light_settings"
         android:fragment="com.mrapocalypse.screwdshop.frags.batterylight.NotificationLightSettings" />
 
+      <PreferenceScreen
+            android:title="@string/power_notification_title"
+            android:summary="@string/power_notification_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
+      </PreferenceScreen>
+
 </PreferenceScreen>

@@ -125,6 +125,20 @@
      <PreferenceCategory
         android:title="@string/icons">
 
+        <PreferenceScreen
+            android:title="@string/status_bar_icon_blacklist_title"
+            android:summary="@string/status_bar_icon_blacklist_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.TunerActivity" />
+        </PreferenceScreen>
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="status_bar_show_battery_percent"
+            android:title="@string/show_battery_percentage"
+            android:summary="@string/show_battery_percentage_summary"
+            android:defaultValue="false" />
+
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
     	   android:key="bluetooth_show_battery"
            android:title="@string/bluetooth_battery_title"
@@ -133,8 +147,8 @@
 
         <Preference
            android:key="nettraffic"
-        android:title="@string/nettraffic_settings_title"
-        android:fragment="com.mrapocalypse.screwdshop.frags.NetTraffic" />
+           android:title="@string/nettraffic_settings_title"
+           android:fragment="com.mrapocalypse.screwdshop.frags.NetTraffic" />
   
      </PreferenceCategory>
 
