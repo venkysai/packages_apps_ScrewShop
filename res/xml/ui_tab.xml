@@ -51,4 +51,10 @@
             android:targetClass="com.android.systemui.tuner.ColorAndAppearanceActivity" />
     </PreferenceScreen>
 
+    <Preference
+        android:key="trans_porn"
+        android:title="@string/trans"
+        android:fragment="com.mrapocalypse.screwdshop.frags.TransparencyPornFragment" />
+
+
 </PreferenceScreen>
