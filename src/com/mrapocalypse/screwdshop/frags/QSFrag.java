@@ -25,9 +25,9 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
@@ -49,9 +49,18 @@ public class QSFrag extends SettingsPreferenceFragment implements
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
+    private static final String PREF_CAT_LAYOUT = "qs_layout";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
+    private ListPreference mRowsPortrait;
+    private ListPreference mColumnsPortrait;
+    private ListPreference mRowsLandscape;
+    private ListPreference mColumnsLandscape;
 
 
     @Override
@@ -60,6 +69,8 @@ public class QSFrag extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.qs_frag);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        Resources res = getResources();
+        int defaultValue;
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -75,11 +86,53 @@ public class QSFrag extends SettingsPreferenceFragment implements
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
 
+        PreferenceCategory catLayout = (PreferenceCategory) findPreference(PREF_CAT_LAYOUT);
+
+        mRowsPortrait =
+                (ListPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getInt(resolver,
+                Settings.System.QS_ROWS_PORTRAIT, 3);
+        mRowsPortrait.setValue(String.valueOf(rowsPortrait));
+        mRowsPortrait.setSummary(mRowsPortrait.getEntry());
+        mRowsPortrait.setOnPreferenceChangeListener(this);
+
+        mColumnsPortrait =
+                (ListPreference) findPreference(PREF_COLUMNS_PORTRAIT);
+        int columnsPortrait = Settings.System.getInt(resolver,
+                Settings.System.QS_COLUMNS_PORTRAIT, 5);
+        mColumnsPortrait.setValue(String.valueOf(columnsPortrait));
+        mColumnsPortrait.setSummary(mColumnsPortrait.getEntry());
+        mColumnsPortrait.setOnPreferenceChangeListener(this);
+
+        defaultValue = res.getInteger(R.integer.config_qs_num_rows_landscape_default);
+        if (defaultValue != 1) {
+            mRowsLandscape =
+                    (ListPreference) findPreference(PREF_ROWS_LANDSCAPE);
+            int rowsLandscape = Settings.System.getInt(resolver,
+                    Settings.System.QS_ROWS_LANDSCAPE, defaultValue);
+            mRowsLandscape.setValue(String.valueOf(rowsLandscape));
+            mRowsLandscape.setSummary(mRowsLandscape.getEntry());
+            mRowsLandscape.setOnPreferenceChangeListener(this);
+        } else {
+            catLayout.removePreference(findPreference(PREF_ROWS_LANDSCAPE));
+        }
+
+        mColumnsLandscape =
+                (ListPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        defaultValue = res.getInteger(R.integer.config_qs_num_columns_landscape_default);
+        int columnsLandscape = Settings.System.getInt(resolver,
+                Settings.System.QS_COLUMNS_LANDSCAPE, defaultValue);
+        mColumnsLandscape.setValue(String.valueOf(columnsLandscape));
+        mColumnsLandscape.setSummary(mColumnsLandscape.getEntry());
+        mColumnsLandscape.setOnPreferenceChangeListener(this);
+
     }
 
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        int intValue;
+        int index;
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int quickPulldownValue = Integer.valueOf((String) newValue);
@@ -91,6 +144,34 @@ public class QSFrag extends SettingsPreferenceFragment implements
             int smartPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
             updateSmartPulldownSummary(smartPulldown);
+            return true;
+        } else if (preference == mRowsPortrait) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mRowsPortrait.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_ROWS_PORTRAIT, intValue);
+            preference.setSummary(mRowsPortrait.getEntries()[index]);
+            return true;
+        } else if (preference == mColumnsPortrait) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mColumnsPortrait.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_COLUMNS_PORTRAIT, intValue);
+            preference.setSummary(mColumnsPortrait.getEntries()[index]);
+            return true;
+        } else if (preference == mRowsLandscape) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mRowsLandscape.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_ROWS_LANDSCAPE, intValue);
+            preference.setSummary(mRowsLandscape.getEntries()[index]);
+            return true;
+        } else if (preference == mColumnsLandscape) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mColumnsLandscape.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_COLUMNS_LANDSCAPE, intValue);
+            preference.setSummary(mColumnsLandscape.getEntries()[index]);
             return true;
         }
         return false;

@@ -61,4 +61,34 @@
 
      </PreferenceCategory>
 
+     <PreferenceCategory
+        android:title="@string/qs_tile_layout"
+        android:key="qs_layout">
+
+        <ListPreference
+            android:key="qs_rows_portrait"
+            android:title="@string/qs_port_rows_title"
+            android:entries="@array/qs_rows_portrait_entries"
+            android:entryValues="@array/qs_rows_portrait_values" />
+
+        <ListPreference
+            android:key="qs_columns_portrait"
+            android:title="@string/qs_port_columns_title"
+            android:entries="@array/qs_columns_portrait_entries"
+            android:entryValues="@array/qs_columns_portrait_values" />
+
+        <ListPreference
+            android:key="qs_rows_landscape"
+            android:title="@string/qs_land_rows_title"
+            android:entries="@array/qs_rows_landscape_entries"
+            android:entryValues="@array/qs_rows_landscape_values" />
+
+        <ListPreference
+            android:key="qs_columns_landscape"
+            android:title="@string/qs_land_columns_title"
+            android:entries="@array/qs_columns_landscape_entries"
+            android:entryValues="@array/qs_columns_landscape_values" />
+
+      </PreferenceCategory>
+
 </PreferenceScreen>
