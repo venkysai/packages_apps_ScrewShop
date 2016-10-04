@@ -42,6 +42,12 @@
         android:summary="@string/qs_advanced_data_summary"
         android:defaultValue="false" />
 
+     <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+        android:key="qs_bt_easy_toggle"
+        android:title="@string/qs_bt_easy_toggle_title"
+        android:summary="@string/qs_bt_easy_toggle_summary"
+        android:defaultValue="false" />
+
      <PreferenceCategory
         android:title="@string/pulldown">
 
