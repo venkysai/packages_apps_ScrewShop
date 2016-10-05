@@ -79,10 +79,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_SCREWD_LOGO_COLOR = "status_bar_screwd_logo_color";
     //private static final String KEY_SCREWD_LOGO_STYLE = "status_bar_screwd_logo_style";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
+    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
     private SwitchPreference mEnableNC;
     private SwitchPreference mForceExpanded;
@@ -102,6 +106,10 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private String mCustomCarrierLabelText;
     private ColorPickerPreference mScrewdLogoColor;
     //private ListPreference mScrewdLogoStyle;
+    private ListPreference mStatusBarBattery;
+    private ListPreference mStatusBarBatteryShowPercent;
+    private int mStatusBarBatteryValue;
+    private int mStatusBarBatteryShowPercentValue;
 
 
     @Override
@@ -259,6 +267,23 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mScrewdLogoColor.setSummary(hexColor);
         mScrewdLogoColor.setNewPreviewColor(intColor);
+
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        mStatusBarBatteryValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
+        mStatusBarBattery.setValue(Integer.toString(mStatusBarBatteryValue));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
+
+        mStatusBarBatteryShowPercent =
+                (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+        mStatusBarBatteryShowPercentValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBatteryShowPercent.setValue(Integer.toString(mStatusBarBatteryShowPercentValue));
+        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+        enableStatusBarBatteryDependents(mStatusBarBatteryValue);
     }
 
 
@@ -410,6 +435,23 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     UserHandle.USER_CURRENT);
             mScrewdLogoStyle.setSummary(mScrewdLogoStyle.getEntries()[index]);
             return true;*/
+        } else if (preference == mStatusBarBattery) {
+            mStatusBarBatteryValue = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            mStatusBarBattery.setSummary(
+                    mStatusBarBattery.getEntries()[index]);
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, mStatusBarBatteryValue);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue);
+            return true;
+        } else if (preference == mStatusBarBatteryShowPercent) {
+            mStatusBarBatteryShowPercentValue = Integer.valueOf((String) newValue);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
+            return true;
         }
         return false;
     }
@@ -442,6 +484,15 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             alert.show();
         }
         return super.onPreferenceTreeClick(preference);
+    }
+
+    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
+                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+        } else {
+            mStatusBarBatteryShowPercent.setEnabled(true);
+        }
     }
 
     private void updateCustomLabelTextSummary() {
