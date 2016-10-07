@@ -54,6 +54,11 @@
         android:summary="@string/qs_wifi_easy_toggle_summary"
         android:defaultValue="false" />
 
+     <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+        android:key="lockscreen_qs_disabled"
+        android:title="@string/lockscreen_qs_disabled_title"
+        android:summary="@string/lockscreen_qs_disabled_summary"/>
+
      <PreferenceCategory
         android:title="@string/pulldown">
 
