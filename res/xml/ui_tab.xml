@@ -49,5 +49,9 @@
         android:title="@string/trans"
         android:fragment="com.mrapocalypse.screwdshop.frags.TransparencyPornFragment" />
 
+    <Preference
+        android:key="batterybar"
+        android:title="@string/battery_bar_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.BatteryBar" />
 
 </PreferenceScreen>

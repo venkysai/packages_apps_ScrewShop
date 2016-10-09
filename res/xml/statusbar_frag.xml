@@ -236,12 +236,6 @@
         </PreferenceScreen>
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="status_bar_show_battery_percent"
-            android:title="@string/show_battery_percentage"
-            android:summary="@string/show_battery_percentage_summary"
-            android:defaultValue="false" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
     	   android:key="bluetooth_show_battery"
            android:title="@string/bluetooth_battery_title"
            android:summary="@string/bluetooth_battery_summary"
