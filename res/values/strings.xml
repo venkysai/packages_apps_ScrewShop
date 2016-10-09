@@ -79,6 +79,7 @@
     <string name="qs_tile_layout">Tile Layout</string>
     <string name="battery">Battery</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
+    <string name="statusbar_logo">Statusbar Logo</string>
 
     <!-- begin strings for options -->
     
@@ -931,4 +932,14 @@
     <string name="show_carrier_keyguard">Lockscreen only</string>
     <string name="show_carrier_statusbar">Statusbar only</string>
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
+    
+     <!-- Statusbar Screw'd logo -->
+    <string name="status_bar_logo_category_title">Statusbar logo</string>
+    <string name="status_bar_screwd_logo_title">Screw\'d logo</string>
+    <string name="status_bar_screwd_logo_summary">Enable to show Screw\'d logo on the left side of statusbar</string>
+    <string name="status_bar_screwd_logo_color">Screw\'d logo color</string>
+    <string name="status_bar_screwd_logo_position">Logo location</string>
+    <string name="status_bar_screwd_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
 </resources>
