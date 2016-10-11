@@ -1167,4 +1167,9 @@
     <string name="power_menu_transparency">Power/reboot menu transparency</string>
     <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
 
+    <!-- SS summary text -->
+    <string name="ss_settings_summary_title">Custom SS summary text in Settings application</string>
+    <string name="custom_summary_title">Custom SS summary</string>
+    <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
+
 </resources>

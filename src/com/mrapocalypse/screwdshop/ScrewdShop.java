@@ -16,13 +16,16 @@
 
 package com.mrapocalypse.screwdshop;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.design.widget.Snackbar;
-
+import android.text.TextUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -185,8 +188,14 @@ public class ScrewdShop extends SettingsPreferenceFragment {
 
         @Override
         public void setListening(boolean listening) {
+            String mCustomSummary = Settings.System.getString(
+                    mContext.getContentResolver(), Settings.System.SS_SETTINGS_SUMMARY);
             if (listening) {
-                mSummaryLoader.setSummary(this, mContext.getString(R.string.screwd_settings_summary_title));
+                if (TextUtils.isEmpty(mCustomSummary)) {
+                    mSummaryLoader.setSummary(this, mContext.getString(R.string.screw_shop_summary_title));
+                } else {
+                    mSummaryLoader.setSummary(this, mCustomSummary);
+                }
             }
         }
     }

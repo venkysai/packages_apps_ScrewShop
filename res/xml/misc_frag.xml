@@ -41,4 +41,8 @@
         android:key="screenshot_type"
         android:title="@string/screenshot_type_title" />
 
+     <Preference
+        android:key="ss_settings_summary"
+        android:title="@string/ss_settings_summary_title" />
+
 </PreferenceScreen>
