@@ -57,8 +57,11 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+    private static final String PREF_SS_SETTINGS_SUMMARY = "ss_settings_summary";
 
     private ListPreference mTorchPowerButton;
+    private Preference mCustomSummary;
+    private String mCustomSummaryText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,10 @@ public class MiscFrag extends SettingsPreferenceFragment implements
             mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
             mTorchPowerButton.setOnPreferenceChangeListener(this);
         }
+
+
+        mCustomSummary = (Preference) prefScreen.findPreference(PREF_SS_SETTINGS_SUMMARY);
+        updateCustomSummaryTextString();
 
     }
 
@@ -110,6 +117,46 @@ public class MiscFrag extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.SCREWD;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mCustomSummary) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_summary_title);
+            alert.setMessage(R.string.custom_summary_explain);
+
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mCustomSummaryText) ? "" : mCustomSummaryText);
+            input.setSelection(input.getText().length());
+            alert.setView(input);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString().trim();
+                            Settings.System.putString(resolver, Settings.System.SS_SETTINGS_SUMMARY, value);
+                            updateCustomSummaryTextString();
+                        }
+                    });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+        } else {
+            return super.onPreferenceTreeClick(preference);
+        }
+        return false;
+    }
+
+    private void updateCustomSummaryTextString() {
+        mCustomSummaryText = Settings.System.getString(
+                getActivity().getContentResolver(), Settings.System.SS_SETTINGS_SUMMARY);
+
+        if (TextUtils.isEmpty(mCustomSummaryText)) {
+            mCustomSummary.setSummary(R.string.screw_shop_summary_title);
+        } else {
+            mCustomSummary.setSummary(mCustomSummaryText);
+        }
     }
 
 }

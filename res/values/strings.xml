@@ -14,7 +14,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ScrewShop</string>
-    <string name="screw_shop_summary_title">Free Smoke, Free Smoke</string>
+    <string name="screwd_settings_summary_title">Free Smoke, Free Smoke</string>
     <string name="action_settings">Settings</string>
     <string name="press_back_again">Press back again to leave ScrewShop!</string>
     <string name="screwd_device_success">Yay! You\'re Screw\'d!!</string>
@@ -1188,5 +1188,10 @@
     <!-- Face auto unlock -->
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
+
+    <!-- SS summary text -->
+    <string name="ss_settings_summary_title">Custom SS summary text in Settings application</string>
+    <string name="custom_summary_title">Custom SS summary</string>
+    <string name="custom_summary_explain">Please enter a new summary. Leave blank to revert to stock text.</string>
 </resources>
 

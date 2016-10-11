@@ -306,8 +306,14 @@ public class ScrewdShop extends SettingsPreferenceFragment {
 
         @Override
         public void setListening(boolean listening) {
+            String mCustomSummary = Settings.System.getString(
+                    mContext.getContentResolver(), Settings.System.SS_SETTINGS_SUMMARY);
             if (listening) {
-                mSummaryLoader.setSummary(this, mContext.getString(R.string.screwd_settings_summary_title));
+                if (TextUtils.isEmpty(mCustomSummary)) {
+                    mSummaryLoader.setSummary(this, mContext.getString(R.string.screw_shop_summary_title));
+                } else {
+                    mSummaryLoader.setSummary(this, mCustomSummary);
+                }
             }
         }
     }
