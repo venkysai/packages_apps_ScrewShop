@@ -14,7 +14,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ScrewShop</string>
-    <string name="screw_shop_summary_title">Chopped Up, not Slopped Up...</string>
+    <string name="screw_shop_summary_title">Free Smoke, Free Smoke</string>
     <string name="action_settings">Settings</string>
     <string name="press_back_again">Press back again to leave ScrewShop!</string>
     <string name="screwd_device_success">Yay! You\'re Screw\'d!!</string>
