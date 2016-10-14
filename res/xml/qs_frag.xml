@@ -48,6 +48,12 @@
         android:summary="@string/qs_bt_easy_toggle_summary"
         android:defaultValue="false" />
 
+     <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+        android:key="qs_wifi_easy_toggle"
+        android:title="@string/qs_wifi_easy_toggle_title"
+        android:summary="@string/qs_wifi_easy_toggle_summary"
+        android:defaultValue="false" />
+
      <PreferenceCategory
         android:title="@string/pulldown">
 
