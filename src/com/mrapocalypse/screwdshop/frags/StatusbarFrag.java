@@ -20,8 +20,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
@@ -36,6 +38,9 @@ import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
+import android.telephony.TelephonyManager;
+import android.text.Spannable;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.widget.EditText;
 
@@ -68,6 +73,8 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
     private static final String SMS_BREATH = "sms_breath";
     private static final String BREATHING_NOTIFICATIONS = "breathing_notifications";
+    private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
+    private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -86,6 +93,9 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private SwitchPreference mVoicemailBreath;
     private SwitchPreference mSmsBreath;
     private PreferenceGroup mBreathingNotifications;
+    private PreferenceScreen mCustomCarrierLabel;
+    private ListPreference mShowCarrierLabel;
+    private String mCustomCarrierLabelText;
 
 
     @Override
@@ -94,6 +104,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.statusbar_frag);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         PackageManager pm = getPackageManager();
         Resources systemUiResources;
@@ -207,12 +218,27 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             prefSet.removePreference(mSmsBreath);
             prefSet.removePreference(mBreathingNotifications);
         }
+
+        mShowCarrierLabel = (ListPreference) findPreference(SHOW_CARRIER_LABEL);
+        int showCarrierLabel = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
+        mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
+        mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
+        mShowCarrierLabel.setOnPreferenceChangeListener(this);
+
+        mCustomCarrierLabel = (PreferenceScreen) findPreference(CUSTOM_CARRIER_LABEL);
+        if (TelephonyManager.getDefault().isMultiSimEnabled()) {
+            prefSet.removePreference(mCustomCarrierLabel);
+        } else {
+            updateCustomLabelTextSummary();
+        }
     }
 
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         AlertDialog dialog;
+        ContentResolver resolver = getActivity().getContentResolver();
         if  (preference == mEnableNC) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), STATUS_BAR_NOTIF_COUNT,
@@ -334,8 +360,56 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             Settings.Global.putInt(getContentResolver(), SMS_BREATH,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mShowCarrierLabel) {
+            int showCarrierLabel = Integer.valueOf((String) newValue);
+            int index = mShowCarrierLabel.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.
+                STATUS_BAR_SHOW_CARRIER, showCarrierLabel);
+            mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntries()[index]);
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_explain);
+
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+            input.setSelection(input.getText().length());
+            alert.setView(input);
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString().trim();
+                            Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
+                            updateCustomLabelTextSummary();
+                            Intent i = new Intent();
+                            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+                            getActivity().sendBroadcast(i);
+                }
+            });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    private void updateCustomLabelTextSummary() {
+        mCustomCarrierLabelText = Settings.System.getString(
+            getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+
+        if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
+            mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
+        } else {
+            mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
+        }
     }
 
     private void parseClockDateFormats() {
