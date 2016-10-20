@@ -80,6 +80,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String BREATHING_NOTIFICATIONS = "breathing_notifications";
     private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
     private static final String KEY_SCREWD_LOGO_COLOR = "status_bar_screwd_logo_color";
     //private static final String KEY_SCREWD_LOGO_STYLE = "status_bar_screwd_logo_style";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -92,6 +93,8 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_WEATHER = "status_bar_weather";
     private static final String PREF_CATEGORY_INDICATORS = "pref_cat_icons";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -117,6 +120,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private PreferenceScreen mCustomCarrierLabel;
     private ListPreference mShowCarrierLabel;
     private String mCustomCarrierLabelText;
+    private ColorPickerPreference mCarrierColorPicker;
     private ColorPickerPreference mScrewdLogoColor;
     //private ListPreference mScrewdLogoStyle;
     private ListPreference mStatusBarBattery;
@@ -273,6 +277,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         } else {
             updateCustomLabelTextSummary();
         }
+
+        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        int carrColor = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        String carrHexColor = String.format("#%08x", (0xffffffff & carrColor));
+        mCarrierColorPicker.setSummary(carrHexColor);
+        mCarrierColorPicker.setNewPreviewColor(carrColor);
 
         /*
         mScrewdLogoStyle = (ListPreference) findPreference(KEY_SCREWD_LOGO_STYLE);
@@ -495,6 +507,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.
                 STATUS_BAR_SHOW_CARRIER, showCarrierLabel);
             mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntries()[index]);
+            return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
         } else if (preference == mScrewdLogoColor) {
             String hex = ColorPickerPreference.convertToARGB(
