@@ -119,6 +119,11 @@
             android:entryValues="@array/status_bar_logo_position_values"
             android:dependency="status_bar_screwd_logo" />
 
+       <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="status_bar_screwd_logo_animated"
+            android:title="@string/status_bar_logo_animate_title"
+            android:summary="@string/status_bar_logo_animate_summary" />
+
      </PreferenceCategory>
 
      <PreferenceCategory

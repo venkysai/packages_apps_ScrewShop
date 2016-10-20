@@ -942,4 +942,6 @@
     <string name="status_bar_screwd_logo_position_summary">Choose which side to display the logo on, left or right</string>
     <string name="status_bar_logo_position_right">Right</string>
     <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_animate_title">Animate the logo</string>
+    <string name="status_bar_logo_animate_summary">When enabled, the Screw\'d logo will blink at you.</string>
 </resources>
