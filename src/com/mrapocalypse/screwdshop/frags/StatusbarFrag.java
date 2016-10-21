@@ -414,7 +414,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+        if (preference == mCustomCarrierLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
