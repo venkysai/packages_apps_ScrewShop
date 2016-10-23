@@ -40,6 +40,8 @@ import android.view.ViewGroup;
 import android.util.Log;
 
 import com.android.settings.R;
+import com.android.internal.util.screwd.screwdUtils;
+import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
@@ -61,7 +63,11 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
     // Intent for launching the omniswitch settings actvity
     public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
             .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
+    private static final String CATEGORY_STOCK_RECENTS = "stock_recents";
+    private static final String CATEGORY_OMNI_RECENTS = "omni_recents";
 
+    private PreferenceCategory mStockRecents;
+    private PreferenceCategory mOmniRecents;
     private ListPreference mImmersiveRecents;
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
@@ -78,6 +84,8 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+        mStockRecents = (PreferenceCategory) findPreference(CATEGORY_STOCK_RECENTS);
+        mOmniRecents = (PreferenceCategory) findPreference(CATEGORY_OMNI_RECENTS);
 
         mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
         mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
@@ -109,6 +117,8 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
+        updateRecents();
+
     }
 
     @Override
@@ -132,6 +142,7 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(
                     resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
             mOmniSwitchSettings.setEnabled(value);
+            updateRecents();
             return true;
         } else if (preference == mRecentsClearAllLocation) {
             int location = Integer.valueOf((String) newValue);
@@ -168,4 +179,19 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
                 }).show();
     }
 
+    private void updateRecents() {
+        boolean omniRecents = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_USE_OMNISWITCH, 0) == 1;
+
+        if (omniRecents) {
+            mOmniRecents.setEnabled(true);
+            mStockRecents.setEnabled(false);
+        } else if (!screwdUtils.isPackageInstalled(getActivity(), OMNISWITCH_PACKAGE_NAME)) {
+            mOmniRecents.setEnabled(false);
+            mStockRecents.setEnabled(true);
+        } else {
+            mOmniRecents.setEnabled(true);
+            mStockRecents.setEnabled(true);
+        }
+    }
 }

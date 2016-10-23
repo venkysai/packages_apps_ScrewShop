@@ -99,7 +99,8 @@
     <string name="options">Options</string>
     <string name="ss_prefs">Screw\'d Settings preferences</string>
     <string name="qs_header_title">Quick settings header</string>
-    <string name="custom_header_cat">Header Image</string>    
+    <string name="custom_header_cat">Header Image</string>
+    <string name="aosp_recents_title">AOSP recents</string>    
 
     <!-- begin strings for options -->
     
