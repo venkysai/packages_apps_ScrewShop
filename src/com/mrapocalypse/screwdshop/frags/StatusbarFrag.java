@@ -78,7 +78,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_SCREWD_LOGO_COLOR = "status_bar_screwd_logo_color";
-    private static final String KEY_SCREWD_LOGO_STYLE = "status_bar_screwd_logo_style";
+    //private static final String KEY_SCREWD_LOGO_STYLE = "status_bar_screwd_logo_style";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -101,7 +101,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mShowCarrierLabel;
     private String mCustomCarrierLabelText;
     private ColorPickerPreference mScrewdLogoColor;
-    private ListPreference mScrewdLogoStyle;
+    //private ListPreference mScrewdLogoStyle;
 
 
     @Override
@@ -239,6 +239,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             updateCustomLabelTextSummary();
         }
 
+        /*
         mScrewdLogoStyle = (ListPreference) findPreference(KEY_SCREWD_LOGO_STYLE);
         int screwdLogoStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_SCREWD_LOGO_STYLE, 0,
@@ -246,6 +247,8 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         mScrewdLogoStyle.setValue(String.valueOf(screwdLogoStyle));
         mScrewdLogoStyle.setSummary(mScrewdLogoStyle.getEntry());
         mScrewdLogoStyle.setOnPreferenceChangeListener(this);
+
+        */
 
         // Aicp logo color
         mScrewdLogoColor =
@@ -399,14 +402,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_SCREWD_LOGO_COLOR, intHex);
             return true;
-        } else if (preference == mScrewdLogoStyle) {
+        /*} else if (preference == mScrewdLogoStyle) {
             int screwdLogoStyle = Integer.valueOf((String) newValue);
             int index = mScrewdLogoStyle.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(
                     resolver, Settings.System.STATUS_BAR_SCREWD_LOGO_STYLE, screwdLogoStyle,
                     UserHandle.USER_CURRENT);
             mScrewdLogoStyle.setSummary(mScrewdLogoStyle.getEntries()[index]);
-            return true;
+            return true;*/
         }
         return false;
     }
