@@ -45,6 +45,12 @@
             android:title="@string/display_lockscreen_rotation_title"
             android:defaultValue="false"/>
 
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="lockscreen_charging_current"
+            android:title="@string/lockscreen_charging_current_title"
+            android:summary="@string/lockscreen_charging_current_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

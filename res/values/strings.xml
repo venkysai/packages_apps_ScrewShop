@@ -1089,4 +1089,8 @@
     <string name="font_notoserif_italic">NotoSerif Italic</string>
     <string name="font_notoserif_bold">NotoSerif Bold</string>
     <string name="font_notoserif_bold_italic">NotoSerif Bold Italic</string>
+
+    <!-- Lockscreen charging current indicator  -->
+    <string name="lockscreen_charging_current_title">Lockscreen charging info</string>
+    <string name="lockscreen_charging_current_summary">Display negociated charger max current and voltage on lockscreen</string>
 </resources>
