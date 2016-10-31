@@ -30,4 +30,9 @@
         android:title="@string/omni_notification_light_settings"
         android:fragment="com.mrapocalypse.screwdshop.frags.batterylight.NotificationLightSettings" />
 
+      <Preference
+            android:fragment="com.mrapocalypse.screwdshop.frags.HeadsUpSettings"
+            android:key="heads_up_settings"
+            android:title="@string/headsup_settings_title" />
+
 </PreferenceScreen>
