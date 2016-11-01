@@ -1061,7 +1061,7 @@
 
     <!-- Heads up switch -->
     <string name="heads_up_switch_title">Heads up</string>
-    <string name="heads_up_switch_summary">Toggle Heads up globally, not per app.</string>
+    <string name="heads_up_switch_summary">Toggle Heads up globally, not per app</string>
 
     <!-- Fonts -->
     <string name="font_normal">Roboto</string>
