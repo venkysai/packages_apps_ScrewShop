@@ -630,7 +630,7 @@
     <string name="navbar_tuner_title">Navbar Tuner</string>
     <string name="navbar_tuner_summary">Customize buttons and layout</string>
     <!-- color tuner options -->
-    <string name="display_color_title">Screen color &amp; appearance</string>
+    <string name="display_color_title">Screen Color &amp; Appearance</string>
     <string name="display_color_summary">screen color controls and night mode</string>
     <!-- multiwindow navbar gesture -->
     <string name="nav_gesture_title">Enable multiwindow swipe-up gesture</string>
@@ -780,7 +780,7 @@
     <string name="navbar_size">Bar size</string>
     <string name="navbar_mode">Navigation mode</string>
     <string name="navbar_visibility">Enable navigation bar</string>
-    <string name="navigationbar_settings_title">Navigation bar</string>
+    <string name="navigationbar_settings_title">Navigation Bar</string>
     <string name="navigationbar_settings_summary">Customize navigation style and behavior</string>
     <string name="navbar_general_title">Advanced</string>
     <string name="navigation_bar_left_title">Left-handed mode</string>
@@ -1061,7 +1061,7 @@
 
     <!-- Heads up switch -->
     <string name="heads_up_switch_title">Heads up</string>
-    <string name="heads_up_switch_summary">Toogle Heads up globally, not per app.</string>
+    <string name="heads_up_switch_summary">Toggle Heads up globally, not per app.</string>
 
     <!-- Fonts -->
     <string name="font_normal">Roboto</string>
