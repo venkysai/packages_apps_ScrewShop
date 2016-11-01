@@ -65,13 +65,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
-    private static final String PREF_ENABLE = "clock_style";
+    private static final String PREF_CLOCK_STYLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "status_bar_am_pm";
     private static final String PREF_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String PREF_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
     private static final String PREF_CLOCK_DATE_FORMAT = "clock_date_format";
     private static final String STATUS_BAR_CLOCK = "status_bar_show_clock";
+    private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
     private static final String MISSED_CALL_BREATH = "missed_call_breath";
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
     private static final String SMS_BREATH = "sms_breath";
@@ -103,6 +104,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mClockDatePosition;
     private ListPreference mClockDateFormat;
     private SwitchPreference mStatusBarClock;
+    private SwitchPreference mStatusBarClockSeconds;
     private SwitchPreference mMissedCallBreath;
     private SwitchPreference mVoicemailBreath;
     private SwitchPreference mSmsBreath;
@@ -151,7 +153,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 FORCE_EXPANDED_NOTIFICATIONS, 0);
         mForceExpanded.setChecked(ForceExpanded != 0);
 
-        mClockStyle = (ListPreference) findPreference(PREF_ENABLE);
+        mClockStyle = (ListPreference) findPreference(PREF_CLOCK_STYLE);
         mClockStyle.setOnPreferenceChangeListener(this);
         mClockStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_STYLE,
@@ -205,6 +207,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarClock.setOnPreferenceChangeListener(this);
+
+        mStatusBarClockSeconds = (SwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
+        mStatusBarClockSeconds.setChecked((Settings.System.getInt(
+                getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK_SECONDS, 0) == 1));
+        mStatusBarClockSeconds.setOnPreferenceChangeListener(this);
 
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) != 0;
@@ -386,6 +394,11 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_CLOCK,
                     (Boolean) newValue ? 1 : 0);
             return true;
+        } else if (preference == mStatusBarClockSeconds) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK_SECONDS,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
         } else if (preference == mClockDateFormat) {
             int index = mClockDateFormat.findIndexOfValue((String) newValue);
 
@@ -403,7 +416,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 }
                 alert.setView(input);
 
-                alert.setPositiveButton(R.string.menu_save, new DialogInterface.OnClickListener() {
+                alert.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int whichButton) {
                         String value = input.getText().toString();
                         if (value.equals("")) {
@@ -416,7 +429,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     }
                 });
 
-                alert.setNegativeButton(R.string.menu_cancel,
+                alert.setNegativeButton(R.string.cancel,
                     new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         return;
