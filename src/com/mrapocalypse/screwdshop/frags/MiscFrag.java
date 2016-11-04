@@ -48,9 +48,11 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
     private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
     private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+    private static final String SCREENSHOT_TYPE = "screenshot_type";
 
     private SwitchPreference mFlashlightNotification;
     private SwitchPreference mDisableIM;
+    private ListPreference mScreenshotType;
 
 
     @Override
@@ -76,6 +78,13 @@ public class MiscFrag extends SettingsPreferenceFragment implements
                 DISABLE_IMMERSIVE_MESSAGE, 0);
         mDisableIM.setChecked(DisableIM != 0);
 
+        mScreenshotType = (ListPreference) findPreference(SCREENSHOT_TYPE);
+        int mScreenshotTypeValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREENSHOT_TYPE, 0);
+        mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
+        mScreenshotType.setSummary(mScreenshotType.getEntry());
+        mScreenshotType.setOnPreferenceChangeListener(this);
+
     }
 
 
@@ -90,6 +99,14 @@ public class MiscFrag extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE,
                     value ? 1 : 0);
+            return true;
+        } else if  (preference == mScreenshotType) {
+            int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());
+            mScreenshotType.setSummary(
+                    mScreenshotType.getEntries()[mScreenshotTypeValue]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SCREENSHOT_TYPE, mScreenshotTypeValue);
+            mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
             return true;
         }
         return false;
