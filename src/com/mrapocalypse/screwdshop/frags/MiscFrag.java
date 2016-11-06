@@ -42,6 +42,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
+
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import com.android.internal.util.screwd.screwdUtils;
@@ -55,7 +57,9 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String PREF_SS_SETTINGS_SUMMARY = "ss_settings_summary";
+    private static final String SCREENSHOT_DELAY = "screenshot_delay";
 
+    private CustomSeekBarPreference mScreenshotDelay;
     private ListPreference mScreenshotType;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
@@ -78,6 +82,11 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         mCustomSummary = (Preference) prefScreen.findPreference(PREF_SS_SETTINGS_SUMMARY);
         updateCustomSummaryTextString();
 
+        mScreenshotDelay = (CustomSeekBarPreference) findPreference(SCREENSHOT_DELAY);
+        int screenshotDelay = Settings.System.getInt(resolver,
+                Settings.System.SCREENSHOT_DELAY, 1000);
+        mScreenshotDelay.setValue(screenshotDelay / 1);
+        mScreenshotDelay.setOnPreferenceChangeListener(this);
     }
 
 
@@ -90,6 +99,11 @@ public class MiscFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SCREENSHOT_TYPE, mScreenshotTypeValue);
             mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
+            return true;
+        } else if (preference == mScreenshotDelay) {
+            int screenshotDelay = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
             return true;
         }
         return false;
