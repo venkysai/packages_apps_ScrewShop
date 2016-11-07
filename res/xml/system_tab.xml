@@ -47,4 +47,9 @@
         android:title="@string/alarm_blocker"
         android:fragment="com.mrapocalypse.screwdshop.frags.AlarmBlocker" />
 
+     <Preference
+        android:key="wakelock_blocker"
+        android:title="@string/wakelock_blocker_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.WakeLockBlocker" />
+
 </PreferenceScreen>
