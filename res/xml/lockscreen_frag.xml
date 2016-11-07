@@ -51,6 +51,11 @@
             android:summary="@string/lockscreen_charging_current_summary"
             android:defaultValue="true" />
 
+         <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+            android:key="lockscreen_visualizer"
+            android:title="@string/lockscreen_visualizer_title"
+            android:defaultValue="true"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
