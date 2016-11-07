@@ -1173,5 +1173,8 @@
 
     <!-- DT2S on Statusbar -->
     <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
+
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
 </resources>
 
