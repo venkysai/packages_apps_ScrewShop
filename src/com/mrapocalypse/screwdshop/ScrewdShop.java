@@ -308,13 +308,27 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         public void setListening(boolean listening) {
             String mCustomSummary = Settings.System.getString(
                     mContext.getContentResolver(), Settings.System.SS_SETTINGS_SUMMARY);
+            boolean mRandSum = Settings.System.getInt(
+                    mContext.getContentResolver(), Settings.System.SS_SETTINGS_RANDOM_SUMMARY, 0) == 1;
+            final String[] summariesArray = mContext.getResources().getStringArray(R.array.custom_summaries);
+            String chosenSum = randomSummary(summariesArray);
+
             if (listening) {
-                if (TextUtils.isEmpty(mCustomSummary)) {
+                if (TextUtils.isEmpty(mCustomSummary) && !mRandSum) {
                     mSummaryLoader.setSummary(this, mContext.getString(R.string.screw_shop_summary_title));
-                } else {
+                } else if (!TextUtils.isEmpty(mCustomSummary) && !mRandSum) { //Random is off, Use User's input
                     mSummaryLoader.setSummary(this, mCustomSummary);
+                } else if (TextUtils.isEmpty(mCustomSummary) && mRandSum) { //Random is on, User Input is blank
+                    mSummaryLoader.setSummary(this, chosenSum);
+                } else if (!TextUtils.isEmpty(mCustomSummary) && mRandSum) { //Random is on, but User has input
+                    mSummaryLoader.setSummary(this, chosenSum); //Override Text from user input
                 }
             }
+        }
+
+        public static String randomSummary(String[] array) {
+            int rand = new Random().nextInt(array.length);
+            return array[rand];
         }
     }
 
