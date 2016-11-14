@@ -52,13 +52,10 @@ import com.android.internal.util.screwd.screwdUtils;
 public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
-    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String PREF_SS_SETTINGS_SUMMARY = "ss_settings_summary";
 
-    private SwitchPreference mFlashlightNotification;
-    private SwitchPreference mDisableIM;
     private ListPreference mScreenshotType;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
@@ -70,21 +67,6 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mFlashlightNotification = (SwitchPreference) findPreference(FLASHLIGHT_NOTIFICATION);
-        mFlashlightNotification.setOnPreferenceChangeListener(this);
-        if (!screwdUtils.deviceSupportsFlashLight(getActivity())) {
-            prefScreen.removePreference(mFlashlightNotification);
-        } else {
-        mFlashlightNotification.setChecked((Settings.System.getInt(resolver,
-                Settings.System.FLASHLIGHT_NOTIFICATION, 0) == 1));
-        }
-
-        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
-        mDisableIM.setOnPreferenceChangeListener(this);
-        int DisableIM = Settings.System.getInt(getContentResolver(),
-                DISABLE_IMMERSIVE_MESSAGE, 0);
-        mDisableIM.setChecked(DisableIM != 0);
 
         mScreenshotType = (ListPreference) findPreference(SCREENSHOT_TYPE);
         int mScreenshotTypeValue = Settings.System.getInt(getActivity().getContentResolver(),
@@ -101,17 +83,7 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if  (preference == mFlashlightNotification) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                   Settings.System.FLASHLIGHT_NOTIFICATION, checked ? 1:0);
-            return true;
-        } else if (preference == mDisableIM) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE,
-                    value ? 1 : 0);
-            return true;
-        } else if  (preference == mScreenshotType) {
+        if  (preference == mScreenshotType) {
             int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());
             mScreenshotType.setSummary(
                     mScreenshotType.getEntries()[mScreenshotTypeValue]);

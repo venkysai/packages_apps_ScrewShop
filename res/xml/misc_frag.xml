@@ -17,38 +17,26 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/misc" >
 
-     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="flashlight_notification"
-        android:title="@string/flashlight_notification_title"
-        android:summary="@string/flashlight_notification_summary"
-        android:defaultValue="false" />
-
-     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="disable_immersive_message"
-        android:title="@string/disable_immersive_message_title"
-        android:summary="@string/disable_immersive_message_summary"
-        android:persistent="false" />
-
-     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="disable_fc_notifications"
-        android:title="@string/disable_fc_notifications_title"
-        android:summary="@string/disable_fc_notifications_summary"
-        android:defaultValue="false" />
-
      <ListPreference
         android:entries="@array/screenshot_type_entries"
         android:entryValues="@array/screenshot_type_values"
         android:key="screenshot_type"
         android:title="@string/screenshot_type_title" />
 
-     <Preference
-        android:key="ss_settings_summary"
-        android:title="@string/ss_settings_summary_title" />
+     <PreferenceCategory
+         android:key="ss_prefs"
+         android:title="@string/ss_prefs" >
+   
+         <Preference
+            android:key="ss_settings_summary"
+            android:title="@string/ss_settings_summary_title" />
 
-     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="ss_settings_random_summary"
-        android:title="@string/custom_summary_randomize_title"
-        android:summary="@string/custom_summary_randomize_explain"
-        android:defaultValue="false" />
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="ss_settings_random_summary"
+            android:title="@string/custom_summary_randomize_title"
+            android:summary="@string/custom_summary_randomize_explain"
+            android:defaultValue="false" />
+
+     </PreferenceCategory>
 
 </PreferenceScreen>

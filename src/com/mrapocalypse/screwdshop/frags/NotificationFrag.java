@@ -38,12 +38,18 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
+import com.android.internal.util.screwd.screwdUtils;
+
 
 /**
  * Created by cedwards on 6/3/2016.
  */
 public class NotificationFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
+
+    private SwitchPreference mFlashlightNotification;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,12 +59,26 @@ public class NotificationFrag extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mFlashlightNotification = (SwitchPreference) findPreference(FLASHLIGHT_NOTIFICATION);
+        mFlashlightNotification.setOnPreferenceChangeListener(this);
+        if (!screwdUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mFlashlightNotification);
+        } else {
+        mFlashlightNotification.setChecked((Settings.System.getInt(resolver,
+                Settings.System.FLASHLIGHT_NOTIFICATION, 0) == 1));
+        }
+
     }
 
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        if  (preference == mFlashlightNotification) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                   Settings.System.FLASHLIGHT_NOTIFICATION, checked ? 1:0);
+            return true;
+        }
         return false;
     }
 

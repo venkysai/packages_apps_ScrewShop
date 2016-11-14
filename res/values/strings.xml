@@ -92,6 +92,7 @@
     <string name="statusbar_logo">Statusbar Logo</string>
     <string name="weather">Weather options</string>
     <string name="vol_dialog">Volume Dialog</string>
+    <string name="ss_prefs">Screw\'d Settings preferences</string>
 
     <!-- begin strings for options -->
     
