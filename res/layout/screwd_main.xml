@@ -27,7 +27,7 @@
         android:id="@+id/tabs"
         app:pstsShouldExpand="true"
         android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:layout_height="56.0dip" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
