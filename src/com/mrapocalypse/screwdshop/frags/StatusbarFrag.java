@@ -81,10 +81,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     //private static final String KEY_SCREWD_LOGO_STYLE = "status_bar_screwd_logo_style";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BATTERY_STYLE_TILE = "status_bar_battery_style_tile";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
+    private static final int STATUS_BAR_BATTERY_STYLE_PORTRAIT = 0;
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
@@ -110,6 +112,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarBatteryShowPercent;
     private int mStatusBarBatteryValue;
     private int mStatusBarBatteryShowPercentValue;
+    private SwitchPreference mQsBatteryTitle;
 
 
     @Override
@@ -283,6 +286,11 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
+        mQsBatteryTitle = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_STYLE_TILE);
+        mQsBatteryTitle.setChecked((Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, 1) == 1));
+        mQsBatteryTitle.setOnPreferenceChangeListener(this);
+
         enableStatusBarBatteryDependents(mStatusBarBatteryValue);
     }
 
@@ -452,6 +460,10 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
             return true;
+        } else if  (preference == mQsBatteryTitle) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, checked ? 1:0);
         }
         return false;
     }
@@ -490,8 +502,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
                 batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
             mStatusBarBatteryShowPercent.setEnabled(false);
+            mQsBatteryTitle.setEnabled(false);
+        } else if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_PORTRAIT) {
+            mQsBatteryTitle.setEnabled(false);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
+            mQsBatteryTitle.setEnabled(true);
         }
     }
 
