@@ -26,6 +26,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -82,6 +83,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE_TILE = "status_bar_battery_style_tile";
+    private static final String STATUS_BAR_CHARGE_COLOR = "status_bar_charge_color";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -113,6 +115,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private int mStatusBarBatteryValue;
     private int mStatusBarBatteryShowPercentValue;
     private SwitchPreference mQsBatteryTitle;
+    private ColorPickerPreference mChargeColor;
 
 
     @Override
@@ -291,6 +294,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, 1) == 1));
         mQsBatteryTitle.setOnPreferenceChangeListener(this);
 
+        int chargeColor = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_CHARGE_COLOR, Color.WHITE);
+        mChargeColor = (ColorPickerPreference) findPreference("status_bar_charge_color");
+        mChargeColor.setNewPreviewColor(chargeColor);
+        mChargeColor.setOnPreferenceChangeListener(this);
+
         enableStatusBarBatteryDependents(mStatusBarBatteryValue);
     }
 
@@ -448,7 +457,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
             mStatusBarBattery.setSummary(
                     mStatusBarBattery.getEntries()[index]);
-            Settings.Secure.putInt(getContentResolver(),
+            Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE, mStatusBarBatteryValue);
             enableStatusBarBatteryDependents(mStatusBarBatteryValue);
             return true;
@@ -457,13 +466,19 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
             mStatusBarBatteryShowPercent.setSummary(
                     mStatusBarBatteryShowPercent.getEntries()[index]);
-            Settings.Secure.putInt(getContentResolver(),
+            Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
             return true;
         } else if  (preference == mQsBatteryTitle) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, checked ? 1:0);
+            return true;
+        } else if (preference.equals(mChargeColor)) {
+            int color = ((Integer) newValue).intValue();
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
+            return true;
         }
         return false;
     }
@@ -503,11 +518,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
             mStatusBarBatteryShowPercent.setEnabled(false);
             mQsBatteryTitle.setEnabled(false);
+            mChargeColor.setEnabled(false);
         } else if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_PORTRAIT) {
             mQsBatteryTitle.setEnabled(false);
+            mChargeColor.setEnabled(true);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
             mQsBatteryTitle.setEnabled(true);
+            mChargeColor.setEnabled(true);
         }
     }
 
