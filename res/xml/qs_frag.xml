@@ -59,6 +59,12 @@
         android:title="@string/lockscreen_qs_disabled_title"
         android:summary="@string/lockscreen_qs_disabled_summary"/>
 
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        android:key="music_tile_title"
+        android:title="@string/qs_music_tile_track_optional_title"
+        android:summary="@string/qs_music_tile_track_optional_summary"
+        android:defaultValue="false"/>
+
      <PreferenceCategory
         android:title="@string/pulldown">
 
