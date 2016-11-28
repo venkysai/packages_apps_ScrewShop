@@ -466,6 +466,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     mStatusBarBattery.getEntries()[index]);
             Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE, mStatusBarBatteryValue);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
             return true;
         } else if (preference == mStatusBarBatteryShowPercent) {
             mStatusBarBatteryShowPercentValue = Integer.valueOf((String) newValue);
@@ -474,24 +475,27 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     mStatusBarBatteryShowPercent.getEntries()[index]);
             Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_SHOW_BATTERY_PERCENT, mStatusBarBatteryShowPercentValue);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
             return true;
         } else if  (preference == mQsBatteryTitle) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, checked ? 1:0);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
             return true;
         } else if (preference.equals(mChargeColor)) {
             int color = ((Integer) newValue).intValue();
             Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
             return true;
         } else if  (preference == mForceChargeBatteryText) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.Secure.putInt(resolver,
                     Settings.Secure.FORCE_CHARGE_BATTERY_TEXT, checked ? 1:0);
+            enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
             return true;
         }
-        enableStatusBarBatteryDependents(mStatusBarBatteryValue, mStatusBarBatteryShowPercentValue);
         return false;
     }
 
