@@ -23,9 +23,9 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.PowerMenuFragment" />
 
     <Preference
-        android:key="sounds"
-        android:title="@string/sounds"
-        android:fragment="com.mrapocalypse.screwdshop.frags.SoundsFrag" />
+        android:key="buttons"
+        android:title="@string/buttons"
+        android:fragment="com.mrapocalypse.screwdshop.frags.ButtonsFrag" />
 
      <Preference
         android:key="lockscreen"

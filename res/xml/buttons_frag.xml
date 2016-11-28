@@ -17,7 +17,7 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory 
-         android:title="@string/buttons">
+         android:title="@string/vol_rock">
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
             android:key="volume_keys_control_media_stream"
@@ -70,14 +70,11 @@
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>
 
-    </PreferenceCategory>
-
-          
-          <!-- Volume Steps -->
         <Preference
                 android:key="volume_steps"
                 android:title="@string/volume_steps_title"
                 android:fragment="com.mrapocalypse.screwdshop.frags.VolumeSteps" />
 
+    </PreferenceCategory>
 
 </PreferenceScreen>

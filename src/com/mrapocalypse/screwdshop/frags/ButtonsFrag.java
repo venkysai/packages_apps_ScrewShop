@@ -43,7 +43,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 /**
  * Created by cedwards on 6/3/2016.
  */
-public class SoundsFrag extends SettingsPreferenceFragment implements
+public class ButtonsFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
@@ -61,7 +61,7 @@ public class SoundsFrag extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.sounds_frag);
+        addPreferencesFromResource(R.xml.buttons_frag);
 
         final ContentResolver resolver = getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -138,13 +138,9 @@ public class SoundsFrag extends SettingsPreferenceFragment implements
         return false;
     }
 
-
-
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.SCREWD;
     }
-
-
 
 }
