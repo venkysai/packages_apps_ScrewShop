@@ -96,6 +96,7 @@
     <string name="vol_rock">Volume Rocker</string>
     <string name="options">Options</string>
     <string name="ss_prefs">Screw\'d Settings preferences</string>
+    <string name="qs_header_title">Quick settings header</string>
 
     <!-- begin strings for options -->
     
@@ -1294,5 +1295,15 @@
     <!-- Battery Saver easy toggle -->
     <string name="qs_battery_easy_toggle_title">Battery tile easy toggle</string>
     <string name="qs_battery_easy_toggle_summary">Makes it so one click will turn Battery Saver on or off instead of taking you to settings</string>
+
+    <!-- QS Header Icons -->
+    <string name="qs_settings_icon_title">Settings Shortcut</string>
+    <string name="qs_settings_icon_summary">Disable the settings shortcut in the header</string>
+    <string name="qs_edit_title">Edit Icon</string>
+    <string name="qs_edit_summary">Disable the tile edit icon in the header</string>
+    <string name="qs_multiuser_switch_title">Multi-user Switch</string>
+    <string name="qs_multiuser_switch_summary">Disable the multi-user switch in the header</string>
+    <string name="qs_expand_indicator_title">Expand Indicator</string>
+    <string name="qs_expand_indicator_summary">Disable the expand indicator in the header</string>
 
 </resources>
