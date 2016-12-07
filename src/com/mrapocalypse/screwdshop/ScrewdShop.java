@@ -29,7 +29,6 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
 
 import java.io.BufferedReader;
