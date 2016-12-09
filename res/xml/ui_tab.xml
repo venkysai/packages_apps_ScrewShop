@@ -44,13 +44,6 @@
         android:title="@string/notifications"
         android:fragment="com.mrapocalypse.screwdshop.frags.NotificationFrag" />
 
-    <PreferenceScreen
-            android:title="@string/display_color_title">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.ColorAndAppearanceActivity" />
-    </PreferenceScreen>
-
     <Preference
         android:key="trans_porn"
         android:title="@string/trans"
