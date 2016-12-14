@@ -23,7 +23,9 @@ import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
@@ -38,12 +40,17 @@ import com.android.settings.Utils;
 import com.android.internal.util.screwd.screwdUtils;
 import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
+import com.android.internal.widget.LockPatternUtils;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PowerMenuFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String POWER_ENTS = "power_ents";
+    private static final String POWER_OPTS = "power_opts";
 
     private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
 
@@ -66,13 +73,27 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
     private String[] mAvailableActions;
     private String[] mAllActions;
 
+    private static final int MY_USER_ID = UserHandle.myUserId();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.powermenu_fragment);
         mContext = getActivity().getApplicationContext();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
+        final PreferenceCategory entriesCategory =
+                (PreferenceCategory) prefScreen.findPreference(POWER_ENTS);
+        final PreferenceCategory optionsCategory =
+                (PreferenceCategory) prefScreen.findPreference(POWER_OPTS);
+
+        if (!lockPatternUtils.isSecure(MY_USER_ID)) {
+            prefScreen.removePreference(optionsCategory);
+        }
+
+		// power items
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
         mAllActions = PowerMenuConstants.getAllActions();
@@ -80,7 +101,7 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
         for (String action : mAllActions) {
             // Remove preferences not present in the overlay
             if (!isActionAllowed(action)) {
-                getPreferenceScreen().removePreference(findPreference(action));
+                entriesCategory.removePreference(findPreference(action));
                 continue;
             }
 
@@ -125,6 +146,10 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
     public void onStart() {
         super.onStart();
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory entriesCategory =
+                (PreferenceCategory) prefScreen.findPreference(POWER_ENTS);
+
         if (mRebootPref != null) {
             mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
         }
@@ -138,8 +163,8 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
         }
 
         if (mTorchPref != null) {
-            if (!Utils.deviceSupportsFlashLight(getActivity())) {
-                actionCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_TORCH));
+            if (!screwdUtils.deviceSupportsFlashLight(getActivity())) {
+                entriesCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_TORCH));
                 mTorchPref = null;
             } else {
                 mTorchPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_TORCH));
@@ -152,7 +177,7 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
 
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-                getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                entriesCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
                 mUsersPref = null;
             } else {
                 List<UserInfo> users = ((UserManager) mContext.getSystemService(
@@ -290,8 +315,8 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
     }
 
     private void updatePreferences() {
-        boolean bugreport = Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
+        boolean bugreport = Settings.Secure.getInt(getContentResolver(),
+            Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
 
         if (mBugReportPref != null) {
             mBugReportPref.setEnabled(bugreport);
@@ -307,7 +332,7 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
         mLocalUserConfig.clear();
         String[] defaultActions;
         String savedActions = Settings.Global.getStringForUser(mContext.getContentResolver(),
-                Settings.Global.POWER_MENU_ACTIONS, UserHandle.USER_CURRENT);
+            Settings.Global.POWER_MENU_ACTIONS, UserHandle.USER_CURRENT);
 
         if (savedActions == null) {
             defaultActions = mContext.getResources().getStringArray(
@@ -342,8 +367,8 @@ public class PowerMenuFragment extends SettingsPreferenceFragment implements
             }
         }
 
-        Settings.Global.putStringForUser(getActivity().getContentResolver(),
-                 Settings.Global.POWER_MENU_ACTIONS, s.toString(), UserHandle.USER_CURRENT);
+        Settings.Global.putStringForUser(getContentResolver(),
+            Settings.Global.POWER_MENU_ACTIONS, s.toString(), UserHandle.USER_CURRENT);
         updatePowerMenuDialog();
     }
 

@@ -19,13 +19,19 @@
     android:title="@string/power_menu_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="power_opts"
+        android:title="@string/options" >
+
     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
             android:key="lockscreen_enable_power_menu"
             android:title="@string/lockscreen_enable_power_menu_title"
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
-  
+
+    </PreferenceCategory>
     <PreferenceCategory 
+         android:key="power_ents"
          android:title="@string/entries">
     
 	<SwitchPreference
