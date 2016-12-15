@@ -42,6 +42,8 @@ import com.android.internal.widget.LockPatternUtils;
 
 import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 /**
@@ -58,6 +60,7 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS = "qs_columns";
     private static final String KEY_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
     private static final String PREF_LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+    private static final String QS_NIGHT_BRIGHTNESS_VALUE = "qs_night_brightness_value";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -66,6 +69,8 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsColumns;
     private CustomSeekBarPreference mSysuiQqsCount;
     private SwitchPreference mLockQsDisabled;
+    private ListPreference mNightBrightValue;
+    private int mNightBrightValueVal;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -130,6 +135,13 @@ public class QSFrag extends SettingsPreferenceFragment implements
             prefSet.removePreference(mLockQsDisabled);
         }
 
+        mNightBrightValue = (ListPreference) findPreference(QS_NIGHT_BRIGHTNESS_VALUE);
+        mNightBrightValueVal = Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_NIGHT_BRIGHTNESS_VALUE, 0);
+        mNightBrightValue.setValue(Integer.toString(mNightBrightValueVal));
+        mNightBrightValue.setSummary(mNightBrightValue.getEntry());
+        mNightBrightValue.setOnPreferenceChangeListener(this);
+
     }
 
 
@@ -173,6 +185,14 @@ public class QSFrag extends SettingsPreferenceFragment implements
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_QS_DISABLED, checked ? 1:0);
+            return true;
+        } else if (preference == mNightBrightValue) {
+            mNightBrightValueVal = Integer.valueOf((String) newValue);
+            index = mNightBrightValue.findIndexOfValue((String) newValue);
+            mNightBrightValue.setSummary(
+                    mNightBrightValue.getEntries()[index]);
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.QS_NIGHT_BRIGHTNESS_VALUE, mNightBrightValueVal);
             return true;
         }
         return false;
