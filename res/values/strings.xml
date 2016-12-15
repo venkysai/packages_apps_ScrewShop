@@ -100,7 +100,8 @@
     <string name="ss_prefs">Screw\'d Settings preferences</string>
     <string name="qs_header_title">Quick settings header</string>
     <string name="custom_header_cat">Header Image</string>
-    <string name="aosp_recents_title">AOSP recents</string>    
+    <string name="aosp_recents_title">AOSP recents</string>
+    <string name="fingerprint_cat">Fingerprint</string>
 
     <!-- begin strings for options -->
     
@@ -1536,5 +1537,9 @@
     <string name="wired_ringtone_focus_mode_title">Where to play ringtones from</string>
     <string name="wired_ringtone_focus_mode_dynamic">Wired headset if connected and playing music</string>
     <string name="wired_ringtone_focus_mode_stock">Speakerphone and headset (default)</string>
+
+    <!-- fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
 
 </resources>

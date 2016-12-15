@@ -16,6 +16,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+            android:key="fingerprint_category"
+            android:title="@string/fingerprint_cat" >
+
+        <SwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fprint_sucess_vib_title"
+            android:summary="@string/fprint_sucess_vib_summary"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory 
          android:title="@string/the_interface">
 
@@ -101,8 +113,7 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.screwd.LockscreenShortcutsActivity" />
         </PreferenceScreen>
-
-        
+       
 
     </PreferenceCategory>
 
