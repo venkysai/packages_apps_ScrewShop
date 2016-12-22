@@ -1259,13 +1259,4 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-
-    <!-- Advanced night mode tile -->
-    <string name="qs_night_brightness_toggle_title">Night mode low brightness</string>
-    <string name="qs_night_brightness_toggle_summary">Automatically set low brightness value when you enable night light from the QS tile. Disabling night light will restore the previous value</string>
-    <string name="qs_night_brightness_value_title">Night brightness value</string>
-    <string name="qs_night_brightness_value_dialog">Which level the brightness will be set to</string>
-    <string name="qs_night_bright_less">Low brightness</string>
-    <string name="qs_night_bright_medium">Medium brightness</string>
-    <string name="qs_night_bright_min">Minimum brightness</string>
 </resources>
