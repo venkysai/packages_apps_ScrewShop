@@ -55,6 +55,12 @@
         android:defaultValue="false" />
 
      <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+        android:key="qs_battery_easy_toggle"
+        android:title="@string/qs_battery_easy_toggle_title"
+        android:summary="@string/qs_battery_easy_toggle_summary"
+        android:defaultValue="false" />
+
+     <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
         android:key="lockscreen_qs_disabled"
         android:title="@string/lockscreen_qs_disabled_title"
         android:summary="@string/lockscreen_qs_disabled_summary"/>
