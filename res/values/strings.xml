@@ -1175,7 +1175,7 @@
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay.</string>
 
     <!-- Transparency porn -->
-    <string name="qs_transparent_shade">QS shade transparency</string>
+    <string name="qs_transparent_shade">QS shade opacity</string>
     <string name="qs_stroke_title">QS shade stroke</string>
     <string name="qs_stroke_disabled">Disabled</string>
     <string name="qs_stroke_accent">Accent color</string>
@@ -1185,7 +1185,7 @@
     <string name="qs_corner_radius_title">QS shade corner radius</string>
     <string name="qs_dash_width_title">QS stroke dash width</string>
     <string name="qs_dash_gap_title">QS stroke dash gap</string>
-    <string name="volume_dialog_transparency">Volume dialog transparency</string>
+    <string name="volume_dialog_transparency">Volume dialog opacity</string>
     <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
     <string name="volume_dialog_stroke_disabled">Disabled</string>
     <string name="volume_dialog_stroke_accent">Accent color</string>
@@ -1195,7 +1195,7 @@
     <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
     <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
     <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
-    <string name="power_menu_transparency">Power/reboot menu transparency</string>
+    <string name="power_menu_transparency">Power/reboot menu opacity</string>
     <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
 
     <!-- SS summary text -->
