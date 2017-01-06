@@ -22,6 +22,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -74,6 +76,8 @@ public class ScrewdShop extends SettingsPreferenceFragment {
     boolean weAreScrewd = false;
     private SettingsObserver mSettingsObserver;
 
+    private static final Intent ABOUT_SCREWD = new Intent().setComponent(new ComponentName("com.screwdaosp.lean", "com.screwdaosp.lean.MainActivity"));
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
 
@@ -110,6 +114,9 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         switch (item.getItemId()) {
             case R.id.restart_ui:
                 Root.runCommand("pkill -f com.android.systemui");
+                return true;
+            case R.id.about:
+                startActivity(ABOUT_SCREWD);
                 return true;
             default:
                 return false;
