@@ -58,6 +58,9 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS = "qs_columns";
     private static final String KEY_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
     private static final String PREF_LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+    private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
+    private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
+    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -66,6 +69,8 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsColumns;
     private CustomSeekBarPreference mSysuiQqsCount;
     private SwitchPreference mLockQsDisabled;
+    private ListPreference mDaylightHeaderPack;
+    private CustomSeekBarPreference mHeaderShadow;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -130,6 +135,38 @@ public class QSFrag extends SettingsPreferenceFragment implements
             prefSet.removePreference(mLockQsDisabled);
         }
 
+        String settingHeaderPackage = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
+        if (settingHeaderPackage == null) {
+            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+        }
+        mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
+
+        List<String> entries = new ArrayList<String>();
+        List<String> values = new ArrayList<String>();
+        getAvailableHeaderPacks(entries, values);
+        mDaylightHeaderPack.setEntries(entries.toArray(new String[entries.size()]));
+        mDaylightHeaderPack.setEntryValues(values.toArray(new String[values.size()]));
+
+        int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        if (valueIndex == -1) {
+            // no longer found
+            settingHeaderPackage = DEFAULT_HEADER_PACKAGE;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, settingHeaderPackage);
+            valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
+        }
+        mDaylightHeaderPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntry());
+        mDaylightHeaderPack.setOnPreferenceChangeListener(this);
+
+        // header image shadows
+        mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        final int headerShadow = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 80);
+        mHeaderShadow.setValue(headerShadow);
+        mHeaderShadow.setOnPreferenceChangeListener(this);
+
     }
 
 
@@ -174,6 +211,18 @@ public class QSFrag extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_QS_DISABLED, checked ? 1:0);
             return true;
+        } else if (preference == mDaylightHeaderPack) {
+            String value = (String) objValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
+            int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
+            mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
+            return true;
+         } else if (preference == mHeaderShadow) {
+            Integer headerShadow = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
+            return true;
         }
         return false;
     }
@@ -216,7 +265,39 @@ public class QSFrag extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
+    private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
+        Intent i = new Intent();
+        PackageManager packageManager = getPackageManager();
+        i.setAction("org.omnirom.DaylightHeaderPack");
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
+                values.add(0, packageName);
+            } else {
+                values.add(packageName);
+            }
+            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (label == null) {
+                label = r.activityInfo.packageName;
+            }
+            if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
+                entries.add(0, label);
+            } else {
+                entries.add(label);
+            }
+        }
+        i.setAction("org.omnirom.DaylightHeaderPack1");
+        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+            String packageName = r.activityInfo.packageName;
+            values.add(packageName  + "/" + r.activityInfo.name);
 
+            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            if (label == null) {
+                label = packageName;
+            }
+            entries.add(label);
+        }
+    }
 
     @Override
     protected int getMetricsCategory() {
