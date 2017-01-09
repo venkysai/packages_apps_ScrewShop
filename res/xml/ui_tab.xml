@@ -50,11 +50,6 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.TransparencyPornFragment" />
 
     <Preference
-        android:key="blur"
-        android:title="@string/settings_blur_cat"
-        android:fragment="com.mrapocalypse.screwdshop.frags.BlurPersonalizations" />
-
-    <Preference
         android:key="batterybar"
         android:title="@string/battery_bar_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.BatteryBar" />
