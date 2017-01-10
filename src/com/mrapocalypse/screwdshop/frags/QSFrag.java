@@ -21,6 +21,9 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -42,6 +45,8 @@ import com.android.internal.widget.LockPatternUtils;
 
 import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -61,6 +66,8 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
     private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
+    private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -71,6 +78,9 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private SwitchPreference mLockQsDisabled;
     private ListPreference mDaylightHeaderPack;
     private CustomSeekBarPreference mHeaderShadow;
+    private ListPreference mHeaderProvider;
+    private String mDaylightHeaderProvider;
+    private PreferenceScreen mHeaderBrowse;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -167,6 +177,22 @@ public class QSFrag extends SettingsPreferenceFragment implements
         mHeaderShadow.setValue(headerShadow);
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
+        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
+        String providerName = Settings.System.getString(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
+        if (providerName == null) {
+            providerName = mDaylightHeaderProvider;
+        }
+        mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
+        valueIndex = mHeaderProvider.findIndexOfValue(providerName);
+        mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mHeaderProvider.setSummary(mHeaderProvider.getEntry());
+        mHeaderProvider.setOnPreferenceChangeListener(this);
+        mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
+
+        mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
+        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
+
     }
 
 
@@ -212,16 +238,24 @@ public class QSFrag extends SettingsPreferenceFragment implements
                     Settings.Secure.LOCK_QS_DISABLED, checked ? 1:0);
             return true;
         } else if (preference == mDaylightHeaderPack) {
-            String value = (String) objValue;
+            String value = (String) newValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
             return true;
          } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) objValue;
+            Integer headerShadow = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
+            return true;
+         } else if (preference == mHeaderProvider) {
+            String value = (String) newValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER, value);
+            int valueIndex = mHeaderProvider.findIndexOfValue(value);
+            mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
+            mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
             return true;
         }
         return false;
@@ -304,6 +338,11 @@ public class QSFrag extends SettingsPreferenceFragment implements
         return MetricsEvent.SCREWD;
     }
 
-
+    private boolean isBrowseHeaderAvailable() {
+        PackageManager pm = getPackageManager();
+        Intent browse = new Intent();
+        browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
+        return pm.resolveActivity(browse, 0) != null;
+    }
 
 }
