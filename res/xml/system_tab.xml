@@ -52,4 +52,9 @@
         android:title="@string/wakelock_blocker_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.WakeLockBlocker" />
 
+     <Preference
+        android:key="screenstate_category"
+        android:title="@string/screen_state_toggles_title" 
+        android:fragment="com.mrapocalypse.screwdshop.frags.ScreenStateToggles" />
+
 </PreferenceScreen>
