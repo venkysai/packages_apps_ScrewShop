@@ -38,6 +38,9 @@
     <color name="expanded_button_color_normal">#4CAF50</color>
     <color name="expanded_button_color_close">#F44336</color>
 
+    <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
+
     <!-- DSLV colors -->
     <color name="actionbar_icon_color">#ffffff</color>
     <color name="dslv_icon_dark">#ff009688</color>
