@@ -42,4 +42,7 @@
     <color name="fab_ripple">#1fffffff</color><!-- 12% white -->
     <color name="fab_shape">?android:attr/colorAccent</color>
 
+    <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
+
 </resources>
