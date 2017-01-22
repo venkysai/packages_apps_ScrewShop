@@ -22,6 +22,7 @@
   <string name="screwd_device_success">Yay! Tu sei Screw\'d!!</string>
   <string name="screwd_device_failure">Siamo spiacenti, questo non è un dispositivo Screw\'d. Uscendo...</string>
   <string name="restart_systemui">Riavvia SystemUI</string>
+  <string name="lean">Info su</string>
   <!-- General strings -->
   <string name="ok">OK</string>
   <string name="reset">Resetta</string>
@@ -54,7 +55,7 @@
   <!-- Tabs -->
   <string name="ui_tab">UI</string>
   <string name="system_tab">Sistema</string>
-  <string name="navigation_tab">Navigatore</string>
+  <string name="navigation_tab">Navigazione</string>
   <!-- Sections -->
   <string name="statusbar">Barra di stato</string>
   <string name="qs">Impostazioni Rapide</string>
@@ -97,6 +98,7 @@
   <string name="options">Opzioni</string>
   <string name="ss_prefs">Preferenze Impostazioni Screw\'d</string>
   <string name="qs_header_title">Impostazioni rapide di intestazione</string>
+  <string name="custom_header_cat">Immagine intestazione</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Riavvio avanzato</string>
@@ -364,7 +366,7 @@
   <string name="shortcuts_icon_picker_market">Market</string>
   <string name="shortcuts_icon_picker_movie">Film</string>
   <string name="shortcuts_icon_picker_music">Musica</string>
-  <string name="shortcuts_icon_picker_nav">Navigatore</string>
+  <string name="shortcuts_icon_picker_nav">Navigazione</string>
   <string name="shortcuts_icon_picker_phone">Telefono</string>
   <string name="shortcuts_icon_picker_package">Pacchetto</string>
   <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
@@ -1006,6 +1008,7 @@
   <string name="ticker_font_size_title">Dimensione caratteri</string>
   <!-- Heads up switch -->
   <string name="heads_up_switch_title">Heads up</string>
+  <string name="heads_up_switch_summary">Attiva Heads Up a livello globale, non per ogni app</string>
   <!-- Fonts -->
   <string name="font_normal">Roboto</string>
   <string name="font_bold">Roboto Bold</string>
@@ -1034,6 +1037,7 @@
   <string name="font_notoserif_bold_italic">NotoSerif Bold Italic</string>
   <!--  Lockscreen battery info indicator  -->
   <string name="lockscreen_battery_info_title">Info ricarica su schermata di blocco</string>
+  <string name="lockscreen_battery_info_summary">Mostra in tempo reale la carica corrente, il voltaggio, e la temperatura della batteria nella schermata di blocco mentre in carica</string>
   <!-- Heads up settings -->
   <string name="headsup_settings_title">Notifiche peeking</string>
   <string name="summary_heads_up_enabled">Le notifiche peeking sono attivate</string>
@@ -1062,30 +1066,68 @@
   <!-- Optional screenshot type -->
   <string name="screenshot_type_title">Tipo di screenshot</string>
   <string name="screenshot_type_fullscreen">Cattura uno screenshot a schermo intero</string>
+  <string name="screenshot_type_partial">Trascina la selezione sulla zona che si vuole prendere come screenshot</string>
   <!-- Screenshot delay -->
   <string name="screenshot_options_category">Opzioni screenshot</string>
   <string name="screenshot_delay_title">Ritardo screenshot</string>
   <string name="screenshot_delay_summary">Regola in quanto tempo lo screenshot è catturato</string>
   <!-- BT easy toggle -->
+  <string name="qs_bt_easy_toggle_title">Toggle semplice bluetooth</string>
+  <string name="qs_bt_easy_toggle_summary">Permette con un clic di attivare o disattivare il Bluetooth invece di avviare le impostazioni</string>
   <!-- WiFi easy toggle -->
+  <string name="qs_wifi_easy_toggle_title">Toggle semplice WiFi</string>
+  <string name="qs_wifi_easy_toggle_summary">Abilita il tocco singolo per attivare o disattivare il WiFi</string>
   <!-- On-The-Go -->
   <string name="power_menu_onthego_title">Modalità On-The-Go</string>
   <string name="onthego_alpha_title">Alfa On-The-Go</string>
   <string name="onthego_alpha_summary">Valore alfa della sovrapposizione On-The-Go.</string>
   <!-- Transparency porn -->
+  <string name="qs_stroke_disabled">Disattivo</string>
   <string name="qs_stroke_accent">Colore accent</string>
   <string name="qs_stroke_custom">Colore personalizzato</string>
   <string name="volume_dialog_stroke_disabled">Disattivo</string>
+  <string name="volume_dialog_stroke_accent">Colore accent</string>
   <string name="volume_dialog_stroke_custom">Colore personalizzato</string>
   <!-- SS summary text -->
+  <string name="ss_settings_summary_title">Frase personalizzata nella descrizione SS in impostazioni</string>
+  <string name="custom_summary_title">Frase personalizzata SS</string>
+  <string name="custom_summary_explain">Inserisci una nuova frase. Lascia vuoto per ritornare al testo predefinito.</string>
   <!-- Custom summaries -->
+  <string name="custom_summary_randomize_title">Frasi casuali</string>
+  <string name="custom_summary_randomize_explain">Frasi pre-scritte verranno selezionate casualmente e cambieranno ogni volta che tu avvii le impostazioni.\nQuesto sostituisce qualsiasi frase personalizzata settata.</string>
+  <string name="sum1">Chopped Up, not Slopped Up...</string>
+  <string name="sum2">Swangin in the rain...</string>
+  <string name="sum3">#TuSeiScrewdAdesso!</string>
+  <string name="sum4">Un Sacco di Opzioni!</string>
+  <string name="sum5">Dove i ragazzi fighi passano il tempo...</string>
+  <string name="sum6">(Throws phone at Dustin)</string>
+  <string name="sum7">È esattamente quello che sembra...</string>
+  <string name="sum8">Roba figa all\'interno</string>
+  <string name="sum9">Caramelle Gratis!!</string>
   <string name="sum10">↑ ↑ ↓ ↓ ← → ← → B A</string>
+  <string name="sum11">Choppin \'em up...</string>
   <!-- Volume key controls media stream -->
+  <string name="volume_keys_control_media_stream_title">I tasti volume regolano il volume multimediale</string>
+  <string name="volume_keys_control_media_stream_summary">Forza i tasti del volume a controllare la riproduzione multimediale</string>
   <!-- lock screen visualizer -->
+  <string name="lockscreen_visualizer_title">Visualizza music visualizer</string>
   <!-- Quick Settings on lockscreen -->
+  <string name="lockscreen_qs_disabled_title">Disattiva le impostazioni rapide quando bloccato</string>
+  <string name="lockscreen_qs_disabled_summary">Disattiva scorciatoie e impostazioni rapide sulla schermata di blocco sicura</string>
   <!-- Screw'd Settings tabs slide effects -->
+  <string name="effect_default">Predefinita</string>
+  <string name="effect_tablet">Tablet</string>
   <!-- QS Music Tile -->
   <!-- Recents panel settings -->
+  <string name="show_clear_all_recents_button_title">Pulsante chiudi tutto</string>
+  <string name="show_clear_all_recents_button_summary">Mostra pulsante chiudi tutto</string>
+  <string name="recents_clear_all_location_title">Posizione chiudi tutto</string>
+  <string name="recents_clear_all_location_top_right">In alto a destra</string>
+  <string name="recents_clear_all_location_top_left">In alto a sinistra</string>
+  <string name="recents_clear_all_location_top_center">In alto al centro</string>
+  <string name="recents_clear_all_location_bottom_right">In basso a destra</string>
+  <string name="recents_clear_all_location_bottom_left">In basso a sinistra</string>
+  <string name="recents_clear_all_location_bottom_center">In basso al centro</string>
   <!-- Dynamic Navbar Color -->
   <string name="nav_bar_dynamic_title">Colore navbar dinamica</string>
   <string name="nav_bar_dynamic_summary">Attiva per settare sulla barra di navigazione il colore dark primario delle app. Riavvia la tua app desiderata per notare gli effetti</string>
@@ -1107,12 +1149,63 @@
   <string name="battery_bar_style_center_mirrored">Centro-specchiato</string>
   <string name="battery_bar_style_reversed">Invertita</string>
   <string name="battery_bar_use_charging_color">Colore personalizzato durante la carica</string>
+  <string name="battery_bar_blend_color_title">Miscela colori</string>
   <!-- Battery Saver easy toggle -->
   <!-- QS Header Icons -->
+  <string name="qs_settings_icon_title">Scorciatoia impostazioni</string>
+  <string name="qs_edit_title">Modifica l\'icona</string>
   <!-- Center Date + Time in header -->
+  <string name="qs_date_time_center_summary">Richiede una o più icone per essere disabilitato</string>
   <!-- Recents Membar -->
+  <string name="systemui_recents_mem_display_title">Mostra barra di memoria</string>
+  <string name="systemui_recents_mem_display_summary">Mostra quanta RAM è usata nella vista recenti</string>
   <!-- Blur UI -->
+  <string name="nav_blur_ui_title">UI Sfocatura</string>
+  <string name="blur_ui_category_title">Sfocatura</string>
+  <string name="blurred_status_bar_expanded_enabled_pref">Sfoca Sfondo Barra di Stato</string>
+  <string name="blurred_status_bar_expanded_enabled_pref_summary">Sfoca lo sfondo quando si tira giù la barra di stato</string>
+  <string name="translucent_notifications_pref">Notifiche traslucide</string>
+  <string name="translucent_notifications_pref_summary">Imposta lo sfondo delle notifiche traslucide</string>
+  <string name="translucent_header_pref">Intestazione Barra di Stato Sfocata </string>
+  <string name="translucent_header_pref_summary">Sfoca lo sfondo dell\'intestazione della barra di stato</string>
+  <string name="translucent_quick_settings_pref">Barra di stato espansa traslucida</string>
+  <string name="translucent_quick_settings_pref_summary">Fai trasparente lo sfondo del pannello impostazioni rapide</string>
+  <string name="transluency_level_universal">Livello trasparenza</string>
+  <string name="blur_expstatus_cat">Barra di stato espansa </string>
+  <string name="blur_notifications_cat">Notifiche</string>
+  <string name="blur_header_cat">Intestazione barra di stato</string>
+  <string name="blur_qs_cat">Impostazioni Rapide</string>
+  <string name="blur_recents_cat">Recenti</string>
+  <string name="blurred_recent_app_enabled_pref">Sfoca sfondo recenti </string>
+  <string name="blurred_recent_app_enabled_pref_summary">Lo sfondo della lista app recenti viene sfocato</string>
+  <string name="blurred_scale">Scala di sfocatura</string>
+  <string name="blurred_scale_summary">Qualità dell\'immagine sfocata</string>
+  <string name="blurred_radius">Raggio di sfocatura</string>
+  <string name="blurred_radius_summary">Quantità di sfocatura</string>
+  <string name="blur_cat_notice">Avviso</string>
+  <string name="blur_cat_notice_summary">Le personalizzazioni di sfocatura sono disattivate automaticamente durante la visualizzazione della tastiera!</string>
+  <string name="blur_colors_cat">Filtri Colori di sfocatura</string>
+  <string name="blur_light_color">Filtro colore immagine chiaro</string>
+  <string name="blur_dark_color">Filtro colore immagine scuro</string>
+  <string name="blur_mixed_color">Filtro colore immagine mixato</string>
+  <string name="blur_colors_notice">A cosa servono questi colori?</string>
+  <string name="blur_colors_notice_summary">Questi colori sono quelli che tingono gli sfondi sfocati. Invece del grigio normale, ora è possibile scegliere i colori che più vi piacciano. \nCi sono tre filtri colore disponibili per: sfondi chiari, scuri e chiari/scuri. \nQuindi come lavorano questi colori?? \n Semplice, come dice il titolo, verrà utilizzato il filtro chiaro per sfondi più chiari, filtro scuro per sfondi scuri e il filtro misto verrà utilizzato per gli sfondi non troppo scuri, ma nemmeno troppo chiari. \nQuesti colori vengono utilizzati per entrambi gli sfondi sfocati: Drawer di Notifica e App Recenti </string>
   <!-- Time-context headers in notification header -->
+  <string name="status_bar_custom_header_title">Immagine intestazione personalizzata</string>
+  <string name="status_bar_custom_header_summary">Attiva immagine intestazione nel pannello notifiche</string>
+  <string name="daylight_header_pack_title">Pacchetto immagini intestazione</string>
+  <string name="status_bar_custom_header_shadow_title">Ombra immagini intestazione</string>
+  <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità su immagini luminose</string>
+  <string name="unit_percent">\u0025</string>
+  <string name="static_header_provider_title">Statica</string>
+  <string name="daylight_header_provider_title">Dinamica</string>
+  <string name="custom_header_provider_title">Provider di intestazione</string>
+  <string name="custom_header_browse_title">Sfoglia le intestazioni installate</string>
+  <string name="custom_header_browse_summary">Pressione lunga su qualsiasi immagine per utilizzare la modalità statica</string>
   <!-- DUI Double Tap to Sleep -->
+  <string name="smartbar_doubletap_sleep_title">Doppio tocco per spegnere</string>
+  <string name="smartbar_doubletap_sleep_summary">Doppio tap sulle aree vuote della barra di navigazione per spegnere lo schermo</string>
   <!--One handed mode -->
+  <string name="one_handed_mode_title">Modalità ad una sola mano</string>
+  <string name="one_handed_mode_summary">Permette scorrendo sulla barra di navigazione di attivare la modalità ad una sola mano</string>
 </resources>
