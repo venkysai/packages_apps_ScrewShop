@@ -61,6 +61,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.mrapocalypse.screwdshop.viewpager.transforms.*;
 
 import com.mrapocalypse.screwdshop.util.Root;
+import com.mrapocalypse.screwdshop.util.Tools;
 
 /**
  * Created by MrApocalypse on 9/6/2016.
@@ -69,14 +70,16 @@ import com.mrapocalypse.screwdshop.util.Root;
 
 public class ScrewdShop extends SettingsPreferenceFragment {
 
+    private static final String LEAN_PACKAGE_NAME = "com.screwdaosp.lean";
+    private static final Intent LEAN_PACKAGE_INTENT = new Intent().setComponent(new ComponentName(LEAN_PACKAGE_NAME, "com.screwdaosp.lean.MainActivity"));
+
     ViewPager mViewPager;
     ViewGroup mContainer;
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
     boolean weAreScrewd = false;
+    boolean weHaveLean;
     private SettingsObserver mSettingsObserver;
-
-    private static final Intent ABOUT_SCREWD = new Intent().setComponent(new ComponentName("com.screwdaosp.lean", "com.screwdaosp.lean.MainActivity"));
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
@@ -91,6 +94,8 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         mSettingsObserver.observe();
 
         setHasOptionsMenu(true);
+
+        weHaveLean = Tools.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
 
         return view;
     }
@@ -107,7 +112,9 @@ public class ScrewdShop extends SettingsPreferenceFragment {
                 Root.runCommand("pkill -f com.android.systemui");
                 return true;
             case R.id.about:
-                startActivity(ABOUT_SCREWD);
+                if (weHaveLean) {
+                   startActivity(LEAN_PACKAGE_INTENT);
+                }
                 return true;
             default:
                 return false;
