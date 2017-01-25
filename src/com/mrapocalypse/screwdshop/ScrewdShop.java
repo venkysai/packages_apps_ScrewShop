@@ -92,15 +92,6 @@ public class ScrewdShop extends SettingsPreferenceFragment {
 
         setHasOptionsMenu(true);
 
-        weAreScrewd = areWeScrewd();
-
-        if (weAreScrewd) {
-            //Snackbar.make(view.findViewById(R.id.main_content),getString(R.string.screwd_device_success), Snackbar.LENGTH_SHORT).show();
-        } else {
-            //Toast.makeText(getContext(),getString(R.string.screwd_device_failure), Toast.LENGTH_LONG).show();
-            android.os.Process.killProcess(android.os.Process.myPid());
-            java.lang.System.exit(1);
-        }
         return view;
     }
 
@@ -260,28 +251,6 @@ public class ScrewdShop extends SettingsPreferenceFragment {
                 default:
                     break;
             }
-        }
-    }
-
-    public static boolean areWeScrewd() {
-        Process p = null;
-        String flavor = "";
-        try {
-            p = new ProcessBuilder("/system/bin/getprop", "ro.build.flavor").redirectErrorStream(true).start();
-            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line = "";
-            while ((line=br.readLine()) != null) {
-                flavor= line;
-            }
-            p.destroy();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (flavor.contains("screwd")) {
-            return true;
-        } else {
-            return false;
         }
     }
 
