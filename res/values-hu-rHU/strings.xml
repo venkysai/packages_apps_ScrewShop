@@ -841,6 +841,8 @@
   <string name="pulse_custom_fudge_factor">Józan ész szint</string>
   <string name="lavamp_solid_speed_title">Lávalámpa sebessége</string>
   <string name="pulse_solid_dimen_category">Folytonos vonalak üzemmód beállításai</string>
+  <string name="fling_lavalamp_color_from">Lávalámpa indítási szín</string>
+  <string name="fling_lavalamp_color_to">Lávalámpa befejező szín</string>
   <!-- Pulse config -->
   <string name="pulse_custom_dimen">Sáv szélessége</string>
   <string name="pulse_custom_div">Sáv térköz</string>
@@ -1255,4 +1257,5 @@
   <!--One handed mode -->
   <string name="one_handed_mode_title">Egykezes üzemmód</string>
   <string name="one_handed_mode_summary">Engedélyezi a navigációs sávon való csúsztatást az egykezes üzemmód engedélyezéséhez</string>
+  <!-- App sidebar -->
 </resources>
