@@ -42,4 +42,9 @@
         android:title="@string/omni_battery_light_settings"
         android:fragment="com.mrapocalypse.screwdshop.frags.batterylight.BatteryLightSettings" />
 
+     <Preference
+        android:id="@+id/alarm_blocker"
+        android:title="@string/alarm_blocker"
+        android:fragment="com.mrapocalypse.screwdshop.frags.AlarmBlocker" />
+
 </PreferenceScreen>
