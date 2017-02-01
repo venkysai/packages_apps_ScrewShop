@@ -1209,4 +1209,6 @@
   <string name="one_handed_mode_title">Modalità ad una sola mano</string>
   <string name="one_handed_mode_summary">Permette scorrendo sulla barra di navigazione di attivare la modalità ad una sola mano</string>
   <!-- App sidebar -->
+  <!-- Alarm blocker -->
+  <!-- Wakelock blocker -->
 </resources>

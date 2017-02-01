@@ -1258,4 +1258,36 @@
   <string name="one_handed_mode_title">Egykezes üzemmód</string>
   <string name="one_handed_mode_summary">Engedélyezi a navigációs sávon való csúsztatást az egykezes üzemmód engedélyezéséhez</string>
   <!-- App sidebar -->
+  <string name="app_sidebar_title">Alkalmazás oldalsáv</string>
+  <string name="app_sidebar_enable_title">Alkalmazás oldalsáv engedélyezése</string>
+  <string name="app_sidebar_enable_summaryOn">Alkalmazás oldalsáv engedélyezve van</string>
+  <string name="app_sidebar_enable_summaryOff">Alkalmazás oldalsáv le van tiltva</string>
+  <string name="app_sidebar_setup_items_title">Oldalsáv tatalmának beállítása</string>
+  <string name="app_sidebar_setup_items_summary">Elmek hozzáadása, eltávolítása, és a pozíció az oldalsávon</string>
+  <string name="app_sidebar_transparency_title">Oldalsáv átlátszóság</string>
+  <string name="app_sidebar_transparency_summary">Az oldalsáv átlátszóságának beállítása</string>
+  <string name="app_sidebar_position_title">Oldalsáv helye</string>
+  <string name="app_sidebar_position_summary">Az oldalsáv helye a képernyő jobb vagy bal oldalán</string>
+  <string name="app_sidebar_position_left">Bal</string>
+  <string name="app_sidebar_position_right">Jobb</string>
+  <string name="app_sidebar_hide_labels_title">Ikonfeliratok elrejtése</string>
+  <string name="app_sidebar_hide_labels_summary">Oldalsáv ikonfeliratainak elrejtése</string>
+  <string name="tab_category">Látható fülek</string>
+  <string name="use_tab_title">Fülek megjelenítése</string>
+  <string name="use_tab_summary">Látható fül megjelenítése az oldalon, mely érintésre megjeleníti az oldalsávot.</string>
+  <string name="tab_position_title">Fül helye</string>
+  <string name="tab_position_summary">A látható fül a képernyő oldalának tetején, közepén, vagy alján jelenjen meg.</string>
+  <string name="tab_size_title">Fül mérete</string>
+  <string name="tab_size_summary">A látható fül méretének módosítása.</string>
+  <string name="trigger_category">Indítási zóna</string>
+  <string name="trigger_width_title">Szélessége</string>
+  <string name="trigger_width_summary">Indítási terület szélességének beállítása</string>
+  <string name="trigger_top_title">Pozíció</string>
+  <string name="trigger_top_summary">Indítási terület magassági pozíció beállítása</string>
+  <string name="trigger_bottom_title">Magasság</string>
+  <string name="trigger_bottom_summary">Indítási terület magasságának beállítása</string>
+  <string name="app_sidebar_hide_timeout_title">Alkalmazássáv automatikus elrejtése</string>
+  <string name="app_sidebar_hide_timeout_summary">Automatikus elrejtés időkorlátja.</string>
+  <!-- Alarm blocker -->
+  <!-- Wakelock blocker -->
 </resources>
