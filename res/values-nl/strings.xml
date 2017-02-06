@@ -300,6 +300,29 @@
   <!-- CM Lockscreen shortcuts -->
   <string name="lockscreen_targets_message">Vergrendelscherm snelkoppelingen</string>
   <string name="lockscreen_bottom_summary">Aanpassen van de swipe snelkoppelingen onderaan het lockscreen</string>
+  <!-- Gesture Anywhere -->
+  <!-- Label, button used to add a gesture -->
+  <!-- Label, button used to reload all gestures -->
+  <!-- Label, button used to cancel the operation of adding a gesture -->
+  <!-- Label, button used to save a gesture newly created -->
+  <!-- Label, prompt asking the user to enter the name of the gesture -->
+  <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+  <!-- success message, tells the user where the gesture was saved -->
+  <!-- Buttons in Rename gesture dialog box -->
+  <!-- Buttons in Rename gesture dialog box -->
+  <!-- Message displayed when the user opens the gestures settings screen -->
+  <!-- Message displayed when the user has no gestures -->
+  <!-- Title of the screen used to view/manage gestures -->
+  <!-- Noun, menu item used to edit a gesture -->
+  <!-- Noun, menu item used to remove a gesture -->
+  <!-- Message displayed when a gesture is successfully deleted -->
+  <!-- Title of dialog box -->
+  <!-- Label of gesture name field in Rename gesture dialog box -->
+  <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+  <string name="picker_activities">Activiteiten</string>
+  <string name="select_custom_app_title">Selecteer aangepaste app</string>
+  <string name="select_custom_activity_title">Selecteer aangepaste activiteit</string>
+  <string name="profile_applist_title">Apps</string>
   <!-- Slim DSLV -->
   <string name="shortcut_action_none">Geen</string>
   <string name="shortcut_action_longpress">Lang indrukken:</string>
@@ -1218,4 +1241,5 @@
   <!-- App sidebar -->
   <!-- Alarm blocker -->
   <!-- Wakelock blocker -->
+  <!-- Screen state service -->
 </resources>
