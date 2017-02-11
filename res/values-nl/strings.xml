@@ -1242,4 +1242,6 @@
   <!-- Alarm blocker -->
   <!-- Wakelock blocker -->
   <!-- Screen state service -->
+  <!-- Slim Recent panel -->
+  <!-- ATTENTION: RTL languages need to replace left with right -->
 </resources>

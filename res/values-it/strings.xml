@@ -76,6 +76,7 @@
   <string name="trans">Trasparenza</string>
   <string name="sounds">Suoni</string>
   <string name="buttons">Pulsanti</string>
+  <string name="gestureany">Gesture Ovunque</string>
   <!-- Categories -->
   <string name="general">Generale</string>
   <string name="system_animations">Animazioni di sistema</string>
@@ -303,24 +304,50 @@
   <string name="lockscreen_targets_message">Scorciatoie con swipe nella schermata di sblocco</string>
   <string name="lockscreen_bottom_summary">Personalizza le scorciatoie con swipe in basso nella schermata di blocco</string>
   <!-- Gesture Anywhere -->
+  <string name="gesture_anywhere_title">Gesture Ovunque</string>
+  <string name="gesture_anywhere_enabled_title">Gesture Ovunque</string>
+  <string name="gesture_anywhere_enabled_summary">Attiva Gesture Ovunque</string>
+  <string name="gesture_anywhere_position_title">Posizione</string>
+  <string name="gesture_anywhere_position_left">Bordo sinistro</string>
+  <string name="gesture_anywhere_position_right">Bordo destro</string>
+  <string name="gesture_anywhere_gestures_title">Gestures</string>
+  <string name="gesture_anywhere_gestures_summary">Aggiungi, rimuovi e modifica le gesture</string>
   <!-- Label, button used to add a gesture -->
+  <string name="ga_button_add">Aggiungi una gesture</string>
   <!-- Label, button used to reload all gestures -->
+  <string name="ga_button_reload">Ricarica</string>
   <!-- Label, button used to cancel the operation of adding a gesture -->
+  <string name="ga_button_discard">Annulla</string>
   <!-- Label, button used to save a gesture newly created -->
+  <string name="ga_button_done">Fatto</string>
   <!-- Label, prompt asking the user to enter the name of the gesture -->
+  <string name="ga_prompt_gesture_name">Nome</string>
   <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+  <string name="ga_error_missing_name">È necessario immettere un nome</string>
   <!-- success message, tells the user where the gesture was saved -->
+  <string name="ga_save_success">Gesture salvata in %s</string>
   <!-- Buttons in Rename gesture dialog box -->
+  <string name="ga_rename_action">OK</string>
   <!-- Buttons in Rename gesture dialog box -->
+  <string name="ga_cancel_action">Cancella</string>
   <!-- Message displayed when the user opens the gestures settings screen -->
+  <string name="ga_gestures_loading">Caricamento delle gesture...</string>
   <!-- Message displayed when the user has no gestures -->
+  <string name="ga_gestures_empty">Nessuna gesture</string>
   <!-- Title of the screen used to view/manage gestures -->
+  <string name="ga_gestures_activity">Gesture</string>
   <!-- Noun, menu item used to edit a gesture -->
+  <string name="ga_gestures_edit">Modifica</string>
   <!-- Noun, menu item used to remove a gesture -->
+  <string name="ga_gestures_delete">Cancella</string>
   <!-- Message displayed when a gesture is successfully deleted -->
+  <string name="ga_gestures_delete_success">Gesture cancellata</string>
   <!-- Title of dialog box -->
+  <string name="ga_gestures_rename_title">Rinomina la gesture</string>
   <!-- Label of gesture name field in Rename gesture dialog box -->
+  <string name="ga_gestures_rename_label">Nome della gesture</string>
   <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+  <string name="ga_gestures_error_loading">Impossibile caricare %s. Assicurarsi di avere memoria disponibile.</string>
   <string name="trigger_category">Zona di innesco</string>
   <string name="trigger_width_title">Larghezza di innesco</string>
   <string name="trigger_width_summary">Regola la larghezza della zona di innesco</string>
@@ -871,6 +898,8 @@
   <string name="pulse_custom_fudge_factor">Potenza</string>
   <string name="lavamp_solid_speed_title">Velocità barra pulse</string>
   <string name="pulse_solid_dimen_category">Impostazioni modalità linee solide</string>
+  <string name="fling_lavalamp_color_from">Colore misto iniziale</string>
+  <string name="fling_lavalamp_color_to">Colore misto finale</string>
   <!-- Pulse config -->
   <string name="pulse_custom_dimen">Larghezza barra</string>
   <string name="pulse_custom_div">Spaziatura barra</string>
@@ -1112,12 +1141,28 @@
   <string name="onthego_alpha_title">Alfa On-The-Go</string>
   <string name="onthego_alpha_summary">Valore alfa della sovrapposizione On-The-Go.</string>
   <!-- Transparency porn -->
+  <string name="qs_transparent_shade">Trasparenza QS</string>
+  <string name="qs_stroke_title">Contorno QS</string>
   <string name="qs_stroke_disabled">Disattivo</string>
   <string name="qs_stroke_accent">Colore accent</string>
   <string name="qs_stroke_custom">Colore personalizzato</string>
+  <string name="qs_stroke_color_title">Colore contorno QS</string>
+  <string name="qs_stroke_thickness_title">Dimensione contorno QS</string>
+  <string name="qs_corner_radius_title">Smussatura angoli QS</string>
+  <string name="qs_dash_width_title">Larghezza tratti contorno QS</string>
+  <string name="qs_dash_gap_title">Spaziatura tratti contorno QS</string>
+  <string name="volume_dialog_transparency">Trasparenza tendina volume</string>
+  <string name="volume_dialog_stroke_title">Contorno tendina volume</string>
   <string name="volume_dialog_stroke_disabled">Disattivo</string>
   <string name="volume_dialog_stroke_accent">Colore accent</string>
   <string name="volume_dialog_stroke_custom">Colore personalizzato</string>
+  <string name="volume_dialog_stroke_color_title">Colore contorno tendina volume</string>
+  <string name="volume_dialog_stroke_thickness_title">Dimensione contorno tendina volume</string>
+  <string name="volume_dialog_corner_radius_title">Smussatura angoli tendina volume</string>
+  <string name="volume_dialog_dash_width_title">Larghezza tratti contorno tendina volume</string>
+  <string name="volume_dialog_dash_gap_title">Spaziatura tratti contorno tendina volume</string>
+  <string name="power_menu_transparency">Trasparenza menu di spegnimento/riavvio</string>
+  <string name="power_menu_dialog_dim">Opacità sfondo dietro finestra menu di spegnimento/riavvio</string>
   <!-- SS summary text -->
   <string name="ss_settings_summary_title">Frase personalizzata nella descrizione SS in impostazioni</string>
   <string name="custom_summary_title">Frase personalizzata SS</string>
@@ -1145,9 +1190,27 @@
   <string name="lockscreen_qs_disabled_title">Disattiva le impostazioni rapide quando bloccato</string>
   <string name="lockscreen_qs_disabled_summary">Disattiva scorciatoie e impostazioni rapide sulla schermata di blocco sicura</string>
   <!-- Screw'd Settings tabs slide effects -->
+  <string name="tabs_effect_title">Transizioni schede nelle opzioni Screw\'d</string>
   <string name="effect_default">Predefinita</string>
+  <string name="effect_accordion">Fisarmonica</string>
+  <string name="effect_background_to_foreground">Sfondo in primo piano</string>
+  <string name="effect_cube_in">Cubo in</string>
+  <string name="effect_cube_out">Cubo out</string>
+  <string name="effect_depth_page">Pagina in profondità</string>
+  <string name="effect_flip_horizontal">Rifletti orizzontalmente</string>
+  <string name="effect_flip_vertical">Rifletti verticalmente</string>
+  <string name="effect_foreground_to_background">Primo piano allo sfondo</string>
+  <string name="effect_rotate_down">Rotazione in basso</string>
+  <string name="effect_rotate_up">Rotazione in alto</string>
+  <string name="effect_scale_in_out">Scala in out</string>
+  <string name="effect_stack">Pila</string>
   <string name="effect_tablet">Tablet</string>
+  <string name="effect_zoom_in">Zoom in</string>
+  <string name="effect_zoom_out_slide">Slide Zoom out</string>
+  <string name="effect_zoom_out">Zoom out</string>
   <!-- QS Music Tile -->
+  <string name="qs_music_tile_track_optional_title">Titolo traccia musicale su tile</string>
+  <string name="qs_music_tile_track_optional_summary">Visualizza il titolo del brano musicale come titolo del tile</string>
   <!-- Recents panel settings -->
   <string name="show_clear_all_recents_button_title">Pulsante chiudi tutto</string>
   <string name="show_clear_all_recents_button_summary">Mostra pulsante chiudi tutto</string>
@@ -1180,12 +1243,22 @@
   <string name="battery_bar_style_reversed">Invertita</string>
   <string name="battery_bar_use_charging_color">Colore personalizzato durante la carica</string>
   <string name="battery_bar_blend_color_title">Miscela colori</string>
+  <string name="battery_bar_blend_color_summary">Fondi i colori pieni/vuoti corrispondenti alla percentuale della batteria</string>
+  <string name="battery_bar_blend_color_reverse_title">Inverti la direzione del colore</string>
+  <string name="battery_bar_blend_color_reverse_summary_off">Completa → vuota: rosso ← verde ← blu ← rosso</string>
+  <string name="battery_bar_blend_color_reverse_summary_on">Completa → vuota: rosso → verde → blu → rosso</string>
   <!-- Battery Saver easy toggle -->
+  <string name="qs_battery_easy_toggle_title">Toggle semplice tile batteria</string>
   <string name="qs_battery_easy_toggle_summary">Permette con un clic di attivare o disattivare Battery Saver invece di avviare le impostazioni</string>
   <!-- QS Header Icons -->
   <string name="qs_settings_icon_title">Scorciatoia impostazioni</string>
+  <string name="qs_settings_icon_summary">Disattiva le scorciatoie impostazioni nell\'intestazione</string>
   <string name="qs_edit_title">Modifica l\'icona</string>
+  <string name="qs_edit_summary">Disattiva l\'icona modifica tile nell\'intestazione</string>
   <string name="qs_multiuser_switch_title">Switch Multi-utente</string>
+  <string name="qs_multiuser_switch_summary">Disattiva lo switch multi-utente nell\'intestazione</string>
+  <string name="qs_expand_indicator_title">Indicatore di espansione</string>
+  <string name="qs_expand_indicator_summary">Disattiva l\'indicatore di espansione nell\'intestazione</string>
   <!-- Center Date + Time in header -->
   <string name="qs_date_time_center_title">Data e Ora centrate</string>
   <string name="qs_date_time_center_summary">Richiede una o più icone per essere disabilitato</string>
@@ -1290,4 +1363,22 @@
   <string name="wakelock_blocker_warning_title">Procedi con cautela</string>
   <string name="wakelock_blocker_warning">Bloccare i wakelocks potrebbe causare instabilità, crash o perdita di dati</string>
   <!-- Screen state service -->
+  <string name="screen_state_toggles_summary">\@null</string>
+  <string name="screen_state_toggles_title">Azioni di sospensione</string>
+  <string name="screen_state_toggles_enable_title">Attiva</string>
+  <string name="screen_state_toggles_enable_summary">Azioni saranno eseguite sullo schermo spento. Verrà ripristinato sullo schermo allo stato precedente.</string>
+  <string name="screen_state_toggles_mobile_title">Reti mobili</string>
+  <string name="screen_state_toggles_location_title">Posizione</string>
+  <string name="screen_state_toggles_twog">Passa a 2G</string>
+  <string name="screen_state_toggles_twog_summary">La modalità di rete passerà su 2G a schermo spento</string>
+  <string name="screen_state_toggles_gps">Disattiva GPS</string>
+  <string name="screen_state_toggles_gps_summary">La localizzazione GPS verrà disabilitata a schermo spento</string>
+  <string name="screen_state_toggles_mobile_data">Disattiva dati mobili</string>
+  <string name="screen_state_toggles_mobile_data_summary">I dati mobili verranno disattivati a schermo spento</string>
+  <string name="screen_state_off_delay_title">Ritardo dell\'azione a schermo spento</string>
+  <string name="screen_state_off_delay_summary">Numero di secondi da aspettare prima di eseguire le azioni a schermo spento</string>
+  <string name="screen_state_on_delay_title">Ritardo dell\'azione a schermo acceso</string>
+  <string name="screen_state_on_delay_summary">Numero di secondi da aspettare prima di eseguire le azioni a schermo acceso</string>
+  <!-- Slim Recent panel -->
+  <!-- ATTENTION: RTL languages need to replace left with right -->
 </resources>
