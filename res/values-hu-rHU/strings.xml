@@ -100,6 +100,7 @@
   <string name="ss_prefs">Screw\'d beállítások</string>
   <string name="qs_header_title">Gyorsbeállítások fejléc</string>
   <string name="custom_header_cat">Fejléc képe</string>
+  <string name="aosp_recents_title">AOSP előzmények</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Speciális újraindítás</string>
@@ -1253,6 +1254,8 @@
   <!-- QS Header Icons -->
   <string name="qs_settings_icon_title">Beállítások parancsikon</string>
   <string name="qs_settings_icon_summary">Beállítások gyorsgomb engedélyezése a fejlécen</string>
+  <string name="qs_running_services_title">Futó szolgáltatások ikon</string>
+  <string name="qs_running_services_summary">A futó szolgáltatások ikon letiltása a fejlécen</string>
   <string name="qs_edit_title">Szerkesztő ikon</string>
   <string name="qs_edit_summary">Csempe-szerkesztés ikon letiltása a fejlécen</string>
   <string name="qs_multiuser_switch_title">Több-felhasználó váltó</string>
@@ -1380,5 +1383,26 @@
   <string name="screen_state_on_delay_title">Művelet késleltetése bekapcsolt képernyőnél</string>
   <string name="screen_state_on_delay_summary">A képernyő bekapcsolása után a műveletek végrehajtásának késleltetése másodpercben</string>
   <!-- Slim Recent panel -->
+  <string name="slim_recents_title">Slim előzmények</string>
+  <string name="use_slim_recents_title">Slim előzmények használata</string>
+  <string name="use_slim_recents_summary">Slim előzmények használata az alapértemezett előzmények nézet helyett</string>
+  <string name="slim_recents_settings_title">Slim előzmények beállítások</string>
+  <string name="slim_recents_settings_summary">Slim előzmények beállításainak megtekintése</string>
+  <string name="recent_panel_category">Slim előzmények alkalmazások panel</string>
+  <string name="show_running_tasks_title">Csak a futó alkalmazások megjelenítése</string>
+  <string name="recents_max_apps_title">Maximum engedélyezett alkalmazás</string>
+  <string name="recent_panel_scale_title">Méret</string>
+  <string name="recent_panel_expanded_mode_title">Kiterjesztett állapot</string>
+  <string name="recent_panel_expanded_mode_summary">Előzmények kiterjesztett előnézeti módban</string>
+  <string name="recent_panel_expanded_mode_auto">Auto (alapértelmezett)</string>
+  <string name="recent_panel_expanded_mode_always">Mindig</string>
+  <string name="recent_panel_expanded_mode_never">Soha</string>
+  <string name="recent_panel_show_topmost_title">Legmagasabb tevékenység megjelenítése</string>
+  <string name="recent_panel_show_topmost_summary">Nem zárja ki a legfelső tevékenységet az előzmények nézetben</string>
+  <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
+  <string name="recent_card_bg_color_title">Kártya háttérszíne</string>
+  <string name="recent_card_text_color_title">Kártya szövegének színe</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
+  <string name="recent_panel_lefty_mode_summary">Az előzmények panelt a bal oldalon jelenítse meg</string>
 </resources>
