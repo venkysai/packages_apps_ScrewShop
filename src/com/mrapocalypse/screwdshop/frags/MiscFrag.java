@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.app.Fragment;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
@@ -58,11 +59,13 @@ public class MiscFrag extends SettingsPreferenceFragment implements
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String PREF_SS_SETTINGS_SUMMARY = "ss_settings_summary";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
+    private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
 
     private CustomSeekBarPreference mScreenshotDelay;
     private ListPreference mScreenshotType;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
+    private ListPreference mWiredHeadsetRingtoneFocus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,13 @@ public class MiscFrag extends SettingsPreferenceFragment implements
                 Settings.System.SCREENSHOT_DELAY, 1000);
         mScreenshotDelay.setValue(screenshotDelay / 1);
         mScreenshotDelay.setOnPreferenceChangeListener(this);
+
+        mWiredHeadsetRingtoneFocus = (ListPreference) findPreference(WIRED_RINGTONE_FOCUS_MODE);
+        int mWiredHeadsetRingtoneFocusValue = Settings.Global.getInt(resolver,
+                Settings.Global.WIRED_RINGTONE_FOCUS_MODE, 1);
+        mWiredHeadsetRingtoneFocus.setValue(Integer.toString(mWiredHeadsetRingtoneFocusValue));
+        mWiredHeadsetRingtoneFocus.setSummary(mWiredHeadsetRingtoneFocus.getEntry());
+        mWiredHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
     }
 
 
@@ -104,6 +114,14 @@ public class MiscFrag extends SettingsPreferenceFragment implements
             int screenshotDelay = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
+            return true;
+        } else if (preference == mWiredHeadsetRingtoneFocus) {
+            int mWiredHeadsetRingtoneFocusValue = Integer.valueOf((String) newValue);
+            int index = mWiredHeadsetRingtoneFocus.findIndexOfValue((String) newValue);
+            mWiredHeadsetRingtoneFocus.setSummary(
+                    mWiredHeadsetRingtoneFocus.getEntries()[index]);
+            Settings.Global.putInt(getActivity().getContentResolver(), Settings.Global.WIRED_RINGTONE_FOCUS_MODE,
+                    mWiredHeadsetRingtoneFocusValue);
             return true;
         }
         return false;

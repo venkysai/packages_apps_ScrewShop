@@ -1532,4 +1532,9 @@
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
+    <!-- Wired headset ringtone audio focus -->
+    <string name="wired_ringtone_focus_mode_title">Where to play ringtones from</string>
+    <string name="wired_ringtone_focus_mode_dynamic">Wired headset if connected and playing music</string>
+    <string name="wired_ringtone_focus_mode_stock">Speakerphone and headset (default)</string>
+
 </resources>
