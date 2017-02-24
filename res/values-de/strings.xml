@@ -43,7 +43,6 @@
   <string name="profile_choose_app">Anwendung wählen</string>
   <string name="profile_reset_title">Zurücksetzen</string>
   <string name="show_title">Zeige</string>
-  <string name="choose_app">Anwendung wählen</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -72,9 +71,7 @@
   <string name="ex_desk">Erweiterter Desktop</string>
   <string name="sounds">Töne</string>
   <string name="misc">Sonstiges</string>
-  <string name="animations">Animationen</string>
   <string name="trans">Transparenz</string>
-  <string name="sounds">Töne</string>
   <string name="buttons">Tasten</string>
   <string name="gestureany">Gesten überall</string>
   <!-- Categories -->
@@ -100,6 +97,7 @@
   <string name="ss_prefs">Screw\'d Einstellungs Vorzüge</string>
   <string name="qs_header_title">Kopfzeile der Schnelleinstellungen</string>
   <string name="custom_header_cat">Bild für Kopfzeile</string>
+  <string name="aosp_recents_title">AOSP-Variante der zuletzt geöffneten Apps</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Erweitertes Neustartmenü</string>
@@ -259,7 +257,6 @@
   <string name="power_menu_animation_aosp">AOSP (Standard)</string>
   <string name="power_menu_animation_bottom">Unten</string>
   <string name="power_menu_animation_top">Oben</string>
-  <string name="power_menu_animation_rotate">Drehung</string>
   <string name="power_menu_animation_rotate">Drehung</string>
   <string name="power_menu_animation_xylon">Fliegen</string>
   <string name="power_menu_animation_slide">Gleiten</string>
@@ -446,7 +443,6 @@
   <string name="lockscreen_shorcuts_longpress_title">Verknüpfungen lang gedrückt</string>
   <string name="lockscreen_shorcuts_longpress_summary">Benutzerdefinierte Verknüpfungen des Sperrbildschirm öffnen wenn Taste lange gedrückt wird</string>
   <string name="lockscreen_shortcuts_category">Verknüpfungen</string>
-  <string name="shortcut_action_none">Keine</string>
   <string name="shortcut_action_app">Benutzerdefinierte Anwendung</string>
   <string name="shortcut_action_home">Startseite</string>
   <string name="shortcut_action_back">Zurück</string>
@@ -464,64 +460,7 @@
   <string name="shortcut_action_media_play_pause">Musik - Wiedergabe/Pause</string>
   <string name="shortcut_action_media_previous">Musik - vorheriger Titel</string>
   <string name="shortcut_action_wake_device">Gerät aufwecken</string>
-  <string name="shortcut_action_longpress">Langes Drücken:</string>
-  <string name="shortcut_action_select_action_longpress">Wähle eine Lang gedrückt Aktion:</string>
-  <string name="shortcut_action_select_action">Aktion auswählen:</string>
-  <string name="shortcut_action_select_action_newaction">Wähle eine neue Aktion:</string>
-  <string name="shortcut_action_reset">Zurücksetzen</string>
-  <string name="shortcut_action_add">Hinzufügen</string>
-  <string name="shortcut_action_reset_message">Alle Einträge auf die Standardwerte zurücksetzen?</string>
-  <string name="shortcut_action_max">Maximale Einträge Größe erreicht</string>
-  <string name="shortcut_action_warning">Warnung</string>
-  <string name="shortcut_action_warning_message">Es ist nicht möglich, den letzten Eintrag zu löschen</string>
-  <string name="shortcut_action_disable_message">Deaktiviert\nFüge einen Eintrag hinzu, um diese Funktion zu Aktivieren</string>
-  <string name="shortcut_image_not_valid">Die gewählte Anwendung gibt kein gültiges Symbol zurück oder die Bild zuschneiden Funktion wird nicht unterstützt. Verwenden Sie eine andere Anwendung.</string>
-  <string name="shortcut_duplicate_entry">Die gewählte Aktion kann nicht zweimal hinzugefügt werden</string>
-  <string name="shortcut_action_help_shortcut">Verknüpfung</string>
-  <string name="shortcut_action_help_button">Taste</string>
-  <string name="shortcut_action_help_app">Anwendung</string>
-  <string name="shortcut_action_help_icon">, während des Symbol auswählen, Anpassungsoptionen anzeigen</string>
-  <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, wählen Sie das Symbol \"hinzufügen\". Sobald ein %1$s hinzugefügt wird, ändert Sie die Zeile markieren target%2$s\n\nZum entfernen ein %1$s, Wischen Sie die Zeile horizontal nach links oder rechts. Neu anordnen einen %1$s in der Liste durch vertikal ziehen nach links.\n\nSoll auf Standardwerte zurückgesetzt werden, wählen Sie das Symbol \"zurücksetzen\".</string>
-  <string name="shortcut_action_help_delete_last_entry">Entfernen aller %1$s in der Liste wird das Feature vollständig deaktivieren.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen aller %1$s in der Liste wird den zweiten PIE Layer entfernen.</string>
-  <string name="shortcut_action_none">Keine</string>
-  <string name="shortcut_action_app">Benutzerdefinierte Anwendung</string>
-  <string name="shortcut_action_home">Startseite</string>
-  <string name="shortcut_action_back">Zurück</string>
-  <string name="shortcut_action_menu">Menü</string>
-  <string name="shortcut_action_ime">Eingabemethoden öffnen</string>
-  <string name="shortcut_action_power_menu">Ein/Aus-Menü</string>
-  <string name="shortcut_action_recent">Letzte Apps</string>
-  <string name="shortcut_action_power">Bildschirm ausschalten</string>
-  <string name="shortcut_action_search">In Anwendung suchen</string>
-  <string name="shortcut_action_ring_vib">Klingeln/Vibrieren</string>
-  <string name="shortcut_action_ring_silent">Klingeln/Lautlos</string>
-  <string name="shortcut_action_ring_vib_silent">Klingeln/Vibrieren/Lautlos</string>
-  <string name="shortcut_action_camera">Kamera</string>
-  <string name="shortcut_action_media_next">Musik - nächster Titel</string>
-  <string name="shortcut_action_media_play_pause">Musik - Wiedergabe/Pause</string>
-  <string name="shortcut_action_media_previous">Musik - vorheriger Titel</string>
-  <string name="shortcut_action_wake_device">Gerät aufwecken</string>
-  <string name="shortcut_action_longpress">Langes Drücken:</string>
-  <string name="shortcut_action_select_action_longpress">Wähle eine Lang gedrückt Aktion:</string>
-  <string name="shortcut_action_select_action">Aktion auswählen:</string>
-  <string name="shortcut_action_select_action_newaction">Wähle eine neue Aktion:</string>
-  <string name="shortcut_action_reset">Zurücksetzen</string>
-  <string name="shortcut_action_add">Hinzufügen</string>
-  <string name="shortcut_action_reset_message">Alle Einträge auf die Standardwerte zurücksetzen?</string>
-  <string name="shortcut_action_max">Maximale Einträge Größe erreicht</string>
-  <string name="shortcut_action_warning">Warnung</string>
-  <string name="shortcut_action_warning_message">Es ist nicht möglich, den letzten Eintrag zu löschen</string>
-  <string name="shortcut_action_disable_message">Deaktiviert\nFüge einen Eintrag hinzu, um diese Funktion zu Aktivieren</string>
-  <string name="shortcut_image_not_valid">Die gewählte Anwendung gibt kein gültiges Symbol zurück oder die Bild zuschneiden Funktion wird nicht unterstützt. Verwenden Sie eine andere Anwendung.</string>
-  <string name="shortcut_duplicate_entry">Die gewählte Aktion kann nicht zweimal hinzugefügt werden</string>
-  <string name="shortcut_action_help_shortcut">Verknüpfung</string>
-  <string name="shortcut_action_help_button">Taste</string>
-  <string name="shortcut_action_help_app">Anwendung</string>
-  <string name="shortcut_action_help_icon">, während des Symbol auswählen, Anpassungsoptionen anzeigen</string>
   <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, wählen Sie das Symbol \"hinzufügen\". Sobald ein %1$s hinzugefügt wird, ändert Sie die Zeile markieren target%2$s\n\nZum entfernen ein %1$s, Wischen Sie die Zeile horizontal nach links oder rechts. Neu anordnen einen %1$s in der Liste durch vertikal ziehen nach links.\n\nSoll auf Standardwerte zurückgesetzt werden, wählen Sie die Option \"zurücksetzen\".</string>
-  <string name="shortcut_action_help_delete_last_entry">Entfernen aller %1$s in der Liste wird das Feature vollständig deaktivieren.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen aller %1$s in der Liste wird den zweiten PIE Layer entfernen.</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">Medien-Titelbild</string>
   <string name="media_art_summary">Medien-Titelbild auf dem Sperrbildschirm aktivieren</string>
@@ -601,7 +540,6 @@
   <string name="led_color_green">Grün</string>
   <string name="led_color_red">Rot</string>
   <string name="led_color_blue">Blau</string>
-  <string name="ok">Okay</string>
   <string name="advanced">Erweitert</string>
   <string name="profiles_add">Hinzufügen...</string>
   <!-- Notification light dialogs -->
@@ -626,7 +564,6 @@
   <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Benachrichtigungs-LED</string>
   <string name="notificationlight_title">Benachrichtigungs-LED-Einstellungen</string>
-  <string name="notification_light_general_title">Allgemein</string>
   <string name="notification_light_applist_title">Anwendungen</string>
   <string name="notification_light_phonelist_title">Telefon</string>
   <string name="notification_light_use_custom">Benutzerdefinierte Werte verwenden</string>
@@ -731,7 +668,6 @@
   <string name="qs_rows_portrait_title">Zeilen (Hochformat)</string>
   <string name="qs_rows_landscape_title">Zeilen (Querformat)</string>
   <string name="qs_columns_title">Spalten</string>
-  <string name="sysui_qqs_count_title">Kleine QS-Kacheln</string>
   <string name="qs_tile_title_visibility_title">QS Kacheln-Titel</string>
   <string name="qs_tile_title_visibility_summary_on">QS-Kacheln-Titel sind jetzt sichtbar</string>
   <string name="qs_tile_title_visibility_summary_off">QS-Kacheln-Titel sind jetzt verschwunden</string>
@@ -1253,6 +1189,8 @@
   <!-- QS Header Icons -->
   <string name="qs_settings_icon_title">Einstellungsverknüpfung</string>
   <string name="qs_settings_icon_summary">Deaktivieren Sie die Einstellungen-Verknüpfung in der Kopfzeile</string>
+  <string name="qs_running_services_title">Aktive Dienste Symbol</string>
+  <string name="qs_running_services_summary">Deaktivieren Sie das Laufende Dienste Symbol in der Kopfzeile</string>
   <string name="qs_edit_title">Bearbeitungssymbol</string>
   <string name="qs_edit_summary">Deaktivieren Sie die Kachel-bearbeiten-Symbol in der Kopfzeile</string>
   <string name="qs_multiuser_switch_title">Mehrbenutzer Schalter</string>
@@ -1380,5 +1318,29 @@
   <string name="screen_state_on_delay_title">Bildschirm An Aktionen Verzögerung</string>
   <string name="screen_state_on_delay_summary">Anzahl der Sekunden warten, bevor Aktionen in Kraft treten</string>
   <!-- Slim Recent panel -->
+  <string name="slim_recents_title">Slim-Variante der zuletzt geöffneten Apps</string>
+  <string name="use_slim_recents_title">Slim Recents verwenden</string>
+  <string name="use_slim_recents_summary">Slim Recents anstelle der Standard-Ansicht für zuletzt verwendete Apps benutzen</string>
+  <string name="slim_recents_settings_title">Slim Recents Einstellungen</string>
+  <string name="slim_recents_settings_summary">Schaue die Einstellungen der Slim Recents an</string>
+  <string name="recent_panel_category">Slim Recents App Ansicht</string>
+  <string name="show_running_tasks_title">Nur laufende Apps anzeigen</string>
+  <string name="recents_max_apps_title">Maximal erlaubte Apps</string>
+  <string name="recent_panel_scale_title">Größe</string>
+  <string name="recent_panel_expanded_mode_title">Erweiterter Modus</string>
+  <string name="recent_panel_expanded_mode_summary">Erweiterter Vorschaumodus der letzten Apps</string>
+  <string name="recent_panel_expanded_mode_auto">Automatisch (Standard)</string>
+  <string name="recent_panel_expanded_mode_always">Immer</string>
+  <string name="recent_panel_expanded_mode_never">Niemals</string>
+  <string name="recent_panel_show_topmost_title">Zeige die aktive App</string>
+  <string name="recent_panel_show_topmost_summary">Aktive App nicht von den zuletzt geöffneten Apps ausschließen</string>
+  <string name="recent_panel_bg_color_title">Panel Hintergrundfarbe</string>
+  <string name="recent_card_bg_color_title">Karten Hintergrundfarbe</string>
+  <string name="recent_card_text_color_title">Karten Textfarbe</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
+  <string name="recent_panel_lefty_mode_summary">Zuletzt geöffnete Apps am linken Rand anzeigen</string>
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>

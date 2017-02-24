@@ -39,7 +39,6 @@
   <string name="profile_choose_app">Sélectionner une application</string>
   <string name="profile_reset_title">Réinitialiser</string>
   <string name="show_title">Afficher</string>
-  <string name="choose_app">Sélectionner une application</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -68,9 +67,7 @@
   <string name="ex_desk">Bureau étendu</string>
   <string name="sounds">Sons</string>
   <string name="misc">Divers</string>
-  <string name="animations">Animations</string>
   <string name="trans">Transparence</string>
-  <string name="sounds">Sons</string>
   <string name="buttons">Boutons</string>
   <!-- Categories -->
   <string name="general">Général</string>
@@ -254,7 +251,6 @@
   <string name="power_menu_animation_bottom">En bas</string>
   <string name="power_menu_animation_top">En haut</string>
   <string name="power_menu_animation_rotate">Rotation</string>
-  <string name="power_menu_animation_rotate">Rotation</string>
   <string name="power_menu_animation_xylon">Vol</string>
   <string name="power_menu_animation_slide">Faire glisser</string>
   <string name="power_menu_animation_turn">Tourner</string>
@@ -407,7 +403,6 @@
   <string name="lockscreen_shorcuts_longpress_title">Appui long sur les raccourcis</string>
   <string name="lockscreen_shorcuts_longpress_summary">Ouvrir les raccourcis personnalisés de l\'écran de verrouillage par un appui long</string>
   <string name="lockscreen_shortcuts_category">Raccourcis</string>
-  <string name="shortcut_action_none">Aucune</string>
   <string name="shortcut_action_app">Application personnalisée</string>
   <string name="shortcut_action_home">Accueil</string>
   <string name="shortcut_action_back">Retour</string>
@@ -425,64 +420,7 @@
   <string name="shortcut_action_media_play_pause">Musique - lecture/pause</string>
   <string name="shortcut_action_media_previous">Musique - piste précédente</string>
   <string name="shortcut_action_wake_device">Réveiller l\'appareil</string>
-  <string name="shortcut_action_longpress">Appui long :</string>
-  <string name="shortcut_action_select_action_longpress">Choisir l\'action associée à un appui long :</string>
-  <string name="shortcut_action_select_action">Choisir une action :</string>
-  <string name="shortcut_action_select_action_newaction">Choisir une nouvelle action :</string>
-  <string name="shortcut_action_reset">Réinitialiser </string>
-  <string name="shortcut_action_add">Ajouter</string>
-  <string name="shortcut_action_reset_message">Réinitialiser toutes les entrées par défaut ?</string>
-  <string name="shortcut_action_max">Le nombre d\'entrées maximum a été atteint</string>
-  <string name="shortcut_action_warning">Avertissement</string>
-  <string name="shortcut_action_warning_message">Il n\'est pas possible de supprimer la dernière entrée</string>
-  <string name="shortcut_action_disable_message">Désactivé\nAjouter une entrée pour activer cette fonction</string>
-  <string name="shortcut_image_not_valid">L\'application choisie n\'a pas retourné une icône valide ou ne supporte pas le recadrage d\'image. Utilisez une autre application.</string>
-  <string name="shortcut_duplicate_entry">Impossible d\'ajouter l\'action choisie deux fois</string>
-  <string name="shortcut_action_help_shortcut">raccourci</string>
-  <string name="shortcut_action_help_button">bouton</string>
-  <string name="shortcut_action_help_app">application</string>
-  <string name="shortcut_action_help_icon">, tout en cliquant sur l’icône pour afficher des options de personnalisation</string>
-  <string name="shortcut_action_help_main">Pour ajouter un %1$s, sélectionner l\'icône \"ajouter\'. Une fois un %1$s ajouté, sélectionner la ligne changera la cible %2$s\n\nPour supprimer un %1$s, balayer la ligne horizontalement à droite ou à gauche. Réorganiser un %1$s dans la liste en faisant glisser verticalement l\'ancre sur la gauche.\n\nPour effacer ou réinitialiser aux valeurs par défaut, sélectionner l\'icône de réinitialisation.</string>
-  <string name="shortcut_action_help_delete_last_entry">Supprimer tous les %1$s dans la liste désactivera complètement la fonctionnalité.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Supprimer tous les %1$s dans la liste désactivera entièrement la deuxième couche du \"pie\" entièrement.</string>
-  <string name="shortcut_action_none">Aucune</string>
-  <string name="shortcut_action_app">Application personnalisée</string>
-  <string name="shortcut_action_home">Accueil</string>
-  <string name="shortcut_action_back">Retour</string>
-  <string name="shortcut_action_menu">Menu</string>
-  <string name="shortcut_action_ime">Ouvrir le sélecteur de clavier</string>
-  <string name="shortcut_action_power_menu">Menu marche/arrêt</string>
-  <string name="shortcut_action_recent">Applications récentes</string>
-  <string name="shortcut_action_power">Écran éteint</string>
-  <string name="shortcut_action_search">Rechercher dans l\'application</string>
-  <string name="shortcut_action_ring_vib">Sonnerie/vibreur</string>
-  <string name="shortcut_action_ring_silent">Sonnerie/silencieux</string>
-  <string name="shortcut_action_ring_vib_silent">Sonnerie/vibreur/silencieux</string>
-  <string name="shortcut_action_camera">Appareil photo</string>
-  <string name="shortcut_action_media_next">Musique - piste suivante</string>
-  <string name="shortcut_action_media_play_pause">Musique - lecture/pause</string>
-  <string name="shortcut_action_media_previous">Musique - piste précédente</string>
-  <string name="shortcut_action_wake_device">Réveiller l\'appareil</string>
-  <string name="shortcut_action_longpress">Appui long :</string>
-  <string name="shortcut_action_select_action_longpress">Choisir l\'action associée à un appui long :</string>
-  <string name="shortcut_action_select_action">Choisir une action :</string>
-  <string name="shortcut_action_select_action_newaction">Choisir une nouvelle action :</string>
-  <string name="shortcut_action_reset">Réinitialiser </string>
-  <string name="shortcut_action_add">Ajouter</string>
-  <string name="shortcut_action_reset_message">Réinitialiser toutes les entrées par défaut ?</string>
-  <string name="shortcut_action_max">Le nombre d\'entrées maximum a été atteint</string>
-  <string name="shortcut_action_warning">Avertissement</string>
-  <string name="shortcut_action_warning_message">Il n\'est pas possible de supprimer la dernière entrée</string>
-  <string name="shortcut_action_disable_message">Désactivé\nAjouter une entrée pour activer cette fonction</string>
-  <string name="shortcut_image_not_valid">L\'application choisie n\'a pas retourné une icône valide ou ne supporte pas le recadrage d\'image. Utilisez une autre application.</string>
-  <string name="shortcut_duplicate_entry">Impossible d\'ajouter l\'action choisie deux fois</string>
-  <string name="shortcut_action_help_shortcut">raccourci</string>
-  <string name="shortcut_action_help_button">bouton</string>
-  <string name="shortcut_action_help_app">application</string>
-  <string name="shortcut_action_help_icon">, tout en cliquant sur l’icône pour afficher des options de personnalisation</string>
   <string name="shortcut_action_help_main">Pour ajouter un %1$s, sélectionner l\'icône \"ajouter\". Une fois un %1$s ajouté, sélectionner la ligne changera la cible %2$s\n\nPour supprimer un %1$s, balayer la ligne horizontalement à droite ou à gauche. Réorganiser un %1$s dans la liste en faisant glisser verticalement l\'ancre sur la gauche.\n\nPour effacer ou réinitialiser aux valeurs par défaut, sélectionner l\'icône de réinitialisation.</string>
-  <string name="shortcut_action_help_delete_last_entry">Supprimer tous les %1$s dans la liste désactivera complètement la fonctionnalité.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Supprimer tous les %1$s dans la liste désactivera entièrement la deuxième couche du \"pie\" entièrement.</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">Pochette d\'album</string>
   <string name="media_art_summary">Activez l\'afficahge de la pochette d\'album sur le l\'écran de verouillage</string>
@@ -562,7 +500,6 @@
   <string name="led_color_green">Vert</string>
   <string name="led_color_red">Rouge</string>
   <string name="led_color_blue">Bleu</string>
-  <string name="ok">Ok</string>
   <string name="advanced">Avancé</string>
   <string name="profiles_add">Ajouter ...</string>
   <!-- Notification light dialogs -->
@@ -587,7 +524,6 @@
   <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Voyant de notification</string>
   <string name="notificationlight_title">Préférences de paramètres de LED</string>
-  <string name="notification_light_general_title">Général</string>
   <string name="notification_light_applist_title">Applications</string>
   <string name="notification_light_phonelist_title">Téléphone </string>
   <string name="notification_light_use_custom">Utiliser des valeurs personnalisées</string>
@@ -809,4 +745,7 @@
   <!-- Screen state service -->
   <!-- Slim Recent panel -->
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>

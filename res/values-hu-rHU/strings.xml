@@ -43,7 +43,7 @@
   <string name="profile_choose_app">Alkalmazás választása</string>
   <string name="profile_reset_title">Visszaállítás</string>
   <string name="show_title">Megjelenítés</string>
-  <string name="choose_app">Alkalmazás kiválasztása</string>
+  <string name="choose_app">Alkalmazás választása</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -101,6 +101,7 @@
   <string name="qs_header_title">Gyorsbeállítások fejléc</string>
   <string name="custom_header_cat">Fejléc képe</string>
   <string name="aosp_recents_title">AOSP előzmények</string>
+  <string name="fingerprint_cat">Ujjlenyomat</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Speciális újraindítás</string>
@@ -447,7 +448,7 @@
   <string name="lockscreen_shorcuts_longpress_title">Hosszan nyomva</string>
   <string name="lockscreen_shorcuts_longpress_summary">Nyisson meg egyéni zárképernyő hivatkozásokat nyomva tartás esetén</string>
   <string name="lockscreen_shortcuts_category">Parancsikonok</string>
-  <string name="shortcut_action_none">Nincs</string>
+  <string name="shortcut_action_none">Semmi</string>
   <string name="shortcut_action_app">Egyéni alkalmazás</string>
   <string name="shortcut_action_home">Kezdőképernyő</string>
   <string name="shortcut_action_back">Vissza</string>
@@ -469,7 +470,7 @@
   <string name="shortcut_action_select_action_longpress">Hosszan nyomási művelet választása:</string>
   <string name="shortcut_action_select_action">Művelet választása:</string>
   <string name="shortcut_action_select_action_newaction">Új művelet választása:</string>
-  <string name="shortcut_action_reset">Alaphelyzet</string>
+  <string name="shortcut_action_reset">Visszaállít</string>
   <string name="shortcut_action_add">Hozzáadás</string>
   <string name="shortcut_action_reset_message">Alapértelmezett értékek visszaállítása?</string>
   <string name="shortcut_action_max">A bejegyzések száma elérte a maximumot</string>
@@ -485,7 +486,7 @@
   <string name="shortcut_action_help_main">%1$s hozzáadásához válassza a \"Hozzáadás\" ikont. Miután %1$s hozzá lett adva, a sor kiválasztása változtatja a célt%2$s\n\n%1$s eltávolításához a sort csúsztassa jobbra vagy balra. Egy %1$s listán belüli átrendezéséhez húzza függőlegesen a bal oldali horgonyt.\n\nTörlés vagy alaphelyzetbe állításhoz válassza a visszaállítás opciót.</string>
   <string name="shortcut_action_help_delete_last_entry">Minden %1$s eltávolítása a listából a funkció letiltásához vezet.</string>
   <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Minden %1$s eltávolítása a listából teljesen kikapcsolja a pie második rétegét.</string>
-  <string name="shortcut_action_none">Nincs</string>
+  <string name="shortcut_action_none">Semmi</string>
   <string name="shortcut_action_app">Egyéni alkalmazás</string>
   <string name="shortcut_action_home">Kezdőképernyő</string>
   <string name="shortcut_action_back">Vissza</string>
@@ -507,7 +508,7 @@
   <string name="shortcut_action_select_action_longpress">Hosszan nyomási művelet választása:</string>
   <string name="shortcut_action_select_action">Művelet választása:</string>
   <string name="shortcut_action_select_action_newaction">Új művelet választása:</string>
-  <string name="shortcut_action_reset">Alaphelyzet</string>
+  <string name="shortcut_action_reset">Visszaállít</string>
   <string name="shortcut_action_add">Hozzáadás</string>
   <string name="shortcut_action_reset_message">Alapértelmezett értékek visszaállítása?</string>
   <string name="shortcut_action_max">A bejegyzések száma elérte a maximumot</string>
@@ -732,7 +733,8 @@
   <string name="qs_rows_portrait_title">Sorok (álló)</string>
   <string name="qs_rows_landscape_title">Sorok (fekvő)</string>
   <string name="qs_columns_title">Oszlopok</string>
-  <string name="sysui_qqs_count_title">Kis csempék</string>
+  <string name="qqs_scroll_title">Kis csempék görgetése</string>
+  <string name="qqs_scroll_summary">A kis csempék közötti görgetés engedélyezése</string>
   <string name="qs_tile_title_visibility_title">Gyorsbeállítás csempe címek</string>
   <string name="qs_tile_title_visibility_summary_on">Gyorsbeállítás csempék címei most láthatók</string>
   <string name="qs_tile_title_visibility_summary_off">Gyorsbeállítás csempék címei most eltűntek</string>
@@ -925,6 +927,9 @@
   <string name="smartbar_button_animation_summary">Az elsődleges gombok megnyomási animációjának beállítása</string>
   <string name="smartbar_button_animation_ripple">Hullámosság</string>
   <string name="smartbar_button_animation_spring">Rugózás</string>
+  <string name="smartbar_button_animation_pixel">Pixel (összes gomb)</string>
+  <string name="smartbar_button_animation_pixel_home">Pixel (csak kezdőlap gomb)</string>
+  <string name="smartbar_button_animation_pixel_home_ripple">Pixel (csak kezdőlap gomb) és Hullámosság</string>
   <string name="smartbar_factory_reset_title">Gyári beállítások visszaállítása</string>
   <string name="smartbar_factory_reset_confirm">Biztos, hogy visszaállítod a Smartbar-t gyári állapotra?</string>
   <string name="smartbar_ime_action_title">Beviteli mód műveletek</string>
@@ -1405,4 +1410,14 @@
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
   <string name="recent_panel_lefty_mode_summary">Az előzmények panelt a bal oldalon jelenítse meg</string>
+  <!-- Wired headset ringtone audio focus -->
+  <string name="wired_ringtone_focus_mode_title">Csengőhangok lejátszásának helye</string>
+  <string name="wired_ringtone_focus_mode_dynamic">Vezetékes fejhallgatón, ha csatlakoztatva van és zenét hallgat</string>
+  <string name="wired_ringtone_focus_mode_stock">Hangszóró és fejhallgató (alapértelmezett)</string>
+  <!-- fingerprint authentication vibration -->
+  <string name="fprint_sucess_vib_title">Rezeg ujjlenyomat azonosításkor</string>
+  <string name="fprint_sucess_vib_summary">Rezeg sikeres ujjlenyomat azonosítás esetén</string>
+  <!-- Fingerprint unlock keystore -->
+  <string name="fp_unlock_keystore_title">Ujjlenyomattal való feloldás</string>
+  <string name="fp_unlock_keystore_summary">Újraindítás után eszköz feloldása ujjlenyomattal a PIN/Jelszó/Minta helyett\nMegjegyzés: csak saját felelősségre!</string>
 </resources>

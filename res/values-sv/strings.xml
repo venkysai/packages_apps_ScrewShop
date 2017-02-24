@@ -152,4 +152,7 @@
   <!-- Screen state service -->
   <!-- Slim Recent panel -->
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>

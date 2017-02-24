@@ -40,7 +40,6 @@
   <string name="profile_choose_app">アプリを選択</string>
   <string name="profile_reset_title">リセット</string>
   <string name="show_title">表示</string>
-  <string name="choose_app">アプリを選択</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -67,7 +66,6 @@
   <string name="lcd">画面の密度</string>
   <string name="ex_desk">拡張デスクトップ</string>
   <string name="misc">その他</string>
-  <string name="animations">アニメーション</string>
   <string name="buttons">ボタン</string>
   <!-- Categories -->
   <string name="general">全般</string>
@@ -199,7 +197,6 @@
   <string name="power_menu_animation_dialog_title">電源メニューのアニメーションを選択</string>
   <string name="power_menu_animation_aosp">AOSP (既定)</string>
   <string name="power_menu_animation_rotate">画面の回転</string>
-  <string name="power_menu_animation_rotate">画面の回転</string>
   <string name="power_menu_animation_slide">スライド</string>
   <string name="power_menu_animation_card">3D</string>
   <!-- Tiles animation style  -->
@@ -323,7 +320,6 @@
   <string name="lockscreen_shorcuts_longpress_title">ショートカットの長押し</string>
   <string name="lockscreen_shorcuts_longpress_summary">長押しでロック画面のショートカットを起動する</string>
   <string name="lockscreen_shortcuts_category">ショートカット</string>
-  <string name="shortcut_action_none">なし</string>
   <string name="shortcut_action_app">任意のアプリ</string>
   <string name="shortcut_action_home">ホーム</string>
   <string name="shortcut_action_back">戻る</string>
@@ -339,44 +335,6 @@
   <string name="shortcut_action_media_next">音楽 - 次のトラック</string>
   <string name="shortcut_action_media_play_pause">音楽 - 再生/一時停止</string>
   <string name="shortcut_action_media_previous">音楽 - 前のトラック</string>
-  <string name="shortcut_action_longpress">長押し:</string>
-  <string name="shortcut_action_select_action_longpress">長押しアクションの選択:</string>
-  <string name="shortcut_action_select_action">アクションを選択:</string>
-  <string name="shortcut_action_select_action_newaction">新しいアクションを選択:</string>
-  <string name="shortcut_action_reset">リセット</string>
-  <string name="shortcut_action_add">追加</string>
-  <string name="shortcut_action_reset_message">すべてのエントリを既定にリセットしますか？</string>
-  <string name="shortcut_action_warning">警告</string>
-  <string name="shortcut_action_help_shortcut">ショートカット</string>
-  <string name="shortcut_action_help_button">ボタン</string>
-  <string name="shortcut_action_help_app">アプリ</string>
-  <string name="shortcut_action_none">なし</string>
-  <string name="shortcut_action_app">任意のアプリ</string>
-  <string name="shortcut_action_home">ホーム</string>
-  <string name="shortcut_action_back">戻る</string>
-  <string name="shortcut_action_menu">メニュー</string>
-  <string name="shortcut_action_ime">入力方法の切り替え</string>
-  <string name="shortcut_action_power_menu">電源メニュー</string>
-  <string name="shortcut_action_power">画面オフ</string>
-  <string name="shortcut_action_search">アプリ内検索</string>
-  <string name="shortcut_action_ring_vib">着信音/バイブ</string>
-  <string name="shortcut_action_ring_silent">着信音/サイレント</string>
-  <string name="shortcut_action_ring_vib_silent">着信音/バイブ/サイレント</string>
-  <string name="shortcut_action_camera">カメラ</string>
-  <string name="shortcut_action_media_next">音楽 - 次のトラック</string>
-  <string name="shortcut_action_media_play_pause">音楽 - 再生/一時停止</string>
-  <string name="shortcut_action_media_previous">音楽 - 前のトラック</string>
-  <string name="shortcut_action_longpress">長押し:</string>
-  <string name="shortcut_action_select_action_longpress">長押しアクションの選択:</string>
-  <string name="shortcut_action_select_action">アクションを選択:</string>
-  <string name="shortcut_action_select_action_newaction">新しいアクションを選択:</string>
-  <string name="shortcut_action_reset">リセット</string>
-  <string name="shortcut_action_add">追加</string>
-  <string name="shortcut_action_reset_message">すべてのエントリを既定にリセットしますか？</string>
-  <string name="shortcut_action_warning">警告</string>
-  <string name="shortcut_action_help_shortcut">ショートカット</string>
-  <string name="shortcut_action_help_button">ボタン</string>
-  <string name="shortcut_action_help_app">アプリ</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">メディアカバーアート</string>
   <string name="media_art_summary">ロック画面上でのメディアカバーアートを有効にする</string>
@@ -446,7 +404,6 @@
   <string name="led_color_green">緑</string>
   <string name="led_color_red">赤</string>
   <string name="led_color_blue">青</string>
-  <string name="ok">OK</string>
   <string name="advanced">高度</string>
   <string name="profiles_add">追加...</string>
   <!-- Notification light dialogs -->
@@ -471,7 +428,6 @@
   <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">通知ライト</string>
   <string name="notificationlight_title">通知LEDの設定</string>
-  <string name="notification_light_general_title">全般</string>
   <string name="notification_light_applist_title">アプリ</string>
   <string name="notification_light_phonelist_title">携帯電話</string>
   <string name="notification_light_use_custom">カスタム値を使用</string>
@@ -553,7 +509,6 @@
   <string name="qs_rows_portrait_title">行 (縦向き時)</string>
   <string name="qs_rows_landscape_title">行 (横向き時)</string>
   <string name="qs_columns_title">列</string>
-  <string name="sysui_qqs_count_title">小さいQSタイル</string>
   <string name="qs_tile_title_visibility_title">QSタイルのタイトル表示</string>
   <string name="qs_tile_title_visibility_summary_on">QSタイルのタイトルが表示されるようになりました</string>
   <string name="qs_tile_title_visibility_summary_off">QSタイルのタイトルが削除されました</string>
@@ -847,4 +802,7 @@
   <!-- Screen state service -->
   <!-- Slim Recent panel -->
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>

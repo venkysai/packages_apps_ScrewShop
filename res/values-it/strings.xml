@@ -100,6 +100,7 @@
   <string name="ss_prefs">Preferenze Impostazioni Screw\'d</string>
   <string name="qs_header_title">Impostazioni rapide di intestazione</string>
   <string name="custom_header_cat">Immagine intestazione</string>
+  <string name="aosp_recents_title">Menu recenti AOSP</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Riavvio avanzato</string>
@@ -135,10 +136,10 @@
   <string name="swap_volume_buttons_title">Riorienta</string>
   <string name="swap_volume_buttons_summary">Inverti i tasti del volume quando lo schermo viene ruotato</string>
   <!-- Volume rocker wake -->
-  <string name="volume_rocker_wake_title">Accendi il display con i tasti del volume</string>
+  <string name="volume_rocker_wake_title">Accendi il display con i tasti +/-</string>
   <string name="volume_rocker_wake_summary">Premendo il bilanciere del volume si accenderà lo schermo</string>
   <!-- Volume rocker music control -->
-  <string name="volume_rocker_music_controls_title">Controllo riproduzione</string>
+  <string name="volume_rocker_music_controls_title">Controllo riproduzione musicale</string>
   <string name="volume_rocker_music_controls_summary">Quando lo schermo è spento, premere a lungo i tasti volume cambierà canzone</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Notifica torcia</string>
@@ -240,20 +241,20 @@
   <string name="toast_icon_title">Icona toast</string>
   <string name="toast_icon_summary">Visualizza l\'icona dell\'app corrispondente con il toast</string>
   <!-- Bluetooth status -->
-  <string name="bluetooth_battery_title">Mostra lo stato della batteria del Bluetooth</string>
+  <string name="bluetooth_battery_title">Mostra stato batteria Bluetooth</string>
   <string name="bluetooth_battery_summary">Visualizza lo stato della batteria per il dispositivo bluetooth connesso, se disponibile.</string>
   <!-- Force expanded notifications -->
   <string name="force_expanded_notifications_title">Forza notifiche estese</string>
-  <string name="force_expanded_notifications_summary">Disponibile solo per le app che supportano le notifiche espanse</string>
+  <string name="force_expanded_notifications_summary">Disponibile solo per le app che supportano le notifiche estese</string>
   <!-- Disabling immersive mode messages -->
-  <string name="disable_immersive_message_title">Disabilita i messaggi della modalità immersiva</string>
+  <string name="disable_immersive_message_title">Disabilita aiuti a schermo intero</string>
   <string name="disable_immersive_message_summary">Nasconderà i messaggi di aiuto relativi alla modalità immersiva</string>
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">Applicazioni nascoste</string>
   <string name="hide_from_recents_add_app">Aggiungi app</string>
   <string name="hide_apps_from_recents_summary">Scegli quali app escludere dal pannello recenti</string>
   <!-- Power menu Animations  -->
-  <string name="power_menu_animation_title">Animazione menu power</string>
+  <string name="power_menu_animation_title">Animazione menu di spegnimento</string>
   <string name="power_menu_animation_summary">Cambia l\'animazione di entrata/uscita del menu di spegnimento</string>
   <string name="power_menu_animation_dialog_title">Seleziona animazione del menu di spegnimento</string>
   <string name="power_menu_animation_aosp">AOSP (predefinita)</string>
@@ -301,7 +302,7 @@
   <string name="lockscreen_enable_power_menu_title">Mostra menù di spegnimento su schermata di blocco</string>
   <string name="lockscreen_enable_power_menu_summary">Questa opzione disattiverà il menu di spegnimento nella schermata di blocco</string>
   <!-- CM Lockscreen shortcuts -->
-  <string name="lockscreen_targets_message">Scorciatoie con swipe nella schermata di sblocco</string>
+  <string name="lockscreen_targets_message">Scelta rapida a scorrimento</string>
   <string name="lockscreen_bottom_summary">Personalizza le scorciatoie con swipe in basso nella schermata di blocco</string>
   <!-- Gesture Anywhere -->
   <string name="gesture_anywhere_title">Gesture Ovunque</string>
@@ -472,7 +473,7 @@
   <string name="shortcut_action_add">Aggiungi</string>
   <string name="shortcut_action_reset_message">Reimpostare tutte le voci di default?</string>
   <string name="shortcut_action_max">È stata raggiunta la quantità massima di voci</string>
-  <string name="shortcut_action_warning">Attenzione</string>
+  <string name="shortcut_action_warning">Avviso</string>
   <string name="shortcut_action_warning_message">Non è possibile eliminare l\'ultima voce</string>
   <string name="shortcut_action_disable_message">Disattivato\nAggiungi una voce per attivare questa funzionalità</string>
   <string name="shortcut_image_not_valid">L\'app scelta non restituisce un\'icona valida o non supporta il ritaglio dell\'immagine. Usa un\'altra app.</string>
@@ -481,9 +482,9 @@
   <string name="shortcut_action_help_button">pulsante</string>
   <string name="shortcut_action_help_app">app</string>
   <string name="shortcut_action_help_icon">, mentre selezionando l\'icona si apriranno le opzioni di personalizzazione</string>
-  <string name="shortcut_action_help_main">Per aggiungere un %1$s, seleziona Aggiung icona. Una volta che un %1$s viene aggiunto, la riga selezionata cambierà l\'obiettivo%2$s\n\nPer rimuovere un %1$s, scorri la riga orizzontalmente da sinistra a destra. Riordina un %1$s nella lista trascinando verticalmente l\'ancora sulla sinistra.\n\nPer cancellare o ripristinare ai predefiniti, seleziona l\'icona di Reset.</string>
-  <string name="shortcut_action_help_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà completamente la funzione.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà completamente il secondo strato Pie.</string>
+  <string name="shortcut_action_help_main">Per aggiungere una %1$s, selezionare l\'icona Aggiungi. Dopo aver aggiunto una %1$s, selezionando il titolo si potrà cambiare la scelta fatta%2$s\n\nPer rimuovere una %1$s, sfiora la riga desiderata verso sinistra o destra. Riordinare una %1$s nell\'elenco trascinando verticalmente l\'ancoraggio a sinistra.\n\nPer pulire o resettare alle impostazioni predefinite, selezionare l\'opzione di Reset.</string>
+  <string name="shortcut_action_help_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà la funzione.</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà il secondo strato pie.</string>
   <string name="shortcut_action_none">Nessuna</string>
   <string name="shortcut_action_app">App personalizzata</string>
   <string name="shortcut_action_home">Home</string>
@@ -510,7 +511,7 @@
   <string name="shortcut_action_add">Aggiungi</string>
   <string name="shortcut_action_reset_message">Reimpostare tutte le voci di default?</string>
   <string name="shortcut_action_max">È stata raggiunta la quantità massima di voci</string>
-  <string name="shortcut_action_warning">Attenzione</string>
+  <string name="shortcut_action_warning">Avviso</string>
   <string name="shortcut_action_warning_message">Non è possibile eliminare l\'ultima voce</string>
   <string name="shortcut_action_disable_message">Disattivato\nAggiungi una voce per attivare questa funzionalità</string>
   <string name="shortcut_image_not_valid">L\'app scelta non restituisce un\'icona valida o non supporta il ritaglio dell\'immagine. Usa un\'altra app.</string>
@@ -520,8 +521,8 @@
   <string name="shortcut_action_help_app">app</string>
   <string name="shortcut_action_help_icon">, mentre selezionando l\'icona si apriranno le opzioni di personalizzazione</string>
   <string name="shortcut_action_help_main">Per aggiungere una %1$s, selezionare l\'icona Aggiungi. Dopo aver aggiunto una %1$s, selezionando il titolo si potrà cambiare la scelta fatta%2$s\n\nPer rimuovere una %1$s, sfiora la riga desiderata verso sinistra o destra. Riordinare una %1$s nell\'elenco trascinando verticalmente l\'ancoraggio a sinistra.\n\nPer pulire o resettare alle impostazioni predefinite, selezionare l\'opzione di Reset.</string>
-  <string name="shortcut_action_help_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà completamente la funzione.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà completamente il secondo strato Pie.</string>
+  <string name="shortcut_action_help_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà la funzione.</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Rimuovendo ogni %1$s dalla lista disabiliterà il secondo strato pie.</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">Media cover art</string>
   <string name="media_art_summary">Attiva cover art nella schermata di blocco</string>
@@ -634,11 +635,11 @@
   <string name="notification_light_missed_call_title">Chiamata persa</string>
   <string name="notification_light_voicemail_title">Segreteria</string>
   <string name="notification_light_screen_on">LED con schermo acceso</string>
-  <string name="notification_light_zen_mode">Luci in modalità Non Disturbare</string>
+  <string name="notification_light_zen_mode">LED in modalità Non Disturbare</string>
   <string name="notification_light_use_multiple_leds">LED Multipli</string>
   <string name="keywords_lights_brightness_level">Dim luminosità LED</string>
   <string name="notification_light_automagic">AutoColorazione</string>
-  <string name="notification_light_automagic_summary">Settea automaticamente un colore adeguato per il led di notifica se l\'applicazione non ha valore personalizzati</string>
+  <string name="notification_light_automagic_summary">Setta automaticamente un colore adeguato per il led di notifica se l\'applicazione non ha valore personalizzati</string>
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Impostazioni LED</string>
   <string name="led_notification_text">Luce LED abilitata dalle impostazioni</string>
@@ -672,7 +673,7 @@
   <string name="volbtn_up_zen_title">Vol+ in modalità non disturbare</string>
   <string name="volbtn_up_zen_summary">Consenti al tasto vol+ di far uscire dalla modalità non disturbare</string>
   <!-- Volume do not disturb switch -->
-  <string name="vol_zen_title">switch a Non Disturbare</string>
+  <string name="vol_zen_title">Switch a Non Disturbare</string>
   <string name="vol_zen_summary">Mostra lo switch Non Disturbare nel pannello volume</string>
   <!-- Statusbar Clock options -->
   <string name="status_bar_title">Barra di stato</string>
@@ -711,7 +712,7 @@
   <string name="clock_date_style_uppercase">Maiuscolo</string>
   <string name="clock_date_format_custom">Formato java personalizzato</string>
   <!-- Quick Settings brightness slider -->
-  <string name="qs_brightness_slider_title">Cursore di Luminosità</string>
+  <string name="qs_brightness_slider_title">Cursore di luminosità</string>
   <string name="qs_brightness_slider_summary">Mostra cursore luminosità nel pannello Impostazioni rapide</string>
   <string name="brightness_icon_title">Icona luminosità </string>
   <string name="brightness_icon_summary">Mostra icona luminosità a sinistra dello slider luminosità per regolare la luminosità automatica</string>
@@ -719,7 +720,7 @@
   <string name="quick_settings_vibrate_title">Vibra al tocco</string>
   <string name="quick_settings_vibrate_summary">Vibrazione quando si toccano i tile</string>
   <!-- Advanced data tile -->
-  <string name="qs_advanced_data_title">Tile dati rete avanzato</string>
+  <string name="qs_advanced_data_title">Tile rete dati semplice</string>
   <string name="qs_advanced_data_summary">Abilita il tocco singolo per attivare o disattivare i dati</string>
   <!-- Lockscreen Torch -->
   <string name="keyguard_torch_title">Torcia su schermata di blocco</string>
@@ -728,10 +729,11 @@
   <string name="display_lockscreen_rotation_title">Rotazione schermata sblocco</string>
   <!-- Quick settings tiles columns and rows config -->
   <string name="qs_layout_category">Disposizione dei Tile</string>
-  <string name="qs_rows_portrait_title">Righe (verticale)</string>
-  <string name="qs_rows_landscape_title">Righe (orizzontale)</string>
+  <string name="qs_rows_portrait_title">Righe (in verticale)</string>
+  <string name="qs_rows_landscape_title">Righe (in orizzontale)</string>
   <string name="qs_columns_title">Colonne</string>
-  <string name="sysui_qqs_count_title">Tile con barra di stato semichiusa</string>
+  <string name="qqs_scroll_title">Scroll dei tile a tendina semichiusa</string>
+  <string name="qqs_scroll_summary">Permette lo scroll dei tile sul pannello delle impostazioni rapide semichiuso</string>
   <string name="qs_tile_title_visibility_title">Titoli tile</string>
   <string name="qs_tile_title_visibility_summary_on">Titoli tile ora visibili</string>
   <string name="qs_tile_title_visibility_summary_off">Titoli tile ora non visibili</string>
@@ -767,7 +769,7 @@
   <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
   <string name="status_bar_battery_style_tile_title">Stile tile batteria personalizzato</string>
   <string name="status_bar_battery_style_tile_summary">Permette di impostare lo stesso stile di icona scelto per la batteria nella barra di stato</string>
-  <string name="status_bar_charge_color_title">Colore icona batteria in carica su barra di stato</string>
+  <string name="status_bar_charge_color_title">Colore icona batteria in carica</string>
   <string name="status_bar_charge_color_summary">Imposta il colore dell\'icona batteria quando è in carica nella barra di stato</string>
   <string name="force_charge_battery_text_title">Percentuale batteria in carica</string>
   <string name="force_charge_battery_text_summary_on">Mostra la percentuale della batteria fuori dall\'icona durante la carica</string>
@@ -924,6 +926,9 @@
   <string name="smartbar_button_animation_summary">Imposta lo stile di animazione dei pulsanti quando vengono premuti</string>
   <string name="smartbar_button_animation_ripple">Ripple</string>
   <string name="smartbar_button_animation_spring">Spring</string>
+  <string name="smartbar_button_animation_pixel">Pixel (tutti i pulsanti)</string>
+  <string name="smartbar_button_animation_pixel_home">Pixel (solo tasto Home)</string>
+  <string name="smartbar_button_animation_pixel_home_ripple">Pixel (solo tasto Home) e Ripple</string>
   <string name="smartbar_factory_reset_title">Reimposta stock</string>
   <string name="smartbar_factory_reset_confirm">Sei sicuro di voler resettare Smarbar alle impostazioni di default?</string>
   <string name="smartbar_ime_action_title">Azioni metodo di input</string>
@@ -1131,10 +1136,10 @@
   <string name="screenshot_delay_title">Ritardo screenshot</string>
   <string name="screenshot_delay_summary">Regola in quanto tempo lo screenshot è catturato</string>
   <!-- BT easy toggle -->
-  <string name="qs_bt_easy_toggle_title">Toggle semplice bluetooth</string>
+  <string name="qs_bt_easy_toggle_title">Tile bluetooth semplice</string>
   <string name="qs_bt_easy_toggle_summary">Permette con un clic di attivare o disattivare il Bluetooth invece di avviare le impostazioni</string>
   <!-- WiFi easy toggle -->
-  <string name="qs_wifi_easy_toggle_title">Toggle semplice WiFi</string>
+  <string name="qs_wifi_easy_toggle_title">Tile WiFi semplice</string>
   <string name="qs_wifi_easy_toggle_summary">Abilita il tocco singolo per attivare o disattivare il WiFi</string>
   <!-- On-The-Go -->
   <string name="power_menu_onthego_title">Modalità On-The-Go</string>
@@ -1164,8 +1169,8 @@
   <string name="power_menu_transparency">Trasparenza menu di spegnimento/riavvio</string>
   <string name="power_menu_dialog_dim">Opacità sfondo dietro finestra menu di spegnimento/riavvio</string>
   <!-- SS summary text -->
-  <string name="ss_settings_summary_title">Frase personalizzata nella descrizione SS in impostazioni</string>
-  <string name="custom_summary_title">Frase personalizzata SS</string>
+  <string name="ss_settings_summary_title">Frase a piacere nelle impostazioni screw\'d</string>
+  <string name="custom_summary_title">Frase personalizzata</string>
   <string name="custom_summary_explain">Inserisci una nuova frase. Lascia vuoto per ritornare al testo predefinito.</string>
   <!-- Custom summaries -->
   <string name="custom_summary_randomize_title">Frasi casuali</string>
@@ -1182,15 +1187,15 @@
   <string name="sum10">↑ ↑ ↓ ↓ ← → ← → B A</string>
   <string name="sum11">Choppin \'em up...</string>
   <!-- Volume key controls media stream -->
-  <string name="volume_keys_control_media_stream_title">I tasti volume regolano il volume multimediale</string>
+  <string name="volume_keys_control_media_stream_title">I tasti +/- regolano il volume media</string>
   <string name="volume_keys_control_media_stream_summary">Forza i tasti del volume a controllare la riproduzione multimediale</string>
   <!-- lock screen visualizer -->
-  <string name="lockscreen_visualizer_title">Visualizza music visualizer</string>
+  <string name="lockscreen_visualizer_title">Mostra music visualizer</string>
   <!-- Quick Settings on lockscreen -->
   <string name="lockscreen_qs_disabled_title">Disattiva le impostazioni rapide quando bloccato</string>
   <string name="lockscreen_qs_disabled_summary">Disattiva scorciatoie e impostazioni rapide sulla schermata di blocco sicura</string>
   <!-- Screw'd Settings tabs slide effects -->
-  <string name="tabs_effect_title">Transizioni schede nelle opzioni Screw\'d</string>
+  <string name="tabs_effect_title">Transizione schede nelle opzioni Screw\'d</string>
   <string name="effect_default">Predefinita</string>
   <string name="effect_accordion">Fisarmonica</string>
   <string name="effect_background_to_foreground">Sfondo in primo piano</string>
@@ -1241,19 +1246,21 @@
   <string name="battery_bar_style_regular">Regolare</string>
   <string name="battery_bar_style_center_mirrored">Centro-specchiato</string>
   <string name="battery_bar_style_reversed">Invertita</string>
-  <string name="battery_bar_use_charging_color">Colore personalizzato durante la carica</string>
+  <string name="battery_bar_use_charging_color">Colore durante la carica</string>
   <string name="battery_bar_blend_color_title">Miscela colori</string>
   <string name="battery_bar_blend_color_summary">Fondi i colori pieni/vuoti corrispondenti alla percentuale della batteria</string>
   <string name="battery_bar_blend_color_reverse_title">Inverti la direzione del colore</string>
   <string name="battery_bar_blend_color_reverse_summary_off">Completa → vuota: rosso ← verde ← blu ← rosso</string>
   <string name="battery_bar_blend_color_reverse_summary_on">Completa → vuota: rosso → verde → blu → rosso</string>
   <!-- Battery Saver easy toggle -->
-  <string name="qs_battery_easy_toggle_title">Toggle semplice tile batteria</string>
-  <string name="qs_battery_easy_toggle_summary">Permette con un clic di attivare o disattivare Battery Saver invece di avviare le impostazioni</string>
+  <string name="qs_battery_easy_toggle_title">Tile risparmio energetico semplice</string>
+  <string name="qs_battery_easy_toggle_summary">Permette con un clic di attivare o disattivare il risparmio energetico invece di avviare le impostazioni</string>
   <!-- QS Header Icons -->
-  <string name="qs_settings_icon_title">Scorciatoia impostazioni</string>
+  <string name="qs_settings_icon_title">Icona impostazioni</string>
   <string name="qs_settings_icon_summary">Disattiva le scorciatoie impostazioni nell\'intestazione</string>
-  <string name="qs_edit_title">Modifica l\'icona</string>
+  <string name="qs_running_services_title">Icona servizi in esecuzione</string>
+  <string name="qs_running_services_summary">Disattiva l\'icona servizi in esecuzione nell\'intestazione</string>
+  <string name="qs_edit_title">Icona modifica tile</string>
   <string name="qs_edit_summary">Disattiva l\'icona modifica tile nell\'intestazione</string>
   <string name="qs_multiuser_switch_title">Switch Multi-utente</string>
   <string name="qs_multiuser_switch_summary">Disattiva lo switch multi-utente nell\'intestazione</string>
@@ -1264,7 +1271,7 @@
   <string name="qs_date_time_center_summary">Richiede una o più icone per essere disabilitato</string>
   <!-- Recents Membar -->
   <string name="systemui_recents_mem_display_title">Mostra barra di memoria</string>
-  <string name="systemui_recents_mem_display_summary">Mostra quanta RAM è usata nella vista recenti</string>
+  <string name="systemui_recents_mem_display_summary">Mostra quanta RAM è usata nella modalità recenti</string>
   <!-- Blur UI -->
   <string name="nav_blur_ui_title">UI Sfocatura</string>
   <string name="blur_ui_category_title">Sfocatura</string>
@@ -1297,15 +1304,15 @@
   <string name="blur_colors_notice">A cosa servono questi colori?</string>
   <string name="blur_colors_notice_summary">Questi colori sono quelli che tingono gli sfondi sfocati. Invece del grigio normale, ora è possibile scegliere i colori che più vi piacciano. \nCi sono tre filtri colore disponibili per: sfondi chiari, scuri e chiari/scuri. \nQuindi come lavorano questi colori?? \n Semplice, come dice il titolo, verrà utilizzato il filtro chiaro per sfondi più chiari, filtro scuro per sfondi scuri e il filtro misto verrà utilizzato per gli sfondi non troppo scuri, ma nemmeno troppo chiari. \nQuesti colori vengono utilizzati per entrambi gli sfondi sfocati: Drawer di Notifica e App Recenti </string>
   <!-- Time-context headers in notification header -->
-  <string name="status_bar_custom_header_title">Immagine intestazione personalizzata</string>
-  <string name="status_bar_custom_header_summary">Attiva immagine intestazione nel pannello notifiche</string>
+  <string name="status_bar_custom_header_title">Immagine di intestazione</string>
+  <string name="status_bar_custom_header_summary">Attiva un\'immagine di intestazione personalizzata nel pannello notifiche</string>
   <string name="daylight_header_pack_title">Pacchetto immagini intestazione</string>
   <string name="status_bar_custom_header_shadow_title">Ombra immagini intestazione</string>
   <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità su immagini luminose</string>
   <string name="unit_percent">\u0025</string>
   <string name="static_header_provider_title">Statica</string>
   <string name="daylight_header_provider_title">Dinamica</string>
-  <string name="custom_header_provider_title">Provider di intestazione</string>
+  <string name="custom_header_provider_title">Stile di intestazione</string>
   <string name="custom_header_browse_title">Sfoglia le intestazioni installate</string>
   <string name="custom_header_browse_summary">Pressione lunga su qualsiasi immagine per utilizzare la modalità statica</string>
   <!-- DUI Double Tap to Sleep -->
@@ -1366,7 +1373,7 @@
   <string name="screen_state_toggles_summary">\@null</string>
   <string name="screen_state_toggles_title">Azioni di sospensione</string>
   <string name="screen_state_toggles_enable_title">Attiva</string>
-  <string name="screen_state_toggles_enable_summary">Azioni saranno eseguite sullo schermo spento. Verrà ripristinato sullo schermo allo stato precedente.</string>
+  <string name="screen_state_toggles_enable_summary">Determinate azioni verranno eseguite a schermo spento. Una volta riacceso, verrà ripristinato lo stato precedente.</string>
   <string name="screen_state_toggles_mobile_title">Reti mobili</string>
   <string name="screen_state_toggles_location_title">Posizione</string>
   <string name="screen_state_toggles_twog">Passa a 2G</string>
@@ -1380,5 +1387,29 @@
   <string name="screen_state_on_delay_title">Ritardo dell\'azione a schermo acceso</string>
   <string name="screen_state_on_delay_summary">Numero di secondi da aspettare prima di eseguire le azioni a schermo acceso</string>
   <!-- Slim Recent panel -->
+  <string name="slim_recents_title">Menu recenti Slim</string>
+  <string name="use_slim_recents_title">Usa Slim Recents</string>
+  <string name="use_slim_recents_summary">Usa Slim recents invece della visualizzazione dei recenti predefinita</string>
+  <string name="slim_recents_settings_title">Impostazioni Slim recents</string>
+  <string name="slim_recents_settings_summary">Visualizza le impostazioni per slim recents</string>
+  <string name="recent_panel_category">Pannello Slim app recenti</string>
+  <string name="show_running_tasks_title">Mostra solo le app in esecuzione</string>
+  <string name="recents_max_apps_title">Massime applicazioni consentite</string>
+  <string name="recent_panel_scale_title">Dimensione</string>
+  <string name="recent_panel_expanded_mode_title">Modalità estesa</string>
+  <string name="recent_panel_expanded_mode_summary">Modalità anteprima delle app recenti espanse</string>
+  <string name="recent_panel_expanded_mode_auto">Automatico (predefinito)</string>
+  <string name="recent_panel_expanded_mode_always">Sempre</string>
+  <string name="recent_panel_expanded_mode_never">Mai</string>
+  <string name="recent_panel_show_topmost_title">Visualizza attività in primo piano</string>
+  <string name="recent_panel_show_topmost_summary">Non escludere l\' app in primo piano nel pannello app recenti</string>
+  <string name="recent_panel_bg_color_title">Colore di sfondo del pannello</string>
+  <string name="recent_card_bg_color_title">Colore sfondo della scheda</string>
+  <string name="recent_card_text_color_title">Colore testo della scheda</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <string name="recent_panel_lefty_mode_title">Mostra sul lato sinistro</string>
+  <string name="recent_panel_lefty_mode_summary">Mostra il pannello app recenti sul lato sinistro</string>
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>

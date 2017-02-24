@@ -42,7 +42,6 @@
   <string name="profile_choose_app">Kies app</string>
   <string name="profile_reset_title">Opnieuw instellen</string>
   <string name="show_title">Tonen</string>
-  <string name="choose_app">Kies app</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -71,9 +70,7 @@
   <string name="ex_desk">Uitgebreid bureaublad</string>
   <string name="sounds">Geluiden</string>
   <string name="misc">Diversen</string>
-  <string name="animations">Animaties</string>
   <string name="trans">Transparantie</string>
-  <string name="sounds">Geluiden</string>
   <string name="buttons">Knoppen</string>
   <!-- Categories -->
   <string name="general">Algemeen</string>
@@ -257,7 +254,6 @@
   <string name="power_menu_animation_bottom">Onderkant</string>
   <string name="power_menu_animation_top">Bovenkant</string>
   <string name="power_menu_animation_rotate">Rotatie</string>
-  <string name="power_menu_animation_rotate">Rotatie</string>
   <string name="power_menu_animation_xylon">Vliegen</string>
   <string name="power_menu_animation_slide">Schuiven</string>
   <string name="power_menu_animation_turn">Draaien</string>
@@ -410,7 +406,6 @@
   <string name="lockscreen_shorcuts_longpress_title">Lang indrukken snelkoppelingen</string>
   <string name="lockscreen_shorcuts_longpress_summary">Aangepaste vergrendelscherm snelkoppelingen openen bij langdrukken</string>
   <string name="lockscreen_shortcuts_category">Snelkoppelingen</string>
-  <string name="shortcut_action_none">Geen</string>
   <string name="shortcut_action_app">Aangepaste app</string>
   <string name="shortcut_action_home">Home</string>
   <string name="shortcut_action_back">Terug</string>
@@ -428,64 +423,7 @@
   <string name="shortcut_action_media_play_pause">Muziek - afspelen/pauzeren</string>
   <string name="shortcut_action_media_previous">Muziek - vorige track</string>
   <string name="shortcut_action_wake_device">Apparaat ontwaken</string>
-  <string name="shortcut_action_longpress">Lang indrukken:</string>
-  <string name="shortcut_action_select_action_longpress">Kies langdruk actie:</string>
-  <string name="shortcut_action_select_action">Actie selecteren:</string>
-  <string name="shortcut_action_select_action_newaction">Kies nieuwe actie:</string>
-  <string name="shortcut_action_reset">Opnieuw instellen</string>
-  <string name="shortcut_action_add">Voeg toe</string>
-  <string name="shortcut_action_reset_message">Alles terugzetten naar standaard?</string>
-  <string name="shortcut_action_max">Maximale aantal shortcuts is bereikt</string>
-  <string name="shortcut_action_warning">Waarschuwing</string>
-  <string name="shortcut_action_warning_message">Het is niet mogelijk om de laatste entry te verwijderen</string>
-  <string name="shortcut_action_disable_message">Uitgeschakeld\nVoeg een entry toe om deze functie in te schakelen</string>
-  <string name="shortcut_image_not_valid">De gekozen app heeft geen icoon laten zien, of accepteert geen bijsnijden. Gebruik een andere app.</string>
-  <string name="shortcut_duplicate_entry">De gekozen actie kan niet twee keer worden toegevoegd</string>
-  <string name="shortcut_action_help_shortcut">snelkoppeling</string>
-  <string name="shortcut_action_help_button">knop</string>
-  <string name="shortcut_action_help_app">app</string>
-  <string name="shortcut_action_help_icon">, tijdens selecteren van het icoon laat de aanpassingsopties zien</string>
   <string name="shortcut_action_help_main">Om een %1$s toe te voegen, selecteer het Toevoeg icoon. Op het moment dat %1$s is toegevoegd, zal het selecteren van de rij het doel aanpassen%2$s\n\nSleep de rij horizontaal naar links of naar rechts om een %1$s te verwijderen. Herschik %1$s in de lijst door vertikaal te slepen naar het ankerpunt aan de linkerzijde.\n\nOm alles te herstellen naar standaard waarden, selecteer het Herstel icoon.</string>
-  <string name="shortcut_action_help_delete_last_entry">Alle %1$s verwijderen uit de lijst zal de functie volledig uitschakelen.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Alle %1$s verwijderen in de lijst zal de tweede Pie ring volledig uitschakelen.</string>
-  <string name="shortcut_action_none">Geen</string>
-  <string name="shortcut_action_app">Aangepaste app</string>
-  <string name="shortcut_action_home">Home</string>
-  <string name="shortcut_action_back">Terug</string>
-  <string name="shortcut_action_menu">Menu</string>
-  <string name="shortcut_action_ime">Open IME schakelaar</string>
-  <string name="shortcut_action_power_menu">Power-menu</string>
-  <string name="shortcut_action_recent">Recent</string>
-  <string name="shortcut_action_power">Scherm uit</string>
-  <string name="shortcut_action_search">Zoeken in app</string>
-  <string name="shortcut_action_ring_vib">Ring/Vib</string>
-  <string name="shortcut_action_ring_silent">Geluid/stil</string>
-  <string name="shortcut_action_ring_vib_silent">Ring/Vib/Stil</string>
-  <string name="shortcut_action_camera">Camera</string>
-  <string name="shortcut_action_media_next">Muziek - volgende track</string>
-  <string name="shortcut_action_media_play_pause">Muziek - afspelen/pauzeren</string>
-  <string name="shortcut_action_media_previous">Muziek - vorige track</string>
-  <string name="shortcut_action_wake_device">Apparaat ontwaken</string>
-  <string name="shortcut_action_longpress">Lang indrukken:</string>
-  <string name="shortcut_action_select_action_longpress">Kies langdruk actie:</string>
-  <string name="shortcut_action_select_action">Actie selecteren:</string>
-  <string name="shortcut_action_select_action_newaction">Kies nieuwe actie:</string>
-  <string name="shortcut_action_reset">Opnieuw instellen</string>
-  <string name="shortcut_action_add">Voeg toe</string>
-  <string name="shortcut_action_reset_message">Alles terugzetten naar standaard?</string>
-  <string name="shortcut_action_max">Maximale aantal shortcuts is bereikt</string>
-  <string name="shortcut_action_warning">Waarschuwing</string>
-  <string name="shortcut_action_warning_message">Het is niet mogelijk om de laatste entry te verwijderen</string>
-  <string name="shortcut_action_disable_message">Uitgeschakeld\nVoeg een entry toe om deze functie in te schakelen</string>
-  <string name="shortcut_image_not_valid">De gekozen app heeft geen icoon laten zien, of accepteert geen bijsnijden. Gebruik een andere app.</string>
-  <string name="shortcut_duplicate_entry">De gekozen actie kan niet twee keer worden toegevoegd</string>
-  <string name="shortcut_action_help_shortcut">snelkoppeling</string>
-  <string name="shortcut_action_help_button">knop</string>
-  <string name="shortcut_action_help_app">app</string>
-  <string name="shortcut_action_help_icon">, tijdens selecteren van het icoon laat de aanpassingsopties zien</string>
-  <string name="shortcut_action_help_main">Om een %1$s toe te voegen, selecteer het Toevoeg icoon. Op het moment dat %1$s is toegevoegd, zal het selecteren van de rij het doel aanpassen%2$s\n\nSleep de rij horizontaal naar links of naar rechts om een %1$s te verwijderen. Herschik %1$s in de lijst door vertikaal te slepen naar het ankerpunt aan de linkerzijde.\n\nOm alles te herstellen naar standaard waarden, selecteer het Herstel icoon.</string>
-  <string name="shortcut_action_help_delete_last_entry">Alle %1$s verwijderen uit de lijst zal de functie volledig uitschakelen.</string>
-  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Alle %1$s verwijderen in de lijst zal de tweede Pie ring volledig uitschakelen.</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">Hoesafbeeldingen media</string>
   <string name="media_art_summary">Toon hoesafbeeldingen media op het vergrendelscherm</string>
@@ -565,7 +503,6 @@
   <string name="led_color_green">Groen</string>
   <string name="led_color_red">Rood</string>
   <string name="led_color_blue">Blauw</string>
-  <string name="ok">Oké</string>
   <string name="advanced">Geadvanceerd</string>
   <string name="profiles_add">Voeg toe...</string>
   <!-- Notification light dialogs -->
@@ -590,7 +527,6 @@
   <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Notificatie-led</string>
   <string name="notificationlight_title">Notificatie LED instellingen</string>
-  <string name="notification_light_general_title">Algemeen</string>
   <string name="notification_light_applist_title">Apps</string>
   <string name="notification_light_phonelist_title">Telefoon</string>
   <string name="notification_light_use_custom">Gebruik aangepaste waarden</string>
@@ -695,7 +631,6 @@
   <string name="qs_rows_portrait_title">Rijen (staand)</string>
   <string name="qs_rows_landscape_title">Rijen (liggend)</string>
   <string name="qs_columns_title">Kolommen</string>
-  <string name="sysui_qqs_count_title">Kleine QS tegels</string>
   <string name="qs_tile_title_visibility_title">QS tegel titels</string>
   <string name="qs_tile_title_visibility_summary_on">QS tegels titels zijn nu zichtbaar</string>
   <string name="qs_tile_title_visibility_summary_off">QS tegels titels zijn nu verdwenen</string>
@@ -1244,4 +1179,7 @@
   <!-- Screen state service -->
   <!-- Slim Recent panel -->
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <!-- Wired headset ringtone audio focus -->
+  <!-- fingerprint authentication vibration -->
+  <!-- Fingerprint unlock keystore -->
 </resources>
