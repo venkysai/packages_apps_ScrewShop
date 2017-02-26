@@ -57,4 +57,13 @@
         android:title="@string/screen_state_toggles_title" 
         android:fragment="com.mrapocalypse.screwdshop.frags.ScreenStateToggles" />
 
+     <PreferenceScreen
+        android:key="extradoze"
+        android:title="@string/doze_settings" >
+        <intent
+            android:action="com.android.settings.action.EXTRA_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.doze"
+            android:targetClass="com.cyanogenmod.settings.doze.DozeSettings" />
+     </PreferenceScreen>
+
 </PreferenceScreen>
