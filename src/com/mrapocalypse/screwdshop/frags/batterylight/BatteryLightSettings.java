@@ -90,7 +90,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         mPulsePref = (SystemSettingSwitchPreference)prefSet.findPreference(BATTERY_PULSE_PREF);
         mPulsePref.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.BATTERY_LIGHT_PULSE, mBatteryLightEnabled ? 1 : 0) != 0);
+                        Settings.System.BATTERY_LIGHT_PULSE, 0) != 0);
         mPulsePref.setOnPreferenceChangeListener(this);
 
         // Does the Device support changing battery LED colors?
