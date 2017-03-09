@@ -29,6 +29,21 @@
                     android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
         </Preference>
 
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingListPreference
+            android:key="status_bar_logo"
+            android:title="@string/status_bar_logo_title"
+            android:dialogTitle="@string/status_bar_logo_dialog_title"
+            android:entries="@array/status_bar_logo_entries"
+            android:entryValues="@array/status_bar_logo_values"
+            android:defaultValue="0" />
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingListPreference
+            android:key="status_bar_show_weather_temp"
+            android:title="@string/statusbar_weather_title"
+            android:dialogTitle="@string/statusbar_weather_dialog_title"
+            android:entries="@array/status_bar_weather_entries"
+            android:entryValues="@array/status_bar_weather_values" />
+
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
             android:key="network_traffic_state"
             android:title="@string/network_traffic_state_title"
@@ -41,14 +56,6 @@
             android:max="10"
             settings:min="0"
             settings:units="" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingListPreference
-            android:key="status_bar_logo"
-            android:title="@string/status_bar_logo_title"
-            android:dialogTitle="@string/status_bar_logo_dialog_title"
-            android:entries="@array/status_bar_logo_entries"
-            android:entryValues="@array/status_bar_logo_values"
-            android:defaultValue="0" />
 
     </PreferenceCategory>
 
