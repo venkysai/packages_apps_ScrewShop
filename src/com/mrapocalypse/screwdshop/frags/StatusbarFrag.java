@@ -33,6 +33,7 @@ import android.os.UserHandle;
 import android.preference.EditTextPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
@@ -342,7 +343,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
 
         // Status bar weather
         mStatusBarWeather = (ListPreference) prefSet.findPreference(PREF_STATUS_BAR_WEATHER);
-        if (mStatusBarWeather != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
+        if (mStatusBarWeather != null && (!screwdUtils.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
             categoryIndicators.removePreference(mStatusBarWeather);
         } else {
             int temperatureShow = Settings.System.getIntForUser(resolver,
