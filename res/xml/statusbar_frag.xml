@@ -198,10 +198,11 @@
               android:summary="@string/status_bar_notif_count_summary"
               android:persistent="false" />
 
-        <Preference
-           android:key="ticker"
-           android:title="@string/ticker_screen_title"
-           android:fragment="com.mrapocalypse.screwdshop.frags.StatusBarTickerSettings" />
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="status_bar_show_ticker"
+            android:title="@string/ticker_title"
+            android:summary="@string/ticker_summary"
+            android:defaultValue="false" />
 
      </PreferenceCategory>
 

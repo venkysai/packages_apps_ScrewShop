@@ -87,6 +87,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CHARGE_COLOR = "status_bar_charge_color";
     private static final String FORCE_CHARGE_BATTERY_TEXT = "force_charge_battery_text";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
+    private static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -123,6 +124,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private SwitchPreference mForceChargeBatteryText;
     private ListPreference mTextChargingSymbol;
     private int mTextChargingSymbolValue;
+    private SwitchPreference mShowTicker;
 
 
     @Override
@@ -326,6 +328,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         mTextChargingSymbol.setOnPreferenceChangeListener(this);
 
         enableStatusBarBatteryDependents();
+
+        mShowTicker = (SwitchPreference) findPreference(STATUS_BAR_SHOW_TICKER);
+        mShowTicker.setOnPreferenceChangeListener(this);
+        int ShowTicker = Settings.System.getInt(getContentResolver(),
+                STATUS_BAR_SHOW_TICKER, 0);
+        mShowTicker.setChecked(ShowTicker != 0);
     }
 
 
@@ -522,6 +530,11 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                     mTextChargingSymbol.getEntries()[index]);
             Settings.Secure.putInt(resolver,
                     Settings.Secure.TEXT_CHARGING_SYMBOL, mTextChargingSymbolValue);
+            return true;
+        } else if (preference == mShowTicker) {
+            boolean value = (Boolean) newValue;
+            Settings.Global.putInt(getContentResolver(), STATUS_BAR_SHOW_TICKER,
+                    value ? 1 : 0);
             return true;
         }
         return false;
