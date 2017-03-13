@@ -231,6 +231,7 @@
      </PreferenceCategory>
 
      <PreferenceCategory
+        android:key="pref_cat_icons"
         android:title="@string/icons">
 
         <PreferenceScreen

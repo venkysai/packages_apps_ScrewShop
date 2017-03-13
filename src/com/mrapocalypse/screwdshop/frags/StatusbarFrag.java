@@ -89,6 +89,8 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
     private static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
     private static final String PREF_STATUS_BAR_WEATHER = "status_bar_weather";
+    private static final String PREF_CATEGORY_INDICATORS = "pref_cat_icons";
+    private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -143,6 +145,8 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         } catch (Exception e) {
             // do something
         }
+
+        PreferenceCategory categoryIndicators = (PreferenceCategory) prefSet.findPreference(PREF_CATEGORY_INDICATORS);
 
         mEnableNC = (SwitchPreference) findPreference(STATUS_BAR_NOTIF_COUNT);
         mEnableNC.setOnPreferenceChangeListener(this);
@@ -336,20 +340,23 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 STATUS_BAR_SHOW_TICKER, 0);
         mShowTicker.setChecked(ShowTicker != 0);
 
-       // Status bar weather
-       mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
-       int temperatureShow = Settings.System.getIntForUser(resolver,
-               Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
-               UserHandle.USER_CURRENT);
-       mStatusBarWeather.setValue(String.valueOf(temperatureShow));
-       if (temperatureShow == 0) {
-           mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
-       } else {
-           mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
-       }
-          mStatusBarWeather.setOnPreferenceChangeListener(this);
+        // Status bar weather
+        mStatusBarWeather = (ListPreference) prefSet.findPreference(PREF_STATUS_BAR_WEATHER);
+        if (mStatusBarWeather != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
+            categoryIndicators.removePreference(mStatusBarWeather);
+        } else {
+            int temperatureShow = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
+                UserHandle.USER_CURRENT);
+            mStatusBarWeather.setValue(String.valueOf(temperatureShow));
+            if (temperatureShow == 0) {
+                mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+            } else {
+                mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
+            }
+            mStatusBarWeather.setOnPreferenceChangeListener(this);
+        }
     }
-
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
