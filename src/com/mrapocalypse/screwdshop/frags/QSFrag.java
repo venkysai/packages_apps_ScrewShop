@@ -73,6 +73,7 @@ public class QSFrag extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+    private static final String CATEGORY_WEATHER = "weather_category";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;

@@ -343,7 +343,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
 
         // Status bar weather
         mStatusBarWeather = (ListPreference) prefSet.findPreference(PREF_STATUS_BAR_WEATHER);
-        if (mStatusBarWeather != null && (!screwdUtils.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
+        if (mStatusBarWeather != null && (!screwdUtils.isPackageInstalled(getActivity(),WEATHER_SERVICE_PACKAGE))) {
             categoryIndicators.removePreference(mStatusBarWeather);
         } else {
             int temperatureShow = Settings.System.getIntForUser(resolver,
