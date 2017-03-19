@@ -17,6 +17,15 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+     <PreferenceScreen
+            android:key="oneplus_gestures"
+            android:title="@string/oneplus_gestures" >
+            <intent
+                android:action="com.android.settings.action.EXTRA_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+     </PreferenceScreen>
+
      <Preference
         android:key="gest_any"
         android:title="@string/gestureany"

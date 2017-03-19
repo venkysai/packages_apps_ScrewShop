@@ -18,11 +18,12 @@ package com.mrapocalypse.screwdshop.tabs;
 
 import android.os.Bundle;
 import android.app.Fragment;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
+import com.android.internal.util.screwd.screwdUtils;
+
 //import com.mrapocalypse.screwdshop.R;
 
 /**
@@ -41,10 +44,22 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener{
 
+    private static final String KEY_ONEPLUS_GESTURES = "oneplus_gestures";
+    private static final String KEY_ONEPLUS_GESTURES_PACKAGE_NAME = "com.cyanogenmod.settings.device";
+
+    private PreferenceScreen mOneplusGestures;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.nav_tab);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        mOneplusGestures = (PreferenceScreen) findPreference(KEY_ONEPLUS_GESTURES);
+        if (!screwdUtils.isPackageInstalled(getActivity(), KEY_ONEPLUS_GESTURES_PACKAGE_NAME)) {
+            prefSet.removePreference(mOneplusGestures);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
