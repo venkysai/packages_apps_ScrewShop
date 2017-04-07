@@ -133,7 +133,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private SwitchPreference mForceChargeBatteryText;
     private ListPreference mTextChargingSymbol;
     private int mTextChargingSymbolValue;
-    private SwitchPreference mShowTicker;
+    private ListPreference mShowTicker;
     private ListPreference mStatusBarWeather;
 
     @Override
@@ -350,11 +350,13 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
 
         enableStatusBarBatteryDependents();
 
-        mShowTicker = (SwitchPreference) findPreference(STATUS_BAR_SHOW_TICKER);
+        mShowTicker = (ListPreference) findPreference(STATUS_BAR_SHOW_TICKER);
         mShowTicker.setOnPreferenceChangeListener(this);
-        int ShowTicker = Settings.System.getInt(getContentResolver(),
-                STATUS_BAR_SHOW_TICKER, 0);
-        mShowTicker.setChecked(ShowTicker != 0);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                0, UserHandle.USER_CURRENT);
+        mShowTicker.setValue(String.valueOf(tickerMode));
+        mShowTicker.setSummary(mShowTicker.getEntry());
 
         // Status bar weather
         mStatusBarWeather = (ListPreference) prefSet.findPreference(PREF_STATUS_BAR_WEATHER);
@@ -579,10 +581,13 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(resolver,
                     Settings.Secure.TEXT_CHARGING_SYMBOL, mTextChargingSymbolValue);
             return true;
-        } else if (preference == mShowTicker) {
-            boolean value = (Boolean) newValue;
-            Settings.Global.putInt(getContentResolver(), STATUS_BAR_SHOW_TICKER,
-                    value ? 1 : 0);
+        } else if (preference.equals(mShowTicker)) {
+            int tickerMode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode,
+                    UserHandle.USER_CURRENT);
+            int index = mShowTicker.findIndexOfValue((String) newValue);
+            mShowTicker.setSummary(mShowTicker.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarWeather) {
             int temperatureShow = Integer.valueOf((String) newValue);
