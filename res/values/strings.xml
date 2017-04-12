@@ -1546,5 +1546,9 @@
      <string name="status_bar_toggle_brightness">Brightness control</string>
      <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
+     <!-- Dialer force heads up -->
+     <string name="always_headsup_dialer_title">Force heads up for dialer</string>
+     <string name="always_headsup_dialer_summary">Show heads up for dialer even if heads up is off to avoid fullscreen dialer on incoming calls</string>
+
 
 </resources>
