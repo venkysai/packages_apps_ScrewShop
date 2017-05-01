@@ -24,6 +24,9 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -61,7 +64,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.mrapocalypse.screwdshop.viewpager.transforms.*;
 
 import com.mrapocalypse.screwdshop.util.Root;
-import com.mrapocalypse.screwdshop.util.Tools;
+import com.android.internal.util.screwd.screwdUtils;
 
 /**
  * Created by MrApocalypse on 9/6/2016.
@@ -74,30 +77,54 @@ public class ScrewdShop extends SettingsPreferenceFragment {
     private static final Intent LEAN_PACKAGE_INTENT = new Intent().setComponent(new ComponentName(LEAN_PACKAGE_NAME, "com.screwdaosp.lean.MainActivity"));
 
     ViewPager mViewPager;
+    View view;
+    boolean weHaveLean;
     ViewGroup mContainer;
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
-    boolean weAreScrewd = false;
-    boolean weHaveLean;
     private SettingsObserver mSettingsObserver;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mContainer = container;
 
-        View view = inflater.inflate(R.layout.screwd_main, container, false);
-        mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-        mSettingsObserver = new SettingsObserver(new Handler());
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        mTabs.setViewPager(mViewPager);
-        mSettingsObserver.observe();
+        if (isLeanAlive()) {
+            mContainer = container;
+            view = inflater.inflate(R.layout.screwd_main, container, false);
+            mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
+            mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
+            mSettingsObserver = new SettingsObserver(new Handler());
+            mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
+            mViewPager.setAdapter(mSectionsPagerAdapter);
+            mTabs.setViewPager(mViewPager);
+            mSettingsObserver.observe();
 
-        setHasOptionsMenu(true);
-
-        weHaveLean = Tools.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
+            setHasOptionsMenu(true);
+        } else {
+            view = inflater.inflate(R.layout.nothing_to_see, container, false);
+        }
 
         return view;
+    }
+
+    public boolean isLeanAlive() {
+        PackageManager pm = getActivity().getPackageManager();
+        boolean result = false;
+        try {
+            PackageInfo pi = pm.getPackageInfo(LEAN_PACKAGE_NAME,PackageManager.GET_META_DATA);
+            ApplicationInfo ai = pi.applicationInfo;
+            boolean installed = screwdUtils.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
+            boolean enabled = ai.enabled;
+             if (installed && enabled) {
+              result = true;
+             } else if (!installed || !enabled) {
+              result = false;
+             }
+        } catch (PackageManager.NameNotFoundException n) {
+          //Cant find Lean anyway..
+          result = false;
+        }
+
+        return result;
+
     }
 
     @Override

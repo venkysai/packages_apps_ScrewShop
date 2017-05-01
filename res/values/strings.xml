@@ -21,6 +21,8 @@
     <string name="screwd_device_failure">Sorry, this isn\'t a Screw\'d device. Exiting...</string>
     <string name="restart_systemui">Restart SystemUI</string>
     <string name="lean">About</string>
+    <string name="y_u_no_have_lean">Lean is not detected. It is either missing or frozen with Titanium Backup. Please defrost the Lean app with Titanium Backup or re-flash the ROM to put Lean back.\n\nThe only way for you to be seeing this message if YOU removed or froze Lean. This is not a mistake.</string>
+    
 
     <!-- General strings -->
     <string name="ok">OK</string>
