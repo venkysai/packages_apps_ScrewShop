@@ -139,7 +139,7 @@ public class ScrewdShop extends SettingsPreferenceFragment {
                 Root.runCommand("pkill -f com.android.systemui");
                 return true;
             case R.id.about:
-                if (weHaveLean) {
+                if (isLeanAlive()) {
                    startActivity(LEAN_PACKAGE_INTENT);
                 }
                 return true;
