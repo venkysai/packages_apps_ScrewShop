@@ -1559,4 +1559,8 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of the QS panel while your network is monitored by external apps or a VPN</string>
 
+     <!-- AOSP Recents Grid -->
+     <string name="recents_use_grid_title">Enable grid recents</string>
+     <string name="recents_use_grid_summary">Show grid style using AOSP recents</string>
+
 </resources>

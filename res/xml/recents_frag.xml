@@ -35,6 +35,11 @@
             android:summary="@string/systemui_recents_mem_display_summary"
             android:defaultValue="false" />
 
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="recents_use_grid"
+            android:title="@string/recents_use_grid_title"
+            android:summary="@string/recents_use_grid_summary"
+            android:defaultValue="true" />
 
          <ListPreference
             android:key="immersive_recents"
