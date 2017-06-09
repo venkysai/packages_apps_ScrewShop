@@ -92,6 +92,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_WEATHER = "status_bar_weather";
     private static final String PREF_CATEGORY_INDICATORS = "pref_cat_icons";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+    private static final String STATUS_BAR_BATTERY_SAVER_COLOR = "status_bar_battery_saver_color";
 
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -133,6 +134,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private int mTextChargingSymbolValue;
     private ListPreference mShowTicker;
     private ListPreference mStatusBarWeather;
+    private ColorPickerPreference mBatterySaverColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -366,6 +368,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             }
             mStatusBarWeather.setOnPreferenceChangeListener(this);
         }
+
+       int batterySaverColor = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_SAVER_COLOR, 0xfff4511e);
+       mBatterySaverColor = (ColorPickerPreference) findPreference("status_bar_battery_saver_color");
+       mBatterySaverColor.setNewPreviewColor(batterySaverColor);
+       mBatterySaverColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -589,6 +597,15 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 mStatusBarWeather.getEntries()[index]);
             }
             return true;
+        } else if (preference.equals(mBatterySaverColor)) {
+            int color = ((Integer) newValue).intValue();
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_SAVER_COLOR, color);
+            return true;} else if (preference.equals(mBatterySaverColor)) {
+            int color = ((Integer) newValue).intValue();
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_SAVER_COLOR, color);
+            return true;
         }
         return false;
     }
@@ -632,6 +649,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             mStatusBarBatteryShowPercent.setEnabled(false);
             mForceChargeBatteryText.setEnabled(false);
             mTextChargingSymbol.setEnabled(true);
+           //mBatterySaverColor.setEnabled(false);
         } else if (mStatusBarBatteryValue == STATUS_BAR_BATTERY_STYLE_PORTRAIT) {
             mStatusBarBatteryShowPercent.setEnabled(true);
             mForceChargeBatteryText.setEnabled(mStatusBarBatteryShowPercentValue == 2 ? false : true);
@@ -641,6 +659,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             //so till a fix let's keep mTextChargingSymbol enabled by default
             //mTextChargingSymbol.setEnabled((mStatusBarBatteryShowPercentValue == 0 && !mForceChargeBatteryText.isChecked())
             //|| (mStatusBarBatteryShowPercentValue == 1 && !mForceChargeBatteryText.isChecked()) ? false : true);
+            //mBatterySaverColor.setEnabled(true);
             mTextChargingSymbol.setEnabled(true);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
@@ -648,6 +667,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             //mTextChargingSymbol.setEnabled((mStatusBarBatteryShowPercentValue == 0 && !mForceChargeBatteryText.isChecked())
             //|| (mStatusBarBatteryShowPercentValue == 1 && !mForceChargeBatteryText.isChecked()) ? false : true);
             mTextChargingSymbol.setEnabled(true);
+            //mBatterySaverColor.setEnabled(true);
         }
     }
 
