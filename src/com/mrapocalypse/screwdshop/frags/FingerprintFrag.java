@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.app.Fragment;
 import android.hardware.fingerprint.FingerprintManager;
 import android.support.v7.preference.PreferenceCategory;
@@ -52,11 +53,15 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String PREF_QUICK_PULLDOWN_FP = "quick_pulldown_fp";
+    private static final String FP_SWIPE_CALL_ACTIONS = "fp_swipe_call_actions";
 
     private SystemSettingSwitchPreference mFingerprintVib;
     private FingerprintManager mFingerprintManager;
     private SystemSettingSwitchPreference mFpKeystore;
     private SystemSettingSwitchPreference mQuickPulldownFp;
+    private ListPreference mFpSwipeCallActions;
+
+   private int mFpSwipeCallActionsValue;
 
 
     @Override
@@ -89,8 +94,16 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
             mQuickPulldownFp.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP, 0) == 1));
             mQuickPulldownFp.setOnPreferenceChangeListener(this);
+
+            mFpSwipeCallActions = (ListPreference) findPreference(FP_SWIPE_CALL_ACTIONS);
+            mFpSwipeCallActionsValue = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.FP_SWIPE_CALL_ACTIONS, 0, UserHandle.USER_CURRENT);
+            mFpSwipeCallActions.setValue(Integer.toString(mFpSwipeCallActionsValue));
+            mFpSwipeCallActions.setSummary(mFpSwipeCallActions.getEntry());
+            mFpSwipeCallActions.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(mQuickPulldownFp);
+            prefScreen.removePreference(mFpSwipeCallActions);
         }
 
     }
@@ -113,11 +126,18 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP, value ? 1 : 0);
             return true;
+        } else if (preference == mFpSwipeCallActions) {
+            mFpSwipeCallActionsValue = Integer.valueOf((String) newValue);
+            int index = mFpSwipeCallActions.findIndexOfValue((String) newValue);
+            mFpSwipeCallActions.setSummary(
+                    mFpSwipeCallActions.getEntries()[index]);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.FP_SWIPE_CALL_ACTIONS, mFpSwipeCallActionsValue,
+                    UserHandle.USER_CURRENT);
+            return true;
         }
         return false;
     }
-
-
 
     @Override
     protected int getMetricsCategory() {
