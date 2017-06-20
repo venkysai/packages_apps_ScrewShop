@@ -54,7 +54,9 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String PREF_QUICK_PULLDOWN_FP = "quick_pulldown_fp";
     private static final String FP_SWIPE_CALL_ACTIONS = "fp_swipe_call_actions";
+    private static final String FINGERPRINT_GESTURES_CATEGORY = "fingerprint_gestures_category";
 
+    private PreferenceCategory mFingerprintGesturesCategory;
     private SystemSettingSwitchPreference mFingerprintVib;
     private FingerprintManager mFingerprintManager;
     private SystemSettingSwitchPreference mFpKeystore;
@@ -89,8 +91,9 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
             mFpKeystore.setOnPreferenceChangeListener(this);
         }
 
-        mQuickPulldownFp = (SystemSettingSwitchPreference) findPreference(PREF_QUICK_PULLDOWN_FP);
+        mFingerprintGesturesCategory = (PreferenceCategory) findPreference(FINGERPRINT_GESTURES_CATEGORY);
         if (getResources().getBoolean(com.android.internal.R.bool.config_supportSystemNavigationKeys)) {
+            mQuickPulldownFp = (SystemSettingSwitchPreference) findPreference(PREF_QUICK_PULLDOWN_FP);
             mQuickPulldownFp.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP, 0) == 1));
             mQuickPulldownFp.setOnPreferenceChangeListener(this);
@@ -102,8 +105,7 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
             mFpSwipeCallActions.setSummary(mFpSwipeCallActions.getEntry());
             mFpSwipeCallActions.setOnPreferenceChangeListener(this);
         } else {
-            prefScreen.removePreference(mQuickPulldownFp);
-            prefScreen.removePreference(mFpSwipeCallActions);
+            prefScreen.removePreference(mFingerprintGesturesCategory);
         }
 
     }

@@ -81,6 +81,7 @@
     <string name="gestureany">Gesture Anywhere</string>
     <string name="fp">Fingerprint</string>
     <string name="oneplus_gestures">OnePlus Gestures</string>
+    <string name="fingerprint_gestures_category">Gestures</string>
     <!-- Categories -->
     <string name="general">General</string>
     <string name="system_animations">System Animations</string>

@@ -29,18 +29,24 @@
          android:summary="@string/fp_unlock_keystore_summary"
          android:persistent="false" />
 
-     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="quick_pulldown_fp"
-        android:title="@string/quick_pulldown_fp_title"
-        android:summary="@string/quick_pulldown_fp_summary"
-        android:defaultValue="false" />
+     <PreferenceCategory
+        android:key="fingerprint_gestures_category"
+        android:title="@string/fingerprint_gestures_category">
 
-     <ListPreference
-        android:key="fp_swipe_call_actions"
-        android:title="@string/fp_swipe_call_actions_title"
-        android:summary="%s"
-        android:entries="@array/fp_swipe_call_actions_entries"
-        android:entryValues="@array/fp_swipe_call_actions_values"
-        android:defaultValue="0" />
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="quick_pulldown_fp"
+            android:title="@string/quick_pulldown_fp_title"
+            android:summary="@string/quick_pulldown_fp_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="fp_swipe_call_actions"
+            android:title="@string/fp_swipe_call_actions_title"
+            android:summary="%s"
+            android:entries="@array/fp_swipe_call_actions_entries"
+            android:entryValues="@array/fp_swipe_call_actions_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
