@@ -79,6 +79,7 @@
     <string name="sounds">Sounds</string>
     <string name="buttons">Buttons</string>
     <string name="gestureany">Gesture Anywhere</string>
+    <string name="fp">Fingerprint</string>
     <!-- Categories -->
     <string name="general">General</string>
     <string name="system_animations">System Animations</string>
@@ -1563,5 +1564,9 @@
      <!-- AOSP Recents Grid -->
      <string name="recents_use_grid_title">Enable grid recents</string>
      <string name="recents_use_grid_summary">Show grid style using AOSP recents</string>
+
+    <!-- QS Pulldown fingerprint -->
+    <string name="quick_pulldown_fp_title">Fingerprint quick pulldown</string>
+    <string name="quick_pulldown_fp_summary">Expand the quick settings panel with only one swipe of the fingerprint sensor</string>
 
 </resources>

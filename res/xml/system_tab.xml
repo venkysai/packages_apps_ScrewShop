@@ -28,6 +28,11 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.ButtonsFrag" />
 
      <Preference
+        android:key="finger_print"
+        android:title="@string/fp"
+        android:fragment="com.mrapocalypse.screwdshop.frags.FingerprintFrag" />
+
+     <Preference
         android:key="lockscreen"
         android:title="@string/lockscreen"
         android:fragment="com.mrapocalypse.screwdshop.frags.LockscreenFrag" />
