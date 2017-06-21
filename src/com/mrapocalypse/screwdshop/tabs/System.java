@@ -16,12 +16,14 @@
 
 package com.mrapocalypse.screwdshop.tabs;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.preference.Preference;
+import android.hardware.fingerprint.FingerprintManager;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,10 +45,23 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 public class System extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
 
+
+    private FingerprintManager mFingerprintManager;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_tab);
+
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        Preference fpPref = getPreferenceManager().findPreference("finger_print");
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+
+        if (!mFingerprintManager.isHardwareDetected()){
+            prefScreen.removePreference(fpPref);
+        }
     }
 
     @Override
