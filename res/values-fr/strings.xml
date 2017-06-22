@@ -572,24 +572,15 @@
   <string name="vol_zen_title">Activer le mode \"Ne pas déranger\"</string>
   <string name="vol_zen_summary">Afficher le mode \"Ne pas déranger\" sur le panneau de configuration sonore</string>
   <!-- Statusbar Clock options -->
-  <string name="status_bar_title">Barre d\'état</string>
-  <string name="status_bar_style_title">Style</string>
   <string name="status_bar_clock">Horloge &amp; date</string>
   <string name="clock_title_enable">Alignement</string>
-  <string name="clock_enabled">Activée</string>
-  <string name="clock_disabled">Désactivée</string>
-  <string name="status_bar_clock_style_reset">Réinitialiser la couleur</string>
   <string name="status_bar_show_clock_title">Afficher l\'heure &amp; la date</string>
   <string name="status_bar_am_pm_title">AM/PM</string>
   <string name="status_bar_am_pm_info">Le format 24 heures est activé</string>
-  <string name="enable_clock_weekday">Jour de la semaine</string>
-  <string name="enable_clock_weekday_summary">Jour de la semaine abrégé avant l\'heure</string>
   <string name="right_clock">Horloge à droite</string>
   <string name="center_clock">Horloge centrée</string>
   <string name="left_clock">Horloge à gauche</string>
-  <string name="dont_show">Ne pas afficher</string>
   <string name="clock_date_display">Date</string>
-  <string name="clock_date_display_summary">Afficher une date personnalisée avant l\'heure</string>
   <string name="clock_date_style">Style de la date</string>
   <string name="clock_date_position">Position de la date</string>
   <string name="clock_date_format">Format de la date</string>
@@ -597,13 +588,6 @@
   <string name="clock_date_string_edittext_summary">Entrer une valeur</string>
   <string name="clock_date_right">A droite de l\'horloge</string>
   <string name="clock_date_left">A gauche de l\'horloge</string>
-  <string name="am_pm_clock_normal">Taille de police normale</string>
-  <string name="am_pm_clock_small">Taille de police petite</string>
-  <string name="am_pm_clock_none">Ne pas afficher</string>
-  <string name="clock_date_display_none">Ne pas afficher</string>
-  <string name="clock_date_display_small">Taille de police petite</string>
-  <string name="clock_date_display_normal">Taille de police normale</string>
-  <string name="clock_date_style_normal">Normal</string>
   <string name="clock_date_style_lowercase">Minuscules</string>
   <string name="clock_date_style_uppercase">Majuscules</string>
   <string name="clock_date_format_custom">Format java personnalisé</string>
@@ -631,10 +615,7 @@
   <string name="status_bar_battery_percentage_default">Masqué</string>
   <string name="status_bar_battery_percentage_text_inside">A l\'intérieur de l\'icône</string>
   <string name="status_bar_battery_percentage_text_next">À côté de l\'icône</string>
-  <string name="status_bar_battery_style_tile_title">Tuile pour la personnalisation de la batterie</string>
   <string name="status_bar_battery_style_tile_summary">Autoriser à définir le même style d\'icône pour la barre d\'état</string>
-  <string name="status_bar_charge_color_title">Couleur de la l\'icône \"batterie\" dans la barre d\'état lors de la recharge de l\'appareil</string>
-  <string name="status_bar_charge_color_summary">Définir la couleur de l\'icône de batterie lors du rechargement de l\'appareil</string>
   <string name="force_charge_battery_text_title">Pourcentage de recharge de la batterie dans la barre d\'état</string>
   <string name="force_charge_battery_text_summary_on">Afficher le pourcentage de batterie en dehors de l\'icône pendant le chargement</string>
   <string name="force_charge_battery_text_summary_off">Afficher le pourcentage de batterie à l\'intérieur de l\'icône pendant le chargement</string>
@@ -707,7 +688,6 @@
   <!-- PA Pie control -->
   <!-- Status Bar Ticker -->
   <!-- Heads up switch -->
-  <!-- Fonts -->
   <!--  Lockscreen battery info indicator  -->
   <!-- Heads up settings -->
   <!-- Heads up timeout -->
@@ -715,6 +695,7 @@
   <!-- Optional screenshot type -->
   <!-- Screenshot delay -->
   <!-- BT easy toggle -->
+  <!-- Location easy toggle -->
   <!-- WiFi easy toggle -->
   <!-- On-The-Go -->
   <!-- Transparency porn -->
@@ -748,4 +729,12 @@
   <!-- Wired headset ringtone audio focus -->
   <!-- fingerprint authentication vibration -->
   <!-- Fingerprint unlock keystore -->
+  <!-- OmniJaws -->
+  <!-- StatusBar weather settings -->
+  <!-- statusbar brightness -->
+  <!-- Dialer force heads up -->
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>

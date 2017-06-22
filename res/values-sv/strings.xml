@@ -116,7 +116,6 @@
   <!-- PA Pie control -->
   <!-- Status Bar Ticker -->
   <!-- Heads up switch -->
-  <!-- Fonts -->
   <!--  Lockscreen battery info indicator  -->
   <!-- Heads up settings -->
   <!-- Heads up timeout -->
@@ -124,6 +123,7 @@
   <!-- Optional screenshot type -->
   <!-- Screenshot delay -->
   <!-- BT easy toggle -->
+  <!-- Location easy toggle -->
   <!-- WiFi easy toggle -->
   <!-- On-The-Go -->
   <!-- Transparency porn -->
@@ -155,4 +155,12 @@
   <!-- Wired headset ringtone audio focus -->
   <!-- fingerprint authentication vibration -->
   <!-- Fingerprint unlock keystore -->
+  <!-- OmniJaws -->
+  <!-- StatusBar weather settings -->
+  <!-- statusbar brightness -->
+  <!-- Dialer force heads up -->
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>

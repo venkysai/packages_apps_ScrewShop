@@ -101,6 +101,7 @@
   <string name="qs_header_title">Impostazioni rapide di intestazione</string>
   <string name="custom_header_cat">Immagine intestazione</string>
   <string name="aosp_recents_title">Menu recenti AOSP</string>
+  <string name="fingerprint_cat">Impronte digitali</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Riavvio avanzato</string>
@@ -676,24 +677,15 @@
   <string name="vol_zen_title">Switch a Non Disturbare</string>
   <string name="vol_zen_summary">Mostra lo switch Non Disturbare nel pannello volume</string>
   <!-- Statusbar Clock options -->
-  <string name="status_bar_title">Barra di stato</string>
-  <string name="status_bar_style_title">Stile</string>
   <string name="status_bar_clock">Orologio &amp; Data</string>
   <string name="clock_title_enable">Allineamento</string>
-  <string name="clock_enabled">Abilitiato</string>
-  <string name="clock_disabled">Disabilitato</string>
-  <string name="status_bar_clock_style_reset">Resetta Colore</string>
   <string name="status_bar_show_clock_title">Visualizza orologio &amp; data</string>
   <string name="status_bar_am_pm_title">AM/PM</string>
   <string name="status_bar_am_pm_info">È abilitato l\'orologio a 24 ore</string>
-  <string name="enable_clock_weekday">Giorno della settimana</string>
-  <string name="enable_clock_weekday_summary">Giorno della settimana abbreviato prima dell\'ora</string>
   <string name="right_clock">Ora a destra</string>
   <string name="center_clock">Ora centrata</string>
   <string name="left_clock">Ora a sinistra</string>
-  <string name="dont_show">Non visualizzare</string>
   <string name="clock_date_display">Data</string>
-  <string name="clock_date_display_summary">Visualizza data personalizzata prima dell\'ora</string>
   <string name="clock_date_style">Stile data</string>
   <string name="clock_date_position">Posizione data</string>
   <string name="clock_date_format">Formato data</string>
@@ -701,13 +693,6 @@
   <string name="clock_date_string_edittext_summary">Inserisci la stringa</string>
   <string name="clock_date_right">A destra dell\'ora</string>
   <string name="clock_date_left">A sinistra dell\'ora</string>
-  <string name="am_pm_clock_normal">Dimensione carattere normale</string>
-  <string name="am_pm_clock_small">Dimensione carattere piccolo</string>
-  <string name="am_pm_clock_none">Non visualizzare</string>
-  <string name="clock_date_display_none">Non visualizzare</string>
-  <string name="clock_date_display_small">Dimensione carattere piccolo</string>
-  <string name="clock_date_display_normal">Dimensione carattere normale</string>
-  <string name="clock_date_style_normal">Normale</string>
   <string name="clock_date_style_lowercase">Minuscolo</string>
   <string name="clock_date_style_uppercase">Maiuscolo</string>
   <string name="clock_date_format_custom">Formato java personalizzato</string>
@@ -755,7 +740,6 @@
   <string name="omniswitch_settings_title">OmniSwitch</string>
   <!-- Battery customizations -->
   <string name="status_bar_battery_style_category">Batteria</string>
-  <string name="status_bar_battery_style_title">Stile indicatore batteria</string>
   <string name="status_bar_battery_style_icon_portrait">Icona verticale</string>
   <string name="status_bar_battery_style_icon_landscape">Icona orizzontale</string>
   <string name="status_bar_battery_style_circle">Cerchio</string>
@@ -767,10 +751,7 @@
   <string name="status_bar_battery_percentage_default">Nascosto</string>
   <string name="status_bar_battery_percentage_text_inside">All\'interno dell\'icona</string>
   <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
-  <string name="status_bar_battery_style_tile_title">Stile tile batteria personalizzato</string>
   <string name="status_bar_battery_style_tile_summary">Permette di impostare lo stesso stile di icona scelto per la batteria nella barra di stato</string>
-  <string name="status_bar_charge_color_title">Colore icona batteria in carica</string>
-  <string name="status_bar_charge_color_summary">Imposta il colore dell\'icona batteria quando è in carica nella barra di stato</string>
   <string name="force_charge_battery_text_title">Percentuale batteria in carica</string>
   <string name="force_charge_battery_text_summary_on">Mostra la percentuale della batteria fuori dall\'icona durante la carica</string>
   <string name="force_charge_battery_text_summary_off">Mostra la percentuale della batteria dentro l\'icona durante la carica</string>
@@ -899,6 +880,9 @@
   <string name="pulse_legacy_mode_advanced_category">Impostazioni modalità blocchi di dissolvenza</string>
   <string name="pulse_custom_fudge_factor">Potenza</string>
   <string name="lavamp_solid_speed_title">Velocità barra pulse</string>
+  <string name="pulse_solid_units_count">Linee continue totali</string>
+  <string name="pulse_solid_lines_count">Linee continue totali</string>
+  <string name="pulse_solid_units_opacity">Opacità linee continue</string>
   <string name="pulse_solid_dimen_category">Impostazioni modalità linee solide</string>
   <string name="fling_lavalamp_color_from">Colore misto iniziale</string>
   <string name="fling_lavalamp_color_to">Colore misto finale</string>
@@ -931,8 +915,6 @@
   <string name="smartbar_button_animation_pixel_home_ripple">Pixel (solo tasto Home) e Ripple</string>
   <string name="smartbar_factory_reset_title">Reimposta stock</string>
   <string name="smartbar_factory_reset_confirm">Sei sicuro di voler resettare Smarbar alle impostazioni di default?</string>
-  <string name="smartbar_ime_action_title">Azioni metodo di input</string>
-  <string name="smartbar_ime_action_summary">Setta quali pulsanti mostrare quando la tastiera è visibile a schermo</string>
   <string name="smartbar_ime_action_none">Nessuna</string>
   <string name="smartbar_ime_action_arrows">Tasti direzionali</string>
   <string name="smartbar_ime_action_switcher">Switcher tastiera</string>
@@ -1066,39 +1048,9 @@
   <!-- Status Bar Ticker -->
   <string name="ticker_screen_title">Ticker</string>
   <string name="ticker_title">Tickeri barra di stato</string>
-  <string name="ticker_screen_summary">Personalizza lo stile del ticker</string>
-  <string name="ticker_summary">Attiva il vecchio ticker su barra di stato</string>
-  <string name="ticker_font_style_title">Stile font</string>
-  <string name="ticker_font_size_title">Dimensione caratteri</string>
   <!-- Heads up switch -->
   <string name="heads_up_switch_title">Heads up</string>
   <string name="heads_up_switch_summary">Attiva Heads Up a livello globale, non per ogni app</string>
-  <!-- Fonts -->
-  <string name="font_normal">Roboto</string>
-  <string name="font_bold">Roboto Bold</string>
-  <string name="font_italic">Roboto Italic</string>
-  <string name="font_bold_italic">Roboto Bold Italic</string>
-  <string name="font_light_normal">Roboto Light (predefinito)</string>
-  <string name="font_light_italic">Roboto Light Italic</string>
-  <string name="font_thin_normal">Roboto Thin</string>
-  <string name="font_thin_italic">Roboto Thin Italic</string>
-  <string name="font_condensed_normal">Roboto Condensed</string>
-  <string name="font_condensed_bold">Roboto Condensed Bold</string>
-  <string name="font_condensed_italic">Roboto Condensed Italic</string>
-  <string name="font_condensed_bold_italic">Roboto Condensed Bold Italic</string>
-  <string name="font_medium_normal">Roboto Medium</string>
-  <string name="font_medium_italic">Roboto Medium Italic</string>
-  <string name="font_black_normal">Roboto Black</string>
-  <string name="font_black_italic">Roboto Black Italic</string>
-  <string name="font_condensed_light_normal">Roboto Condensed Light</string>
-  <string name="font_condensed_light_italic">Roboto Condensed Light Italic</string>
-  <string name="font_dancingscript">DancingScript</string>
-  <string name="font_dancingscript_bold">DancingScript Bold</string>
-  <string name="font_comingsoon">ComingSoon</string>
-  <string name="font_notoserif">NotoSerif Normal</string>
-  <string name="font_notoserif_italic">NotoSerif Italic</string>
-  <string name="font_notoserif_bold">NotoSerif Bold</string>
-  <string name="font_notoserif_bold_italic">NotoSerif Bold Italic</string>
   <!--  Lockscreen battery info indicator  -->
   <string name="lockscreen_battery_info_title">Info ricarica su schermata di blocco</string>
   <string name="lockscreen_battery_info_summary">Mostra in tempo reale la carica corrente, il voltaggio, e la temperatura della batteria nella schermata di blocco mentre in carica</string>
@@ -1138,6 +1090,7 @@
   <!-- BT easy toggle -->
   <string name="qs_bt_easy_toggle_title">Tile bluetooth semplice</string>
   <string name="qs_bt_easy_toggle_summary">Permette con un clic di attivare o disattivare il Bluetooth invece di avviare le impostazioni</string>
+  <!-- Location easy toggle -->
   <!-- WiFi easy toggle -->
   <string name="qs_wifi_easy_toggle_title">Tile WiFi semplice</string>
   <string name="qs_wifi_easy_toggle_summary">Abilita il tocco singolo per attivare o disattivare il WiFi</string>
@@ -1231,7 +1184,6 @@
   <string name="nav_bar_dynamic_summary">Attiva per settare sulla barra di navigazione il colore dark primario delle app. Riavvia la tua app desiderata per notare gli effetti</string>
   <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Lancia l\'app musica</string>
-  <string name="headset_connect_player_summary">Lancia l\'app musica predefinita quando gli auricolari sono collegati</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Barra batteria</string>
   <string name="battery_bar">Posizione della barra batteria</string>
@@ -1405,11 +1357,23 @@
   <string name="recent_panel_show_topmost_summary">Non escludere l\' app in primo piano nel pannello app recenti</string>
   <string name="recent_panel_bg_color_title">Colore di sfondo del pannello</string>
   <string name="recent_card_bg_color_title">Colore sfondo della scheda</string>
-  <string name="recent_card_text_color_title">Colore testo della scheda</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Mostra sul lato sinistro</string>
   <string name="recent_panel_lefty_mode_summary">Mostra il pannello app recenti sul lato sinistro</string>
   <!-- Wired headset ringtone audio focus -->
+  <string name="wired_ringtone_focus_mode_stock">Vivavoce e auricolare (impostazione predefinita)</string>
   <!-- fingerprint authentication vibration -->
+  <string name="fprint_sucess_vib_title">Vibrazione all\'autenticazione dell\'impronta</string>
+  <string name="fprint_sucess_vib_summary">Vibra all\'autenticazione con successo tramite impronta digitale</string>
   <!-- Fingerprint unlock keystore -->
+  <string name="fp_unlock_keystore_title">Sbloccare FP</string>
+  <string name="fp_unlock_keystore_summary">Sblocca il dispositivo con l\'impronta digitale dopo il riavvio senza PIN/Password/Pattern\nNota: a tuo rischio!</string>
+  <!-- OmniJaws -->
+  <!-- StatusBar weather settings -->
+  <!-- statusbar brightness -->
+  <!-- Dialer force heads up -->
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>

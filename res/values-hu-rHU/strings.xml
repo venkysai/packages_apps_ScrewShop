@@ -23,6 +23,7 @@
   <string name="screwd_device_failure">Sajnáljuk, de ez nem egy Screw\'d készülék. Kilépés...</string>
   <string name="restart_systemui">SystemUI újraindítása</string>
   <string name="lean">Névjegy</string>
+  <string name="y_u_no_have_lean">A Lean nem észlelhető. Vagy hiányzik, vagy le lett fagyasztva a Titanium Backuppal. Kérjük, szüntesse meg a Lean alkalmazás lefagyasztását, vagy flashelje újra a ROM-ot, hogy visszaszerezhesse a Lean-t.\n\nAz egyetlen oka annak, hogy ezt az üzenetet látja, ha eltávolította vagy lefagyasztotta a Lean-t. Nem véletlenül látja.</string>
   <!-- General strings -->
   <string name="ok">OK</string>
   <string name="reset">Alaphelyzet</string>
@@ -677,24 +678,16 @@
   <string name="vol_zen_title">Ne zavarj kapcsoló</string>
   <string name="vol_zen_summary">Ne zavarj kapcsoló megjelenítése a hangerő panelon</string>
   <!-- Statusbar Clock options -->
-  <string name="status_bar_title">Állapotsor</string>
-  <string name="status_bar_style_title">Stílus</string>
   <string name="status_bar_clock">Óra és dátum</string>
   <string name="clock_title_enable">Igazítás</string>
-  <string name="clock_enabled">Engedélyezve</string>
-  <string name="clock_disabled">Letiltva</string>
-  <string name="status_bar_clock_style_reset">Színek visszaállítása</string>
   <string name="status_bar_show_clock_title">Óra és dátum megjelenítése</string>
+  <string name="status_bar_clock_seconds_title">Másodperc megjelenítése</string>
   <string name="status_bar_am_pm_title">De/Du</string>
   <string name="status_bar_am_pm_info">24-órás formátum engedélyezve</string>
-  <string name="enable_clock_weekday">A hét napja</string>
-  <string name="enable_clock_weekday_summary">Hét napjának rövidített megjelenítése az óra előtt</string>
   <string name="right_clock">Jobb</string>
   <string name="center_clock">Közép</string>
   <string name="left_clock">Bal</string>
-  <string name="dont_show">Ne jelenjen meg</string>
   <string name="clock_date_display">Dátum</string>
-  <string name="clock_date_display_summary">Egyéni dátum kijelzése az óra előtt</string>
   <string name="clock_date_style">Dátum stílusa</string>
   <string name="clock_date_position">Dátum pozíció</string>
   <string name="clock_date_format">Dátumformátum</string>
@@ -702,16 +695,14 @@
   <string name="clock_date_string_edittext_summary">Formátum megadása</string>
   <string name="clock_date_right">Időtől jobbra</string>
   <string name="clock_date_left">Időtől balra</string>
-  <string name="am_pm_clock_normal">Normál betűméret</string>
-  <string name="am_pm_clock_small">Kis betűméret</string>
-  <string name="am_pm_clock_none">Ne jelenjen meg</string>
-  <string name="clock_date_display_none">Ne jelenjen meg</string>
-  <string name="clock_date_display_small">Kis betűméret</string>
-  <string name="clock_date_display_normal">Normál betűméret</string>
-  <string name="clock_date_style_normal">Normál</string>
+  <string name="clock_am_pm_date_normal">Normál</string>
+  <string name="clock_am_pm_date_small">Kicsi</string>
+  <string name="clock_am_pm_date_none">Rejtett</string>
   <string name="clock_date_style_lowercase">Kisbetűs</string>
   <string name="clock_date_style_uppercase">Nagybetűs</string>
   <string name="clock_date_format_custom">Egyéni java formátum</string>
+  <string name="cancel">Mégse</string>
+  <string name="save">Mentés</string>
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title">Fényerő csúszka</string>
   <string name="qs_brightness_slider_summary">Fényerő csúszka megjelenítése a gyorsbeállítások panelen</string>
@@ -756,7 +747,7 @@
   <string name="omniswitch_settings_title">OmniSwitch</string>
   <!-- Battery customizations -->
   <string name="status_bar_battery_style_category">Akkumulátor</string>
-  <string name="status_bar_battery_style_title">Akkumulátor állapot stílus</string>
+  <string name="status_bar_battery_style_title">Állapotsori akkumulátor stílus</string>
   <string name="status_bar_battery_style_icon_portrait">Álló ikon</string>
   <string name="status_bar_battery_style_icon_landscape">Fekvő ikon</string>
   <string name="status_bar_battery_style_circle">Kör</string>
@@ -768,10 +759,8 @@
   <string name="status_bar_battery_percentage_default">Rejtett</string>
   <string name="status_bar_battery_percentage_text_inside">Ikonon belül</string>
   <string name="status_bar_battery_percentage_text_next">Ikon mellett</string>
-  <string name="status_bar_battery_style_tile_title">Egyéni akkumulátor csempe stílus</string>
+  <string name="battery_tile_style_title">Akkumulátor csempe stílusa</string>
   <string name="status_bar_battery_style_tile_summary">Lehetővé teszi, hogy ugyanazt az ikonstílust állítsa be, mint az állapotsoron</string>
-  <string name="status_bar_charge_color_title">Állapotsori akkumulátor töltési szín</string>
-  <string name="status_bar_charge_color_summary">Az állapotsori akkumulátor ikon töltés közbeni színének beállítása</string>
   <string name="force_charge_battery_text_title">Százalék kijelzése töltés közben</string>
   <string name="force_charge_battery_text_summary_on">Akkumulátor százalék mutatása az ikonon kívül, töltés közben</string>
   <string name="force_charge_battery_text_summary_off">Akkumulátor százalék mutatása az ikonon belül, töltés közben</string>
@@ -802,6 +791,7 @@
   <string name="info_pref_note_title">Megjegyzés</string>
   <string name="smartbar_interface">SmartBar</string>
   <string name="icon_pack_picker_dialog_title">Ikon csomagok</string>
+  <string name="image_exceeds_max_allowed_size">A kép nem lehet ennél nagyobb: 512x512</string>
   <string name="invalid_icon_from_uri">Nem sikerült betölteni a képet a tartalomszolgáltatótól</string>
   <string name="picker_activities">Tevékenységek</string>
   <string name="select_custom_app_title">Egyéni alkalmazás kiválasztása</string>
@@ -900,7 +890,11 @@
   <string name="pulse_legacy_mode_advanced_category">Halványuló blokkok üzemmód beállításai</string>
   <string name="pulse_custom_fudge_factor">Józan ész szint</string>
   <string name="lavamp_solid_speed_title">Lávalámpa sebessége</string>
+  <string name="pulse_solid_units_count">Folytonos vonalak száma</string>
+  <string name="pulse_solid_lines_count">Folytonos vonalak száma</string>
+  <string name="pulse_solid_units_opacity">Folytonos vonalak átlátszósága</string>
   <string name="pulse_solid_dimen_category">Folytonos vonalak üzemmód beállításai</string>
+  <string name="pulse_custom_buttons_opacity_title">Gombok átlátszósága Pulse mellett</string>
   <string name="fling_lavalamp_color_from">Lávalámpa indítási szín</string>
   <string name="fling_lavalamp_color_to">Lávalámpa befejező szín</string>
   <!-- Pulse config -->
@@ -932,11 +926,12 @@
   <string name="smartbar_button_animation_pixel_home_ripple">Pixel (csak kezdőlap gomb) és Hullámosság</string>
   <string name="smartbar_factory_reset_title">Gyári beállítások visszaállítása</string>
   <string name="smartbar_factory_reset_confirm">Biztos, hogy visszaállítod a Smartbar-t gyári állapotra?</string>
-  <string name="smartbar_ime_action_title">Beviteli mód műveletek</string>
-  <string name="smartbar_ime_action_summary">Állítsa be, milyen gombok jelenjenek meg, ha a képernyő-billentyűzet megjelenik</string>
+  <string name="smartbar_ime_action_title">Beviteli módszer és médiatevékenységek</string>
+  <string name="smartbar_ime_action_summary">Állítsa be, mely gombok jelenjenek meg a billentyűzet felugrása, vagy a zene lejátszása közben</string>
   <string name="smartbar_ime_action_none">Semmi</string>
   <string name="smartbar_ime_action_arrows">Beviteli nyilak</string>
   <string name="smartbar_ime_action_switcher">Billentyűzet váltó</string>
+  <string name="smartbar_ime_action_dynamic">Beviteli/média nyilak</string>
   <string name="smartbar_backup_current_config_title">Profil mentése</string>
   <string name="smartbar_restore_config_title">Profil visszaállítása</string>
   <string name="smartbar_config_name_edit_dialog_title">Smartbar profilnév</string>
@@ -958,6 +953,7 @@
   <string name="show_carrier_keyguard">Csak a zárképernyőn</string>
   <string name="show_carrier_statusbar">Csak az állapotsoron</string>
   <string name="show_carrier_enabled">Zárképernyő és állapotsor</string>
+  <string name="status_bar_carrier_color">Szolgáltatói címke színe</string>
   <!-- Statusbar Screw'd logo -->
   <string name="status_bar_logo_category_title">Állapotsori logó</string>
   <string name="status_bar_screwd_logo_title">Screw\'d logó</string>
@@ -1067,39 +1063,13 @@
   <!-- Status Bar Ticker -->
   <string name="ticker_screen_title">Értesítés gördítése</string>
   <string name="ticker_title">Értesítés gördítése állapotsoron</string>
-  <string name="ticker_screen_summary">Gördítési stílus beállítása</string>
-  <string name="ticker_summary">A régi értesítés gördítése állapotsoron engedélyezése</string>
-  <string name="ticker_font_style_title">Betűtípus</string>
-  <string name="ticker_font_size_title">Betűméret</string>
+  <string name="ticker_summary">Engedélyezze a régi ketyegőt. Ne használja a Lebegő értesítésekkel együtt.</string>
+  <string name="ticker_disabled">Nincs gördítés</string>
+  <string name="ticker_enabled">Értesítés gördítése állapotsoron</string>
+  <string name="ticker_media_enabled">Értesítés és zene gördítése állapotsoron</string>
   <!-- Heads up switch -->
   <string name="heads_up_switch_title">Lebegő értesítés</string>
   <string name="heads_up_switch_summary">Felugró értesítések globális váltása az alkalmazásonkénti helyett</string>
-  <!-- Fonts -->
-  <string name="font_normal">Roboto</string>
-  <string name="font_bold">Roboto félkövér</string>
-  <string name="font_italic">Roboto dőlt</string>
-  <string name="font_bold_italic">Roboto félkövér dőlt</string>
-  <string name="font_light_normal">Roboto vékony (alapértelmezett)</string>
-  <string name="font_light_italic">Roboto vékony dőlt</string>
-  <string name="font_thin_normal">Roboto Thin</string>
-  <string name="font_thin_italic">Roboto Thin dőlt</string>
-  <string name="font_condensed_normal">Roboto sűrített</string>
-  <string name="font_condensed_bold">Roboto sűrített félkövér</string>
-  <string name="font_condensed_italic">Roboto sűrített dőlt</string>
-  <string name="font_condensed_bold_italic">Roboto sűrített félkövér dőlt</string>
-  <string name="font_medium_normal">Roboto Medium</string>
-  <string name="font_medium_italic">Roboto Medium dőlt</string>
-  <string name="font_black_normal">Roboto Black</string>
-  <string name="font_black_italic">Roboto Black dőlt</string>
-  <string name="font_condensed_light_normal">Roboto sűrített vékony</string>
-  <string name="font_condensed_light_italic">Roboto sűrített vékony dőlt</string>
-  <string name="font_dancingscript">DancingScript</string>
-  <string name="font_dancingscript_bold">DancingScript félkövér</string>
-  <string name="font_comingsoon">ComingSoon</string>
-  <string name="font_notoserif">NotoSerif normál</string>
-  <string name="font_notoserif_italic">NotoSerif dőlt</string>
-  <string name="font_notoserif_bold">NotoSerif félkövér</string>
-  <string name="font_notoserif_bold_italic">NotoSerif félkövér dőlt</string>
   <!--  Lockscreen battery info indicator  -->
   <string name="lockscreen_battery_info_title">Zárképernyő töltési információ</string>
   <string name="lockscreen_battery_info_summary">Valós idejű töltőáram, feszültség és az akkumulátor hőmérsékletének megjelenítése töltés közben a zárképernyőn</string>
@@ -1139,6 +1109,9 @@
   <!-- BT easy toggle -->
   <string name="qs_bt_easy_toggle_title">Bluetooth gyorskapcsoló</string>
   <string name="qs_bt_easy_toggle_summary">Engedélyezi, hogy egy megnyomás ki/be kapcsolja a Bluetooth-t ahelyett, hogy a beállításaiba vinne</string>
+  <!-- Location easy toggle -->
+  <string name="qs_location_easy_toggle_title">Hely könnyű ki/bekapcsolása</string>
+  <string name="qs_location_easy_toggle_summary">Egyszerű érintéssel a helymeghatározás ki/be kapcsolható a beállítások helyett</string>
   <!-- WiFi easy toggle -->
   <string name="qs_wifi_easy_toggle_title">Wi-Fi gyorskapcsoló</string>
   <string name="qs_wifi_easy_toggle_summary">Engedélyezi, hogy egy megnyomás ki/be kapcsolja a Wi-Fi-t ahelyett, hogy a beállításaiba vinne</string>
@@ -1232,7 +1205,6 @@
   <string name="nav_bar_dynamic_summary">Engedélyezze ahhoz, hogy a navigációs sáv felvegye az alkalmazás sötét fő színét (általában az állapotsáv színe is ez). Szükséges lehet az alkalmazások újraindítása a változtatás életbe lépéséhez</string>
   <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Zenelejátszó indítása csatlakoztatáskor</string>
-  <string name="headset_connect_player_summary">Alapértelmezett zenelejátszó elindítása fülhallgató csatlakoztatásakor</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Akkumulátorsáv</string>
   <string name="battery_bar">Akkumulátorsáv helye</string>
@@ -1406,7 +1378,14 @@
   <string name="recent_panel_show_topmost_summary">Nem zárja ki a legfelső tevékenységet az előzmények nézetben</string>
   <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
   <string name="recent_card_bg_color_title">Kártya háttérszíne</string>
-  <string name="recent_card_text_color_title">Kártya szövegének színe</string>
+  <string name="recent_reset_title">Alapértelmezett színek visszaállítása</string>
+  <string name="recent_reset_confirm">Biztosan alaphelyzetbe állítja a Slim előzmények színeit?</string>
+  <string name="default_auto_string">Alapértelmezett (alkalmazás alapú)</string>
+  <string name="slim_icon_pack_title">Ikon csomag</string>
+  <string name="slim_icon_pack_summary">Egyéni ikoncsomag alkalmazása a panlenon lévő alkalmazásokra</string>
+  <string name="no_iconpacks_summary">Nincs ikoncsomag telepítve</string>
+  <string name="dialog_pick_iconpack_title">Válasszon ikoncsomagot</string>
+  <string name="default_iconpack_title">Alapértelmezett ikonok</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
   <string name="recent_panel_lefty_mode_summary">Az előzmények panelt a bal oldalon jelenítse meg</string>
@@ -1420,4 +1399,27 @@
   <!-- Fingerprint unlock keystore -->
   <string name="fp_unlock_keystore_title">Ujjlenyomattal való feloldás</string>
   <string name="fp_unlock_keystore_summary">Újraindítás után eszköz feloldása ujjlenyomattal a PIN/Jelszó/Minta helyett\nMegjegyzés: csak saját felelősségre!</string>
+  <!-- OmniJaws -->
+  <string name="weather_title">Időjárás</string>
+  <string name="weather_config_title">Időjárás csempe beállítások</string>
+  <!-- StatusBar weather settings -->
+  <string name="statusbar_weather_title">Állapotsori időjárás</string>
+  <string name="statusbar_weather_summary">Gyorsbeállítások/időjárás beállítása.</string>
+  <string name="statusbar_weather_dialog_title">Állapotsori időjárás stílusa</string>
+  <string name="status_bar_weather_hidden">Rejtett Időjárás</string>
+  <string name="status_bar_temperature_image_show_scale">Hőmérséklet mértékegységgel és képpel</string>
+  <string name="status_bar_temperature_image_hide_scale">Hőmérséklet képpel mértékegység nélkül</string>
+  <string name="status_bar_temperature_show_scale_hide_image">Hőmérséklet mértékegységgel</string>
+  <string name="status_bar_temperature_hide_scale_hide_image">Hőmérséklet mértékegység nélkül</string>
+  <string name="status_bar_show_image">Kép megjelenítése</string>
+  <!-- statusbar brightness -->
+  <string name="status_bar_toggle_brightness">Fényerő vezérlése</string>
+  <string name="status_bar_toggle_brightness_summary">Fényerő beállítása az állapotsoron való csúsztatással</string>
+  <!-- Dialer force heads up -->
+  <string name="always_headsup_dialer_title">Tárcsázó lebegő értesítésének kényszérítése</string>
+  <string name="always_headsup_dialer_summary">Tárcsázó lebegő értesítésének megjelenítése akkor is, ha az ki van kapcsolva, így elkerülve teljes képernyős bejövő hívást</string>
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>

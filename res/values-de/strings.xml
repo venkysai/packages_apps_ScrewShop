@@ -43,6 +43,7 @@
   <string name="profile_choose_app">Anwendung wählen</string>
   <string name="profile_reset_title">Zurücksetzen</string>
   <string name="show_title">Zeige</string>
+  <string name="choose_app">Anwendung wählen</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <string name="reset_screwd">Screw\'d</string>
@@ -71,7 +72,9 @@
   <string name="ex_desk">Erweiterter Desktop</string>
   <string name="sounds">Töne</string>
   <string name="misc">Sonstiges</string>
+  <string name="animations">Animationen</string>
   <string name="trans">Transparenz</string>
+  <string name="sounds">Töne</string>
   <string name="buttons">Tasten</string>
   <string name="gestureany">Gesten überall</string>
   <!-- Categories -->
@@ -98,6 +101,7 @@
   <string name="qs_header_title">Kopfzeile der Schnelleinstellungen</string>
   <string name="custom_header_cat">Bild für Kopfzeile</string>
   <string name="aosp_recents_title">AOSP-Variante der zuletzt geöffneten Apps</string>
+  <string name="fingerprint_cat">Fingerabdruck</string>
   <!-- begin strings for options -->
   <!-- Advanced reboot options -->
   <string name="advanced_reboot_title">Erweitertes Neustartmenü</string>
@@ -257,6 +261,7 @@
   <string name="power_menu_animation_aosp">AOSP (Standard)</string>
   <string name="power_menu_animation_bottom">Unten</string>
   <string name="power_menu_animation_top">Oben</string>
+  <string name="power_menu_animation_rotate">Drehung</string>
   <string name="power_menu_animation_rotate">Drehung</string>
   <string name="power_menu_animation_xylon">Fliegen</string>
   <string name="power_menu_animation_slide">Gleiten</string>
@@ -443,6 +448,7 @@
   <string name="lockscreen_shorcuts_longpress_title">Verknüpfungen lang gedrückt</string>
   <string name="lockscreen_shorcuts_longpress_summary">Benutzerdefinierte Verknüpfungen des Sperrbildschirm öffnen wenn Taste lange gedrückt wird</string>
   <string name="lockscreen_shortcuts_category">Verknüpfungen</string>
+  <string name="shortcut_action_none">Keine</string>
   <string name="shortcut_action_app">Benutzerdefinierte Anwendung</string>
   <string name="shortcut_action_home">Startseite</string>
   <string name="shortcut_action_back">Zurück</string>
@@ -460,7 +466,64 @@
   <string name="shortcut_action_media_play_pause">Musik - Wiedergabe/Pause</string>
   <string name="shortcut_action_media_previous">Musik - vorheriger Titel</string>
   <string name="shortcut_action_wake_device">Gerät aufwecken</string>
+  <string name="shortcut_action_longpress">Langes Drücken:</string>
+  <string name="shortcut_action_select_action_longpress">Wähle eine Lang gedrückt Aktion:</string>
+  <string name="shortcut_action_select_action">Aktion auswählen:</string>
+  <string name="shortcut_action_select_action_newaction">Wähle eine neue Aktion:</string>
+  <string name="shortcut_action_reset">Zurücksetzen</string>
+  <string name="shortcut_action_add">Hinzufügen</string>
+  <string name="shortcut_action_reset_message">Alle Einträge auf die Standardwerte zurücksetzen?</string>
+  <string name="shortcut_action_max">Maximale Einträge Größe erreicht</string>
+  <string name="shortcut_action_warning">Warnung</string>
+  <string name="shortcut_action_warning_message">Es ist nicht möglich, den letzten Eintrag zu löschen</string>
+  <string name="shortcut_action_disable_message">Deaktiviert\nFüge einen Eintrag hinzu, um diese Funktion zu Aktivieren</string>
+  <string name="shortcut_image_not_valid">Die gewählte Anwendung gibt kein gültiges Symbol zurück oder die Bild zuschneiden Funktion wird nicht unterstützt. Verwenden Sie eine andere Anwendung.</string>
+  <string name="shortcut_duplicate_entry">Die gewählte Aktion kann nicht zweimal hinzugefügt werden</string>
+  <string name="shortcut_action_help_shortcut">Verknüpfung</string>
+  <string name="shortcut_action_help_button">Taste</string>
+  <string name="shortcut_action_help_app">Anwendung</string>
+  <string name="shortcut_action_help_icon">, während des Symbol auswählen, Anpassungsoptionen anzeigen</string>
   <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, wählen Sie das Symbol \"hinzufügen\". Sobald ein %1$s hinzugefügt wird, ändert Sie die Zeile markieren target%2$s\n\nZum entfernen ein %1$s, Wischen Sie die Zeile horizontal nach links oder rechts. Neu anordnen einen %1$s in der Liste durch vertikal ziehen nach links.\n\nSoll auf Standardwerte zurückgesetzt werden, wählen Sie die Option \"zurücksetzen\".</string>
+  <string name="shortcut_action_help_delete_last_entry">Entfernen aller %1$s in der Liste wird das Feature vollständig deaktivieren.</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen aller %1$s in der Liste wird den zweiten PIE Layer entfernen.</string>
+  <string name="shortcut_action_none">Keine</string>
+  <string name="shortcut_action_app">Benutzerdefinierte Anwendung</string>
+  <string name="shortcut_action_home">Startseite</string>
+  <string name="shortcut_action_back">Zurück</string>
+  <string name="shortcut_action_menu">Menü</string>
+  <string name="shortcut_action_ime">Open IME wechsler</string>
+  <string name="shortcut_action_power_menu">Ein/Aus-Menü</string>
+  <string name="shortcut_action_recent">Letzte Apps</string>
+  <string name="shortcut_action_power">Bildschirm ausschalten</string>
+  <string name="shortcut_action_search">In Anwendung suchen</string>
+  <string name="shortcut_action_ring_vib">Klingeln/Vibrieren</string>
+  <string name="shortcut_action_ring_silent">Klingeln/Lautlos</string>
+  <string name="shortcut_action_ring_vib_silent">Klingeln/Vibrieren/Lautlos</string>
+  <string name="shortcut_action_camera">Kamera</string>
+  <string name="shortcut_action_media_next">Musik - nächster Titel</string>
+  <string name="shortcut_action_media_play_pause">Musik - Wiedergabe/Pause</string>
+  <string name="shortcut_action_media_previous">Musik - vorheriger Titel</string>
+  <string name="shortcut_action_wake_device">Gerät aufwecken</string>
+  <string name="shortcut_action_longpress">Langes Drücken:</string>
+  <string name="shortcut_action_select_action_longpress">Wähle eine Lang gedrückt Aktion:</string>
+  <string name="shortcut_action_select_action">Aktion auswählen:</string>
+  <string name="shortcut_action_select_action_newaction">Wähle eine neue Aktion:</string>
+  <string name="shortcut_action_reset">Zurücksetzen</string>
+  <string name="shortcut_action_add">Hinzufügen</string>
+  <string name="shortcut_action_reset_message">Zurücksetzen alle Einträge auf die Standardwerte?</string>
+  <string name="shortcut_action_max">Maximale Einträge Größe erreicht</string>
+  <string name="shortcut_action_warning">Warnung</string>
+  <string name="shortcut_action_warning_message">Es ist nicht möglich, den letzten Eintrag zu löschen</string>
+  <string name="shortcut_action_disable_message">Deaktiviert\nFüge einen Eintrag hinzu, um diese Funktion zu Aktivieren</string>
+  <string name="shortcut_image_not_valid">Die gewählte Anwendung gibt kein gültiges Symbol zurück oder die Bild zuschneiden Funktion wird nicht unterstützt. Verwenden Sie eine andere Anwendung.</string>
+  <string name="shortcut_duplicate_entry">Die gewählte Aktion kann nicht zweimal hinzugefügt werden</string>
+  <string name="shortcut_action_help_shortcut">Verknüpfung</string>
+  <string name="shortcut_action_help_button">Taste</string>
+  <string name="shortcut_action_help_app">Anwendung</string>
+  <string name="shortcut_action_help_icon">, während des Symbol auswählen, Anpassungsoptionen anzeigen</string>
+  <string name="shortcut_action_help_main">Um eine %1$s hinzuzufügen, wählen Sie das Symbol \"hinzufügen\". Sobald ein %1$s hinzugefügt wird, ändert Sie die Zeile markieren target%2$s\n\nZum entfernen ein %1$s, Wischen Sie die Zeile horizontal nach links oder rechts. Neu anordnen einen %1$s in der Liste durch vertikal ziehen nach links.\n\nSoll auf Standardwerte zurückgesetzt werden, wählen Sie die Option \"zurücksetzen\".</string>
+  <string name="shortcut_action_help_delete_last_entry">Entfernen aller %1$s in der Liste wird das Feature vollständig deaktivieren.</string>
+  <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Entfernen aller %1$s in der Liste wird den zweiten PIE Layer entfernen.</string>
   <!-- Lockscreen album art -->
   <string name="media_art_title">Medien-Titelbild</string>
   <string name="media_art_summary">Medien-Titelbild auf dem Sperrbildschirm aktivieren</string>
@@ -540,6 +603,7 @@
   <string name="led_color_green">Grün</string>
   <string name="led_color_red">Rot</string>
   <string name="led_color_blue">Blau</string>
+  <string name="ok">Okay</string>
   <string name="advanced">Erweitert</string>
   <string name="profiles_add">Hinzufügen...</string>
   <!-- Notification light dialogs -->
@@ -564,6 +628,7 @@
   <!-- Lights settings screen, notification light settings -->
   <string name="notification_light_title">Benachrichtigungs-LED</string>
   <string name="notificationlight_title">Benachrichtigungs-LED-Einstellungen</string>
+  <string name="notification_light_general_title">Allgemein</string>
   <string name="notification_light_applist_title">Anwendungen</string>
   <string name="notification_light_phonelist_title">Telefon</string>
   <string name="notification_light_use_custom">Benutzerdefinierte Werte verwenden</string>
@@ -612,24 +677,15 @@
   <string name="vol_zen_title">\"Nicht stören\"-Schalter</string>
   <string name="vol_zen_summary">Zeige \"Nicht stören\"-Schalter im Lautstärkefeld</string>
   <!-- Statusbar Clock options -->
-  <string name="status_bar_title">Statusleiste</string>
-  <string name="status_bar_style_title">Stil</string>
   <string name="status_bar_clock">Uhr &amp; Datum</string>
   <string name="clock_title_enable">Ausrichtung</string>
-  <string name="clock_enabled">Aktiviert</string>
-  <string name="clock_disabled">Deaktiviert</string>
-  <string name="status_bar_clock_style_reset">Farbe zurücksetzen</string>
   <string name="status_bar_show_clock_title">Uhr &amp; Datum anzeigen</string>
   <string name="status_bar_am_pm_title">AM/PM</string>
   <string name="status_bar_am_pm_info">24 Stunden Uhrzeit ist aktiviert</string>
-  <string name="enable_clock_weekday">Wochentag</string>
-  <string name="enable_clock_weekday_summary">Abgekürzter Wochentag vor der Uhrzeit</string>
   <string name="right_clock">Uhr rechts</string>
   <string name="center_clock">Uhr mittig</string>
   <string name="left_clock">Uhr links</string>
-  <string name="dont_show">Nicht anzeigen</string>
   <string name="clock_date_display">Datum</string>
-  <string name="clock_date_display_summary">Zeige benutzerdefiniertes Datum vor der Uhr</string>
   <string name="clock_date_style">Datumsformat</string>
   <string name="clock_date_position">Datums-Position</string>
   <string name="clock_date_format">Datumsformat</string>
@@ -637,13 +693,6 @@
   <string name="clock_date_string_edittext_summary">String eingeben</string>
   <string name="clock_date_right">Rechts neben Uhrzeit</string>
   <string name="clock_date_left">Links neben Uhrzeit</string>
-  <string name="am_pm_clock_normal">Normale Schriftgröße</string>
-  <string name="am_pm_clock_small">Kleine Schriftgröße</string>
-  <string name="am_pm_clock_none">Nicht anzeigen</string>
-  <string name="clock_date_display_none">Nicht anzeigen</string>
-  <string name="clock_date_display_small">Kleine Schriftgröße</string>
-  <string name="clock_date_display_normal">Normale Schriftgröße</string>
-  <string name="clock_date_style_normal">Normal</string>
   <string name="clock_date_style_lowercase">Kleinbuchstaben</string>
   <string name="clock_date_style_uppercase">Großbuchstaben</string>
   <string name="clock_date_format_custom">Benutzerdefiniertes Java-Format</string>
@@ -668,6 +717,8 @@
   <string name="qs_rows_portrait_title">Zeilen (Hochformat)</string>
   <string name="qs_rows_landscape_title">Zeilen (Querformat)</string>
   <string name="qs_columns_title">Spalten</string>
+  <string name="qqs_scroll_title">Kleine QS Kacheln scrollen</string>
+  <string name="qqs_scroll_summary">Ermöglicht, dass scrollen durch die kleinen QS Kacheln</string>
   <string name="qs_tile_title_visibility_title">QS Kacheln-Titel</string>
   <string name="qs_tile_title_visibility_summary_on">QS-Kacheln-Titel sind jetzt sichtbar</string>
   <string name="qs_tile_title_visibility_summary_off">QS-Kacheln-Titel sind jetzt verschwunden</string>
@@ -689,7 +740,6 @@
   <string name="omniswitch_settings_title">OmniSwitch</string>
   <!-- Battery customizations -->
   <string name="status_bar_battery_style_category">Akku</string>
-  <string name="status_bar_battery_style_title">Akkustatus-Symbol</string>
   <string name="status_bar_battery_style_icon_portrait">Symbol Hochformat</string>
   <string name="status_bar_battery_style_icon_landscape">Symbol Querformat</string>
   <string name="status_bar_battery_style_circle">Kreis</string>
@@ -701,10 +751,7 @@
   <string name="status_bar_battery_percentage_default">Ausgeblendet</string>
   <string name="status_bar_battery_percentage_text_inside">Innerhalb des Symbols</string>
   <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
-  <string name="status_bar_battery_style_tile_title">Benutzerdefinierter Akku Kachel Stil</string>
   <string name="status_bar_battery_style_tile_summary">Ermöglichen Sie, die gleichen Symbol Stil gewählt für die Statusbarakku Anzeige eingestellt</string>
-  <string name="status_bar_charge_color_title">Statusleiste Akku Symbol Ladefarbe</string>
-  <string name="status_bar_charge_color_summary">Legen Sie die Farbe des Akkusymbols in der Statusleiste während des Ladevorgangs</string>
   <string name="force_charge_battery_text_title">Akkuprozentanzeige in der Statusleiste</string>
   <string name="force_charge_battery_text_summary_on">Zeigt den Akkuprozentsatz außerhalb des Symbol während des Ladevorgangs</string>
   <string name="force_charge_battery_text_summary_off">Zeigt den Akkuprozentsatz innerhalb des Symbol während des Ladevorgangs</string>
@@ -833,6 +880,9 @@
   <string name="pulse_legacy_mode_advanced_category">Verblassende Blöcke Einstellungen</string>
   <string name="pulse_custom_fudge_factor">Verstand Stufe</string>
   <string name="lavamp_solid_speed_title">Lavalampe Geschwindigkeit</string>
+  <string name="pulse_solid_units_count">Anzahl durchgezogene Linien</string>
+  <string name="pulse_solid_lines_count">Anzahl durchgezogene Linien</string>
+  <string name="pulse_solid_units_opacity">Deckkraft durchgezogene Linien</string>
   <string name="pulse_solid_dimen_category">Einfache Linien Modus Einstellungen</string>
   <string name="fling_lavalamp_color_from">Lavalampe Startfarbe</string>
   <string name="fling_lavalamp_color_to">Lavalampe Endfarbe</string>
@@ -860,10 +910,11 @@
   <string name="smartbar_button_animation_summary">Lege die Animation der Tasten wenn die gedrückt werden fest</string>
   <string name="smartbar_button_animation_ripple">Welligkeit</string>
   <string name="smartbar_button_animation_spring">Hüpfen</string>
+  <string name="smartbar_button_animation_pixel">Pixel (alle Tasten)</string>
+  <string name="smartbar_button_animation_pixel_home">Pixel (Home-Taste)</string>
+  <string name="smartbar_button_animation_pixel_home_ripple">Pixel (Home-Taste) und Welle</string>
   <string name="smartbar_factory_reset_title">Standard zurücksetzen</string>
   <string name="smartbar_factory_reset_confirm">Sind Sie sicher, dass Sie Smartbar auf Standardeinstellungen zurücksetzen möchten?</string>
-  <string name="smartbar_ime_action_title">Eingabemethode Aktionen</string>
-  <string name="smartbar_ime_action_summary">Setze fest welche Tasten angezeigt werden wenn die Tastatur angezeigt wird</string>
   <string name="smartbar_ime_action_none">Keine</string>
   <string name="smartbar_ime_action_arrows">Eingabe Pfeile</string>
   <string name="smartbar_ime_action_switcher">Tastatur-Umschalter</string>
@@ -997,39 +1048,9 @@
   <!-- Status Bar Ticker -->
   <string name="ticker_screen_title">Ticker</string>
   <string name="ticker_title">Statusleisten Ticker</string>
-  <string name="ticker_screen_summary">Den Ticker Stil anpassen</string>
-  <string name="ticker_summary">Aktiviere den alten Status Bar Ticker</string>
-  <string name="ticker_font_style_title">Schriftart</string>
-  <string name="ticker_font_size_title">Schriftgröße</string>
   <!-- Heads up switch -->
   <string name="heads_up_switch_title">Heads up</string>
   <string name="heads_up_switch_summary">Schalten Sie HeadsUp Global, nicht pro app</string>
-  <!-- Fonts -->
-  <string name="font_normal">Roboto</string>
-  <string name="font_bold">Roboto Fett</string>
-  <string name="font_italic">Roboto Kursiv</string>
-  <string name="font_bold_italic">Roboto Fett Kursiv</string>
-  <string name="font_light_normal">Roboto Leicht (Standard)</string>
-  <string name="font_light_italic">Roboto Leicht Kursiv</string>
-  <string name="font_thin_normal">Roboto Dünn</string>
-  <string name="font_thin_italic">Roboto Dünn Kursiv</string>
-  <string name="font_condensed_normal">Roboto Schmal</string>
-  <string name="font_condensed_bold">Roboto Schmal Fett</string>
-  <string name="font_condensed_italic">Roboto Schmal Kursiv</string>
-  <string name="font_condensed_bold_italic">Roboto Schmal Fett Kursiv</string>
-  <string name="font_medium_normal">Roboto Medium</string>
-  <string name="font_medium_italic">Roboto Medium Kursiv</string>
-  <string name="font_black_normal">Roboto Schwarz</string>
-  <string name="font_black_italic">Roboto Schwarz Kursiv</string>
-  <string name="font_condensed_light_normal">Roboto Schmal Leicht</string>
-  <string name="font_condensed_light_italic">Roboto Schmal Leicht Kursiv</string>
-  <string name="font_dancingscript">DancingScript</string>
-  <string name="font_dancingscript_bold">DancingScript Fett</string>
-  <string name="font_comingsoon">ComingSoon</string>
-  <string name="font_notoserif">NotoSerif Normal</string>
-  <string name="font_notoserif_italic">NotoSerif kursiv</string>
-  <string name="font_notoserif_bold">NotoSerif Fett</string>
-  <string name="font_notoserif_bold_italic">NotoSerif Fett Kursiv</string>
   <!--  Lockscreen battery info indicator  -->
   <string name="lockscreen_battery_info_title">Sperrbildschirm Ladeinformation</string>
   <string name="lockscreen_battery_info_summary">Zeige Ladegerät Strom, Spannung und Akkutemperatur auf dem Sperrbildschirm während dem Laden</string>
@@ -1069,6 +1090,7 @@
   <!-- BT easy toggle -->
   <string name="qs_bt_easy_toggle_title">Einfacher Bluetooth Schalter</string>
   <string name="qs_bt_easy_toggle_summary">Macht mit einem Klick Bluetooth Ein- und Ausschalten anstatt zu Einstellungen</string>
+  <!-- Location easy toggle -->
   <!-- WiFi easy toggle -->
   <string name="qs_wifi_easy_toggle_title">Einfacher WLan Schalter</string>
   <string name="qs_wifi_easy_toggle_summary">Aktiviere die Funktion um mit einem Tipp WLan an- oder auszuschalten</string>
@@ -1162,7 +1184,6 @@
   <string name="nav_bar_dynamic_summary">Ändert die Farbe der Navigationsleiste zu der primären dunklen Farbe der App. Starte die App neu um den Effekt zu sehen</string>
   <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">MusikApp starten</string>
-  <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die MusikApp starten</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Akku Leiste</string>
   <string name="battery_bar">Position der Akkuleiste</string>
@@ -1336,11 +1357,25 @@
   <string name="recent_panel_show_topmost_summary">Aktive App nicht von den zuletzt geöffneten Apps ausschließen</string>
   <string name="recent_panel_bg_color_title">Panel Hintergrundfarbe</string>
   <string name="recent_card_bg_color_title">Karten Hintergrundfarbe</string>
-  <string name="recent_card_text_color_title">Karten Textfarbe</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Am linken Rand anzeigen</string>
   <string name="recent_panel_lefty_mode_summary">Zuletzt geöffnete Apps am linken Rand anzeigen</string>
   <!-- Wired headset ringtone audio focus -->
+  <string name="wired_ringtone_focus_mode_title">Über was sollen die Klingeltöne wiedergegeben werden</string>
+  <string name="wired_ringtone_focus_mode_dynamic">Kabelgebundene Kopfhörer falls angeschlossen und Musik gespielt wird</string>
+  <string name="wired_ringtone_focus_mode_stock">Lautsprecher und Kopfhörer (Standard)</string>
   <!-- fingerprint authentication vibration -->
+  <string name="fprint_sucess_vib_title">Vibration bei Fingerabdruckauthentifizierung</string>
+  <string name="fprint_sucess_vib_summary">Vibriert bei erfolgreicher Fingerabdruckauthentifizierung</string>
   <!-- Fingerprint unlock keystore -->
+  <string name="fp_unlock_keystore_title">FP entsperren</string>
+  <string name="fp_unlock_keystore_summary">Nach einem Neustart ohne PIN/Passwort/Muster mit Fingerabdruck entsperren\nNotiz: Auf eigene Gefahr benutzen!</string>
+  <!-- OmniJaws -->
+  <!-- StatusBar weather settings -->
+  <!-- statusbar brightness -->
+  <!-- Dialer force heads up -->
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>

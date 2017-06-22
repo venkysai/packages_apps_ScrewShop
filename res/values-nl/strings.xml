@@ -575,24 +575,15 @@
   <string name="vol_zen_title">Toegang niet storen</string>
   <string name="vol_zen_summary">Toon niet storen schakelaar op volume paneel</string>
   <!-- Statusbar Clock options -->
-  <string name="status_bar_title">Statusbalk</string>
-  <string name="status_bar_style_title">Stijl</string>
   <string name="status_bar_clock">Klok &amp; datum</string>
   <string name="clock_title_enable">Uitlijning</string>
-  <string name="clock_enabled">Ingeschakeld</string>
-  <string name="clock_disabled">Uitgeschaleld</string>
-  <string name="status_bar_clock_style_reset">Herstel kleuren</string>
   <string name="status_bar_show_clock_title">Toon klok &amp; datum</string>
   <string name="status_bar_am_pm_title">AM/PM</string>
   <string name="status_bar_am_pm_info">24-uurs klok is ingeschakeld</string>
-  <string name="enable_clock_weekday">Dag van de week</string>
-  <string name="enable_clock_weekday_summary">Verkorte dag van de week vóór de tijd</string>
   <string name="right_clock">Klok rechts</string>
   <string name="center_clock">Klok gecentreerd</string>
   <string name="left_clock">Linker klok</string>
-  <string name="dont_show">Niet weergeven</string>
   <string name="clock_date_display">Datum</string>
-  <string name="clock_date_display_summary">Aangepaste datum voor de klok weergeven</string>
   <string name="clock_date_style">Datum stijl</string>
   <string name="clock_date_position">Datum positie</string>
   <string name="clock_date_format">Datum format</string>
@@ -600,13 +591,6 @@
   <string name="clock_date_string_edittext_summary">Tekenreeks invoeren</string>
   <string name="clock_date_right">Rechts naast tijd</string>
   <string name="clock_date_left">Links naast tijd</string>
-  <string name="am_pm_clock_normal">Normale lettergrootte</string>
-  <string name="am_pm_clock_small">Kleine lettergrootte</string>
-  <string name="am_pm_clock_none">Niet weergeven</string>
-  <string name="clock_date_display_none">Niet weergeven</string>
-  <string name="clock_date_display_small">Kleine lettergrootte</string>
-  <string name="clock_date_display_normal">Normale lettergrootte</string>
-  <string name="clock_date_style_normal">Normaal</string>
   <string name="clock_date_style_lowercase">Kleine letters</string>
   <string name="clock_date_style_uppercase">Hoofdletters</string>
   <string name="clock_date_format_custom">Aangepast java formaat</string>
@@ -652,7 +636,6 @@
   <string name="omniswitch_settings_title">OmniSwitch</string>
   <!-- Battery customizations -->
   <string name="status_bar_battery_style_category">Batterij</string>
-  <string name="status_bar_battery_style_title">Accu statusstijl</string>
   <string name="status_bar_battery_style_icon_portrait">Icoon staand</string>
   <string name="status_bar_battery_style_icon_landscape">Icoon liggend</string>
   <string name="status_bar_battery_style_circle">Cirkel</string>
@@ -664,10 +647,7 @@
   <string name="status_bar_battery_percentage_default">Verborgen</string>
   <string name="status_bar_battery_percentage_text_inside">In het icoon</string>
   <string name="status_bar_battery_percentage_text_next">Naast het icoon</string>
-  <string name="status_bar_battery_style_tile_title">Aangepaste accu tegel stijl</string>
   <string name="status_bar_battery_style_tile_summary">Sta toe om hetzelfde icoon te kiezen voor de statusbalk batterij</string>
-  <string name="status_bar_charge_color_title">Kleur van batterij icoon in statusbalk tijdens opladen</string>
-  <string name="status_bar_charge_color_summary">Stel de kleur van de statusbalk batterij icoon in tijdens het opladen</string>
   <string name="force_charge_battery_text_title">Statusbalk batterij percentage tijdens opladen</string>
   <string name="force_charge_battery_text_summary_on">Laat het batterijpercentage naast het icoon zien tijdens opladen</string>
   <string name="force_charge_battery_text_summary_off">Laat het batterijpercentage in het icoon zien tijdens opladen</string>
@@ -823,8 +803,6 @@
   <string name="smartbar_button_animation_spring">Veer</string>
   <string name="smartbar_factory_reset_title">Reset naar standaard</string>
   <string name="smartbar_factory_reset_confirm">Weet u zeker dat u de Smartbar instellingen wilt resetten?</string>
-  <string name="smartbar_ime_action_title">Invoermethode acties</string>
-  <string name="smartbar_ime_action_summary">Instellen welke knoppen zichtbaar zijn wanneer een on-screen toetsenbord wordt weergegeven</string>
   <string name="smartbar_ime_action_none">Geen</string>
   <string name="smartbar_ime_action_arrows">Input pijlen</string>
   <string name="smartbar_ime_action_switcher">Toetsenbord switcher</string>
@@ -958,39 +936,9 @@
   <!-- Status Bar Ticker -->
   <string name="ticker_screen_title">Ticker</string>
   <string name="ticker_title">Statusbalk iconen</string>
-  <string name="ticker_screen_summary">De ticker stijl aanpassen</string>
-  <string name="ticker_summary">Schakel de oude statusbalk ticker in</string>
-  <string name="ticker_font_style_title">Lettertype Stijl</string>
-  <string name="ticker_font_size_title">Lettertypegrootte</string>
   <!-- Heads up switch -->
   <string name="heads_up_switch_title">Heads-up</string>
   <string name="heads_up_switch_summary">Toggle Heads-up overal, niet per app</string>
-  <!-- Fonts -->
-  <string name="font_normal">Roboto</string>
-  <string name="font_bold">Roboto Vet</string>
-  <string name="font_italic">Roboto Cursief</string>
-  <string name="font_bold_italic">Roboto Vet Cursief</string>
-  <string name="font_light_normal">Roboto Licht (standaard)</string>
-  <string name="font_light_italic">Roboto Licht Cursief</string>
-  <string name="font_thin_normal">Roboto Dun</string>
-  <string name="font_thin_italic">Roboto Dun Cursief</string>
-  <string name="font_condensed_normal">Roboto Condensed</string>
-  <string name="font_condensed_bold">Roboto Condensed Vet</string>
-  <string name="font_condensed_italic">Roboto Condensed Cursief</string>
-  <string name="font_condensed_bold_italic">Roboto Condensed Vet Cursief</string>
-  <string name="font_medium_normal">Roboto Medium</string>
-  <string name="font_medium_italic">Roboto Medium Cursief</string>
-  <string name="font_black_normal">Roboto Zwart</string>
-  <string name="font_black_italic">Roboto Zwart Cursief</string>
-  <string name="font_condensed_light_normal">Roboto Condensed Licht</string>
-  <string name="font_condensed_light_italic">Roboto Condensed Licht Cursief</string>
-  <string name="font_dancingscript">DancingScript</string>
-  <string name="font_dancingscript_bold">DancingScript Vetgedrukt</string>
-  <string name="font_comingsoon">Binnenkort Beschikbaar</string>
-  <string name="font_notoserif">NotoSerif normaal</string>
-  <string name="font_notoserif_italic">NotoSerif cursief</string>
-  <string name="font_notoserif_bold">NotoSerif Bold</string>
-  <string name="font_notoserif_bold_italic">NotoSerif Bold Italic</string>
   <!--  Lockscreen battery info indicator  -->
   <string name="lockscreen_battery_info_title">Vergrendelscherm oplaadinformatie</string>
   <!-- Heads up settings -->
@@ -1029,6 +977,7 @@
   <!-- BT easy toggle -->
   <string name="qs_bt_easy_toggle_title">Eenvoudige Bluetooth toggle</string>
   <string name="qs_bt_easy_toggle_summary">Maakt het zo dat één klik Bluetooth uitschakelt in plaats van het openen van instellingen</string>
+  <!-- Location easy toggle -->
   <!-- WiFi easy toggle -->
   <string name="qs_wifi_easy_toggle_title">WiFi easy toggle</string>
   <string name="qs_wifi_easy_toggle_summary">Eén-tik actie om WiFi in/uit te schakelen</string>
@@ -1119,7 +1068,6 @@
   <string name="nav_bar_dynamic_summary">Schakel in om navbar aan te passen naar primaire donkere kleur. Herstart om jouw gewenste effect te zien</string>
   <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Muziek app openen</string>
-  <string name="headset_connect_player_summary">Standaardmuziek app openen indien headset wordt aangesloten</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Batterijbalk</string>
   <string name="battery_bar">Batterijbalk locatie</string>
@@ -1182,4 +1130,12 @@
   <!-- Wired headset ringtone audio focus -->
   <!-- fingerprint authentication vibration -->
   <!-- Fingerprint unlock keystore -->
+  <!-- OmniJaws -->
+  <!-- StatusBar weather settings -->
+  <!-- statusbar brightness -->
+  <!-- Dialer force heads up -->
+  <!-- QS footer warnings -->
+  <!-- AOSP Recents Grid -->
+  <!-- QS Pulldown fingerprint -->
+  <!-- FP Call Gesture -->
 </resources>
