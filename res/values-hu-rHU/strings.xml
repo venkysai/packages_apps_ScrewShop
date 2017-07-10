@@ -78,6 +78,7 @@
   <string name="sounds">Hangok</string>
   <string name="buttons">Gombok</string>
   <string name="gestureany">Gesztus bárhol</string>
+  <string name="fp">Ujjlenyomat</string>
   <!-- Categories -->
   <string name="general">Általános</string>
   <string name="system_animations">Rendszeranimációk</string>
@@ -1205,6 +1206,12 @@
   <string name="nav_bar_dynamic_summary">Engedélyezze ahhoz, hogy a navigációs sáv felvegye az alkalmazás sötét fő színét (általában az állapotsáv színe is ez). Szükséges lehet az alkalmazások újraindítása a változtatás életbe lépéséhez</string>
   <!-- Launch music player when headset is connected -->
   <string name="headset_connect_player_title">Zenelejátszó indítása csatlakoztatáskor</string>
+  <string name="headset_connect_player_disabled">Letiltva</string>
+  <string name="headset_connect_player_wired">Ha a vezetékes fülhallgató csatlakoztatva van</string>
+  <string name="headset_connect_player_bt_no_carkit">Ha BT fejhallgató (nem autós) csatlakoztatva van</string>
+  <string name="headset_connect_player_bt">Ha Bluetooth fejhallgató csatlakoztatva van</string>
+  <string name="headset_connect_player_both_no_carkit">Ha vezetékes vagy BT fejhallgató (nem autós) csatlakoztatva van</string>
+  <string name="headset_connect_player_both">Ha vezetékes vagy BT fejhallgató csatlakoztatva van</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Akkumulátorsáv</string>
   <string name="battery_bar">Akkumulátorsáv helye</string>
@@ -1386,6 +1393,7 @@
   <string name="no_iconpacks_summary">Nincs ikoncsomag telepítve</string>
   <string name="dialog_pick_iconpack_title">Válasszon ikoncsomagot</string>
   <string name="default_iconpack_title">Alapértelmezett ikonok</string>
+  <string name="slim_recents_corner_radius_title">Használjon lekerekített sarkokat a kártyáknál</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Bal oldalon jelenítse meg</string>
   <string name="recent_panel_lefty_mode_summary">Az előzmények panelt a bal oldalon jelenítse meg</string>
@@ -1419,7 +1427,19 @@
   <string name="always_headsup_dialer_title">Tárcsázó lebegő értesítésének kényszérítése</string>
   <string name="always_headsup_dialer_summary">Tárcsázó lebegő értesítésének megjelenítése akkor is, ha az ki van kapcsolva, így elkerülve teljes képernyős bejövő hívást</string>
   <!-- QS footer warnings -->
+  <string name="qs_footer_warnings_title">Gyorsbeállítások lábléc figyelmeztetés</string>
+  <string name="qs_footer_warnings_summary">Figyelmeztetés megjelenítése a gyorsbeállítások panel alján, ha a hálózatot külső alkalmazás vagy a VPN figyeli</string>
   <!-- AOSP Recents Grid -->
+  <string name="recents_use_grid_title">Rács előzmények engedélyezése</string>
+  <string name="recents_use_grid_summary">Rács stílus engedélyezése az AOSP előzményekhez</string>
   <!-- QS Pulldown fingerprint -->
+  <string name="quick_pulldown_fp_title">Gyors legördítés ujjlenyomattal</string>
+  <string name="quick_pulldown_fp_summary">A gyorsbeállítások panel kibontása az ujjlenyomat-érzékelő egyetlen érintésével</string>
   <!-- FP Call Gesture -->
+  <string name="fp_swipe_call_actions_title">Ujjlenyomat hívás gesztusok</string>
+  <string name="fp_swipe_call_actions_disabled">Letiltva</string>
+  <string name="fp_swipe_call_actions_updown_answer_call">Csúsztatás fel vagy le a hívások fogadásáért</string>
+  <string name="fp_swipe_call_actions_up_answer_down_silence">Csúsztatás fel a hívás fogadásához, le a némításához</string>
+  <!-- Statusbar Battery Saver -->
+  <!-- Notification guts kill app button -->
 </resources>

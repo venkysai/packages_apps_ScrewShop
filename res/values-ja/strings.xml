@@ -774,4 +774,6 @@
   <!-- AOSP Recents Grid -->
   <!-- QS Pulldown fingerprint -->
   <!-- FP Call Gesture -->
+  <!-- Statusbar Battery Saver -->
+  <!-- Notification guts kill app button -->
 </resources>
