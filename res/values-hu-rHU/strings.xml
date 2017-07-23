@@ -943,6 +943,11 @@
   <string name="smartbar_config_backup_error_toast">Hiba a Smartbar profil mentésekor</string>
   <string name="smartbar_config_restore_error_toast">Hiba a Smartbar profil visszaállításakor</string>
   <string name="navbar_buttons_alpha_title">Gombok áttetszősége</string>
+  <string name="smartbar_longpress_delay_title">Gomb hosszan nyomási késleltetése</string>
+  <string name="smartbar_longpress_delay_summary">Állítsa be, mennyi ideig várjon a rendszer egy hosszan nyomási művelet elindítása előtt</string>
+  <string name="smartbar_longpress_delay_default">Alapértelmezett késleltetés (gyors)</string>
+  <string name="smartbar_longpress_delay_normal">Normál késleltetés</string>
+  <string name="smartbar_longpress_delay_long">Hosszú késleltetés</string>
   <!-- Custom carrier label and position -->
   <string name="carrier_label_settings_title">Szolgáltatói címke</string>
   <string name="carrier_label_settings_summary">Egyéni szolgáltató beállítása</string>
@@ -1441,5 +1446,9 @@
   <string name="fp_swipe_call_actions_updown_answer_call">Csúsztatás fel vagy le a hívások fogadásáért</string>
   <string name="fp_swipe_call_actions_up_answer_down_silence">Csúsztatás fel a hívás fogadásához, le a némításához</string>
   <!-- Statusbar Battery Saver -->
+  <string name="status_bar_battery_saver_color_title">Állapotsori energiatakarékos szín</string>
+  <string name="status_bar_battery_saver_color_summary">Megjegyzés: Ha az energiatakarékos üzemmód már engedélyezve van, az új szín életbe lépéséhez, kapcsolja ki és újra be az energiatakarékosságot!</string>
   <!-- Notification guts kill app button -->
+  <string name="notification_guts_kill_app_button_title">Alkalmazás kilövése gomb</string>
+  <string name="notification_guts_kill_app_button_summary">Az értesítések hosszan nyomási műveletei között megjeleníti az alkalmazás kilövése gombot</string>
 </resources>
