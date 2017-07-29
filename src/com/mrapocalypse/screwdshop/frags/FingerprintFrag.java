@@ -69,9 +69,9 @@ public class FingerprintFrag extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.fingerprint_frag);
 
-        final ContentResolver resolver = getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources res = getResources();
+        ContentResolver resolver = getContentResolver();
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources res = getResources();
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
 
