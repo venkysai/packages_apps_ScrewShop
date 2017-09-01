@@ -33,7 +33,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 /**
  * Created by cedwards on 6/3/2016.
@@ -57,8 +57,8 @@ public class UI extends SettingsPreferenceFragment implements
 
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.SCREWD;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.SCREWD;
     }
 
 

@@ -32,9 +32,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.internal.util.screwd.screwdUtils;
 
 //import com.mrapocalypse.screwdshop.R;
 
@@ -44,10 +43,6 @@ import com.android.internal.util.screwd.screwdUtils;
 public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener{
 
-    private static final String KEY_ONEPLUS_GESTURES = "oneplus_gestures";
-    private static final String KEY_ONEPLUS_GESTURES_PACKAGE_NAME = "com.cyanogenmod.settings.device";
-
-    private PreferenceScreen mOneplusGestures;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,11 +50,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.nav_tab);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        mOneplusGestures = (PreferenceScreen) findPreference(KEY_ONEPLUS_GESTURES);
-        if (!screwdUtils.isPackageInstalled(getActivity(), KEY_ONEPLUS_GESTURES_PACKAGE_NAME)) {
-            prefSet.removePreference(mOneplusGestures);
-        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -69,8 +59,8 @@ public class Navigation extends SettingsPreferenceFragment implements
 
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.SCREWD;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.SCREWD;
     }
 
 

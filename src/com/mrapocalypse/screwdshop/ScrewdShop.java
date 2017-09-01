@@ -56,15 +56,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.mrapocalypse.screwdshop.viewpager.transforms.*;
-
 import com.mrapocalypse.screwdshop.util.Root;
-import com.android.internal.util.screwd.screwdUtils;
 
 /**
  * Created by MrApocalypse on 9/6/2016.
@@ -82,7 +79,6 @@ public class ScrewdShop extends SettingsPreferenceFragment {
     ViewGroup mContainer;
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
-    private SettingsObserver mSettingsObserver;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -91,11 +87,9 @@ public class ScrewdShop extends SettingsPreferenceFragment {
             view = inflater.inflate(R.layout.screwd_main, container, false);
             mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
             mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-            mSettingsObserver = new SettingsObserver(new Handler());
             mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
             mViewPager.setAdapter(mSectionsPagerAdapter);
             mTabs.setViewPager(mViewPager);
-            mSettingsObserver.observe();
 
             setHasOptionsMenu(true);
         } else {
@@ -111,11 +105,11 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         try {
             PackageInfo pi = pm.getPackageInfo(LEAN_PACKAGE_NAME,PackageManager.GET_META_DATA);
             ApplicationInfo ai = pi.applicationInfo;
-            boolean installed = screwdUtils.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
+            //boolean installed = screwdUtils.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
             boolean enabled = ai.enabled;
-             if (installed && enabled) {
+             if (enabled) {
               result = true;
-             } else if (!installed || !enabled) {
+             } else {
               result = false;
              }
         } catch (PackageManager.NameNotFoundException n) {
@@ -196,149 +190,10 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         return titleString;
     }
 
-    private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            ContentResolver resolver = getActivity().getContentResolver();
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.SCREWD_SETTINGS_TABS_EFFECT),
-                    false, this, UserHandle.USER_ALL);
-            update();
-        }
-
-        void unobserve() {
-            ContentResolver resolver = getActivity().getContentResolver();
-            resolver.unregisterContentObserver(this);
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            super.onChange(selfChange);
-            update();
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            update();
-        }
-
-        public void update() {
-            ContentResolver resolver = getActivity().getContentResolver();
-            int effect = Settings.System.getIntForUser(resolver,
-                Settings.System.SCREWD_SETTINGS_TABS_EFFECT, 0,
-                UserHandle.USER_CURRENT);
-            switch (effect) {
-                case 0:
-                    mViewPager.setPageTransformer(true, new DefaultTransformer());
-                    break;
-                case 1:
-                    mViewPager.setPageTransformer(true, new AccordionTransformer());
-                    break;
-                case 2:
-                    mViewPager.setPageTransformer(true, new BackgroundToForegroundTransformer());
-                    break;
-                case 3:
-                    mViewPager.setPageTransformer(true, new CubeInTransformer());
-                    break;
-                case 4:
-                    mViewPager.setPageTransformer(true, new CubeOutTransformer());
-                    break;
-                case 5:
-                    mViewPager.setPageTransformer(true, new DepthPageTransformer());
-                    break;
-                case 6:
-                    mViewPager.setPageTransformer(true, new FlipHorizontalTransformer());
-                    break;
-                case 7:
-                    mViewPager.setPageTransformer(true, new FlipVerticalTransformer());
-                    break;
-                case 8:
-                    mViewPager.setPageTransformer(true, new ForegroundToBackgroundTransformer());
-                    break;
-                case 9:
-                    mViewPager.setPageTransformer(true, new RotateDownTransformer());
-                    break;
-                case 10:
-                    mViewPager.setPageTransformer(true, new RotateUpTransformer());
-                    break;
-                case 11:
-                    mViewPager.setPageTransformer(true, new ScaleInOutTransformer());
-                    break;
-                case 12:
-                    mViewPager.setPageTransformer(true, new StackTransformer());
-                    break;
-                case 13:
-                    mViewPager.setPageTransformer(true, new TabletTransformer());
-                    break;
-                case 14:
-                    mViewPager.setPageTransformer(true, new ZoomInTransformer());
-                    break;
-                case 15:
-                    mViewPager.setPageTransformer(true, new ZoomOutSlideTransformer());
-                    break;
-                case 16:
-                    mViewPager.setPageTransformer(true, new ZoomOutTranformer());
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    private static class SummaryProvider implements SummaryLoader.SummaryProvider {
-
-        private final Context mContext;
-        private final SummaryLoader mSummaryLoader;
-
-        public SummaryProvider(Context context, SummaryLoader summaryLoader) {
-            mContext = context;
-            mSummaryLoader = summaryLoader;
-        }
-
-        @Override
-        public void setListening(boolean listening) {
-            String mCustomSummary = Settings.System.getString(
-                    mContext.getContentResolver(), Settings.System.SS_SETTINGS_SUMMARY);
-            boolean mRandSum = Settings.System.getInt(
-                    mContext.getContentResolver(), Settings.System.SS_SETTINGS_RANDOM_SUMMARY, 0) == 1;
-            final String[] summariesArray = mContext.getResources().getStringArray(R.array.custom_summaries);
-            String chosenSum = randomSummary(summariesArray);
-
-            if (listening) {
-                if (TextUtils.isEmpty(mCustomSummary) && !mRandSum) {
-                    mSummaryLoader.setSummary(this, mContext.getString(R.string.screw_shop_summary_title));
-                } else if (!TextUtils.isEmpty(mCustomSummary) && !mRandSum) { //Random is off, Use User's input
-                    mSummaryLoader.setSummary(this, mCustomSummary);
-                } else if (TextUtils.isEmpty(mCustomSummary) && mRandSum) { //Random is on, User Input is blank
-                    mSummaryLoader.setSummary(this, chosenSum);
-                } else if (!TextUtils.isEmpty(mCustomSummary) && mRandSum) { //Random is on, but User has input
-                    mSummaryLoader.setSummary(this, chosenSum); //Override Text from user input
-                }
-            }
-        }
-
-        public static String randomSummary(String[] array) {
-            int rand = new Random().nextInt(array.length);
-            return array[rand];
-        }
-    }
-
-    public static final SummaryLoader.SummaryProviderFactory SUMMARY_PROVIDER_FACTORY
-            = new SummaryLoader.SummaryProviderFactory() {
-        @Override
-        public SummaryLoader.SummaryProvider createSummaryProvider(Activity activity,
-                                                                   SummaryLoader summaryLoader) {
-            return new SummaryProvider(activity, summaryLoader);
-        }
-    };
-
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.SCREWD;
-     }
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.SCREWD;
+    }
 
 }
 

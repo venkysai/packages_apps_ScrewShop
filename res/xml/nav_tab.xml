@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 Screw'd AOSP
+<!-- Copyright (C) 2017 Screw'd AOSP
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,33 +17,5 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-     <PreferenceScreen
-            android:key="oneplus_gestures"
-            android:title="@string/oneplus_gestures" >
-            <intent
-                android:action="com.android.settings.action.EXTRA_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
-     </PreferenceScreen>
-
-     <Preference
-        android:key="gest_any"
-        android:title="@string/gestureany"
-        android:fragment="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereSettings" />
-
-     <Preference
-        android:key="navigation_options"
-        android:fragment="com.mrapocalypse.screwdshop.frags.NavbarSettings"
-        android:title="@string/navigationbar_settings_title" />
-
-     <Preference
-    	android:key="pa_pie_control"
-        android:title="@string/pa_pie_control_title"
-        android:fragment="com.mrapocalypse.screwdshop.frags.PieControl" />
-
-     <Preference
-        android:key="appsidebar"
-        android:fragment="com.mrapocalypse.screwdshop.frags.AppSidebar"
-        android:title="@string/app_sidebar_title" />
-
+    
 </PreferenceScreen>

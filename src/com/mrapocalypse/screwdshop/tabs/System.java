@@ -35,7 +35,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 //import com.screwdaosp.screwshop.R;
 
@@ -54,14 +54,6 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_tab);
 
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        Preference fpPref = getPreferenceManager().findPreference("finger_print");
-
-        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-
-        if (!mFingerprintManager.isHardwareDetected()){
-            prefScreen.removePreference(fpPref);
-        }
     }
 
     @Override
@@ -82,8 +74,8 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
 
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.SCREWD;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.SCREWD;
     }
 
 }
