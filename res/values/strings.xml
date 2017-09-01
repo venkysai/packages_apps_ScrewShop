@@ -53,6 +53,16 @@
     <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
 
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
     <!-- Tabs -->
     <string name="ui_tab">UI</string>
     <string name="system_tab">System</string>
@@ -63,15 +73,14 @@
     <string name="vol_rock">Volume Rocker</string>
 
     <!-- begin strings for options -->
+
+
+    <!-- Sqap vol buttons -->
     <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
-   <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on color below to apply</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#ff000000</string>
-    <string name="set">Set</string>
-    <string name="color_default">Default</string>
+
+   <!-- Vol keys control media -->
+   <string name="volume_keys_control_media_stream_title">Volume keys control media volume</string>
+   <string name="volume_keys_control_media_stream_summary">Volume panel will show media volume slider by default</string>
+   
     
 </resources>
