@@ -62,6 +62,8 @@
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
 
+    <!-- begin strings for options -->
+    <string name="swap_volume_buttons">Swap volume buttons rotation based</string>
    <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>

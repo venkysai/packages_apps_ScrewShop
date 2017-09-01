@@ -18,6 +18,12 @@
 
     <PreferenceCategory 
          android:title="@string/vol_rock">
+
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="swap_volume_buttons"
+            android:title="@string/swap_volume_buttons"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 
