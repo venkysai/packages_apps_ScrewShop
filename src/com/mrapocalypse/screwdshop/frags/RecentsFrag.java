@@ -40,7 +40,6 @@ import android.view.ViewGroup;
 import android.util.Log;
 
 import com.android.settings.R;
-import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
@@ -48,6 +47,11 @@ import com.android.internal.logging.nano.MetricsProto;
 
 public class RecentsFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+    private ListPreference mRecentsClearAllLocation;
+    private SwitchPreference mRecentsClearAll;
 
 
     @Override
@@ -59,13 +63,27 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
+        // clear all recents
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-
+        if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
