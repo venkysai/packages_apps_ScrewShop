@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
@@ -34,13 +35,15 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+import com.mrapocalypse.screwdshop.utils.Utils;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 
 public class NotificationFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
 
     @Override
@@ -50,6 +53,11 @@ public class NotificationFrag extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
+        }
 
     }
 
