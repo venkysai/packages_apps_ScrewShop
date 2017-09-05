@@ -35,7 +35,7 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.mrapocalypse.screwdshop.utils.Utils;
+import com.mrapocalypse.screwdshop.util.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
