@@ -57,6 +57,10 @@
     <string name="ui_tab">UI</string>
     <string name="system_tab">System</string>
     <string name="navigation_tab">Navigation</string>
+    <!-- Sections -->
+    <string name="buttons">Buttons</string>
+    <!-- Categories -->
+    <string name="vol_rock">Volume Rocker</string>
 
    <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
