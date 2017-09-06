@@ -65,6 +65,12 @@
             android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="qs_footer_warnings"
+            android:title="@string/qs_footer_warnings_title"
+            android:summary="@string/qs_footer_warnings_summary"
+            android:defaultValue="true" />
+
      </PreferenceCategory>
       
 </PreferenceScreen>
