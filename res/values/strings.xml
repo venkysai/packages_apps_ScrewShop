@@ -70,6 +70,7 @@
     <!-- Sections -->
     <string name="buttons">Buttons</string>
     <string name="recents">Recents</string>
+    <string name="notifications">Notifications</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
 
