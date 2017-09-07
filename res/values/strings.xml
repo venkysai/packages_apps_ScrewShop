@@ -69,6 +69,7 @@
     <string name="navigation_tab">Navigation</string>
     <!-- Sections -->
     <string name="buttons">Buttons</string>
+    <string name="recents">Recents</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
 
