@@ -23,6 +23,11 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.StatusbarFrag" />
 
     <Preference
+        android:key="quick_settings"
+        android:title="@string/qs"
+        android:fragment="com.mrapocalypse.screwdshop.frags.QSFrag" />
+
+    <Preference
         android:key="recents"
         android:title="@string/recents"
         android:fragment="com.mrapocalypse.screwdshop.frags.RecentsFrag" />

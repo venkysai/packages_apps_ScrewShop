@@ -73,9 +73,13 @@
     <string name="notifications">Notifications</string>
     <string name="statusbar">Statusbar</string>
     <string name="lockscreen">Lockscreen</string>
+    <string name="qs">Quick Settings</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
     <string name="the_interface">Interface</string>
+    <string name="qs_header_title">Quick settings header</string>
+    <string name="pulldown">Pulldown options</string>
+    <string name="qs_tile_layout">Tile Layout</string>
     <!-- begin strings for options -->
 
 
