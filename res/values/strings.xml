@@ -71,9 +71,11 @@
     <string name="buttons">Buttons</string>
     <string name="recents">Recents</string>
     <string name="notifications">Notifications</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="lockscreen">Lockscreen</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
-
+    <string name="the_interface">Interface</string>
     <!-- begin strings for options -->
 
 
