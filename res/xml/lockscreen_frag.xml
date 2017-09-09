@@ -26,6 +26,12 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
          </Preference>
+	 
+	 <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+              android:key="double_tap_sleep_lockscreen"
+              android:title="@string/double_tap_to_sleep_lockscreen_title"
+              android:summary="@string/double_tap_to_sleep_lockscreen_summary"
+              android:defaultValue="true" />
 
     </PreferenceCategory>
 
