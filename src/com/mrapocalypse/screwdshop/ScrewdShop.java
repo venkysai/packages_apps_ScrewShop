@@ -62,6 +62,7 @@ import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.mrapocalypse.screwdshop.util.Root;
+import com.android.internal.util.screwd.screwdUtils;
 
 /**
  * Created by MrApocalypse on 9/6/2016.
@@ -105,9 +106,9 @@ public class ScrewdShop extends SettingsPreferenceFragment {
         try {
             PackageInfo pi = pm.getPackageInfo(LEAN_PACKAGE_NAME,PackageManager.GET_META_DATA);
             ApplicationInfo ai = pi.applicationInfo;
-            //boolean installed = screwdUtils.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
+            boolean installed = screwdUtils.isPackageInstalled(getActivity(), LEAN_PACKAGE_NAME);
             boolean enabled = ai.enabled;
-             if (enabled) {
+             if (enabled && installed) {
               result = true;
              } else {
               result = false;
