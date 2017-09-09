@@ -32,9 +32,4 @@
     <color name="darkScrewdPrimaryDark">#141831</color>
     <color name="darkScrewdAccent">#8000ff</color>
 
-
-
-    <!-- General -->
-    <color name="theme_accent">@*android:color/material_deep_teal_500</color>
-
 </resources>
