@@ -280,4 +280,13 @@
 
     <!-- Toggle navigation bar -->
     <string name="navigation_bar_enabled_title">Enable navigation bar</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
+    <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_none">No notifications</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_ongoing">No ongoing</string>
 </resources>
