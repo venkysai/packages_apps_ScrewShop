@@ -17,13 +17,31 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/statusbar" >
 
-    <Preference
-            android:title="@string/status_bar_icon_blacklist_title"
-            android:summary="@string/status_bar_icon_blacklist_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
-    </Preference>
+    <PreferenceCategory
+        android:key="pref_cat_icons"
+        android:title="@string/icons">
 
+        <Preference
+                android:title="@string/status_bar_icon_blacklist_title"
+                android:summary="@string/status_bar_icon_blacklist_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
+        </Preference>
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="network_traffic_state"
+            android:title="@string/network_traffic_state_title"
+            android:summary="@string/network_traffic_state_summary"
+            android:defaultValue="true" />
+
+        <com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
+            android:key="network_traffic_autohide_threshold"
+            android:title="@string/network_traffic_autohide_threshold_title"
+            android:max="10"
+            settings:min="0"
+            settings:units="" />
+
+    </PreferenceCategory>
     
 </PreferenceScreen>

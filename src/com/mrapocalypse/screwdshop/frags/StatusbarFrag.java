@@ -52,12 +52,17 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
+import com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference;
 
 /**
  * Created by cedwards on 6/3/2016.
  */
 public class StatusbarFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private CustomSeekBarPreference mThreshold;
+    private SystemSettingSwitchPreference mNetMonitor;
 
 
     @Override
@@ -68,14 +73,39 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
+
+        int value = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
+        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold.setValue(value);
+        mThreshold.setOnPreferenceChangeListener(this);
+        mThreshold.setEnabled(isNetMonitorEnabled);
 
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-
-
+        if (preference == mNetMonitor) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            mThreshold.setEnabled(value);
+            return true;
+        } else if (preference == mThreshold) {
+            int val = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
+                    UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 

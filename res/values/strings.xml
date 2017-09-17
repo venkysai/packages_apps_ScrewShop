@@ -86,6 +86,7 @@
     <string name="pulldown">Pulldown options</string>
     <string name="qs_tile_layout">Tile Layout</string>
     <string name="weather">Weather options</string>
+    <string name="icons">Icons</string>
     <!-- begin strings for options -->
 
 
@@ -289,4 +290,9 @@
     <string name="smart_pulldown_none">No notifications</string>
     <string name="smart_pulldown_dismissable">No dismissable</string>
     <string name="smart_pulldown_ongoing">No ongoing</string>
+
+    <!-- Statusbar net monitor -->
+    <string name="network_traffic_state_title">Network traffic</string>
+    <string name="network_traffic_state_summary">Show net activity in statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
 </resources>
