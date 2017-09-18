@@ -36,5 +36,11 @@
         android:key="notifs"
         android:title="@string/notifications"
         android:fragment="com.mrapocalypse.screwdshop.frags.NotificationFrag" />
+	
+    <Preference
+        android:key="animations"
+        android:title="@string/animations"
+        android:fragment="com.mrapocalypse.screwdshop.frags.AnimFrag" />
+	
 
 </PreferenceScreen>

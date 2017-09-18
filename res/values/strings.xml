@@ -74,6 +74,7 @@
     <string name="statusbar">Statusbar</string>
     <string name="lockscreen">Lockscreen</string>
     <string name="qs">Quick Settings</string>
+    <string name="animations">Animations</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
     <string name="the_interface">Interface</string>
@@ -186,5 +187,10 @@
     <string name="volume_key_cursor_control_off">Disabled</string>
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+    
+    <!-- Double Tap Navbar to sleep -->
+    <string name="dtts_category_header">Double tap to sleep</string>
+    <string name="double_tap_sleep_navbar">Double tap to sleep on navbar</string>
+    <string name="double_tap_sleep_navbar_summary">Double-tap status bar to put the device to sleep</string>
     
 </resources>
