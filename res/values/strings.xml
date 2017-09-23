@@ -294,6 +294,10 @@
     <string name="smart_pulldown_dismissable">No dismissable</string>
     <string name="smart_pulldown_ongoing">No ongoing</string>
 
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_power_menu_disabled_title">Power menu when locked</string>
+    <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lockscreen</string>
+
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Network traffic</string>
     <string name="network_traffic_state_summary">Show net activity in statusbar</string>
