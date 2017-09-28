@@ -54,6 +54,12 @@ import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 public class PanelPorn extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private ListPreference mVolumeDialogStroke;
+    private Preference mVolumeDialogStrokeColor;
+    private Preference mVolumeDialogStrokeThickness;
+    private Preference mVolumeDialogDashWidth;
+    private Preference mVolumeDialogDashGap;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +69,15 @@ public class PanelPorn extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
 
-
+        mVolumeDialogStroke =
+                (ListPreference) findPreference(Settings.System.VOLUME_DIALOG_STROKE);
+        mVolumeDialogStroke.setOnPreferenceChangeListener(this);
+        mVolumeDialogStrokeColor = findPreference(Settings.System.VOLUME_DIALOG_STROKE_COLOR);
+        mVolumeDialogStrokeThickness =
+                findPreference(Settings.System.VOLUME_DIALOG_STROKE_THICKNESS);
+        mVolumeDialogDashWidth = findPreference(Settings.System.VOLUME_DIALOG_STROKE_DASH_WIDTH);
+        mVolumeDialogDashGap = findPreference(Settings.System.VOLUME_DIALOG_STROKE_DASH_GAP);
+        updateVolumeDialogDependencies(mVolumeDialogStroke.getValue());
 
 
     }
@@ -78,11 +92,33 @@ public class PanelPorn extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	    ContentResolver resolver = getActivity().getContentResolver();
-
+        if (preference == mVolumeDialogStroke) {
+            updateVolumeDialogDependencies((String) newValue);
+            return true;
+        }
 
         return false;
     }
 
+
+    private void updateVolumeDialogDependencies(String volumeDialogStroke) {
+        if (volumeDialogStroke.equals("0")) {
+            mVolumeDialogStrokeColor.setEnabled(false);
+            mVolumeDialogStrokeThickness.setEnabled(false);
+            mVolumeDialogDashWidth.setEnabled(false);
+            mVolumeDialogDashGap.setEnabled(false);
+        } else if (volumeDialogStroke.equals("1")) {
+            mVolumeDialogStrokeColor.setEnabled(false);
+            mVolumeDialogStrokeThickness.setEnabled(true);
+            mVolumeDialogDashWidth.setEnabled(true);
+            mVolumeDialogDashGap.setEnabled(true);
+        } else {
+            mVolumeDialogStrokeColor.setEnabled(true);
+            mVolumeDialogStrokeThickness.setEnabled(true);
+            mVolumeDialogDashWidth.setEnabled(true);
+            mVolumeDialogDashGap.setEnabled(true);
+        }
+    }
 
     @Override
     public void onResume() {
