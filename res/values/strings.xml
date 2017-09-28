@@ -87,6 +87,7 @@
     <string name="qs_tile_layout">Tile Layout</string>
     <string name="weather">Weather options</string>
     <string name="icons">Icons</string>
+    <string name="gestures">Gestures</string>
     <!-- begin strings for options -->
 
 
@@ -295,4 +296,8 @@
     <string name="network_traffic_state_title">Network traffic</string>
     <string name="network_traffic_state_summary">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 </resources>
