@@ -1377,6 +1377,11 @@
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">Show Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
+   
+    <!-- Disable music track title in QS tile -->
+    <string name="qs_music_tile_track_optional_title">Music tile track title</string>
+    <string name="qs_music_tile_track_optional_summary">Show the music track title as the QS tile title</string>
+
     
 </resources>
 

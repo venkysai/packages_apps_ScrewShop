@@ -160,4 +160,15 @@
 
      </PreferenceCategory>
       
+    <PreferenceCategory
+            android:title="@string/misc">
+				
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        	  android:key="music_tile_title"
+            android:title="@string/qs_music_tile_track_optional_title"
+            android:summary="@string/qs_music_tile_track_optional_summary"
+            android:defaultValue="false"/>
+
+     </PreferenceCategory>
+
 </PreferenceScreen>
