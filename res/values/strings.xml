@@ -1107,5 +1107,8 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="menu_cancel">Cancel</string>
 
+    <!-- Pocket Judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
 </resources>
 
