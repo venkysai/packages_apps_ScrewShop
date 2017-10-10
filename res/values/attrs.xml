@@ -83,4 +83,10 @@
         <attr name="useDefaultController" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="SeekBarPreference">
+        <attr name="unitsLeft" format="string|reference" />
+        <attr name="unitsRight" format="string|reference" />
+        <attr name="thumb_default_value_color" format="color" />
+    </declare-styleable>
+
 </resources>
