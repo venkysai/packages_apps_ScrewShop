@@ -18,5 +18,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
+    <Preference
+            android:title="@string/navbar_buttons_title"
+            android:summary="@string/navbar_buttons_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.NavBarTunerActivity" />
+    </Preference>
+
     
 </PreferenceScreen>
