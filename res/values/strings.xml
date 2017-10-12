@@ -722,7 +722,10 @@
 
     <!-- Screwd statusbar logo -->
     <string name="status_bar_logo_title">Screw\'d logo</string>
-    <string name="status_bar_logo_summary">Enable to show Screw\'d logo on statusbar</string>
+    <string name="status_bar_logo_dialog_title">Screw\'d logo position</string>
+    <string name="status_bar_logo_disabled">Disabled</string>
+    <string name="status_bar_logo_left">Left</string>
+    <string name="status_bar_logo_right">Right</string>
 
 </resources>
 
