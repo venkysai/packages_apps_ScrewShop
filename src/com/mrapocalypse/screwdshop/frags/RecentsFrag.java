@@ -88,6 +88,9 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mImmersiveRecents;
+    private SwitchPreference mSlimToggle;
+    private Preference mStockIconPacks;
+
     private AlertDialog mDialog;
     private ListView mListView;
 
@@ -114,6 +117,15 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
         mImmersiveRecents.setOnPreferenceChangeListener(this);
 
+        mStockIconPacks = (Preference) findPreference("recents_icon_pack");
+        mSlimToggle = (SwitchPreference) findPreference("use_slim_recents");
+        boolean enabled = Settings.System.getIntForUser(
+                resolver, Settings.System.USE_SLIM_RECENTS, 0,
+                UserHandle.USER_CURRENT) == 1;
+        mSlimToggle.setChecked(enabled);
+        mStockIconPacks.setEnabled(!enabled);
+        mSlimToggle.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -132,13 +144,21 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
             mImmersiveRecents.setValue(String.valueOf(newValue));
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
             return true;
+        } else if (preference == mSlimToggle) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.USE_SLIM_RECENTS, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mSlimToggle.setChecked(value);
+            mStockIconPacks.setEnabled(!value);
+            return true;
         }
         return false;
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == findPreference("recents_icon_pack")) {
+        if (preference == mStockIconPacks) {
             pickIconPack(getContext());
             return true;
         }
