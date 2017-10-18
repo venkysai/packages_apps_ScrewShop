@@ -395,5 +395,9 @@
     <string name="style_disabled_summary">Custom header image is OFF</string>
     <string name="header_provider_disabled">Disabled</string>
     <string name="custom_header_title">Custom header image</string>
+
+    <!-- QS Dark mode -->
+    <string name="qs_style_dark_title">Dark SystemUI style</string>
+    <string name="qs_style_dark_summary">Reboot is required after changing</string>
 </resources>
 
