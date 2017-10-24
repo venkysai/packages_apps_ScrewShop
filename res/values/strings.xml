@@ -89,6 +89,7 @@
     <string name="weather">Weather options</string>
     <string name="icons">Icons</string>
     <string name="gestures">Gestures</string>
+    <string name="aosp_recents_title">AOSP recents</string>
     <!-- begin strings for options -->
 
 
