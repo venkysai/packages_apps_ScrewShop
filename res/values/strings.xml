@@ -79,6 +79,7 @@
     <string name="toast">Toast</string>
     <string name="listview">ListView</string>
     <string name="navigationbar">Navigation Bar</string>
+    <string name="power_menu">Power Menu</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
     <string name="the_interface">Interface</string>

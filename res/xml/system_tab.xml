@@ -17,6 +17,10 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="powermenu"
+        android:title="@string/power_menu"
+        android:fragment="com.mrapocalypse.screwdshop.frags.PowerMenuFrag" />
 
     <Preference
         android:key="buttons"
