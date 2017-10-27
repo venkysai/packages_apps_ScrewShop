@@ -90,6 +90,7 @@
     <string name="icons">Icons</string>
     <string name="gestures">Gestures</string>
     <string name="aosp_recents_title">AOSP recents</string>
+    <string name="power_menu_entries">Entries</string>
     <!-- begin strings for options -->
 
 
@@ -370,5 +371,12 @@
     <string name="slim_blacklist_apps_summary">Apps to not show in the panel</string>
     <string name="slim_blacklist_add_apps_title">Add app</string>
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
+
+    <!-- Power Menu -->
+    <!--string name="powermenu_reboot_title">Reboot</string-->
+    <string name="powermenu_airplane_title">Airplane mode</string>
+    <string name="powermenu_settings_title">Settings</string>
+    <string name="powermenu_lockdown_title">Lock now</string>
+    <string name="powermenu_soundpanel_title">Sound panel</string>
 </resources>
-</resources>
+

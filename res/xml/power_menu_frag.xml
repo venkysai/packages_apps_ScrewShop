@@ -15,12 +15,41 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-   
+
         <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
             android:key="lockscreen_power_menu_disabled"
             android:title="@string/lockscreen_power_menu_disabled_title"
             android:summary="@string/lockscreen_power_menu_disabled_summary"
             android:defaultValue="true" />
 
+        <PreferenceCategory 
+            android:title="@string/power_menu_entries">
+
+             <!--com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_restart"
+                android:title="@string/powermenu_reboot_title"
+                android:defaultValue="true" /-->
+          
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_airplane"
+                android:title="@string/powermenu_airplane_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_settings"
+                android:title="@string/powermenu_settings_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_lockdown"
+                android:title="@string/powermenu_lockdown_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_soundpanel"
+                android:title="@string/powermenu_soundpanel_title"
+                android:defaultValue="false" />
+
+        </PreferenceCategory>
  
 </PreferenceScreen>
