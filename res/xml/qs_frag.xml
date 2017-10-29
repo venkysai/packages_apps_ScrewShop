@@ -56,11 +56,6 @@
      <PreferenceCategory
         android:title="@string/qs_tile_layout"
         android:key="qs_layout">
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="qs_tile_title_visibility"
-            android:title="@string/qs_tile_title_visibility_title"
-            android:defaultValue="false" />
 	
 	<com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
             android:key="qs_rows_portrait"
