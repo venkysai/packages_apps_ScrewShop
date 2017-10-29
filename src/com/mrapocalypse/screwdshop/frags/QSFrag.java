@@ -43,9 +43,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
-
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.widget.LockPatternUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -59,10 +58,6 @@ public class QSFrag extends SettingsPreferenceFragment implements
 
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
-    private CustomSeekBarPreference mQsRowsPort;
-    private CustomSeekBarPreference mQsRowsLand;
-    private CustomSeekBarPreference mQsColumnsPort;
-    private CustomSeekBarPreference mQsColumnsLand;
     private ListPreference mSmartPulldown;
 
     @Override
@@ -71,31 +66,9 @@ public class QSFrag extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.qs_frag);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
         final PreferenceScreen prefSet = getPreferenceScreen();
 
-		int value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
-        mQsRowsPort = (CustomSeekBarPreference) findPreference("qs_rows_portrait");
-        mQsRowsPort.setValue(value);
-        mQsRowsPort.setOnPreferenceChangeListener(this);
-
-        value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
-        mQsRowsLand = (CustomSeekBarPreference) findPreference("qs_rows_landscape");
-        mQsRowsLand.setValue(value);
-        mQsRowsLand.setOnPreferenceChangeListener(this);
-
-        value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 5, UserHandle.USER_CURRENT);
-        mQsColumnsPort = (CustomSeekBarPreference) findPreference("qs_columns_portrait");
-        mQsColumnsPort.setValue(value);
-        mQsColumnsPort.setOnPreferenceChangeListener(this);
-
-        value = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
-        mQsColumnsLand = (CustomSeekBarPreference) findPreference("qs_columns_landscape");
-        mQsColumnsLand.setValue(value);
-        mQsColumnsLand.setOnPreferenceChangeListener(this);
 
         mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
@@ -106,30 +79,11 @@ public class QSFrag extends SettingsPreferenceFragment implements
 
     }
 
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	    ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mQsRowsPort) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_ROWS_PORTRAIT, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mQsRowsLand) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_ROWS_LANDSCAPE, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mQsColumnsPort) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_COLUMNS_PORTRAIT, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mQsColumnsLand) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_COLUMNS_LANDSCAPE, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mSmartPulldown) {
+        if (preference == mSmartPulldown) {
             int smartPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
             updateSmartPulldownSummary(smartPulldown);
