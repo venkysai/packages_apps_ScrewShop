@@ -86,7 +86,6 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
     private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
-    private static final String OMNISWITCH_CAT = "omniswitch";
 
     // Package name of the omnniswitch app
     public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
@@ -102,7 +101,6 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
     private SwitchPreference mRecentsUseOmniSwitch;
     private Preference mOmniSwitchSettings;
     private boolean mOmniSwitchInitCalled;
-    private PreferenceCategory mOmniSwitchCategory;
 
 
     private AlertDialog mDialog;
@@ -143,8 +141,6 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
         mRecentsUseOmniSwitch = (SwitchPreference)
                 prefScreen.findPreference(RECENTS_USE_OMNISWITCH);
 
-        mOmniSwitchCategory = (PreferenceCategory) prefScreen.findPreference(OMNISWITCH_CAT);
-
         try {
             mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
                     Settings.System.RECENTS_USE_OMNISWITCH) == 1);
@@ -156,8 +152,7 @@ public class RecentsFrag extends SettingsPreferenceFragment implements
 
         mOmniSwitchSettings = (Preference)
                 prefScreen.findPreference(OMNISWITCH_START_SETTINGS);
-        //mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
-        prefScreen.removePreference(mOmniSwitchCategory);
+        mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
 
     }
 
