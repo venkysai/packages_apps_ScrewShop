@@ -376,7 +376,7 @@
     <string name="powermenu_soundpanel_title">Sound panel</string>
 
     <!-- QS Headers -->
-    <string name="status_bar_custom_header_title">Enable</string>
+    <string name="status_bar_custom_header_title">Enable custom header</string>
     <string name="daylight_header_pack_title">Header image pack</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
