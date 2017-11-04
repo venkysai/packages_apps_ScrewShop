@@ -86,7 +86,7 @@
     <string name="qs_header_title">Quick settings header</string>
     <string name="pulldown">Pulldown options</string>
     <string name="qs_tile_layout">Tile Layout</string>
-    <string name="weather">Weather options</string>
+    <string name="weather_ops">Weather options</string>
     <string name="icons">Icons</string>
     <string name="gestures">Gestures</string>
     <string name="aosp_recents_title">AOSP recents</string>
@@ -428,7 +428,6 @@
     <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
    
     <!-- Slim DSLV -->
-    <string name="shortcut_action_none">None</string>
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>

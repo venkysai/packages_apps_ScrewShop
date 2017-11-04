@@ -43,7 +43,7 @@
      </PreferenceCategory>
 
      <PreferenceCategory
-        android:title="@string/weather"
+        android:title="@string/weather_ops"
         android:key="weather_category">
         
         <PreferenceScreen
