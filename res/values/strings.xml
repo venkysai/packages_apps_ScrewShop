@@ -93,6 +93,7 @@
     <string name="aosp_recents_title">AOSP recents</string>
     <string name="power_menu_entries">Entries</string>
     <string name="shortcuts">Shortcut options</string>
+    <string name="heads_up_cat">Heads Up</string>
     <!-- begin strings for options -->
 
 
@@ -639,6 +640,11 @@
     <!-- Quick Settings brightness icon -->
     <string name="brightness_icon_title">Brightness slider icon</string>
     <string name="brightness_icon_summary">Show a brightness icon to the left of the brightness slider to toggle auto-brightness</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads up</string>
+    <string name="heads_up_summary_enabled">Pop-up notifications are enabled</string>
+    <string name="heads_up_summary_disabled">Pop-up notifications are disabled</string>
 
 </resources>
 

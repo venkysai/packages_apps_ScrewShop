@@ -18,6 +18,19 @@
      android:title="@string/notifications" >
 
      <PreferenceCategory
+        android:key="headsup"
+        android:title="@string/heads_up_cat" >
+
+        <com.mrapocalypse.screwdshop.prefs.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/heads_up_title"
+            android:summaryOn="@string/heads_up_summary_enabled"
+            android:summaryOff="@string/heads_up_summary_disabled"
+            android:defaultValue="true" />
+
+     </PreferenceCategory>
+
+     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
@@ -36,5 +49,6 @@
             android:title="@string/incall_vibrate_disconnect_title"
             android:defaultValue="false" />
     </PreferenceCategory>
+
 
 </PreferenceScreen>
