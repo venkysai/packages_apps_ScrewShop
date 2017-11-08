@@ -47,4 +47,12 @@
         android:title="@string/wakelock_blocker_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.WakeLockBlocker" />
 
+     <Preference
+        android:key="device_extras_category">
+        android:title="@string/op_device_extras"
+        <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
+            android:targetPackage="com.screwd.settings.device"
+            android:targetClass="com.screwd.settings.device.TouchscreenGestureSettings" />
+    </Preference>
+
 </PreferenceScreen>

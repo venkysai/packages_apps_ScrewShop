@@ -54,6 +54,12 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.system_tab);
 
+        Preference DeviceExtras = findPreference("device_extras_category");
+
+        if (!getResources().getBoolean(R.bool.has_device_extras)) {
+            getPreferenceScreen().removePreference(DeviceExtras);
+        }
+
     }
 
     @Override
