@@ -17,6 +17,11 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/notifications" >
 
+     <Preference
+        android:key="notification_light"
+        android:title="@string/notification_light_title"
+        android:fragment="com.mrapocalypse.screwdshop.frags.batterylight.NotificationLightSettings" />
+
      <PreferenceCategory
         android:key="headsup"
         android:title="@string/heads_up_cat" >

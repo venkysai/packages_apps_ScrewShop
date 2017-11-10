@@ -27,4 +27,7 @@
     <dimen name="fab_elevation_normal">8dp</dimen>
     <dimen name="fab_elevation_pressed">6dp</dimen>
 
+    <!-- Notification light -->
+    <dimen name="oval_notification_size">26dp</dimen>
+
 </resources>
