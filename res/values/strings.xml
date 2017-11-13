@@ -121,16 +121,6 @@
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
-    <!-- Battery light -->
-    <string name="battery_light_settings">Battery Charging Light</string>
-    <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
-    <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
-    <string name="battery_light_cat">Battery light color when charging</string>
-    <string name="battery_light_low_color">Low battery</string>
-    <string name="battery_light_medium_color">Medium battery</string>
-    <string name="battery_light_full_color">Almost full battery</string>
-    <string name="battery_light_reallyfull_color">Full (100) battery</string>
-
     <!--SysUI tuner options -->
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
