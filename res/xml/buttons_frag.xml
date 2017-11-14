@@ -53,6 +53,13 @@
             android:summary="@string/volume_rocker_music_controls_summary"
             android:title="@string/volume_rocker_music_controls_title"
             android:defaultValue="true" />
+
+         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="volume_rocker_wake"
+            android:title="@string/volume_rocker_wake_title"
+            android:summary="@string/volume_rocker_wake_summary"
+            android:defaultValue="false"
+            android:disableDependentsState="true" />
 	    
 	 <ListPreference
             android:dialogTitle="@string/volume_key_cursor_control_title"
