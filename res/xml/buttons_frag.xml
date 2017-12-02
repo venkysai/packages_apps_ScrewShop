@@ -16,15 +16,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory android:key="hardware_keys"
-        android:title="@string/hardware_keys_category">
-
-        <SwitchPreference android:key="hardware_keys_disable"
-            android:title="@string/hardware_keys_disable_title" />
-    </PreferenceCategory>
-
-
-    <PreferenceCategory 
+        <PreferenceCategory 
          android:title="@string/vol_rock">
 
          <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
@@ -68,6 +60,57 @@
             android:entryValues="@array/volume_key_cursor_control_values"
             android:key="volume_key_cursor_control"
             android:title="@string/volume_key_cursor_control_title" />    
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="hardware_keys"
+        android:title="@string/hardware_keys_category">
+
+        <SwitchPreference android:key="hardware_keys_disable"
+            android:title="@string/hardware_keys_disable_title" />
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory
+        android:key="button_backlight_options_category"
+        android:title="@string/button_backlight_options_category" >
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="button_backlight_enable"
+            android:title="@string/button_backlight_enable_title"
+            android:defaultValue="true"/>
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="custom_button_use_screen_brightness"
+            android:title="@string/button_link_brightness"
+            android:summary="@string/button_link_brightness_summary"
+            android:defaultValue="false"
+            android:dependency="button_backlight_enable"
+            android:disableDependentsState="true" />
+
+        <com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
+            android:key="button_manual_brightness_new"
+            android:title="@string/button_manual_brightness"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false"
+            android:dependency="custom_button_use_screen_brightness" />
+
+        <com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
+            android:key="button_timeout"
+            android:title="@string/button_timeout_title"
+            android:max="30"
+            settings:min="0"
+            android:persistent="false"
+            android:dependency="button_backlight_enable" />
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="button_backlight_on_touch_only"
+            android:title="@string/button_backlight_on_touch_only_title"
+            android:summary="@string/button_backlight_on_touch_only_summary"
+            android:defaultValue="false"
+            android:dependency="button_backlight_enable" />
 
     </PreferenceCategory>
 
