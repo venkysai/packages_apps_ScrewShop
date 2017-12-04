@@ -47,6 +47,11 @@
         android:title="@string/wakelock_blocker_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.WakeLockBlocker" />
 
+    <Preference
+        android:key="misc"
+        android:title="@string/misc"
+        android:fragment="com.mrapocalypse.screwdshop.frags.MiscFrag" />
+
      <Preference
         android:key="device_extras_category"
         android:title="@string/op_device_extras">

@@ -80,6 +80,7 @@
     <string name="navigationbar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
     <string name="op_device_extras">OnePlus Extras</string>
+    <string name="misc">Misc</string>
     <!-- Categories -->
     <string name="vol_rock">Volume Rocker</string>
     <string name="the_interface">Interface</string>
