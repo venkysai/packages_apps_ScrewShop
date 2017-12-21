@@ -210,46 +210,6 @@
         <!-- <item>2</item>-->
     </string-array>
 
-    <!-- QS Headers -->
-    <string-array name="custom_header_provider_entries" translatable="false">
-        <item>@string/daylight_header_provider_title</item>
-        <item>@string/static_header_provider_title</item>
-    </string-array>
-
-    <string-array name="custom_header_provider_values" translatable="false">
-        <item>@string/daylight_header_provider</item>
-        <item>@string/static_header_provider</item>
-    </string-array>
-
-    <!-- Power menu Animations  -->
-    <string-array name="power_menu_animations_entries">
-        <item>@string/power_menu_animation_aosp</item>
-        <item>@string/power_menu_animation_bottom</item>
-        <item>@string/power_menu_animation_top</item>
-        <item>@string/power_menu_animation_rotate</item>
-        <item>@string/power_menu_animation_xylon</item>
-        <item>@string/power_menu_animation_slide</item>
-        <item>@string/power_menu_animation_turn</item>
-        <item>@string/power_menu_animation_fly</item>
-        <item>@string/power_menu_animation_card</item>
-        <item>@string/power_menu_animation_translucent_top</item>
-        <item>@string/power_menu_animation_translucent_bottom</item>
-    </string-array>
-
-    <string-array name="power_menu_animations_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-    </string-array>
-
     <!-- Icon type for lockscreen shorcut. -->
     <string-array name="icon_types">
         <item>@string/shortcuts_icon_default</item>
@@ -862,19 +822,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>
-
-    <!-- Volume dialog stroke -->
-    <string-array name="volume_dialog_stroke_entries" translatable="false">
-        <item>@string/volume_dialog_stroke_disabled</item>
-        <item>@string/volume_dialog_stroke_accent</item>
-        <item>@string/volume_dialog_stroke_custom</item>
-    </string-array>
-
-    <string-array name="volume_dialog_stroke_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
     </string-array>
 
 </resources>

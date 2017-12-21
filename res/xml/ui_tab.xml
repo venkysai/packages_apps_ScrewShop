@@ -41,11 +41,6 @@
         android:key="animations"
         android:title="@string/animations"
         android:fragment="com.mrapocalypse.screwdshop.frags.AnimFrag" />
-
-    <Preference
-        android:key="panel_porn"
-        android:title="@string/panel_porn_title"
-        android:fragment="com.mrapocalypse.screwdshop.frags.PanelPorn" />
 	
 
 </PreferenceScreen>

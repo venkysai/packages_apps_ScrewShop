@@ -360,54 +360,6 @@
     <string name="slim_blacklist_apps_summary">Apps to not show in the panel</string>
     <string name="slim_blacklist_add_apps_title">Add app</string>
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
-
-    <!-- Power Menu -->
-    <!--string name="powermenu_reboot_title">Reboot</string-->
-    <string name="powermenu_airplane_title">Airplane mode</string>
-    <string name="powermenu_settings_title">Settings</string>
-    <string name="powermenu_lockdown_title">Lock now</string>
-    <string name="powermenu_soundpanel_title">Sound panel</string>
-
-    <!-- QS Headers -->
-    <string name="status_bar_custom_header_title">Enable custom header</string>
-    <string name="daylight_header_pack_title">Header image pack</string>
-    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
-    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
-    <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
-    <string name="static_header_provider_title">Static</string>
-    <string name="daylight_header_provider_title">Dynamic</string>
-    <string name="custom_header_provider_title">Header provider</string>
-    <string name="custom_header_browse_title">Browse installed headers</string>
-    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
-    <string name="custom_header_browse_summary_new">Browse all available header packages</string>
-    <string name="custom_header_pick_title">Select header image</string>
-    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
-    <string name="style_enabled_summary">Custom header image is ON</string>
-    <string name="style_disabled_summary">Custom header image is OFF</string>
-    <string name="header_provider_disabled">Disabled</string>
-    <string name="custom_header_title">Custom header image</string>
-
-    <!-- QS Dark mode -->
-    <string name="qs_style_dark_title">Dark SystemUI style</string>
-    <string name="qs_style_dark_summary">Reboot is required after changing</string>
-
-     <!-- Power menu Animations  -->
-    <string name="power_menu_animation_title">Power menu animation</string>
-    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
-    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
-    <string name="power_menu_animation_aosp">AOSP (default)</string>
-    <string name="power_menu_animation_bottom">Bottom</string>
-    <string name="power_menu_animation_top">Top</string>
-    <string name="power_menu_animation_rotate">Rotation</string>
-    <string name="power_menu_animation_xylon">Fly</string>
-    <string name="power_menu_animation_slide">Slide</string>
-    <string name="power_menu_animation_turn">Turn</string>
-    <string name="power_menu_animation_fly">Glow</string>
-    <string name="power_menu_animation_card">3D</string>
-    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
-    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
    
     <!-- Slim DSLV -->
     <string name="shortcut_action_longpress">Longpress:</string>
@@ -930,41 +882,10 @@
     <string name="show_carrier_statusbar">Statusbar only</string>
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
 
-    <!-- Pocket Judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
-
     <!-- Seekbar -->
     <string name="seekbar_no_default_value">No default value set</string>
     <string name="seekbar_default_value_set">Value set to default of <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">Default value is already set</string>
     <string name="seekbar_default_string">Default</string>
-
-    <!-- ANBI -->
-    <string name="anbi_title">Accidental touch</string>
-    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
-
-    <!-- Panel porn -->
-    <string name="panel_porn_title">Panel porn</string>
-    <string name="panel_porn_summary"></string>
-
-    <!-- Volume dialog opacity -->
-    <string name="volume_dialog_transparency_title">Volume Dialog Tweaks</string>
-    <string name="volume_dialog_transparency">Volume dialog opacity</string>
-    <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
-    <string name="volume_dialog_stroke_disabled">Disabled</string>
-    <string name="volume_dialog_stroke_accent">Accent color</string>
-    <string name="volume_dialog_stroke_custom">Custom color</string>
-    <string name="volume_dialog_stroke_color_title">Volume dialog stroke color</string>
-    <string name="volume_dialog_stroke_thickness_title">Volume dialog stroke thickness</string>
-    <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
-    <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
-    <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
-
-    <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_tweaks">Power Menu Tweaks</string>
-    <string name="power_menu_transparency">Power/reboot menu opacity</string>
-    <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
-
 </resources>
 

@@ -16,12 +16,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="anbi_enabled"
-            android:title="@string/anbi_title"
-            android:summary="@string/anbi_summary"
-            android:defaultValue="false" />
-
     <PreferenceCategory 
          android:title="@string/vol_rock">
 
