@@ -54,10 +54,10 @@
             android:key="volume_dialog_stroke_thickness"
             android:title="@string/volume_dialog_stroke_thickness_title"
             android:max="25"
-            android:min="1"
+            android:min="0"
             settings:unitsLeft=""
             settings:unitsRight="px"
-            android:defaultValue="4" />
+            android:defaultValue="0" />
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSeekBarPreference
             android:key="volume_dialog_stroke_dash_width"
