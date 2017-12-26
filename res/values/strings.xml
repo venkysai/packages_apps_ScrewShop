@@ -1166,5 +1166,8 @@
     <string name="file_header_select_summary">Select custom image</string>
     <string name="file_header_provider_title">Custom image</string>
     <string name="file_header_provider" translatable="false">file</string>
+
+    <!-- DT2S on Statusbar -->
+    <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
 </resources>
 
