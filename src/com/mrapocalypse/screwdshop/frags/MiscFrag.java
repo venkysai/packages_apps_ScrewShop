@@ -55,7 +55,9 @@ import com.android.internal.util.screwd.screwdUtils;
 public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
 
+    private ListPreference mSystemUIThemeStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,12 +66,27 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
+        int systemUIThemeStyle = Settings.System.getInt(resolver,
+                Settings.System.SYSTEM_UI_THEME, 0);
+        mSystemUIThemeStyle.setValue(String.valueOf(systemUIThemeStyle));
+        mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
+        mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
     }
 
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mSystemUIThemeStyle) {
+            String value = (String) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
+            int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
+            mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
+            return true;
+        }
         return false;
     }
 
