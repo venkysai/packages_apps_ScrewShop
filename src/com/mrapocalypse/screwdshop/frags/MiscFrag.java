@@ -47,6 +47,7 @@ import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.util.screwd.screwdUtils;
 
 /**
@@ -56,8 +57,10 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
+    private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
     private ListPreference mSystemUIThemeStyle;
+    private ListPreference mTorchPowerButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,12 +70,28 @@ public class MiscFrag extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+
         mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
         int systemUIThemeStyle = Settings.System.getInt(resolver,
                 Settings.System.SYSTEM_UI_THEME, 0);
         mSystemUIThemeStyle.setValue(String.valueOf(systemUIThemeStyle));
         mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
         mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
+
+        if (!DUActionUtils.deviceSupportsFlashLight(getContext())) {
+            Preference toRemove = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
+            if (toRemove != null) {
+                prefScreen.removePreference(toRemove);
+            }
+        } else {
+            mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
+            int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
+                    Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
+            mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
+            mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
+            mTorchPowerButton.setOnPreferenceChangeListener(this);
+        }
+
     }
 
 
@@ -85,6 +104,19 @@ public class MiscFrag extends SettingsPreferenceFragment implements
                     Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
             int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
             mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
+            return true;
+        } else if (preference == mTorchPowerButton) {
+            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
+            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
+            mTorchPowerButton.setSummary(
+                    mTorchPowerButton.getEntries()[index]);
+            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
+                    mTorchPowerButtonValue);
+            if (mTorchPowerButtonValue == 1) {
+                //if doubletap for torch is enabled, switch off double tap for camera
+                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
+                        1);
+            }
             return true;
         }
         return false;

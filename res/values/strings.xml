@@ -1039,5 +1039,11 @@
     <string name="button_backlight_on_touch_only_title">Button backlight touch</string>
     <string name="button_backlight_on_touch_only_summary">Button backlight will only appear when buttons are pressed rather than on all the time. Timeout still impacts this feature.</string>
 
+    <!-- Torch Power button gestures -->
+    <string name="torch_power_button_gesture_title">Screen off power button torch</string>
+    <string name="torch_power_button_gesture_none">Disabled</string>
+    <string name="torch_power_button_gesture_dt">Double tap power to toggle torch (will add a small delay to single tap)</string>
+    <string name="torch_power_button_gesture_lp">Long press power to toggle torch</string>
+
 </resources>
 
