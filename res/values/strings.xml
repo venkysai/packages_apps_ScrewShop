@@ -890,13 +890,6 @@
     <string name="seekbar_default_value_already_set">Default value is already set</string>
     <string name="seekbar_default_string">Default</string>
 
-    <!-- QS rows and columns -->
-    <string name="qs_layout_category_title">Tile Layout</string>
-    <string name="qs_rows_portrait_title">Tiles rows on portrait</string>
-    <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
-    <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
-    <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
-
     <!-- Power Menu -->
     <string name="powermenu_reboot_title">Reboot</string>
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
