@@ -897,10 +897,6 @@
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
 
-    <!-- QS tiles title visibility -->
-    <string name="qs_tile_title_visibility_title">Show tiles title</string>
-    <string name="qs_tile_title_visibility_summary">Display tile titles underneath when checked</string>
-
     <!-- Power Menu -->
     <string name="powermenu_reboot_title">Reboot</string>
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
