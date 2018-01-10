@@ -42,6 +42,24 @@
             android:title="@string/lockscreen_visualizer_title"
             android:defaultValue="true"/>
 
+         <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+            android:key="hide_lockscreen_clock"
+            android:title="@string/hide_lockscreen_clock_title"
+            android:summary="@string/hide_lockscreen_clock_summary"
+            android:defaultValue="true" />
+
+         <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+            android:key="hide_lockscreen_date"
+            android:title="@string/hide_lockscreen_date_title"
+            android:summary="@string/hide_lockscreen_date_summary"
+            android:defaultValue="true" />
+
+         <com.mrapocalypse.screwdshop.prefs.SecureSettingSwitchPreference
+            android:key="hide_lockscreen_alarm"
+            android:title="@string/hide_lockscreen_alarm_title"
+            android:summary="@string/hide_lockscreen_alarm_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory 
