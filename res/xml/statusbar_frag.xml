@@ -22,11 +22,12 @@
         android:title="@string/icons">
 
         <Preference
+                android:key="icon_manager"
                 android:title="@string/status_bar_icon_blacklist_title"
                 android:summary="@string/status_bar_icon_blacklist_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.systemui"
-                    android:targetClass="com.android.systemui.tuner.StatusBarIconsTunerActivity" />
+                    android:targetClass="com.android.systemui.tuner.TunerActivity" />
         </Preference>
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingListPreference
