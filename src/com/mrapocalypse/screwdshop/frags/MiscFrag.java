@@ -56,10 +56,8 @@ import com.android.internal.util.screwd.screwdUtils;
 public class MiscFrag extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String SYSTEMUI_THEME_STYLE = "systemui_theme_style";
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
-    private ListPreference mSystemUIThemeStyle;
     private ListPreference mTorchPowerButton;
 
     @Override
@@ -69,14 +67,6 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-
-        mSystemUIThemeStyle = (ListPreference) findPreference(SYSTEMUI_THEME_STYLE);
-        int systemUIThemeStyle = Settings.System.getInt(resolver,
-                Settings.System.SYSTEM_UI_THEME, 0);
-        mSystemUIThemeStyle.setValue(String.valueOf(systemUIThemeStyle));
-        mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntry());
-        mSystemUIThemeStyle.setOnPreferenceChangeListener(this);
 
         if (!DUActionUtils.deviceSupportsFlashLight(getContext())) {
             Preference toRemove = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
@@ -98,14 +88,7 @@ public class MiscFrag extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mSystemUIThemeStyle) {
-            String value = (String) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
-            int valueIndex = mSystemUIThemeStyle.findIndexOfValue(value);
-            mSystemUIThemeStyle.setSummary(mSystemUIThemeStyle.getEntries()[valueIndex]);
-            return true;
-        } else if (preference == mTorchPowerButton) {
+        if (preference == mTorchPowerButton) {
             int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
             int index = mTorchPowerButton.findIndexOfValue((String) newValue);
             mTorchPowerButton.setSummary(
