@@ -65,6 +65,7 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String KEY_SS_TABS_EFFECT = "tabs_effect";
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private static final String SCROLLINGCACHE_DEFAULT = "2";
 
@@ -85,6 +86,7 @@ public class AnimFrag extends SettingsPreferenceFragment implements
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
     private ListPreference mScrollingCachePref;
+    private ListPreference mScreenOffAnimation;
 
 
     private int[] mAnimations;
@@ -222,6 +224,13 @@ public class AnimFrag extends SettingsPreferenceFragment implements
         mListViewTabsEffect.setValue(String.valueOf(tabsEffect));
         mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntry());
         mListViewTabsEffect.setOnPreferenceChangeListener(this);
+
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffStyle = Settings.System.getInt(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -313,6 +322,13 @@ public class AnimFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                      Settings.System.SCREWD_SETTINGS_TABS_EFFECT, value);
             mListViewTabsEffect.setSummary(mListViewTabsEffect.getEntries()[index]);
+            return true;
+        } else if (preference == mScreenOffAnimation) {
+            String value = (String) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
+            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
         }
         preference.setSummary(getProperSummary(preference));
