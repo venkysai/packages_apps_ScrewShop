@@ -29,7 +29,13 @@
               android:key="lockscreen_battery_info"
               android:title="@string/lockscreen_battery_info_title"
               android:summary="@string/lockscreen_battery_info_summary"
-              android:defaultValue="true" />      
+              android:defaultValue="true" /> 
+
+         <Preference
+              android:key="force_ambient_for_media_pref"
+              android:fragment="com.mrapocalypse.screwdshop.frags.AmbientTicker"
+              android:title="@string/force_ambient_for_media_pref_title"
+              android:summary="@string/force_ambient_for_media_pref_summary"/>     
 
     </PreferenceCategory>
 
