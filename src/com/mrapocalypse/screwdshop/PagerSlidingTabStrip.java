@@ -45,6 +45,8 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import com.android.settings.Utils;
+
 import com.android.settings.R;
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {
@@ -165,7 +167,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         // get custom attrs for tabs and container
         a = context.obtainStyledAttributes(attrs, R.styleable.PagerSlidingTabStrip);
-        mIndicatorColor = context.getResources().getColor(R.color.darkScrewdAccent);
+        mIndicatorColor = Utils.getColorAttr(context, android.R.attr.colorAccent);
         mIndicatorHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsIndicatorHeight, mIndicatorHeight);
         mUnderlineColor = context.getResources().getColor(R.color.darkScrewdAccent);
         mUnderlineHeight = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsUnderlineHeight, mUnderlineHeight);
