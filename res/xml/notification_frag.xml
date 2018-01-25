@@ -17,6 +17,13 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/notifications" >
 
+     <ListPreference
+        android:key="notification_sound_vib_screen_on"
+        android:title="@string/notification_sound_vib_screen_on_title"
+        android:entries="@array/notification_sound_vib_screen_on_entries"
+        android:entryValues="@array/notification_sound_vib_screen_on_values"
+        android:summary="%s" />
+
      <Preference
         android:key="notification_light"
         android:title="@string/notification_light_title"

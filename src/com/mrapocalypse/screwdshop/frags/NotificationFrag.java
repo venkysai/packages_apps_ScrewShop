@@ -27,6 +27,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.app.Fragment;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
@@ -74,6 +75,7 @@ public class NotificationFrag extends SettingsPreferenceFragment implements
     private PackageManager mPackageManager;
     private PreferenceGroup mBlacklistPrefList;
     private Preference mAddBlacklistPref;
+    private ListPreference mNoisyNotification;
 
     private String mBlacklistPackageList;
     private Map<String, Package> mBlacklistPackages;
@@ -103,6 +105,14 @@ public class NotificationFrag extends SettingsPreferenceFragment implements
         mAddBlacklistPref = findPreference("add_blacklist_packages");
         mAddBlacklistPref.setOnPreferenceClickListener(this);
 
+        mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
+        mNoisyNotification.setOnPreferenceChangeListener(this);
+        int mode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON,
+                1, UserHandle.USER_CURRENT);
+        mNoisyNotification.setValue(String.valueOf(mode));
+        mNoisyNotification.setSummary(mNoisyNotification.getEntry());
+
         mHeadsUpNotificationsEnabled = (GlobalSettingSwitchPreference) findPreference(KEY_HEADS_UP_NOTIFICATIONS_ENABLED);
         updatePrefs();
 
@@ -124,7 +134,15 @@ public class NotificationFrag extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+        if (preference.equals(mNoisyNotification)) {
+            int mode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, mode, UserHandle.USER_CURRENT);
+            int index = mNoisyNotification.findIndexOfValue((String) newValue);
+            mNoisyNotification.setSummary(
+                    mNoisyNotification.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
