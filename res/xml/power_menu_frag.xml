@@ -17,6 +17,52 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <PreferenceCategory
+            android:title="@string/power_menu_entries">
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_reboot"
+                android:title="@string/powermenu_reboot_title"
+                android:defaultValue="true" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_advanced_reboot"
+                android:title="@string/powermenu_advanced_reboot_title"
+                android:dependency="powermenu_reboot"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_screenshot"
+                android:title="@string/powermenu_screenshot_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_screenrecord"
+                android:title="@string/powermenu_screenrecord_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="powermenu_airplane"
+                android:title="@string/powermenu_airplane_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="global_actions_onthego"
+                android:title="@string/global_actions_onthego_title"
+                android:defaultValue="false" />
+
+            <com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
+                android:key="on_the_go_alpha"
+                android:title="@string/onthego_alpha_title"
+                android:summary="@string/onthego_alpha_summary"
+                android:dependency="global_actions_onthego"
+                android:defaultValue="50"
+                android:max="100"
+                settings:min="0"
+                settings:units="" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:title="@string/powermenu_category_visibility">
 
             <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
@@ -55,50 +101,4 @@
 
         </PreferenceCategory>
 
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="powermenu_reboot"
-            android:title="@string/powermenu_reboot_title"
-            android:defaultValue="true" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="powermenu_advanced_reboot"
-            android:title="@string/powermenu_advanced_reboot_title"
-            android:summary="@string/powermenu_advanced_reboot_summary"
-            android:dependency="powermenu_reboot"
-            android:defaultValue="false" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="powermenu_screenshot"
-            android:title="@string/powermenu_screenshot_title"
-            android:defaultValue="false" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="powermenu_screenrecord"
-            android:title="@string/powermenu_screenrecord_title"
-            android:defaultValue="false" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="powermenu_airplane"
-            android:title="@string/powermenu_airplane_title"
-            android:defaultValue="false" />
-
-       <PreferenceCategory
-        android:key="onthego_category"
-        android:title="@string/onthego_title"/>
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="global_actions_onthego"
-            android:title="@string/global_actions_onthego_title"
-            android:defaultValue="false" />
-
-        <com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference
-            android:key="on_the_go_alpha"
-            android:title="@string/onthego_alpha_title"
-            android:summary="@string/onthego_alpha_summary"
-            android:dependency="global_actions_onthego"
-            android:defaultValue="50"
-            android:max="100"
-            settings:min="0"
-            settings:units="" />
- 
 </PreferenceScreen>
