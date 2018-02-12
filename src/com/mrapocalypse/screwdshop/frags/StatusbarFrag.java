@@ -70,6 +70,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String CLOCK_DATE_STYLE = "clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String BATTERY_STYLE = "battery_style";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -87,6 +88,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ListPreference mBatteryIconStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -169,6 +171,11 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         }
 
         parseClockDateFormats();
+
+        mBatteryIconStyle = (ListPreference) findPreference(BATTERY_STYLE);
+        mBatteryIconStyle.setValue(Integer.toString(Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0)));
+        mBatteryIconStyle.setOnPreferenceChangeListener(this);
     }
 
     private void updateCustomLabelTextSummary() {
@@ -298,6 +305,11 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                         Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, (String) newValue);
                 }
             }
+            return true;
+        } else  if (preference == mBatteryIconStyle) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, value);
             return true;
         }
         return false;

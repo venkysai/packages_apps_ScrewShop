@@ -97,6 +97,7 @@
     <string name="shortcuts">Shortcut options</string>
     <string name="heads_up_cat">Heads Up</string>
     <string name="clock_cat">Clock</string>
+    <string name="battery_cat">Battery</string>
     <!-- begin strings for options -->
 
 
@@ -1122,6 +1123,17 @@
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_user_configurable">User configurable</string>
+
+    <!-- Battery Styles -->
+    <string name="battery_style_title">Battery style</string>
+    <string name="battery_style_summary">Change the look of the icon in the statusbar</string>
+    <string name="battery_style_port">Portrait</string>
+    <string name="battery_style_land">Landscape</string>
+    <string name="battery_style_circle">Circle</string>
+    <string name="battery_style_dotted_circle">Dotted circle</string>
+    <string name="battery_style_solid_circle">Solid circle</string>
+    <string name="battery_style_text">Text</string>
+    <string name="battery_style_hidden">Hidden</string>
 
 </resources>
 
