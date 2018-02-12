@@ -85,11 +85,5 @@
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.mrapocalypse.screwdshop.frags.PulseSettings" />
 
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="anbi_enabled"
-            android:title="@string/anbi_title"
-            android:summary="@string/anbi_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 </PreferenceScreen>
