@@ -27,5 +27,10 @@
         android:fragment="com.mrapocalypse.screwdshop.frags.NavbarSettings"
         android:title="@string/navigationbar" />
 
+     <Preference
+        android:title="@string/carbon_gesture_preference_title"
+        android:key="carbongestures"
+        android:fragment="com.mrapocalypse.screwdshop.frags.CarbonGesturesSettings" />
+
     
 </PreferenceScreen>
