@@ -70,6 +70,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String CLOCK_DATE_STYLE = "clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String CLOCK_DATE_POSITION = "clock_date_position";
     private static final String BATTERY_STYLE = "battery_style";
     private static final String BATTERY_PERCENT = "show_battery_percent";
 
@@ -89,6 +90,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ListPreference mClockDatePosition;
     private ListPreference mBatteryIconStyle;
     private ListPreference mBatteryPercentage;
 
@@ -171,6 +173,12 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
         if (mClockDateFormat.getValue() == null) {
             mClockDateFormat.setValue("EEE");
         }
+
+        mClockDatePosition = (ListPreference) findPreference(CLOCK_DATE_POSITION);
+        mClockDatePosition.setOnPreferenceChangeListener(this);
+        mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0)));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
 
         parseClockDateFormats();
 
@@ -320,6 +328,14 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                         Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, (String) newValue);
                 }
             }
+            return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+            parseClockDateFormats();
             return true;
         } else  if (preference == mBatteryIconStyle) {
             int value = Integer.valueOf((String) newValue);
