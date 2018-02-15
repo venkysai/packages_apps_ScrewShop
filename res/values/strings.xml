@@ -129,7 +129,7 @@
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
     <string name="lockscreen_shortcuts_title">Bottom shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">>Manage lockscreen shortcuts down at the bottom</string>
+    <string name="lockscreen_shortcuts_summary">Manage lockscreen shortcuts down at the bottom</string>
     <string name="navbar_buttons_title">Navbar buttons</string>
     <string name="navbar_buttons_summary">Navbar layout and custom buttons</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
