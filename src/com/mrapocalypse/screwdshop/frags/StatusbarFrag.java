@@ -71,6 +71,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_STYLE = "clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "clock_date_format";
     private static final String BATTERY_STYLE = "battery_style";
+    private static final String BATTERY_PERCENT = "show_battery_percent";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -89,7 +90,7 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
     private ListPreference mBatteryIconStyle;
-    private SwitchPreference mBatteryPercentage;
+    private ListPreference mBatteryPercentage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -177,12 +178,16 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
                 Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
         mBatteryIconStyle = (ListPreference) findPreference(BATTERY_STYLE);
         mBatteryIconStyle.setValue(Integer.toString(batteryStyle));
+        int valueIndex = mBatteryIconStyle.findIndexOfValue(String.valueOf(batteryStyle));
+        mBatteryIconStyle.setSummary(mBatteryIconStyle.getEntries()[valueIndex]);
         mBatteryIconStyle.setOnPreferenceChangeListener(this);
 
-        boolean show = Settings.System.getInt(resolver,
-                Settings.System.SHOW_BATTERY_PERCENT, 1) == 1;
-        mBatteryPercentage = (SwitchPreference) findPreference("show_battery_percent");
-        mBatteryPercentage.setChecked(show);
+        int showPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 1);
+        mBatteryPercentage = (ListPreference) findPreference(BATTERY_PERCENT);
+        mBatteryPercentage.setValue(Integer.toString(showPercent));
+        valueIndex = mBatteryPercentage.findIndexOfValue(String.valueOf(showPercent));
+        mBatteryPercentage.setSummary(mBatteryPercentage.getEntries()[valueIndex]);
         mBatteryPercentage.setOnPreferenceChangeListener(this);
         boolean hideForcePercentage = batteryStyle == 6 || batteryStyle == 7; /*text or hidden style*/
         mBatteryPercentage.setEnabled(!hideForcePercentage);
@@ -320,14 +325,21 @@ public class StatusbarFrag extends SettingsPreferenceFragment implements
             int value = Integer.valueOf((String) newValue);
             Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE, value);
+            int valueIndex = mBatteryIconStyle
+                    .findIndexOfValue((String) newValue);
+            mBatteryIconStyle
+                    .setSummary(mBatteryIconStyle.getEntries()[valueIndex]);
             boolean hideForcePercentage = value == 6 || value == 7;/*text or hidden style*/
             mBatteryPercentage.setEnabled(!hideForcePercentage);
             return true;
         } else  if (preference == mBatteryPercentage) {
-            boolean value = (Boolean) newValue;
+            int value = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SHOW_BATTERY_PERCENT, value ? 1 : 0);
-            mBatteryPercentage.setChecked(value);
+                    Settings.System.SHOW_BATTERY_PERCENT, value);
+            int valueIndex = mBatteryPercentage
+                    .findIndexOfValue((String) newValue);
+            mBatteryPercentage
+                    .setSummary(mBatteryPercentage.getEntries()[valueIndex]);
             return true;
         }
         return false;
