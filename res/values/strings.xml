@@ -62,6 +62,12 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+    <!-- System theme -->
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
+
     <!-- Tabs -->
     <string name="ui_tab">UI</string>
     <string name="system_tab">System</string>
