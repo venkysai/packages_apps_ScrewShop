@@ -36,6 +36,12 @@
         android:title="@string/notification_light_title"
         android:fragment="com.mrapocalypse.screwdshop.frags.batterylight.NotificationLightSettings" />
 
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary"
+        android:defaultValue="false" />
+
      <PreferenceCategory
         android:key="headsup"
         android:title="@string/heads_up_cat" >

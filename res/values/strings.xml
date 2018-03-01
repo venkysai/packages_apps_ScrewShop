@@ -1210,5 +1210,9 @@
     <string name="sum10">&#8593; &#8593; &#8595; &#8595; &#8592; &#8594; &#8592; &#8594; A B</string> 
     <string name="sum11">Choppin \'em up...</string>
 
+    <!-- Notification guts kill app button -->
+    <string name="notification_guts_kill_app_button_title">Kill app button</string>
+    <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+
 </resources>
 
