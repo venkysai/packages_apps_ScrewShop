@@ -589,6 +589,7 @@
 
     <!-- Heads up -->
     <string name="heads_up_title">Allow Heads up</string>
+    <string name="heads_up_summary">Configure Heads up and blacklist options</string>
     <string name="heads_up_summary_enabled">Heads-up notifications are enabled</string>
     <string name="heads_up_summary_disabled">Heads-up notifications are disabled</string>
     <string name="heads_up_blacklist_add_package_title">Add app</string>
@@ -597,6 +598,7 @@
     <string name="heads_up_blacklist_choose_app">Select app</string>
     <string name="heads_up_blacklist_dialog_delete_title">Delete</string>
     <string name="heads_up_blacklist_dialog_delete_message">Remove selected item?</string>
+    <string name="heads_up_warning_text">Heads up notifications are meant to be used for multitasking while using full screen apps and/or playing games. Just know that while you use heads up notifications, you will not be able to use the ticker feature.</string>
 
     <!-- Notification light dialogs -->
     <string name="advanced">Advanced</string>
