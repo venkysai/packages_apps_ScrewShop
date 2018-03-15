@@ -62,7 +62,6 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <string name="set">Einstellen</string>
   <string name="color_default">Standard</string>
   <!-- Tabs -->
-  <string name="ui_tab">UI</string>
   <string name="system_tab">System</string>
   <string name="navigation_tab">Navigation</string>
   <!-- Sections -->
@@ -1095,4 +1094,7 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <!-- Face auto unlock -->
   <!-- SS summary text -->
   <!-- Custom summaries -->
+  <!-- Notification guts kill app button -->
+  <!-- Fingerprint authentication vibration -->
+  <!-- Tiles animation style  -->
 </resources>
