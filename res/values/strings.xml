@@ -99,6 +99,7 @@
     <string name="heads_up_cat">Heads Up</string>
     <string name="clock_cat">Clock</string>
     <string name="battery_cat">Battery</string>
+    <string name="qs_panel_cat">QS Pannel</string>
     <!-- begin strings for options -->
 
 
@@ -1249,6 +1250,9 @@
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
+
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">QS Panel Transparency</string>
 
 </resources>
 
