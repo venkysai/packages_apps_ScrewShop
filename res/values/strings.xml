@@ -1386,5 +1386,12 @@
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
     <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
     
+		<!-- Ambient display bottom info -->
+    <string name="ambient_display_bottom_info_title">Ambient Display bottom view</string>
+    <string name="ambient_display_bottom_info_summary">Enable to show information on the bottom while dozing</string>
+    <string name="ambient_display_bottom_info_off">Disabled</string>
+    <string name="ambient_display_bottom_info_battery">Battery percent</string>
+    <string name="ambient_display_bottom_info_weather">Brief weather info</string>
+
 </resources>
 

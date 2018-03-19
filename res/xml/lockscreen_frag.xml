@@ -142,11 +142,19 @@
             android:summary="@string/fprint_sucess_vib_summary"
             android:defaultValue="true" />
 
-    <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-        android:key="fp_unlock_keystore"
-        android:title="@string/fp_unlock_keystore_title"
-        android:summary="@string/fp_unlock_keystore_summary"
-        android:defaultValue="false" />
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="fp_unlock_keystore"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:defaultValue="false" />
+         
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingIntListPreference
+        		android:key="ambient_bottom_display"
+        		android:entries="@array/ambient_display_bottom_info_entries"
+        		android:entryValues="@array/ambient_display_bottom_info_values"
+        		android:title="@string/ambient_display_bottom_info_title"
+        		android:summary="%s"
+        		android:defaultValue="0" />
 
      </PreferenceCategory>
 
