@@ -126,6 +126,13 @@
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
 
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="qs_show_mini"
+            android:title="@string/qs_show_mini_title"
+            android:summary="@string/qs_show_mini_summary"
+            android:dependency="status_bar_custom_header"
+            android:defaultValue="false" />
+
      </PreferenceCategory>
       
 </PreferenceScreen>
