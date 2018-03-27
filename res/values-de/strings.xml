@@ -1080,6 +1080,7 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <string name="file_header_select_title">Bild auswählen</string>
   <string name="file_header_select_summary">Eigenes Bild auswählen</string>
   <string name="file_header_provider_title">Benutzerdefiniertes Bild</string>
+  <!-- QS header mini mode -->
   <!-- DT2S on Statusbar -->
   <string name="double_tap_sleep_gesture_title">Doppeltes Tippen auf die Statusleiste um das Gerät zu sperren</string>
   <!-- Lock screen visualizer -->
@@ -1097,4 +1098,5 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <!-- Notification guts kill app button -->
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
+  <!-- QuickSettings Panel Transparency -->
 </resources>

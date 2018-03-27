@@ -82,6 +82,7 @@
   <string name="gestureany">Gesto kdekoli</string>
   <string name="batterybar_title">Pruh baterie</string>
   <!-- Categories -->
+  <string name="qs_tiles">Dlaždice QS</string>
   <string name="vol_rock">Tlačítko hlasitosti</string>
   <string name="the_interface">Rozhraní</string>
   <string name="qs_header_title">Záhlaví rychlého nastavení</string>
@@ -112,6 +113,8 @@
   <string name="recents_clear_all_location_bottom_right">Vpravo dole</string>
   <string name="recents_clear_all_location_bottom_left">Vlevo dole</string>
   <string name="recents_clear_all_location_bottom_center">Dole uprostřed</string>
+  <string name="recents_show_membar_title">Pruh paměti</string>
+  <string name="recents_show_membar_summary">Zobrazit pruh s dostupnou pamětí zařízení</string>
   <!-- Incall vibrate options -->
   <string name="incall_vibration_category">Možnosti vibrací při volání</string>
   <string name="incall_vibrate_connect_title">Vibrovat při připojení</string>
@@ -292,6 +295,9 @@
   <string name="ticker_disabled">Zakázáno</string>
   <string name="ticker_enabled">Notifikační oznámení</string>
   <string name="ticker_media_enabled">Notifikační a hudební oznámení</string>
+  <string name="ticker_animation_mode_title">Styl animace textu oznámení</string>
+  <string name="ticker_animation_mode_alpha_fade">Slábnutí</string>
+  <string name="ticker_animation_mode_scroll">Posun</string>
   <!-- Recents icon pack support -->
   <string name="recents_icon_pack_title">Balíček ikon</string>
   <string name="recents_icon_pack_summary">Použít vlastní balíček ikon pro panel nedávných aplikací</string>
@@ -319,6 +325,7 @@
   <string name="slim_icon_pack_title">Balíček ikon</string>
   <string name="slim_icon_pack_summary">Použít vlastní balíček ikon pro aplikace v panelu</string>
   <string name="slim_recents_corner_radius_title">Použít zaoblené rohy pro karty</string>
+  <string name="slim_recents_hints_footer">Chcete-li vymazat všechny aplikace, přidržte na panelu dva prsty. Chcete-li zabránit vymazání aplikace, dlouze stiskněte její ikonu a označte ji hvězdičkou.\n\nPro další přídavné funkce, jako je vícenásobné okno nebo aplikace, kterou chcete ukončit, v panelu dlouze stiskněte nebo přetáhněte kartu.</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Zobrazit na levém okraji</string>
   <string name="recent_panel_lefty_mode_summary">Zobrazit panel nedávných aplikací na levém okraji</string>
@@ -549,6 +556,7 @@
   <string name="brightness_icon_summary">Zobrazit ikonu jasu napravo od posuvníku k přepnutí automatického jasu</string>
   <!-- Heads up -->
   <string name="heads_up_title">Povolit plovoucí oznámení</string>
+  <string name="heads_up_summary">Nastavení plovoucích oznámení a možností černé listiny</string>
   <string name="heads_up_summary_enabled">Plovoucí oznámení jsou povolena</string>
   <string name="heads_up_summary_disabled">Plovoucí oznámení jsou zakázána</string>
   <string name="heads_up_blacklist_add_package_title">Přidat aplikaci</string>
@@ -557,6 +565,7 @@
   <string name="heads_up_blacklist_choose_app">Vybrat aplikaci</string>
   <string name="heads_up_blacklist_dialog_delete_title">Odstranit</string>
   <string name="heads_up_blacklist_dialog_delete_message">Odstranit vybranou položku?</string>
+  <string name="heads_up_warning_text">Plovoucí oznámení jsou určeny k použití v multitaskingu, při používání aplikací v režimu celé obrazovky a při hraní her. Uvědomte si, že když používáte plovoucí oznámení, nebudete moci používat text oznámení.</string>
   <!-- Notification light dialogs -->
   <string name="advanced">Rozšířené</string>
   <string name="edit_light_settings">Upravit nastavení LED diody</string>
@@ -867,7 +876,7 @@
   <string name="volume_dialog_stroke_color_title">Barva ohraničení panelu hlasitosti</string>
   <string name="volume_dialog_stroke_thickness_title">Šířka ohraničení panelu hlasitosti</string>
   <string name="volume_dialog_corner_radius_title">Poloměr rohů ohraničení panelu hlasitosti</string>
-  <string name="volume_dialog_dash_width_title">Šířka pomlčky ohraničení panelu hlasitosti</string>
+  <string name="volume_dialog_dash_width_title">Šířka čáry ohraničení panelu hlasitosti</string>
   <string name="volume_dialog_dash_gap_title">Šířka mezery ohraničení panelu hlasitosti</string>
   <string name="power_menu_tweaks">Úpravy nabídky tlačítka napájení</string>
   <string name="power_menu_transparency">Průhlednost menu tlačítka napájení/restartu</string>
@@ -920,7 +929,7 @@
   <string name="trigger_category">Aktivační oblast</string>
   <string name="trigger_width_title">Aktivační šířka</string>
   <string name="trigger_width_summary">Nastavit šířku aktivační oblasti</string>
-  <string name="trigger_top_title">Aktivační oblast</string>
+  <string name="trigger_top_title">Pozice aktivační oblasti</string>
   <string name="trigger_top_summary">Upravte vertikální pozici aktivační oblasti</string>
   <string name="trigger_bottom_title">Aktivační výška</string>
   <string name="trigger_bottom_summary">Nastavit výšku aktivační oblasti</string>
@@ -1082,6 +1091,7 @@
   <string name="file_header_select_title">Vybrat obrázek</string>
   <string name="file_header_select_summary">Vybrat vlastní obrázek</string>
   <string name="file_header_provider_title">Vlastní obrázek</string>
+  <!-- QS header mini mode -->
   <!-- DT2S on Statusbar -->
   <string name="double_tap_sleep_gesture_title">Dvojitým poklepáním na stavovou lištu uspat zařízení</string>
   <!-- Lock screen visualizer -->
@@ -1115,6 +1125,31 @@
   <string name="sum10">&#8593; &#8593; &#8595; &#8595; &#8592; &#8594; &#8592; &#8594; A B</string>
   <string name="sum11">Choppin \'em up...</string>
   <!-- Notification guts kill app button -->
+  <string name="notification_guts_kill_app_button_title">Tlačítko ukončení aplikace</string>
+  <string name="notification_guts_kill_app_button_summary">Zobrazit tlačítko ukončení aplikace v nabídce dlouhého stisnutí na upozornění</string>
   <!-- Fingerprint authentication vibration -->
+  <string name="fprint_sucess_vib_title">Vibrace při načtení otisku prstu</string>
+  <string name="fprint_sucess_vib_summary">Vibrace při úspěšném ověření otisku prstu</string>
   <!-- Tiles animation style  -->
+  <string name="qs_tile_animation_style_title">Styl animace</string>
+  <string name="qs_tile_animation_duration_title">Doba trvání animace</string>
+  <string name="qs_tile_animation_interpolator_title">Interpolátor animace dlaždic</string>
+  <string name="qs_tile_animation_style_off">Žádná animace</string>
+  <string name="qs_tile_animation_style_flip">Překlopení</string>
+  <string name="qs_tile_animation_style_rotate">Otáčení</string>
+  <string name="qs_tile_animation_duration_low">Pomalé</string>
+  <string name="qs_tile_animation_duration_default">Výchozí</string>
+  <string name="qs_tile_animation_duration_fast">Rychlé</string>
+  <string name="qs_tile_animation_interpolator_linearInterpolator">Lineární</string>
+  <string name="qs_tile_animation_interpolator_accelerateInterpolator">Zrychlení</string>
+  <string name="qs_tile_animation_interpolator_decelerateInterpolator">Zpomalení</string>
+  <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Zrychlení a zpomalení</string>
+  <string name="qs_tile_animation_interpolator_bounceInterpolator">Odskočení</string>
+  <string name="qs_tile_animation_interpolator_overshootInterpolator">Překročení</string>
+  <string name="qs_tile_animation_interpolator_anticipateInterpolator">Předbíhání</string>
+  <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Předbíhání a překročení</string>
+  <string name="qs_set_animation_style">%1$s</string>
+  <string name="qs_set_animation_duration">%1$s</string>
+  <string name="qs_set_animation_interpolator">%1$s</string>
+  <!-- QuickSettings Panel Transparency -->
 </resources>

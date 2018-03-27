@@ -110,6 +110,7 @@
   <!-- Expanded desktop -->
   <!-- Battery Styles -->
   <!-- QS Headers -->
+  <!-- QS header mini mode -->
   <!-- DT2S on Statusbar -->
   <!-- Lock screen visualizer -->
   <!-- Hide Lockscreen clock, date, & alarm -->
@@ -119,4 +120,5 @@
   <!-- Notification guts kill app button -->
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
+  <!-- QuickSettings Panel Transparency -->
 </resources>

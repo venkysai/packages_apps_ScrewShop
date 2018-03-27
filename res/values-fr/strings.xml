@@ -631,6 +631,7 @@
   <!-- Expanded desktop -->
   <!-- Battery Styles -->
   <!-- QS Headers -->
+  <!-- QS header mini mode -->
   <!-- DT2S on Statusbar -->
   <string name="double_tap_sleep_gesture_title">Double appui sur la barre d\'état pour mettre en veille</string>
   <!-- Lock screen visualizer -->
@@ -645,4 +646,5 @@
   <!-- Notification guts kill app button -->
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
+  <!-- QuickSettings Panel Transparency -->
 </resources>
