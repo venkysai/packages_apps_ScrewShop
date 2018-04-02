@@ -43,6 +43,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 
+import java.util.Random;
+
 public class AccentPicker extends InstrumentedDialogFragment implements OnClickListener {
 
     private static final String TAG_ACCENT_PICKER = "accent_picker";
@@ -69,6 +71,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         builder.setView(mView)
                 .setNegativeButton(R.string.cancel, this)
                 .setNeutralButton(R.string.theme_accent_picker_default, this)
+                .setPositiveButton(R.string.theme_accent_picker_random, this)
                 .setCancelable(false);
 
         AlertDialog dialog = builder.create();
@@ -433,6 +436,13 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         if (which == AlertDialog.BUTTON_NEUTRAL) {
            Settings.System.putIntForUser(resolver,
                    Settings.System.ACCENT_PICKER, 0, UserHandle.USER_CURRENT);
+           dismiss();
+        }
+        if (which == AlertDialog.BUTTON_POSITIVE) {
+           Random rand = new Random();
+           int  n = rand.nextInt(20) + 1;
+           Settings.System.putIntForUser(resolver,
+                   Settings.System.ACCENT_PICKER, n, UserHandle.USER_CURRENT);
            dismiss();
         }
     }
