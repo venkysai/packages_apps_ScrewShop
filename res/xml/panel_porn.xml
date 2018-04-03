@@ -103,7 +103,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/power_menu_tweaks">
+        android:title="@string/qs_panel_cat">
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSeekBarPreference
             android:key="qs_panel_bg_alpha"
@@ -115,6 +115,5 @@
             android:defaultValue="255" />
   
     </PreferenceCategory>
-
 
 </PreferenceScreen>

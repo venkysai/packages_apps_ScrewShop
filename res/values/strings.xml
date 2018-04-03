@@ -1263,6 +1263,7 @@
 
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">QS Panel Transparency</string>
+    <string name="qs_tile_columns_hint">QS Tile rows &amp; columns can be configured by accessing the QS Tile edit menu and tapping the 3-dot menu button in the top right corner of the screen</string>
 
     <!-- CarbonGestures -->
     <string name="carbon_gesture_preference_title">CarbonGestures</string>

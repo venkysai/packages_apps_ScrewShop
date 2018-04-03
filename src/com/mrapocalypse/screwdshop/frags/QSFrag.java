@@ -184,6 +184,8 @@ public class QSFrag extends SettingsPreferenceFragment implements
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
+
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.qs_tile_columns_hint);
     }
 
     @Override
