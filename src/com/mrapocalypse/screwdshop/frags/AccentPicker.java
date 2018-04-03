@@ -371,8 +371,6 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         if (mView != null) {
             blackAccent = mView.findViewById(R.id.blackAccent);
             // Change the accent picker button depending on whether or not the dark, black is applied
-            blackAccent.setBackgroundColor(getResources().getColor(
-                    (isUsingDarkTheme() || isUsingBlackTheme()) ? R.color.accent_picker_white_accent : R.color.accent_picker_dark_accent));
             blackAccent.setBackgroundTintList(getResources().getColorStateList(
                     (isUsingDarkTheme() || isUsingBlackTheme()) ? R.color.accent_picker_white_accent : R.color.accent_picker_dark_accent));
         }
