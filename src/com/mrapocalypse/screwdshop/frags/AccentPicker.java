@@ -53,6 +53,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
     private int mUserId;
 
     private IOverlayManager mOverlayManager;
+    private GridLayout gridlayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -385,19 +386,10 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
             });
         }
 
-        GridLayout gridlayout;
-        if (mView != null) {
 
-            int intOrientation = getResources().getConfiguration().orientation;
-            gridlayout = mView.findViewById(R.id.Gridlayout);
-            // Lets split this up instead of creating two different layouts
-            // just so we can change the columns
-            if (intOrientation == Configuration.ORIENTATION_PORTRAIT) {
-                gridlayout.setColumnCount(5);
-            } else {
-                gridlayout.setColumnCount(8);
-            }
-        }
+        gridlayout = mView.findViewById(R.id.Gridlayout);
+        gridlayout.setColumnCount(5);
+
     }
 
     // Check for the dark theme overlay
