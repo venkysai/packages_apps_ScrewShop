@@ -79,12 +79,6 @@
             android:defaultValue="false"/>
 
         <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
-            android:key="qs_footer_warnings"
-            android:title="@string/qs_footer_warnings_title"
-            android:summary="@string/qs_footer_warnings_summary"
-            android:defaultValue="true" />
-
-        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
             android:key="status_bar_custom_header"
             android:title="@string/status_bar_custom_header_title"
             android:defaultValue="false" />
@@ -137,6 +131,29 @@
             android:title="@string/qs_show_mini_title"
             android:summary="@string/qs_show_mini_summary"
             android:dependency="status_bar_custom_header"
+            android:defaultValue="false" />
+
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:title="@string/qs_footer_cat">
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="qs_footer_warnings"
+            android:title="@string/qs_footer_warnings_title"
+            android:summary="@string/qs_footer_warnings_summary"
+            android:defaultValue="true" />
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="qs_footer_show_settings"
+            android:title="@string/qs_footer_settings_title"
+            android:summary="@string/qs_footer_settings_summary"
+            android:defaultValue="true" />
+
+        <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="qs_footer_show_services"
+            android:title="@string/qs_footer_services_title"
+            android:summary="@string/qs_footer_services_summary"
             android:defaultValue="false" />
 
      </PreferenceCategory>

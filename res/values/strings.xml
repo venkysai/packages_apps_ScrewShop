@@ -106,7 +106,8 @@
     <string name="heads_up_cat">Heads Up</string>
     <string name="clock_cat">Clock</string>
     <string name="battery_cat">Battery</string>
-    <string name="qs_panel_cat">QS Pannel</string>
+    <string name="qs_panel_cat">QS Panel</string>
+    <string name="qs_footer_cat">QS Footer</string>
     <!-- begin strings for options -->
 
 
@@ -1291,6 +1292,12 @@
     <!-- Disable QS on secure Lockscreen -->
     <string name="lockscreen_qs_disabled_title">No QS when secured</string>
     <string name="lockscreen_qs_disabled_summary">Disable quick settings tiles on secured lockscreen</string>
+
+    <!-- QS footer icons -->
+    <string name="qs_footer_services_title">Show Running Services icon</string>
+    <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
+    <string name="qs_footer_settings_title">Show Settings icon</string>
+    <string name="qs_footer_settings_summary">Display Settings icon in quick settings footer</string>
 
 </resources>
 
