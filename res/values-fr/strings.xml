@@ -60,6 +60,7 @@
   <string name="hex_hint">#ff000000</string>
   <string name="set">Définir</string>
   <string name="color_default">Défaut</string>
+  <!-- System theme -->
   <!-- Tabs -->
   <string name="ui_tab">Interface utilisateur</string>
   <string name="system_tab">Système</string>
@@ -647,4 +648,7 @@
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
   <!-- QuickSettings Panel Transparency -->
+  <!-- CarbonGestures -->
+  <!-- Disable QS on secure Lockscreen -->
+  <!-- QS footer icons -->
 </resources>

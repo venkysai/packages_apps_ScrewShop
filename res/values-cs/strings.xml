@@ -60,6 +60,7 @@
   <string name="hex_hint">#ff000000</string>
   <string name="set">Nastavit</string>
   <string name="color_default">Výchozí</string>
+  <!-- System theme -->
   <!-- Tabs -->
   <string name="ui_tab">UI</string>
   <string name="system_tab">Systém</string>
@@ -1092,6 +1093,8 @@
   <string name="file_header_select_summary">Vybrat vlastní obrázek</string>
   <string name="file_header_provider_title">Vlastní obrázek</string>
   <!-- QS header mini mode -->
+  <string name="qs_show_mini_title">Režim Mini</string>
+  <string name="qs_show_mini_summary">Zmenšete obrázky záhlaví</string>
   <!-- DT2S on Statusbar -->
   <string name="double_tap_sleep_gesture_title">Dvojitým poklepáním na stavovou lištu uspat zařízení</string>
   <!-- Lock screen visualizer -->
@@ -1152,4 +1155,8 @@
   <string name="qs_set_animation_duration">%1$s</string>
   <string name="qs_set_animation_interpolator">%1$s</string>
   <!-- QuickSettings Panel Transparency -->
+  <string name="qs_panel_alpha_title">Průhlednost panelu QS</string>
+  <!-- CarbonGestures -->
+  <!-- Disable QS on secure Lockscreen -->
+  <!-- QS footer icons -->
 </resources>

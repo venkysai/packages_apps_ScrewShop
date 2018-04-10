@@ -17,6 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- General strings -->
   <!-- Color Picker -->
+  <!-- System theme -->
   <!-- Tabs -->
   <!-- Sections -->
   <!-- Categories -->
@@ -121,4 +122,7 @@
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
   <!-- QuickSettings Panel Transparency -->
+  <!-- CarbonGestures -->
+  <!-- Disable QS on secure Lockscreen -->
+  <!-- QS footer icons -->
 </resources>

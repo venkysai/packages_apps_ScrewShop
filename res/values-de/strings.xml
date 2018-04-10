@@ -61,6 +61,7 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <string name="hex_hint">#ff000000</string>
   <string name="set">Einstellen</string>
   <string name="color_default">Standard</string>
+  <!-- System theme -->
   <!-- Tabs -->
   <string name="system_tab">System</string>
   <string name="navigation_tab">Navigation</string>
@@ -1099,4 +1100,7 @@ Der Grund, weshalb diese Nachricht erscheint ist, weil Lean deinstalliert oder e
   <!-- Fingerprint authentication vibration -->
   <!-- Tiles animation style  -->
   <!-- QuickSettings Panel Transparency -->
+  <!-- CarbonGestures -->
+  <!-- Disable QS on secure Lockscreen -->
+  <!-- QS footer icons -->
 </resources>
