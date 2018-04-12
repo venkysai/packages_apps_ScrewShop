@@ -20,8 +20,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.hardware.fingerprint.FingerprintManager;
+import android.os.UserHandle;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -37,14 +39,14 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-//import com.screwdaosp.screwshop.R;
+import com.android.internal.util.screwd.screwdUtils;
 
 /**
  * Created by cedwards on 6/3/2016.
  */
 public class System extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
-
+    private static final String SUBS_PACKAGE = "projekt.substratum";
 
     private FingerprintManager mFingerprintManager;
 
@@ -60,12 +62,22 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
             getPreferenceScreen().removePreference(DeviceExtras);
         }
 
+        boolean subsInstalled = screwdUtils.isAppInstalled(getActivity().getApplicationContext(), SUBS_PACKAGE);
+
         boolean enableSmartPixels = getContext().getResources().
                 getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
         Preference SmartPixels = findPreference("smart_pixels");
 
-        if (!enableSmartPixels){
+        if (!enableSmartPixels) {
             getPreferenceScreen().removePreference(SmartPixels);
+        } else if (enableSmartPixels && subsInstalled) {
+            SmartPixels.setSummary(R.string.substratum_detected_summary);
+            SmartPixels.setEnabled(false);
+
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.SMART_PIXELS_ENABLE,
+                    0, UserHandle.USER_CURRENT);
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.SMART_PIXELS_ON_POWER_SAVE,
+                    0, UserHandle.USER_CURRENT);
         }
 
     }
