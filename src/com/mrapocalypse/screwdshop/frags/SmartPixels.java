@@ -58,8 +58,6 @@ public class SmartPixels extends SettingsPreferenceFragment implements
         mSmartPixelsOnPowerSave = (SystemSettingSwitchPreference) findPreference(ON_POWER_SAVE);
 
         updateDependency();
-
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_footer);
     }
 
     @Override

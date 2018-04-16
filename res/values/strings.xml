@@ -51,7 +51,6 @@
     <string name="icon_title">Icon</string>
     <string name="color_title">Color</string>
     <string name="colors_title">Colors</string>
-    <string name="substratum_detected_summary">Substratum detected! Please uninstall substratum before using this feature.</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -1311,7 +1310,6 @@
     <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Prevent burn-in by shifting pixels every</string>
-    <string name="smart_pixels_footer">CAUTION: Attempting to restart SystemUI with Smart Pixels enabled will cause a black screen and a full reboot will be required to recover.</string>
 
 </resources>
 
