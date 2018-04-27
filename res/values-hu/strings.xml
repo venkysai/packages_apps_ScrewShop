@@ -61,6 +61,11 @@
   <string name="set">Beállít</string>
   <string name="color_default">Alapértelmezett</string>
   <!-- System theme -->
+  <string name="accent_picker_dialog_title">Válasszon egy másodlagos színt</string>
+  <string name="theme_accent_picker_title">Másodlagos szín</string>
+  <string name="theme_accent_picker_summary">Rendszertéma másodlagos színének kiválasztása</string>
+  <string name="theme_accent_picker_default">Alapértelmezett</string>
+  <string name="theme_accent_picker_random">Véletlen</string>
   <!-- Tabs -->
   <string name="ui_tab">Felhasználói felület</string>
   <string name="system_tab">Rendszer</string>
@@ -98,6 +103,8 @@
   <string name="heads_up_cat">Lebegő értesítés</string>
   <string name="clock_cat">Óra</string>
   <string name="battery_cat">Akkumulátor</string>
+  <string name="qs_panel_cat">Gyorsbeállítások panel</string>
+  <string name="qs_footer_cat">Gyorsbeállítások-lábléc</string>
   <!-- begin strings for options -->
   <!-- Sqap vol buttons -->
   <string name="swap_volume_buttons">Hangerő gombok felcserélése a forgatás alapjain</string>
@@ -1143,6 +1150,8 @@
   <string name="qs_tile_animation_duration_low">Lassú</string>
   <string name="qs_tile_animation_duration_default">Alapértelmezett</string>
   <string name="qs_tile_animation_duration_fast">Gyors</string>
+  <string name="qs_tile_animation_duration_quite_fast">Elég gyors</string>
+  <string name="qs_tile_animation_duration_super_fast">Szuper gyors</string>
   <string name="qs_tile_animation_interpolator_linearInterpolator">Egyenletes</string>
   <string name="qs_tile_animation_interpolator_accelerateInterpolator">Gyorsuló</string>
   <string name="qs_tile_animation_interpolator_decelerateInterpolator">Lassuló</string>
@@ -1156,7 +1165,36 @@
   <string name="qs_set_animation_interpolator">%1$s</string>
   <!-- QuickSettings Panel Transparency -->
   <string name="qs_panel_alpha_title">Gyorsbeállítások panel átlátszóság</string>
+  <string name="qs_tile_columns_hint">A gyorsbeállítások csempék sorainak és oszlopainak száma konfigurálhatók a gyorsbeállítások csempe szerkesztése menübe való belépéssel, majd a képernyő jobb felső sarkában lévő 3 pontos menü gomb megérintésével</string>
   <!-- CarbonGestures -->
+  <string name="carbon_gesture_preference_title">CarbonGestures</string>
+  <string name="carbon_gestures_summary">Egyéni globális gesztusok beállítása</string>
+  <string name="carbon_gestures_fingers_title">Gesztushoz használt ujjak</string>
+  <string name="carbon_gestures_right_title">Jobb oldali gesztus</string>
+  <string name="carbon_gestures_left_title">Bal oldali gesztus</string>
+  <string name="carbon_gestures_up_title">Fenti gesztus</string>
+  <string name="carbon_gestures_down_title">Lenti gesztus</string>
+  <string name="carbon_gesture_disabled">Letiltva</string>
+  <string name="carbon_gesture_back">Vissza</string>
+  <string name="carbon_gesture_home">Kezdőlap</string>
+  <string name="carbon_gesture_recents">Előzmények</string>
+  <string name="carbon_gesture_power">Kikapcsolás</string>
+  <string name="carbon_gesture_volume_down">Hangerő le</string>
+  <string name="carbon_gesture_volume_up">Hangerő fel</string>
+  <string name="carbon_gesture_volume_mute">Némítás</string>
+  <string name="carbon_gesture_screenshot">Képernyőmentés</string>
+  <string name="carbon_gesture_media_play_pause">Média lejátszása/szüneteltetése</string>
+  <string name="carbon_gesture_media_skip">Média átugrása</string>
+  <string name="carbon_gesture_media_previous">Előző média</string>
+  <string name="carbon_gesture_customapp">Alkalmazás indítása</string>
+  <string name="carbon_gesture_launch">Indítás</string>
   <!-- Disable QS on secure Lockscreen -->
+  <string name="lockscreen_qs_disabled_title">Csempék tiltása, ha zárolva van</string>
+  <string name="lockscreen_qs_disabled_summary">Gyorsbeállítások csempék tiltása a biztonságos zárképernyőn</string>
   <!-- QS footer icons -->
+  <string name="qs_footer_services_title">Futó szolgáltatások ikon megjelenítése</string>
+  <string name="qs_footer_services_summary">Futó szolgáltatások ikon megjelenítése a gyorsbeállítások-láblécben</string>
+  <string name="qs_footer_settings_title">Beállítások ikon megjelenítése</string>
+  <string name="qs_footer_settings_summary">Beállítások ikon megjelenítése a gyorsbeállítások-láblécben</string>
+  <!-- Smart Pixels -->
 </resources>

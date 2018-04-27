@@ -61,6 +61,11 @@
   <string name="set">Nastavit</string>
   <string name="color_default">Výchozí</string>
   <!-- System theme -->
+  <string name="accent_picker_dialog_title">Vybrat barvu zvýraznění</string>
+  <string name="theme_accent_picker_title">Barva zvýraznění</string>
+  <string name="theme_accent_picker_summary">Vyberte barvu zvýraznění motivu systému</string>
+  <string name="theme_accent_picker_default">Výchozí</string>
+  <string name="theme_accent_picker_random">Náhodně</string>
   <!-- Tabs -->
   <string name="ui_tab">UI</string>
   <string name="system_tab">Systém</string>
@@ -98,6 +103,8 @@
   <string name="heads_up_cat">Plovoucí oznámení</string>
   <string name="clock_cat">Hodiny</string>
   <string name="battery_cat">Baterie</string>
+  <string name="qs_panel_cat">Panel QS</string>
+  <string name="qs_footer_cat">Záhlaví QS</string>
   <!-- begin strings for options -->
   <!-- Sqap vol buttons -->
   <string name="swap_volume_buttons">Prohodit tlačítka hlasitosti podle otočení</string>
@@ -1010,7 +1017,7 @@
   <string name="force_ambient_for_media_on_forced_clean">Minimální (vynucené)</string>
   <!-- Clock options -->
   <string name="statusbar_clock_title">Možnosti hodin</string>
-  <string name="status_bar_show_clock_title">Zobrazit datum &amp; čas</string>
+  <string name="status_bar_show_clock_title">Zobrazit hodiny &amp; datum</string>
   <string name="clock_title_enable">Zarovnání</string>
   <string name="right_clock">Hodiny vpravo</string>
   <string name="center_clock">Hodiny uprostřed</string>
@@ -1129,7 +1136,7 @@
   <string name="sum11">Choppin \'em up...</string>
   <!-- Notification guts kill app button -->
   <string name="notification_guts_kill_app_button_title">Tlačítko ukončení aplikace</string>
-  <string name="notification_guts_kill_app_button_summary">Zobrazit tlačítko ukončení aplikace v nabídce dlouhého stisnutí na upozornění</string>
+  <string name="notification_guts_kill_app_button_summary">Zobrazit tlačítko ukončení aplikace v nabídce dlouhého stisknutí na upozornění</string>
   <!-- Fingerprint authentication vibration -->
   <string name="fprint_sucess_vib_title">Vibrace při načtení otisku prstu</string>
   <string name="fprint_sucess_vib_summary">Vibrace při úspěšném ověření otisku prstu</string>
@@ -1143,6 +1150,8 @@
   <string name="qs_tile_animation_duration_low">Pomalé</string>
   <string name="qs_tile_animation_duration_default">Výchozí</string>
   <string name="qs_tile_animation_duration_fast">Rychlé</string>
+  <string name="qs_tile_animation_duration_quite_fast">Celkem rychle</string>
+  <string name="qs_tile_animation_duration_super_fast">Super rychle</string>
   <string name="qs_tile_animation_interpolator_linearInterpolator">Lineární</string>
   <string name="qs_tile_animation_interpolator_accelerateInterpolator">Zrychlení</string>
   <string name="qs_tile_animation_interpolator_decelerateInterpolator">Zpomalení</string>
@@ -1156,7 +1165,36 @@
   <string name="qs_set_animation_interpolator">%1$s</string>
   <!-- QuickSettings Panel Transparency -->
   <string name="qs_panel_alpha_title">Průhlednost panelu QS</string>
+  <string name="qs_tile_columns_hint">Počet řádků &amp; sloupců dlaždic panelu QS je možné nastavit tak, že otevřete nabídku pro úpravu dlaždic a kliknete na tlačítko nabídky s 3 tečkami v pravém horním rohu obrazovky</string>
   <!-- CarbonGestures -->
+  <string name="carbon_gesture_preference_title">Gesta Carbon</string>
+  <string name="carbon_gestures_summary">Nastavitt vlastní globální gesta</string>
+  <string name="carbon_gestures_fingers_title">Gesta prstů</string>
+  <string name="carbon_gestures_right_title">Gesto vpravo</string>
+  <string name="carbon_gestures_left_title">Gesto vlevo</string>
+  <string name="carbon_gestures_up_title">Gesto nahoru</string>
+  <string name="carbon_gestures_down_title">Gesto dolů</string>
+  <string name="carbon_gesture_disabled">Zakázáno</string>
+  <string name="carbon_gesture_back">Zpět</string>
+  <string name="carbon_gesture_home">Domů</string>
+  <string name="carbon_gesture_recents">Nedávné</string>
+  <string name="carbon_gesture_power">Napájení</string>
+  <string name="carbon_gesture_volume_down">Hlasitost dolů</string>
+  <string name="carbon_gesture_volume_up">Hlasitost nahoru</string>
+  <string name="carbon_gesture_volume_mute">Ztlumit hlasitost</string>
+  <string name="carbon_gesture_screenshot">Snímek obrazovky</string>
+  <string name="carbon_gesture_media_play_pause">Přehrát/Pozastavit skladbu</string>
+  <string name="carbon_gesture_media_skip">Přeskočit skladbu</string>
+  <string name="carbon_gesture_media_previous">Předchozí skladba</string>
+  <string name="carbon_gesture_customapp">Spustit aplikaci</string>
+  <string name="carbon_gesture_launch">Spustit</string>
   <!-- Disable QS on secure Lockscreen -->
+  <string name="lockscreen_qs_disabled_title">Žádný panel QS při zabezpečení</string>
+  <string name="lockscreen_qs_disabled_summary">Zakázat dlaždice rychlého nastavení na zabezpečené zamykací obrazovce</string>
   <!-- QS footer icons -->
+  <string name="qs_footer_services_title">Zobrazit ikonu spuštěných služeb</string>
+  <string name="qs_footer_services_summary">Zobrazit ikonu spuštěných služeb v záhlaví panelu QS</string>
+  <string name="qs_footer_settings_title">Zobrazit ikonu Nastavení</string>
+  <string name="qs_footer_settings_summary">Zobrazit ikonu Nastavení v záhlaví panelu QS</string>
+  <!-- Smart Pixels -->
 </resources>

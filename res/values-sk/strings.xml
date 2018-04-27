@@ -61,6 +61,11 @@
   <string name="set">Nastaviť</string>
   <string name="color_default">Predvolená</string>
   <!-- System theme -->
+  <string name="accent_picker_dialog_title">Vyberať farbu zvýraznenia</string>
+  <string name="theme_accent_picker_title">Farba zvýraznenia</string>
+  <string name="theme_accent_picker_summary">Vyber tématickej farby zvýraznenia systému</string>
+  <string name="theme_accent_picker_default">Predvolená</string>
+  <string name="theme_accent_picker_random">Náhodná</string>
   <!-- Tabs -->
   <string name="ui_tab">UI</string>
   <string name="system_tab">Systém</string>
@@ -98,6 +103,8 @@
   <string name="heads_up_cat">Plávajúce upozornenia</string>
   <string name="clock_cat">Hodiny</string>
   <string name="battery_cat">Batéria</string>
+  <string name="qs_panel_cat">Panel rýchl. nastavení</string>
+  <string name="qs_footer_cat">Záhlavie panela rýchl. nastavení</string>
   <!-- begin strings for options -->
   <!-- Sqap vol buttons -->
   <string name="swap_volume_buttons">Prehodiť tlačidlá hlasitosti podľa otočenia</string>
@@ -1144,6 +1151,8 @@
   <string name="qs_tile_animation_duration_low">Pomalé</string>
   <string name="qs_tile_animation_duration_default">Predvolené</string>
   <string name="qs_tile_animation_duration_fast">Rýchle</string>
+  <string name="qs_tile_animation_duration_quite_fast">Celkom rýchla</string>
+  <string name="qs_tile_animation_duration_super_fast">Super rýchla</string>
   <string name="qs_tile_animation_interpolator_linearInterpolator">Lineárne</string>
   <string name="qs_tile_animation_interpolator_accelerateInterpolator">Zrýchlenie</string>
   <string name="qs_tile_animation_interpolator_decelerateInterpolator">Spomalenie</string>
@@ -1157,7 +1166,36 @@
   <string name="qs_set_animation_interpolator">%1$s</string>
   <!-- QuickSettings Panel Transparency -->
   <string name="qs_panel_alpha_title">Priehľadnosť panela rýchl. nastavení</string>
+  <string name="qs_tile_columns_hint">Počet riadkov a stĺpcov dlaždíc panela rýchl. nastavení je možné nakonfigurovať tak, že otvoríte ponuku na úpravu dlaždíc a kliknete na tlačidlo ponuky s 3 bodkami v pravom hornom rohu obrazovky</string>
   <!-- CarbonGestures -->
+  <string name="carbon_gesture_preference_title">Carbon gestá</string>
+  <string name="carbon_gestures_summary">Konfigurovať vlastné globálne gestá</string>
+  <string name="carbon_gestures_fingers_title">Gesto prstom</string>
+  <string name="carbon_gestures_right_title">Gesto vpravo</string>
+  <string name="carbon_gestures_left_title">Gesto vľavo</string>
+  <string name="carbon_gestures_up_title">Gesto nahor</string>
+  <string name="carbon_gestures_down_title">Gesto nadol</string>
+  <string name="carbon_gesture_disabled">Vypnuté</string>
+  <string name="carbon_gesture_back">Späť</string>
+  <string name="carbon_gesture_home">Domov</string>
+  <string name="carbon_gesture_recents">Nedávne</string>
+  <string name="carbon_gesture_power">Napájanie</string>
+  <string name="carbon_gesture_volume_down">Hlasitosť-</string>
+  <string name="carbon_gesture_volume_up">Hlasitosť+</string>
+  <string name="carbon_gesture_volume_mute">Stlmenie hlasitosti</string>
+  <string name="carbon_gesture_screenshot">Snímka obrazovky</string>
+  <string name="carbon_gesture_media_play_pause">Prehrať/pozastaviť skladbu</string>
+  <string name="carbon_gesture_media_skip">Preskočiť skladbu</string>
+  <string name="carbon_gesture_media_previous">Predchádzajúca skladba</string>
+  <string name="carbon_gesture_customapp">Spustiť aplikáciu</string>
+  <string name="carbon_gesture_launch">Spustiť</string>
   <!-- Disable QS on secure Lockscreen -->
+  <string name="lockscreen_qs_disabled_title">Dlaždice rýchl. nastavení na zabezpečenej obr. uzamknutia</string>
+  <string name="lockscreen_qs_disabled_summary">Zakázať dlaždice rýchlych nastavení dlaždice na zabezpečenej obrazovke uzamknutia</string>
   <!-- QS footer icons -->
+  <string name="qs_footer_services_title">Zobraziť spustené služby</string>
+  <string name="qs_footer_services_summary">Zobraziť dlaždicu spustených služieb v päta panela rýchl. nastavení</string>
+  <string name="qs_footer_settings_title">Zobrazenie dlaždice Nastavenia</string>
+  <string name="qs_footer_settings_summary">Zobraziť dlaždicu Nastavenia v päte panela rýchl. nastavení</string>
+  <!-- Smart Pixels -->
 </resources>
