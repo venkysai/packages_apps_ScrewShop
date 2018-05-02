@@ -1323,5 +1323,11 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Prevent burn-in by shifting pixels every</string>
 
+    <string name="chooser_activity_blacklist_title">Chooser Activity blacklist</string>
+    <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on the a Share button</string>
+    <string name="chooser_activity_blacklist_cat_title">Blacklist</string>
+    <string name="chooser_activity_blacklist_pref_title">Add app</string>
+    <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
+
 </resources>
 
