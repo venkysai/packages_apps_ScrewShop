@@ -1198,4 +1198,12 @@
   <string name="qs_footer_settings_title">Zobrazenie dlaždice Nastavenia</string>
   <string name="qs_footer_settings_summary">Zobraziť dlaždicu Nastavenia v päte panela rýchl. nastavení</string>
   <!-- Smart Pixels -->
+  <string name="smart_pixels_title">Smart Pixels</string>
+  <string name="smart_pixels_summary">Šetrenie batérie vypnutím pixelov navyše</string>
+  <string name="smart_pixels_enable_title">Povoliť Smart Pixels</string>
+  <string name="smart_pixels_enable_summary">Ak chcete znížiť spotrebu energie, vypnite pixely</string>
+  <string name="smart_pixels_on_power_save_title">Automatické zapnutie pri zapnutí šetriča batérie</string>
+  <string name="smart_pixels_on_power_save_summary">Zapnúť Smart Pixels, ak je aktivovaný šetrič batérie</string>
+  <string name="smart_pixels_percent">Percentá pixelov na vypnutie</string>
+  <string name="smart_pixels_shift">Zabraňuje vypaľovaniu displeja častým prepínaním pixelov</string>
 </resources>

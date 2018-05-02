@@ -1197,4 +1197,12 @@
   <string name="qs_footer_settings_title">Zobrazit ikonu Nastavení</string>
   <string name="qs_footer_settings_summary">Zobrazit ikonu Nastavení v záhlaví panelu QS</string>
   <!-- Smart Pixels -->
+  <string name="smart_pixels_title">Smart Pixels</string>
+  <string name="smart_pixels_summary">Ušetření baterie vypnutím pixelů</string>
+  <string name="smart_pixels_enable_title">Povolit Smart Pixels</string>
+  <string name="smart_pixels_enable_summary">Chcete-li snížit spotřebu energie, vypněte pixely</string>
+  <string name="smart_pixels_on_power_save_title">Automatické zapnutí při spořiči baterie</string>
+  <string name="smart_pixels_on_power_save_summary">Povolit Smart Pixels, pokud je aktivován spořič baterie</string>
+  <string name="smart_pixels_percent">Procenta pixelů k vypnutí</string>
+  <string name="smart_pixels_shift">Zabraňuje vypalování displeje častým přepínáním pixelů</string>
 </resources>
