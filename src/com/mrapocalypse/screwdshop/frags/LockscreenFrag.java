@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.app.Fragment;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
@@ -49,8 +50,12 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_SHORTCUTS_LAUNCH_TYPE =
             "lockscreen_shortcuts_launch_type";
+    private static final String KEY_LOCKSCREEN_CLOCK_SELECTION = "lockscreen_clock_selection";
+    private static final String KEY_LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
 
     private ListPreference mLockscreenShortcutsLaunchType;
+    private ListPreference mLockscreenClockSelection;
+    private ListPreference mLockscreenDateSelection;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,20 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
                 PREF_LOCKSCREEN_SHORTCUTS_LAUNCH_TYPE);
         mLockscreenShortcutsLaunchType.setOnPreferenceChangeListener(this);
         setHasOptionsMenu(false);
+
+        mLockscreenClockSelection = (ListPreference) findPreference(KEY_LOCKSCREEN_CLOCK_SELECTION);
+        int clockSelection = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT);
+        mLockscreenClockSelection.setValue(String.valueOf(clockSelection));
+        mLockscreenClockSelection.setSummary(mLockscreenClockSelection.getEntry());
+        mLockscreenClockSelection.setOnPreferenceChangeListener(this);
+
+        mLockscreenDateSelection = (ListPreference) findPreference(KEY_LOCKSCREEN_DATE_SELECTION);
+        int dateSelection = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_DATE_SELECTION, 0, UserHandle.USER_CURRENT);
+        mLockscreenDateSelection.setValue(String.valueOf(dateSelection));
+        mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntry());
+        mLockscreenDateSelection.setOnPreferenceChangeListener(this);
 
     }
 
@@ -88,7 +107,21 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS,
                     Integer.valueOf((String) newValue));
-        return true;
+            return true;
+        } else if (preference == mLockscreenClockSelection) {
+            int clockSelection = Integer.valueOf((String) newValue);
+            int index = mLockscreenClockSelection.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.LOCKSCREEN_CLOCK_SELECTION, clockSelection, UserHandle.USER_CURRENT);
+            mLockscreenClockSelection.setSummary(mLockscreenClockSelection.getEntries()[index]);
+            return true;
+        } else if (preference == mLockscreenDateSelection) {
+            int dateSelection = Integer.valueOf((String) newValue);
+            int index = mLockscreenDateSelection.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.LOCKSCREEN_DATE_SELECTION, dateSelection, UserHandle.USER_CURRENT);
+            mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntries()[index]);
+            return true;
         }
         return false;
     }
