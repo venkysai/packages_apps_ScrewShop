@@ -42,6 +42,12 @@
         android:summary="@string/notification_guts_kill_app_button_summary"
         android:defaultValue="false" />
 
+    <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+            android:key="wallpaper_keyguard_wallpaper_tint"
+            android:title="@string/wallpaper_tint_keyguard"
+            android:summary="@string/wallpaper_tint_summary"
+            android:defaultValue="true" />
+
     <Preference
         android:key="heads_up"
         android:title="@string/heads_up_cat"

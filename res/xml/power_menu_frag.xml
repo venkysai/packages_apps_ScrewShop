@@ -99,6 +99,12 @@
                 android:dependency="powermenu_airplane"
                 android:defaultValue="false" />
 
+            <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+                android:key="wallpaper_keyguard_wallpaper_tint"
+                android:title="@string/wallpaper_tint_keyguard"
+                android:summary="@string/wallpaper_tint_summary"
+                android:defaultValue="true" />
+
         </PreferenceCategory>
 
 </PreferenceScreen>
