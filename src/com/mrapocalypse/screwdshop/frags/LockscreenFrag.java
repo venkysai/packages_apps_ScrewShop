@@ -111,14 +111,14 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
         } else if (preference == mLockscreenClockSelection) {
             int clockSelection = Integer.valueOf((String) newValue);
             int index = mLockscreenClockSelection.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(resolver,
+            Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.LOCKSCREEN_CLOCK_SELECTION, clockSelection, UserHandle.USER_CURRENT);
             mLockscreenClockSelection.setSummary(mLockscreenClockSelection.getEntries()[index]);
             return true;
         } else if (preference == mLockscreenDateSelection) {
             int dateSelection = Integer.valueOf((String) newValue);
             int index = mLockscreenDateSelection.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(resolver,
+            Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.LOCKSCREEN_DATE_SELECTION, dateSelection, UserHandle.USER_CURRENT);
             mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntries()[index]);
             return true;
