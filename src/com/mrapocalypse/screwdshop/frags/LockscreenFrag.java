@@ -42,6 +42,8 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference;
+
 /**
  * Created by cedwards on 6/3/2016.
  */
@@ -52,10 +54,13 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
             "lockscreen_shortcuts_launch_type";
     private static final String KEY_LOCKSCREEN_CLOCK_SELECTION = "lockscreen_clock_selection";
     private static final String KEY_LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
+    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
     private ListPreference mLockscreenShortcutsLaunchType;
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
+
+    private SystemSettingSwitchPreference mFpKeystore;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,8 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
                 PREF_LOCKSCREEN_SHORTCUTS_LAUNCH_TYPE);
         mLockscreenShortcutsLaunchType.setOnPreferenceChangeListener(this);
         setHasOptionsMenu(false);
+
+        mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
 
         mLockscreenClockSelection = (ListPreference) findPreference(KEY_LOCKSCREEN_CLOCK_SELECTION);
         int clockSelection = Settings.System.getIntForUser(resolver,
