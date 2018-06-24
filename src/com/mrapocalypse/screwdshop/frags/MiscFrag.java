@@ -58,15 +58,19 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
     private static final String PREF_SS_SETTINGS_SUMMARY = "ss_settings_summary";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private ListPreference mTorchPowerButton;
     private Preference mCustomSummary;
     private String mCustomSummaryText;
-
+    private ListPreference mFlashlightOnCall;
+       
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.misc_frag);
+
+				PreferenceScreen prefSet = getPreferenceScreen();
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -88,7 +92,20 @@ public class MiscFrag extends SettingsPreferenceFragment implements
 
         mCustomSummary = (Preference) prefScreen.findPreference(PREF_SS_SETTINGS_SUMMARY);
         updateCustomSummaryTextString();
-
+			
+          
+        Preference FlashOnCall = findPreference("flashlight_on_call");
+        
+        if (!com.mrapocalypse.screwdshop.util.Utils.deviceSupportsFlashLight(getActivity())) {
+            prefSet.removePreference(FlashOnCall);
+        } else {
+						mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        		int flashlightValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.FLASHLIGHT_ON_CALL, 0);
+        		mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+        		mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+        		mFlashlightOnCall.setOnPreferenceChangeListener(this);
+				}
     }
 
 
@@ -108,7 +125,14 @@ public class MiscFrag extends SettingsPreferenceFragment implements
                         1);
             }
             return true;
-        }
+        } else if (preference == mFlashlightOnCall) {
+            int flashlightValue = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putInt(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
+            mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+            mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+           return true;
+       }
         return false;
     }
 

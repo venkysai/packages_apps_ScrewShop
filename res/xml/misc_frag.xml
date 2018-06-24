@@ -46,4 +46,10 @@
         android:summary="@string/chooser_activity_blacklist_summary"
         android:persistent="false" />
 
+		<ListPreference
+        android:key="flashlight_on_call"
+        android:title="@string/flashlight_on_call_title"
+        android:entries="@array/flashlight_on_call_entries"
+        android:entryValues="@array/flashlight_on_call_values" />
+
 </PreferenceScreen>
