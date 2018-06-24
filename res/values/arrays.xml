@@ -1248,7 +1248,6 @@
         <item>8</item>
     </string-array>
 
-<<<<<<< HEAD
     <!-- Lockscreen clock styles -->
     <string-array name="lockscreen_clock_selection_entries" translatable="false">
         <item>@string/lockscreen_clock_selection_digital</item>
