@@ -1393,5 +1393,9 @@
     <string name="ambient_display_bottom_info_battery">Battery percent</string>
     <string name="ambient_display_bottom_info_weather">Brief weather info</string>
 
+   	<!-- Less boring Heads up options -->
+    <string name="less_boring_heads_up_title">Make heads up less annoying</string>
+    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app</string> 
+
 </resources>
 
