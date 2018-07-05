@@ -43,6 +43,7 @@ import com.android.settings.Utils;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference;
+import com.mrapocalypse.screwdshop.prefs.CustomSeekBarPreference;
 
 /**
  * Created by cedwards on 6/3/2016.
@@ -55,12 +56,14 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_CLOCK_SELECTION = "lockscreen_clock_selection";
     private static final String KEY_LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private ListPreference mLockscreenShortcutsLaunchType;
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
 
     private SystemSettingSwitchPreference mFpKeystore;
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +94,12 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
         mLockscreenDateSelection.setValue(String.valueOf(dateSelection));
         mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntry());
         mLockscreenDateSelection.setOnPreferenceChangeListener(this);
+				
+			  mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
     }
 
@@ -128,6 +137,11 @@ public class LockscreenFrag extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.LOCKSCREEN_DATE_SELECTION, dateSelection, UserHandle.USER_CURRENT);
             mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntries()[index]);
+            return true;
+        } else if (preference == mMaxKeyguardNotifConfig) {
+            int kgconf = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
             return true;
         }
         return false;
