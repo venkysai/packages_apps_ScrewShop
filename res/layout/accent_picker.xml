@@ -222,14 +222,13 @@
                 android:background="@drawable/round"
                 android:backgroundTint="#607D8B" />
 
-            <Button
+         <!--   <Button
                 android:id="@+id/blackAccent"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_columnWeight="1"
                 android:gravity="center"
-                android:background="@drawable/round"
-                android:layout_gravity="fill_horizontal" />
+                android:layout_gravity="fill_horizontal" /> -->
 
             <Button
                 android:id="@+id/candyRedAccent"

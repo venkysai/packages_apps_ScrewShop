@@ -443,7 +443,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
             });
         }
 
-        Button blackAccent = null;
+/*        Button blackAccent = null;
         if (mView != null) {
             blackAccent = mView.findViewById(R.id.blackAccent);
             // Change the accent picker button depending on whether or not the dark, black, extended, chocolate theme is applied
@@ -461,7 +461,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                     dismiss();
                 }
             });
-        }
+        } */
 
 
         gridlayout = mView.findViewById(R.id.Gridlayout);
