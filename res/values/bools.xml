@@ -18,5 +18,6 @@
 
     <!-- Whether or not a device has device extras -->
     <bool name="has_device_extras">false</bool>
-
+    <!-- Default value for battery light on DND -->
+    <bool name="def_battery_light_dnd">true</bool>
 </resources>

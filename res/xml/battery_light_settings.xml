@@ -22,6 +22,12 @@
         android:title="@string/battery_light_enable"
         android:persistent="false"/>
 
+    <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+				android:key="battery_light_allow_on_dnd"
+        android:title="@string/battery_light_allow_on_dnd_title"
+        android:defaultValue="@bool/def_battery_light_dnd"
+        android:dependency="battery_light_enabled" />
+
     <PreferenceCategory
         android:key="general_section"
         android:title="@string/notification_light_general_title">
