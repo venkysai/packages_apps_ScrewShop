@@ -39,6 +39,14 @@
         android:summary="@string/custom_summary_randomize_explain"
         android:defaultValue="false" />
 
+     <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+         android:key="transparent_volume_dialog_dim"
+         android:title="@string/volume_dialog_dim"
+         android:max="100"
+         settings:min="0"
+         settings:units="%"
+         android:defaultValue="50" />
+
      <Preference
         android:key="chooser_activity_blacklist"
         android:fragment="com.mrapocalypse.screwdshop.frags.ChooserActivityBlacklist"
